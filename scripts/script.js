@@ -9,7 +9,7 @@ const check_if_user_is_logged_in = function () {
         success: function (response){
             console.log(response);
             is_logged_in=response;
-        }
+        },
     });
     return is_logged_in;
 }
@@ -46,10 +46,13 @@ const register_function = function (){
         type: 'POST',
         dataType: 'JSON',
         data: {
-            
+            email: '',
+            password: '',
+            confirmed_password: '',
         },
         success: function(response){
 
         }
     })
 }
+//-------------------------------------------------------------------
