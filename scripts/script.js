@@ -13,7 +13,7 @@ const check_if_user_is_logged_in = function () {
     });
     return is_logged_in;
 }
-document.addEventListener('click',function(){
+$('#click').on('click',function(){
     let a=check_if_user_is_logged_in();
     if(a==true){
         $('body').css('background','red')
