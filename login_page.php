@@ -1,3 +1,11 @@
+<?php
+session_start();
+if(isset($_SESSION['logged_in']))
+{
+    header('Location:strona-glowna');
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -8,7 +16,9 @@
     <script src="scripts/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-    <button id="click"></button>
+    <input type="text" name="email" id="email">
+    <input type="password" id="password" name="password">
+    <button id="log_in">Zaloguj</button>
     <script src="scripts/script.js"></script>
 </body>
 </html>

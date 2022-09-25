@@ -25,6 +25,7 @@ $('#click').on('click',function(){
 //-----------------------------------------------------------------------
 //Logowanie
 const login_function = function(){
+    console.log(4);
     $.ajax({
         url: 'php_scripts/login_script.php',
         type: 'POST',
@@ -34,10 +35,24 @@ const login_function = function(){
             password: $('#password').val()
         },
         success: function(response){
-
+            console.log(response);
+            if(response[2]==true)
+            window.location='index.html';
         }
     })
 }
+$('#log_in').on('click',login_function);
+//------------------------------
+//Wylogowanie
+const log_out = function (){
+    $.ajax({
+        url:'php_scripts/log_out.php',
+        success: function(response){
+            console.log(response);
+        }
+    })
+}
+$('#log_out').on('click',log_out);
 //-------------------------------------------------------------------
 //Rejestracja
 const register_function = function (){
@@ -56,3 +71,18 @@ const register_function = function (){
     })
 }
 //-------------------------------------------------------------------
+//To chyba trzeba będzie w php i z htacces zrobić
+// let current_location = window.location.href;
+// current_location=current_location.split('/');
+// current_location=current_location[current_location.length-1];
+// console.log(current_location);
+// switch(current_location){
+//     case 'login_page.html':
+//         {
+//             let is_logged_in=check_if_user_is_logged_in;
+//             if(is_logged_in){
+//                 window.location.replace('index.html');
+//             }
+//             break;
+//         }
+// }
