@@ -57,19 +57,23 @@ $('#log_out').on('click',log_out);
 //Rejestracja
 const register_function = function (){
     $.ajax({
-        url: 'php_scripts/register_script.php',
+        url: 'php_scripts/register.php',
         type: 'POST',
         dataType: 'JSON',
-        data: {
-            email: '',
-            password: '',
-            confirmed_password: '',
+        data:{
+            register_email: $('#register_email').val(),
+            register_password: $('#register_password').val(),
+            check_password: $('#check_password').val(),
+            name: $('#name').val(),
+            surname: $('#surname').val(),
+            username: $('#username').val()
         },
         success: function(response){
 
         }
     })
 }
+$('#register').on('click',register_function);
 //-------------------------------------------------------------------
 //To chyba trzeba będzie w php i z htacces zrobić
 // let current_location = window.location.href;

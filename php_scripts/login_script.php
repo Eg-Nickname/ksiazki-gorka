@@ -13,7 +13,7 @@ if(!isset($_SESSION['logged_in'])){
             $error = true;
             array_push($error_message,"Podaj poprawny adres e-mail");
         }
-        if(strlen($password)==0){
+        if(strlen($password)==0){ //warunek hasła jakiś trzeba lepszy wziąć
             $error = true;
             array_push($error_message,"Podaj poprawne hasło");
         }
@@ -29,11 +29,12 @@ if(!isset($_SESSION['logged_in'])){
                 $password=md5($password);
                 $sql="SELECT * FROM users WHERE email='$email' AND password='$password'";
                 $result=$connection->query($sql);
-                if(!$result){
+                if(!$result)throw new Exception($connection->error);
+                $number_of_users=$result->num_rows;
+                if($number_of_users==0){
                     array_push($error_message,"Nie znaleziono użytkownika");
                 }
                 else{
-                    $number_of_users=$result->num_rows;
                     if($number_of_users==1){
                         $user_data=$result->fetch_assoc();
                         $login_result=true;
