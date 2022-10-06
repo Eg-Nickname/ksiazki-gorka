@@ -74,6 +74,26 @@ const register_function = function (){
     })
 }
 $('#register').on('click',register_function);
+//pobieranie na główną stronę
+const get_data_for_mainpage= function (){
+    $.ajax({
+        url: 'php_scripts/get_data.php',
+        type: 'POST',
+        dataType: 'JSON',
+        data:{
+            category: 'matematyka'//tylko boolean będzie
+        },
+        success: function(response){
+            console.log(response);
+            for(let element of response)
+            {
+                // if(element.) trzeba skończyć
+            }
+        }
+    })
+}
+$('#btn').on('click',get_data_for_mainpage);
+
 //-------------------------------------------------------------------
 //To chyba trzeba będzie w php i z htacces zrobić
 // let current_location = window.location.href;
