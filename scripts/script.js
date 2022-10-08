@@ -103,16 +103,42 @@ const get_data_for_mainpage= function (){
         }
     })
 }
-$('#btn').on('click',get_data_for_mainpage);
+get_data_for_mainpage();
 //Zmiana wyświetlanych elementów na stronie głównej
 const display_elements_on_mainpage = function(){
-    let category="historia";
+    const category=(this.innerHTML).toLowerCase();
     const books=JSON.parse(localStorage.getItem('books'));
-    console.log(books);
     const books_to_display=books[category];
-    console.log(books_to_display);
+    let item_id=7;
+    if(books_to_display)
+    {
+        for(const element of books_to_display){
+            console.log(element);
+            const div=document.createElement('div');
+            $(div).addClass(`item${item_id} subject`);
+            const img_div=document.createElement('div');
+            $(img_div).addClass(`book-img`);
+            console.log(`"../${element['picture']}"`);
+            $(img_div).css(`background-image`,`url("${element['picture']}")`);
+            const book_name=document.createElement('p');
+            $(book_name).addClass(`book-name`);
+            $(book_name).html(`${element['book_name']}`);
+            const book_price=document.createElement('p');
+            $(book_price).addClass(`book-price`);
+            $(book_price).html(`Zaczyna się od 30 PLN`); //dodać najniższą cenę to bazy
+            const button=document.createElement('button');
+            $(button).addClass(`item${item_id}-btn`);
+            $(button).html('Sprawdź ofertę');
+            div.appendChild(img_div);
+            div.appendChild(book_name);
+            div.appendChild(book_price);
+            div.appendChild(button);
+            $('.books-wrapper').append(div);
+            item_id++;
+        }
+    }
 }
-$('#btn2').on('click',display_elements_on_mainpage);
+$('.buttons-wrapper button').on('click',display_elements_on_mainpage);
 //-------------------------------------------------------------------
 //To chyba trzeba będzie w php i z htacces zrobić
 // let current_location = window.location.href;

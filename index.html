@@ -6,12 +6,120 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="scripts/jquery-3.6.1.min.js"></script>
+    <link rel="stylesheet" href="style/main.css">
 </head>
 <body>
-    <a href="strona-logowania">Klik</a>
-    <button id="btn">aaaa</button>
-    <button id="btn2">ooooo</button>
-    <button id="log_out">Wyloguj</button> <!--można zmienić na a tylko zostawić id  -->
+    <div class="container">
+        <div class="oferrs-section">
+            <div class="offers-text">
+                <h3>Podręczniki Szkolne</h3>
+                <p>Przeglądaj wszystko</p>
+            </div>
+            <div class="buttons-wrapper">
+                <div class="button-1-wrapper">
+                    <button type="button" name="historia" value="historia" class="btn">Historia</button>   
+                    <button type="button" name="polski" value="polski" class="btn">J.Polski</button>   
+                    <button type="button" name="angielski" value="angielski" class="btn">J.Angielski</button>   
+                    <button type="button" name="matematyka" value="matematyka" class="btn active">Matematyka</button>   
+                    <button type="button" name="fizyka" value="fizyka" class="btn">Fizyka</button>   
+                    <button type="button" name="chemia" value="chemia" class="btn">Chemia</button>   
+                    <button type="button" name="biologia" value="biologia" class="btn">Biologia</button>   
+                </div>
+                <div class="button-2-wrapper">
+                    <button type="button" name="informatyka" value="informatyka" class="btn">Informatyka</button>
+                    <button type="button" name="wos" value="wos" class="btn">WOS</button>
+                    <button type="button" name="hit" value="hit" class="btn">HiT</button>
+                    <button type="button" name="geografia" value="geografia" class="btn">Geografia</button>
+                    <button type="button" name="pp" value="pp" class="btn">PP</button>
+                    <button type="button" name="zawodowe" value="zawodowe" class="btn">Zawodowe</button>
+                </div>
+                
+                
+                <div class="button-1-wrapper-hidden">
+                    <button type="button" name="historia" value="historia" class="btn">Historia</button>   
+                    <button type="button" name="polski" value="polski" class="btn">J.Polski</button>   
+                    <button type="button" name="fizyka" value="fizyka" class="btn">Fizyka</button>  
+                    <button type="button" name="wos" value="wos" class="btn">WOS</button>   
+                </div>
+                <div class="button-2-wrapper-hidden">
+                    <button type="button" name="chemia" value="chemia" class="btn">Chemia</button>   
+                    <button type="button" name="biologia" value="biologia" class="btn">Biologia</button> 
+                    <button type="button" name="informatyka" value="informatyka" class="btn">Informatyka</button>
+                </div>
+                <div class="button-3-wrapper-hidden">
+                    <button type="button" name="geografia" value="geografia" class="btn">Geografia</button>
+                    <button type="button" name="pp" value="pp" class="btn">PP</button>
+                    <button type="button" name="zawodowe" value="zawodowe" class="btn">Zawodowe</button>
+                </div>
+                <div class="button-4-wrapper-hidden">
+                    <button type="button" name="angielski" value="angielski" class="btn">J.Angielski</button>   
+                    <button type="button" name="matematyka" value="matematyka" class="btn active">Matematyka</button>
+                    <button type="button" name="hit" value="hit" class="btn">HiT</button>   
+                </div>   
+            </div>
+     
+            </div>
+            <div class="books">
+                <div class="books-wrapper">
+                    <div class="item1 subject">
+                        <div class="book-img item-img-1">
+                        </div>
+                        <p class="book-name">
+                        Matematyka 4 podręcznik Z.R
+                        </p>
+                        <p class="book-price">
+                        Zaczyna od 30 PLN
+                        </p>
+                        <button class="item1-btn">Sprawdź ofertę</button>
+                    </div>
+                    <div class="item2 subject">
+                        <div class="book-img item-img-2">
+                        </div>
+                        <p class="book-name">
+                        Matematyka 4 zbiór zadań Z.R
+                        </p>
+                        <p class="book-price">
+                        Zaczyna od 25 PLN
+                        </p>
+                        <button class="item2-btn">Sprawdź ofertę</button>    
+                    </div>
+                    <div class="item3 subject">
+                        <div class="book-img item-img-3">
+                        </div>
+                        <p class="book-name">
+                        Matematyka 4 podręcznik Z.P
+                        </p>
+                        <p class="book-price">
+                        Zaczyna od 30 PLN
+                        </p>
+                        <button class="item3-btn">Sprawdź ofertę</button>    
+                    </div>
+                    <div class="item4 subject">
+                        <div class="book-img item-img-4">
+                        </div>
+                        <p class="book-name">
+                        Matematyka 4 zbiór zadań Z.P
+                        </p>
+                        <p class="book-price">
+                        Zaczyna od 30 PLN
+                        </p>
+                        <button class="item4-btn">Sprawdź ofertę</button>    
+                    </div>
+                    <div class="item5 subject">
+                        <div class="book-img item-img-5">
+                        </div>
+                        <p class="book-name">
+                        Matematyka 3 podręcznik Z.R
+                        </p>
+                        <p class="book-price">
+                        Zaczyna od 30 PLN
+                        </p>
+                        <button class="item5-btn">Sprawdź ofertę</button>   
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="scripts/script.js"></script>
 </body>
 </html>
