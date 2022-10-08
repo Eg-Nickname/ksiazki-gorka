@@ -1,12 +1,15 @@
 <?php
-if(!isset($_POST['category']))
+if(!isset($_POST['flag']))
 {
     header("Location:../strona-glowna");
     exit();
 }
 else
 {
-    $category = $_POST['category']; // do wywalenia
+    $error=false;
+    $error_message="";
+    $everything=[];
+    $categories=[];
     require_once 'connect.php';
     mysqli_report((MYSQLI_REPORT_STRICT));
     try{
@@ -17,12 +20,19 @@ else
         else{
             $sql="SELECT * FROM `sample_books`";
             $result=$connection->query($sql);
+            if($result){
             $everything= $result->fetch_ALL(MYSQLI_ASSOC); //nieskończone
+            }
+            else{
+                throw new Exception();
+            }
         }
     }
     catch(Exception $e){
-        
+        $error=true;
+        $error_message="Katastrofalny błąd serwera";
     }
+    $array=[$error,$error_message,$everything,$categories];
+    echo json_encode($array);
 }
-echo json_encode ($everything);
 ?>

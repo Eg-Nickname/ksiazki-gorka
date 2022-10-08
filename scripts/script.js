@@ -74,26 +74,45 @@ const register_function = function (){
     })
 }
 $('#register').on('click',register_function);
-//pobieranie na główną stronę
+//Dodanie wszystkich książek do localstorage
 const get_data_for_mainpage= function (){
+    localStorage.removeItem("books");
     $.ajax({
         url: 'php_scripts/get_data.php',
         type: 'POST',
         dataType: 'JSON',
         data:{
-            category: 'matematyka'//tylko boolean będzie
+            flag:true
         },
         success: function(response){
-            console.log(response);
-            for(let element of response)
+            let local_storage_data={
+                matematyka:[],
+                historia:[]
+            };
+            if(response[0]==false)
             {
-                // if(element.) trzeba skończyć
+                const books=response[2];
+                for(const element of books)
+                {
+                    const category=element.category;
+                    local_storage_data[category].push(element);
+                }
+                local_storage_data=JSON.stringify(local_storage_data);
+                localStorage.setItem("books",local_storage_data);
             }
         }
     })
 }
 $('#btn').on('click',get_data_for_mainpage);
-
+//Zmiana wyświetlanych elementów na stronie głównej
+const display_elements_on_mainpage = function(){
+    let category="historia";
+    const books=JSON.parse(localStorage.getItem('books'));
+    console.log(books);
+    const books_to_display=books[category];
+    console.log(books_to_display);
+}
+$('#btn2').on('click',display_elements_on_mainpage);
 //-------------------------------------------------------------------
 //To chyba trzeba będzie w php i z htacces zrobić
 // let current_location = window.location.href;
