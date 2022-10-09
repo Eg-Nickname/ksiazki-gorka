@@ -106,14 +106,19 @@ const get_data_for_mainpage= function (){
 get_data_for_mainpage();
 //Zmiana wyświetlanych elementów na stronie głównej
 const display_elements_on_mainpage = function(){
-    const category=(this.innerHTML).toLowerCase();
+    const wrapper=document.querySelector('.books-wrapper')
+    let category='matematyka';
+    if(wrapper.childElementCount!=0)
+    {
+        category=(this.innerHTML).toLowerCase();
+    }
     const books=JSON.parse(localStorage.getItem('books'));
     const books_to_display=books[category];
-    let item_id=7;
+    let item_id=1;
+    wrapper.textContent='';
     if(books_to_display)
     {
         for(const element of books_to_display){
-            console.log(element);
             const div=document.createElement('div');
             $(div).addClass(`item${item_id} subject`);
             const img_div=document.createElement('div');
@@ -129,16 +134,17 @@ const display_elements_on_mainpage = function(){
             const button=document.createElement('button');
             $(button).addClass(`item${item_id}-btn`);
             $(button).html('Sprawdź ofertę');
-            div.appendChild(img_div);
-            div.appendChild(book_name);
-            div.appendChild(book_price);
-            div.appendChild(button);
+            div.append(img_div,book_name,book_price,button);
             $('.books-wrapper').append(div);
             item_id++;
         }
     }
 }
+
 $('.buttons-wrapper button').on('click',display_elements_on_mainpage);
+$(document).ready(function() {
+    display_elements_on_mainpage();
+})
 //-------------------------------------------------------------------
 //To chyba trzeba będzie w php i z htacces zrobić
 // let current_location = window.location.href;
