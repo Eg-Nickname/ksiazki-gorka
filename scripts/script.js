@@ -22,26 +22,6 @@ $('#click').on('click',function(){
         $('body').css('background','black')
     }
 })
-//-----------------------------------------------------------------------
-//Logowanie
-const login_function = function(){
-    console.log(4);
-    $.ajax({
-        url: 'php_scripts/login_script.php',
-        type: 'POST',
-        dataType: 'JSON',
-        data: {
-            email: $('#email').val(),
-            password: $('#password').val()
-        },
-        success: function(response){
-            console.log(response);
-            if(response[2]==true)
-            window.location='index.html';
-        }
-    })
-}
-$('#log_in').on('click',login_function);
 //------------------------------
 //Wylogowanie
 const log_out = function (){
@@ -54,26 +34,6 @@ const log_out = function (){
 }
 $('#log_out').on('click',log_out);
 //-------------------------------------------------------------------
-//Rejestracja
-const register_function = function (){
-    $.ajax({
-        url: 'php_scripts/register.php',
-        type: 'POST',
-        dataType: 'JSON',
-        data:{
-            register_email: $('#register_email').val(),
-            register_password: $('#register_password').val(),
-            check_password: $('#check_password').val(),
-            name: $('#name').val(),
-            surname: $('#surname').val(),
-            username: $('#username').val()
-        },
-        success: function(response){
-
-        }
-    })
-}
-$('#register').on('click',register_function);
 //Dodanie wszystkich książek do localstorage
 const get_data_for_mainpage= function (){
     localStorage.removeItem("books");
@@ -140,11 +100,11 @@ const display_elements_on_mainpage = function(){
         }
     }
 }
-
 $('.buttons-wrapper button').on('click',display_elements_on_mainpage);
 $(document).ready(function() {
     display_elements_on_mainpage();
 })
+
 //-------------------------------------------------------------------
 //To chyba trzeba będzie w php i z htacces zrobić
 // let current_location = window.location.href;

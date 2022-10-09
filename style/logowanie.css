@@ -1,0 +1,631 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* ////////////////////////////////
+              Ogólne
+//////////////////////////////// */
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px;
+    font-weight: 400px;
+}
+
+body {
+    min-height: 100vh;
+}
+
+html {
+  height: fill-available;
+  height: -webkit-fill-available;
+  }
+.container
+{
+    background-color: #FFFBF6;
+    height: 100vh;
+    max-width: 100%;
+    display: flex;
+}
+
+/* ////////////////////////////////
+              BOX 1
+//////////////////////////////// */
+
+.box-1
+{
+    background-image:url("../book-register.jpg");
+    box-shadow: inset 0 0 0 50vw rgba(0,0,0,0.4);
+    background-size: cover;
+    min-height: 100%;
+    width: 50%;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.box-1-content h1{
+    font-size: 48px;
+    font-weight: bold;
+    line-height: 85px;
+    text-transform: capitalize;
+    color: #fff;
+    max-width: 600px;
+    margin-left: 10rem;
+}
+
+.box-1-content p{
+    font-size: 16px;
+    font-weight: medium;
+    line-height: 25px;
+    color: #fff;
+    max-width: 650px;
+    margin-top: 3rem;
+    margin-left: 10rem;
+}
+
+
+/* ////////////////////////////////
+            BOX 2 i 3
+//////////////////////////////// */
+
+.wrapper{
+  height: 100vh;
+  width: 50%;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  align-content: space-evenly;
+}
+
+
+.wrapper h2{
+  font-size: 44px;
+  font-weight: bold;
+  line-height: 65px;
+  text-transform: capitalize;
+  color: #000;
+  margin: 5rem 0 5rem 0;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+}
+
+.box-2-3-wrapper {
+  background-color: transparent;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: center;
+}
+
+.box-2
+{
+    background-color: transparent;
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+.box-3
+{
+    background-color: transparent;
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+
+
+
+.form-container{
+  display: flex;
+  align-items: center;
+  height : 100%;
+  width: 70%;
+}
+
+
+/* ////////////////////////////////
+        FORM REJESTRACJA
+//////////////////////////////// */
+
+
+.register-in-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* overflow: hidden; */
+    width: 100%;
+  }
+  .register-in-form .label-wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 4rem;
+  }
+
+
+
+/* ////////////////////////////////
+          BOX 2 INPUTY
+//////////////////////////////// */
+
+  .input-field {
+    max-width: 100%;
+    width: 100%;
+    background-color: #fff;
+    margin: 10px 0;
+    height: 54px;
+    line-height: 58px;
+    border: 1px solid #F5E9DC;
+    border-radius: 10px;
+    padding: 0 1.2rem;
+  }
+  
+  .input-field input {
+    background: none;
+    outline: none;
+    border: none;
+    width: 100%;
+    line-height: 1;
+    font-weight: 400px;
+    font-size: 1.4rem;
+    color: #A89887;
+    margin: 14px 0;
+  }
+  
+  .input-field input::placeholder {
+    color: #A89887;
+    font-weight: 500;
+  }
+
+label{
+    color: #000;
+    font-weight: bold;
+    line-height: 18px;
+    font-size: 23px;
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  /* ////////////////////////////////
+          BOX 2 BUTTONY
+//////////////////////////////// */
+
+
+.register-in-btn {
+  align-items: center;
+  background-color: #F5E9DC;
+  border: 1px solid #A89887;
+  border-radius: 10px;
+  color: #000;
+  cursor: pointer;
+  display: flex;
+  font-size: 14px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 20px;
+  max-width: 100%;
+  min-height: 48px;
+  width: 100%;
+  overflow: hidden;
+  padding: 0px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  text-align: center;
+  transition: all 0.4s linear;
+  vertical-align: middle;
+}
+
+.register-in-btn:hover { 
+    transform: scale(0.9);
+}
+
+.register-in-btn-google {
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #F5E9DC;
+    border-radius: 10px;
+    color: #000;
+    cursor: pointer;
+    display: flex;
+    font-size: 18px;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 20px;
+    max-width: 100%;
+    min-height: 48px;
+    width: 100%;
+    overflow: hidden;
+    padding: 0px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    text-align: center;
+    transition: all 0.4s linear;
+    vertical-align: middle;
+  }
+  
+#google-text{
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 15px;
+  color: #000;
+}
+
+  .register-in-btn-google:hover { 
+      transform: scale(0.9);
+  }
+
+  .register-in-btn-google span.icon {
+    background: url("../Google\ icon.svg") no-repeat;
+    float: left;
+    width: 2.4rem;
+    height: 2.5rem;
+    margin-right: 1rem;
+}
+
+/* ////////////////////////////////
+      LINKI LOGIN/REGISTER
+//////////////////////////////// */
+
+#sign-in-goto{
+    justify-content: center;
+    display: flex;
+    font-size: 12px;
+    font-weight: normal;
+    margin-top: 4rem;
+    color: #A89887 
+}
+
+#sign-in-goto a{
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #A89887 
+}
+
+/* ////////////////////////////////
+          FORM LOGOWANIE
+//////////////////////////////// */
+.box-1-hidden{
+    display: none;
+}
+
+/* .box-1-content-hidenn{
+    display: none;
+} */
+
+
+
+#password-tip
+{
+    width: 100%;
+    justify-content: flex-start;
+    text-align: left;
+    color: #A89887;
+    font-size: 12px;
+    font-weight: bold;
+
+}
+.form-login-container{
+  width: 100%;
+}
+
+
+.sign-in-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    width: 100%;
+  }
+.form--hidden{
+    display: none !important;
+}
+
+.box-2-reponsive{
+  width: 50%;
+  max-width: 100%;
+}
+.sign-in-form .label-wrapper
+{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 4rem;
+}
+
+.sign-in-form .label-wrapper .input-field {
+    max-width: 100%;
+    width: 100%;
+    background-color: #fff;
+    margin: 10px 0;
+    height: 54px;
+    border: 1px solid #F5E9DC;
+    border-radius: 10px;
+    padding: 0 1rem;
+  }
+  
+.sign-in-form .label-wrapper .input-field input {
+    background: none;
+    outline: none;
+    border: none;
+    width: 70%;
+    line-height: 1;
+    font-weight: 400px;
+    font-size: 1.2rem;
+    color: #A89887;
+    margin: 18px 0;
+  }
+  
+.sign-in-form .label-wrapper .input-field input::placeholder {
+    color: #A89887;
+    font-weight: 500;
+  }
+
+.sign-in-btn {
+  align-items: center;
+  background-color: #F5E9DC;
+  border: 1px solid #A89887;
+  border-radius: 10px;
+  color: #000;
+  cursor: pointer;
+  display: flex;
+  font-size: 14px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 20px;
+  max-width: 100%;
+  min-height: 53px;
+  width: 100%;
+  overflow: hidden;
+  padding: 0px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  transition: all 0.4s linear;
+  vertical-align: middle;
+}
+
+.sign-in-btn:hover { 
+    transform: scale(0.9);
+}
+
+.sign-in-btn-google {
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #F5E9DC;
+    border-radius: 10px;
+    color: #000;
+    cursor: pointer;
+    display: flex;
+    font-size: 14px;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 20px;
+    max-width: 100%;
+    min-height: 53px;
+    width: 100%;
+    overflow: hidden;
+    padding: 0px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    text-align: center;
+    transition: all 0.4s linear;
+    vertical-align: middle;
+  }
+  
+  .sign-in-btn-google:hover { 
+      transform: scale(0.9);
+  }
+
+  .sign-in-btn-google span.icon {
+    background: url("../Google\ icon.svg") no-repeat;
+    float: left;
+    width: 2.4rem;
+    height: 2.5rem;
+    margin-right: 1rem;
+}
+
+#sign-up-goto{
+    justify-content: center;
+    display: flex;
+    font-size: 12px;
+    font-weight: normal;
+    margin-top: 4rem;
+    color: #A89887; 
+}
+
+#sign-up-goto a{
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #A89887 ;
+}
+
+
+/* Responsywa */
+
+@media only screen and (max-width: 1500px) {
+  .box-1-content h1{
+    font-size: 44px;
+    max-width: 450px;
+}
+
+.box-1-content p{
+    max-width: 500px;
+}
+}
+
+@media only screen and (max-width: 1360px) {
+  .register-in-form .icon{
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1250px) {
+  .box-1-content h1{
+    font-size: 38px;
+    max-width: 450px;
+}
+
+.box-1-content p{
+    max-width: 450px;
+}
+
+}
+
+@media only screen and (max-width: 1100px) {
+  .box-1-content h1{
+    font-size: 36px;
+    max-width: 450px;
+    margin-left: 2rem;
+  }
+
+.box-1-content p{
+    max-width: 450px;
+    margin-left: 2rem;
+  }
+  .label-wrapper
+{
+    width: 80%;
+}
+
+label{
+  font-size: 18px;
+}
+
+.register-in-btn {
+  width: 80%;
+
+}
+
+.register-in-btn:hover { 
+    transform: scale(1);
+}
+
+.register-in-btn-google {
+    width: 80%;
+  }
+  
+  .register-in-btn-google:hover { 
+      transform: scale(1);
+  }
+
+  .icon{
+    display: none;
+  }
+
+}
+
+@media only screen and (max-width: 1024px) {
+
+  .box-1{
+    display: none;
+  }
+
+  .wrapper{
+    width: 100%;
+  }
+
+  .box-2-3-wrapper{
+    width: 100%;
+    align-items: center;
+  }
+  .box-2{
+    width: 50%;
+    align-items: center;
+  }
+  .box-3{
+    width: 50%;
+    align-items: center;
+  }
+  .wrapper h2{
+    font-size: 54px;
+    font-weight: bold;
+    line-height: 85px;
+    text-transform: capitalize;
+    color: #000;
+    margin: 10rem 0 5rem 0;
+}
+
+.form-container{
+  width: 60%;
+}
+
+.form-login-container{
+  width: 100%;
+}
+
+
+
+}
+
+
+@media only screen and (max-width: 700px) {
+  .register-in-btn-google {
+    width: 100%;
+  }
+
+  .register-in-btn {
+    width: 100%;
+  }
+
+  .sign-in-form .icon{
+    display: none;
+  }
+
+
+}
+
+@media only screen and (max-width: 500px) {
+
+  .wrapper .sign-in-text h2{
+    font-size: 44px;
+    font-weight: bold;
+    line-height: 85px;
+    text-transform: capitalize;
+    color: #000;
+    margin: 5rem 0 5rem 0;
+}
+
+.wrapper .sign-up-text h2{
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 85px;
+  text-transform: capitalize;
+  color: #000;
+  margin: 5rem 0 5rem 0;
+}
+
+.register-in-form .icon{
+  display: block;
+}
+
+.register-in-form #google-text{
+  display: none;
+}
+
+.sign-in-form label{
+  font-size: 18px;
+}
+
+.sign-in-form .label-wrapper .input-field input{
+  font-size: 1.2rem;
+}
+.sign-in-form .icon{
+  display: block;
+}
+
+}

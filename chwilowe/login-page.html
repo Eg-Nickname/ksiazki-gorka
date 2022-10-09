@@ -1,11 +1,3 @@
-<?php
-session_start();
-if(isset($_SESSION['logged_in']))
-{
-    header('Location:strona-glowna');
-    exit();
-}
-?>
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -65,7 +57,7 @@ if(isset($_SESSION['logged_in']))
                             <input type="text" placeholder="Wpisz nazwę użytkownika" name="username" id="username" value="2s"/>
                             </div>
                         </div>
-                        <button class="register-in-btn" id="register">Stwórz konto</button> 
+                        <button type="submit" class="register-in-btn" id="register">Stwórz konto</button> 
                     </form>
                     
                     <form action="#" class="sign-in-form form--hidden"> 
@@ -81,8 +73,8 @@ if(isset($_SESSION['logged_in']))
                                 <input type="password" placeholder="Wpisz hasło" id="password" name="password" />
                             </div> 
                         </div>
-                        <button class="sign-in-btn" id="log_in">Zaloguj się</button>
-                        <button class="sign-in-btn-google" id="log_in_google"><span class="icon"></span>Zaloguj się za pomocą Google</button>
+                        <button type="submit" class="sign-in-btn" id="log_in">Zaloguj się</button>
+                        <button type="submit" class="sign-in-btn-google" id="log_in_google"><span class="icon"></span>Zaloguj się za pomocą Google</button>
                         
                     </form>
                     
@@ -110,7 +102,7 @@ if(isset($_SESSION['logged_in']))
                                 <input type="password" placeholder="Potwierdź hasło"  name="check_password" id="check_password" value="123456789" />
                             </div> 
                         </div>
-                        <button class="register-in-btn-google" id="register_google"><span class="icon"></span><span id="google-text">Zarejestruj się z Google</span></button>
+                        <button type="submit" class="register-in-btn-google" id="register_google"><span class="icon"></span><span id="google-text">Zarejestruj się z Google</span></button>
                     </form>
                 </div>  
             </div>
