@@ -45,7 +45,7 @@ if(isset($_SESSION['logged_in']))
             <div class="box-2">
                 <div class="form-container">
                     
-                    <form action="#" class="register-in-form ">
+                    <form action="javascript:void(0);" class="register-in-form " method="POST">
 
                         <div class="label-wrapper sign-up-form">
                             <label for="name">Imię:</label>
@@ -68,7 +68,7 @@ if(isset($_SESSION['logged_in']))
                         <button class="register-in-btn" id="register">Stwórz konto</button> 
                     </form>
                     
-                    <form action="#" class="sign-in-form form--hidden"> 
+                    <form action="javascript:void(0);" class="sign-in-form form--hidden" method="POST"> 
                         <div class="label-wrapper sign-in-form">
                             <label for="name">Adres Email:</label>
                             <div class="input-field">
@@ -91,7 +91,7 @@ if(isset($_SESSION['logged_in']))
             </div> 
             <div class="box-3">
                 <div class="form-container"> 
-                    <form action="#" class="register-in-form ">
+                    <form action="javascript:void(0);" class="register-in-form" method="POST">
                         <div class="label-wrapper register-in-form">
                             <label for="register_email">Email:</label>
                             <div class="input-field">
