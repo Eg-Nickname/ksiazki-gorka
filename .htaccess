@@ -7,3 +7,4 @@ Deny from all
 RewriteEngine on
 RewriteRule strona-glowna index.html
 RewriteRule strona-logowania login_page.php
+RewriteRule oferta offer.html

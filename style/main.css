@@ -240,36 +240,36 @@
     background-size: cover;
     background-repeat: none; 
 }
-.books-wrapper .item-img-1{
+/* .books-wrapper .item-img-1{
     background-image:url("../images/matm3podr.png");
-    /* background-size: cover;
-    background-repeat: none;  */
+    background-size: cover;
+    background-repeat: none; 
 }
 .books-wrapper .item-img-2{
     background-image:url("../images/matm3podr.png");
-    /* background-size: cover;
-    background-repeat: none;  */
+    background-size: cover;
+    background-repeat: none; 
 }
 .books-wrapper .item-img-3{
     background-image:url("../images/matm3podr.png");
-    /* background-size: cover;
-    background-repeat: none;  */
+    background-size: cover;
+    background-repeat: none; 
 }
 .books-wrapper .item-img-4{
     background-image:url("../images/matm3podr.png");
-    /* background-size: cover;
-    background-repeat: none;  */
+    background-size: cover;
+    background-repeat: none; 
 }
 .books-wrapper .item-img-5{
     background-image:url("../images/matm3podr.png");
-    /* background-size: cover;
-    background-repeat: none;  */
+    background-size: cover;
+    background-repeat: none; 
 }
 .books-wrapper .item-img-6{
     background-image:url("../images/matm3podr.png");
-    /* background-size: cover;
-    background-repeat: none;  */
-}
+    background-size: cover;
+    background-repeat: none; 
+} */
 
 @media only screen and (max-width: 1024px) {
     .books-wrapper{

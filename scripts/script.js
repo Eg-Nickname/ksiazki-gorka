@@ -1,4 +1,4 @@
-//Sprawdzanie czy użytkownik jest zalogowany, zwraca true, false
+//Sprawdzanie czy użytkownik jest zalogowany, zwraca true, false, w sumie może się jednak przydać
 const check_if_user_is_logged_in = function () {
     let is_logged_in=false;
     $.ajax({
@@ -35,7 +35,7 @@ const log_out = function (){
 $('#log_out').on('click',log_out);
 //-------------------------------------------------------------------
 //Dodanie wszystkich książek do localstorage
-const get_data_for_mainpage= function (){
+const get_data_for_mainpage = function (){
     localStorage.removeItem("books");
     $.ajax({
         url: 'php_scripts/get_data.php',
@@ -68,21 +68,24 @@ const get_data_for_mainpage= function (){
 get_data_for_mainpage();
 //Zmiana wyświetlanych elementów na stronie głównej
 const display_elements_on_mainpage = function(){
+    console.log(this);
     const wrapper=document.querySelector('.books-wrapper')
     let category='matematyka';
-    if(typeof(this.innerHTML)!='undefined')
-    {
-        category=(this.innerHTML).toLowerCase();
+    if(this){
+        if(typeof(this.innerHTML)!='undefined')
+        {
+            category=(this.innerHTML).toLowerCase();
+        }
     }
     const books=JSON.parse(localStorage.getItem('books'));
     const books_to_display=books[category];
-    let item_id=1;
     wrapper.textContent='';
     if(books_to_display)
     {
         for(const element of books_to_display){
             const div=document.createElement('div');
-            $(div).addClass(`item${item_id} subject`);
+            $(div).addClass(`subject`);
+            div.setAttribute('id',`book_offer${element['book_ID']}`);
             const img_div=document.createElement('div');
             $(img_div).addClass(`book-img`);
             console.log(`"../${element['picture']}"`);
@@ -94,15 +97,29 @@ const display_elements_on_mainpage = function(){
             $(book_price).addClass(`book-price`);
             $(book_price).html(`Zaczyna się od 30 PLN`); //dodać najniższą cenę to bazy
             const button=document.createElement('button');
-            $(button).addClass(`item${item_id}-btn`);
+            $(button).addClass(`book-btn`);
+            button.setAttribute('id',`book-btn${element['book_ID']}`);
             $(button).html('Sprawdź ofertę');
             div.append(img_div,book_name,book_price,button);
             $('.books-wrapper').append(div);
-            item_id++;
         }
     }
+    else return false;
 }
 $('.buttons-wrapper button').on('click',display_elements_on_mainpage);
+/////////////////////////////////////
+// $( document ).ajaxComplete(function() {
+//     display_elements_on_mainpage();
+//   });
+// Pobieranie danych do wyświetlenia podstrony
+const get_sample_book_data = function (){
+    const btn_id=(this.getAttribute('id')).slice(-1);
+    const book_id=($(this).parents().attr('id')).slice(-1); //Muszę to poprawić, bo 
+    const offer_location=`oferta${book_id}`;
+    window.location.href=offer_location;
+}
+$("body").on("click", ".book-btn",get_sample_book_data);
+///////////////////////////////////////
 // $(document).ready(function() {
     
 // })
