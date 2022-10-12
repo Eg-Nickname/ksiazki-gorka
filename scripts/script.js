@@ -45,12 +45,13 @@ const get_data_for_mainpage= function (){
             flag:true
         },
         success: function(response){
-            let local_storage_data={
-                matematyka:[],
-                historia:[]
-            };
             if(response[0]==false)
             {
+                console.log("dopd");
+                let local_storage_data={
+                    matematyka:[],
+                    historia:[]
+                };
                 const books=response[2];
                 for(const element of books)
                 {
@@ -60,6 +61,7 @@ const get_data_for_mainpage= function (){
                 local_storage_data=JSON.stringify(local_storage_data);
                 localStorage.setItem("books",local_storage_data);
             }
+            display_elements_on_mainpage();
         }
     })
 }
@@ -68,7 +70,7 @@ get_data_for_mainpage();
 const display_elements_on_mainpage = function(){
     const wrapper=document.querySelector('.books-wrapper')
     let category='matematyka';
-    if(wrapper.childElementCount!=0)
+    if(typeof(this.innerHTML)!='undefined')
     {
         category=(this.innerHTML).toLowerCase();
     }
@@ -101,9 +103,9 @@ const display_elements_on_mainpage = function(){
     }
 }
 $('.buttons-wrapper button').on('click',display_elements_on_mainpage);
-$(document).ready(function() {
-    display_elements_on_mainpage();
-})
+// $(document).ready(function() {
+    
+// })
 
 //-------------------------------------------------------------------
 //To chyba trzeba będzie w php i z htacces zrobić

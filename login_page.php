@@ -82,7 +82,7 @@ if(isset($_SESSION['logged_in']))
                             </div> 
                         </div>
                         <button class="sign-in-btn" id="log_in">Zaloguj się</button>
-                        <button class="sign-in-btn-google" id="log_in_google"><span class="icon"></span>Zaloguj się za pomocą Google</button>
+                        <!-- <button class="sign-in-btn-google" id="log_in_google"><span class="icon"></span>Zaloguj się za pomocą Google</button> -->
                         
                     </form>
                     

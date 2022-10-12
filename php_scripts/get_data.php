@@ -9,7 +9,6 @@ else
     $error=false;
     $error_message="";
     $everything=[];
-    $categories=[];
     require_once 'connect.php';
     mysqli_report((MYSQLI_REPORT_STRICT));
     try{
@@ -32,7 +31,7 @@ else
         $error=true;
         $error_message="Katastrofalny błąd serwera";
     }
-    $array=[$error,$error_message,$everything,$categories];
+    $array=[$error,$error_message,$everything];
     echo json_encode($array);
 }
 ?>
