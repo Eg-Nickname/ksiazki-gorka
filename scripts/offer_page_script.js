@@ -1,2 +1,74 @@
 // import {get_data_for_mainpage} from './script.js';
 // console.log(get_data_for_mainpage);
+/////////////////////////////////////////////////////////////////////////////
+//--------------------------------------------------------------------------
+//Pobieranie elementów do localStorage, skopiowane z innego skryptu, bo eksport nie chiciał działać- Sadge
+const get_data_for_mainpage = function (){
+    localStorage.removeItem("books");
+    $.ajax({
+        url: 'php_scripts/get_data.php',
+        type: 'POST',
+        dataType: 'JSON',
+        data:{
+            flag:true
+        },
+        success: function(response){
+            if(response[0]==false)
+            {
+                console.log("dopd");
+                let local_storage_data={
+                    matematyka:[],
+                    historia:[]
+                };
+                const books=response[2];
+                for(const element of books)
+                {
+                    const category=element.category;
+                    local_storage_data[category].push(element);
+                }
+                local_storage_data=JSON.stringify(local_storage_data);
+                localStorage.setItem("books",local_storage_data);
+            }
+            display_sample_offer();
+        }
+    })
+}
+get_data_for_mainpage();
+//------------------------------------------------------------------------------
+// Pobieranie danych z url i wyświetlenie ich jako przykładowa książka
+const display_sample_offer = function (){
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const bookId=urlParams.get('number');
+    const title = urlParams.get('title').replaceAll("-"," ");
+    const category = urlParams.get('category');
+    const books=JSON.parse(localStorage.getItem('books'));
+    const subject=books[category];
+    if(subject)
+    {
+        const data = {};
+        for(const element of subject){
+            if(element.book_ID==bookId && element.book_name==title){
+                for(const key in element)
+                {
+                    data[key] = element[key];
+                }
+                break;
+            }
+        }
+        console.log(data);
+        if(Object.keys(data).length!=0){
+            console.log(data.picture);
+            $('body').css('background-image',`url("${data.picture}")`);
+            // `url("${element['picture']}")`
+        }
+        else{
+            $('body').append('<h1>Strona nie istnieje</h1>')
+        }
+    }
+    else{
+        $('body').append('<h1>Strona nie istnieje</h1>')
+    }
+}
+//--------------------------------------------------------------------------------
+////////////////////////////////////////////////////////////////////////////////////
