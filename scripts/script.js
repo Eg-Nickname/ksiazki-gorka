@@ -85,7 +85,7 @@ const display_elements_on_mainpage = function(){
         for(const element of books_to_display){
             const div=document.createElement('div');
             $(div).addClass(`subject`);
-            div.setAttribute('id',`book_offer${element['book_ID']}`);
+            div.setAttribute('id',`${category}${element['book_ID']}`);
             const img_div=document.createElement('div');
             $(img_div).addClass(`book-img`);
             console.log(`"../${element['picture']}"`);
@@ -113,30 +113,28 @@ $('.buttons-wrapper button').on('click',display_elements_on_mainpage);
 //   });
 // Pobieranie danych do wyświetlenia podstrony
 const get_sample_book_data = function (){
-    const btn_id=(this.getAttribute('id')).slice(-1);
-    const book_id=($(this).parents().attr('id')).slice(-1); //Muszę to poprawić, bo 
-    const offer_location=`oferta${book_id}`;
-    window.location.href=offer_location;
+    const btn_id=(this.getAttribute('id')).replace("book-btn","");
+    const category=($(this).parents().attr('id')).replace(btn_id,"");
+    let title="";
+    const books=JSON.parse(localStorage.getItem('books'));
+    const subject=books[category];
+    for(const element of subject){
+        if(element.book_ID==btn_id){
+            title=(element.book_name.split(" ")).join("-");
+            // title=element.book_name;
+            break;
+        }
+    }
+    if(title){
+        const offer_location=`oferta?number=${btn_id}&category=${category}&title=${title}`;
+        window.location.href=offer_location;
+    }
+    else{
+        return false
+    }
 }
 $("body").on("click", ".book-btn",get_sample_book_data);
 ///////////////////////////////////////
 // $(document).ready(function() {
     
 // })
-
-//-------------------------------------------------------------------
-//To chyba trzeba będzie w php i z htacces zrobić
-// let current_location = window.location.href;
-// current_location=current_location.split('/');
-// current_location=current_location[current_location.length-1];
-// console.log(current_location);
-// switch(current_location){
-//     case 'login_page.html':
-//         {
-//             let is_logged_in=check_if_user_is_logged_in;
-//             if(is_logged_in){
-//                 window.location.replace('index.html');
-//             }
-//             break;
-//         }
-// }
