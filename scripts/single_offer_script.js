@@ -3,7 +3,9 @@
 /////////////////////////////////////////////////////////////////////////////
 //--------------------------------------------------------------------------
 //Pobieranie elementów do localStorage, skopiowane z innego skryptu, bo eksport nie chiciał działać- Sadge
+
 const get_data_for_mainpage = function (){
+
     localStorage.removeItem("books");
     $.ajax({
         url: 'php_scripts/get_data.php',
@@ -14,8 +16,7 @@ const get_data_for_mainpage = function (){
         },
         success: function(response){
             if(response[0]==false)
-            {
-                console.log("dopd");
+            { 
                 let local_storage_data={
                     matematyka:[],
                     historia:[]
@@ -27,7 +28,7 @@ const get_data_for_mainpage = function (){
                     local_storage_data[category].push(element);
                 }
                 local_storage_data=JSON.stringify(local_storage_data);
-                localStorage.setItem("books",local_storage_data);
+                localStorage.setItem("books",local_storage_data);;
             }
             display_sample_offer();
         }
@@ -59,7 +60,15 @@ const display_sample_offer = function (){
         console.log(data);
         if(Object.keys(data).length!=0){
             console.log(data.picture);
-            $('body').css('background-image',`url("${data.picture}")`);
+            $('.base-img').css('background-image',`url("${data.picturexl}")`);
+            $('.category-path').append("<p>" + category + " > " + data.book_name + "<h2")
+            $('.base-title').append("<h2>" + data.book_name + "<h2>")
+            $('.publisher-name').append("<p> Wydawnictwo: " + data.publishing_house + "<p>")
+            $('.date-name').append("<p> Data Wydania: " + data.release_date + "<p>")
+            $('.isbn-name').append("<p> ISBN: " + data.ISBN + "<p>")
+            $('.authors-name').append("<p> Autorzy: " + data.authors + "<p>")
+            
+            // ('background-image',`url("${data.picture}")`);
             // `url("${element['picture']}")`
         }
         else{
