@@ -67,3 +67,13 @@ $('#sumbit_filters').on('click', function(){
     }
     display_elements_on_offer_list(subject_array);
 });
+
+const log_out = function (){
+    $.ajax({
+        url:'php_scripts/log_out.php',
+        success: function(response){
+            window.location.reload();
+        }
+    })
+}
+$('#log_out').on('click',log_out);

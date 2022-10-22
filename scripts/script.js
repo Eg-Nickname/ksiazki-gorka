@@ -28,7 +28,7 @@ const log_out = function (){
     $.ajax({
         url:'php_scripts/log_out.php',
         success: function(response){
-            console.log(response);
+            window.location.reload();
         }
     })
 }
@@ -68,7 +68,8 @@ const get_data_for_mainpage = function (){
 get_data_for_mainpage();
 //Zmiana wyświetlanych elementów na stronie głównej
 const display_elements_on_mainpage = function(){
-    console.log(this);
+    $('.active').removeClass(`active`);
+    $(this).addClass('active');
     const wrapper=document.querySelector('.books-wrapper')
     let category='matematyka';
     if(this){
@@ -102,6 +103,12 @@ const display_elements_on_mainpage = function(){
             $(button).html('Sprawdź ofertę');
             div.append(img_div,book_name,book_price,button);
             $('.books-wrapper').append(div);
+        }
+        if(typeof(this.innerHTML)!='undefined')
+        {
+            wrapper.scrollIntoView({
+                behavior: 'smooth'
+            });
         }
     }
     else return false;

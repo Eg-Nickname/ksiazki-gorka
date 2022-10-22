@@ -45,6 +45,7 @@ const display_sample_offer = function (){
     const category = urlParams.get('category');
     const books=JSON.parse(localStorage.getItem('books'));
     const subject=books[category];
+    console.log(subject);
     if(subject)
     {
         const data = {};
@@ -81,3 +82,12 @@ const display_sample_offer = function (){
 }
 //--------------------------------------------------------------------------------
 ////////////////////////////////////////////////////////////////////////////////////
+const log_out = function (){
+    $.ajax({
+        url:'php_scripts/log_out.php',
+        success: function(response){
+            window.location.reload();
+        }
+    })
+}
+$('#log_out').on('click',log_out);

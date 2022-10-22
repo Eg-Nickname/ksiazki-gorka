@@ -1,3 +1,10 @@
+<?php
+session_start();
+$is_logged_in=false;
+if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
+    $is_logged_in =true;
+}
+?>
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -26,20 +33,25 @@
                     </ul>
                 </div>
             </div>
-
-            <div class="right-nav">
-                <button>Zaloguj się</button>
-            </div>
             
-            <!-- /////////////////////////////////////////// -->
-            <!-- PHP do zalogowanego użytkownika  -->
-            <!-- <div class="right-nav-authorized">
-                <div id="user-panel-button"></div>
-                <div id="messages-button"></div>
-                <div id="log_out"></div>
-            </div> -->
-            <!-- /////////////////////////////////////////// -->
-
+            <?php
+            if($is_logged_in){
+                echo<<<END
+                <div class="right-nav-authorized">
+                    <a id="user-panel-button"></a>
+                    <a id="messages-button"></a>
+                    <a id="log_out"></a>
+                </div>
+                END;
+            }
+            else{
+                echo<<<END
+                <div class="right-nav">
+                    <a href="strona-logowania">Zaloguj się</a>
+                </div>
+                END;
+            }
+            ?>
         </div>
     </nav>
 
