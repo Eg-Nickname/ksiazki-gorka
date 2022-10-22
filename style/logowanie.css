@@ -140,7 +140,7 @@ html {
 
 .register-in-form {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     flex-direction: column;
     /* overflow: hidden; */
@@ -282,7 +282,7 @@ label{
     display: flex;
     font-size: 12px;
     font-weight: normal;
-    margin-top: 4rem;
+    margin-top: 2rem;
     color: #A89887 
 }
 
@@ -292,6 +292,34 @@ label{
     text-decoration: none;
     color: #A89887 
 }
+
+/* ////////////////////////////////
+          Span Errory
+//////////////////////////////// */
+
+.error_log_info{
+  color: red;
+  font-size: 12px;
+  visibility: hidden;
+}
+
+.error_log_info_login{
+  color: red;
+  font-size: 12px;
+  visibility: hidden;
+}
+
+
+.error_log_info_password{
+  color: red;
+  font-size: 14px;
+  visibility: hidden;
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 80%;
+  text-align: center;
+}
+
 
 /* ////////////////////////////////
           FORM LOGOWANIE
@@ -304,18 +332,6 @@ label{
     display: none;
 } */
 
-
-
-#password-tip
-{
-    width: 100%;
-    justify-content: flex-start;
-    text-align: left;
-    color: #A89887;
-    font-size: 12px;
-    font-weight: bold;
-
-}
 .form-login-container{
   width: 100%;
 }
@@ -323,7 +339,7 @@ label{
 
 .sign-in-form {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     flex-direction: column;
     overflow: hidden;
@@ -443,7 +459,7 @@ label{
     display: flex;
     font-size: 12px;
     font-weight: normal;
-    margin-top: 4rem;
+    margin-top: 2rem;
     color: #A89887; 
 }
 
@@ -557,7 +573,7 @@ label{
     line-height: 85px;
     text-transform: capitalize;
     color: #000;
-    margin: 10rem 0 5rem 0;
+    margin: 8rem 0 4rem 0;
 }
 
 .form-container{
