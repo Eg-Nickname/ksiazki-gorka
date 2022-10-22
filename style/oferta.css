@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* ////////////////////////////////
+              Ogólne
+//////////////////////////////// */
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px;
+    font-weight: 400px;
+}
+
+a{
+    text-decoration: none;
+    font-size: 16px;
+    color: #513939;
+    font-weight: normal;
+    line-height: 20px;
+}
+
+
+/* ////////////////////////////////
+            Menu
+//////////////////////////////// */
+
+nav{
+    height: 120px;
+    width: 100%;
+    background-color: #F5E9DC;
+}
+
+.nav-container{
+    max-width: 1140px;
+    width: 100%;
+    height: 100%;
+    padding: 0 2rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    grid-template-rows: 100%;
+    border-bottom: 1px solid #000;
+}
+
+/* ////////////////////////////////
+        Lewa częsc Menu
+//////////////////////////////// */
+
+.nav-container .left-nav{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.nav-container .center-nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.nav-container .center-nav .nav-list{
+    height: 100%;
+}
+
+.nav-container .center-nav .ul{
+    height: 100%;
+}
+
+.nav-container .left-nav .nav-image{
+    width: 75px;
+    height: 75px;
+    background-size: cover;
+    background-repeat: none;
+    background-image: url(../images/logo.png)
+}
+
+.nav-container .center-nav .nav-list ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style-type: none;
+    height: 100%;
+    
+}
+
+.nav-container .center-nav .nav-list ul li a{
+    font-size: 16px;
+    color: #000;
+    font-weight: normal;
+    line-height: 20px;
+    height: 50%;
+    position: relative;
+}
+
+.nav-container .center-nav .nav-list ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #A88E87;
+    transition: width .3s;
+    left: 0;
+    top: 25px;
+}
+.nav-container .center-nav .nav-list ul li a:hover::after {
+    width: 100%;
+    transition: width .3s;
+}
+
+.nav-container .center-nav .nav-list ul li+li{
+    margin-left: 3rem;
+}
+
+
+/* ////////////////////////////////
+        Prawa częsc Menu
+//////////////////////////////// */
+
+.nav-container .right-nav{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+/* .nav-container .right-nav button{
+    background-color: transparent;
+    border: 1px solid #A89887;
+    color: #000;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    overflow: hidden;
+    padding: 1.5rem 4rem;
+    text-align: center;
+    transition: all 0.4s ease-in-out;
+    vertical-align: middle;
+    outline: none;
+}
+
+.nav-container .right-nav button:hover{
+    background-color: #000;
+    border: 2px solid #000;
+    color: #F5E9DC;
+    border-radius: 15px;
+} */
+
+
+.nav-container .right-nav-authorized{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 4rem;
+}
+
+.nav-container .right-nav-authorized #user-panel-button{
+    width: 30px;
+    height: 30px;
+    background-size: cover;
+    background-repeat: none;
+    background-image: url(../images/User.svg);
+    color: #000;
+}
+
+.nav-container .right-nav-authorized #messages-button{
+    width: 36px;
+    height: 28px;
+    background-size: cover;
+    background-repeat: none;
+    background-image: url(../images/Message_button.svg);
+}
+
+.nav-container .right-nav-authorized #log_out{
+    width: 34px;
+    height: 28px;
+    background-size: cover;
+    background-repeat: none;
+    background-image: url(../images/log-out.svg);
+}

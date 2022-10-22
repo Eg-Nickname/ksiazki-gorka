@@ -426,11 +426,11 @@ main{
     color: #000;
 }
 
-.active{
-    background-color: #F5E9DC;
-    border-radius: 5px;
-    border: 2px solid #A89887;
-    color: #000;
+.active {
+    background-color: #F5E9DC !important;
+    border-radius: 5px !important;
+    border: 2px solid #A89887 !important;
+    color: #000 !important;
 }
 
 
