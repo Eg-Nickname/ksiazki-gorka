@@ -90,7 +90,7 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
         <div class="oferrs-section">
             <div class="offers-text">
                 <h3>Podręczniki Szkolne</h3>
-                <p><a href="#">Przeglądaj wszystko</a></p>
+                <p><a href="lista-ofert">Przeglądaj wszystko</a></p>
             </div>
             <div class="buttons-wrapper">
                 <div class="buttons-wrapper-1">

@@ -50,7 +50,7 @@ const get_data_for_mainpage = function (){
                 console.log("dopd");
                 let local_storage_data={
                     matematyka:[],
-                    historia:[]
+                    historia:[] //Żeby działało trzeba dodać wszystkie przedmioty
                 };
                 const books=response[2];
                 for(const element of books)

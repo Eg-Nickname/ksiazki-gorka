@@ -39,13 +39,13 @@ if(isset($_SESSION['logged_in']))
         </div>
     
     <div class="wrapper">
-            <span class="sign-up-text"><h2>Zarejestruj się</h2></span>
-            <span class="sign-in-text form--hidden"><h2>Zaloguj się</h2></span>
+            <span class="sign-up-text form--hidden"><h2>Zarejestruj się</h2></span>
+            <span class="sign-in-text"><h2>Zaloguj się</h2></span>
         <div class="box-2-3-wrapper">
             <div class="box-2">
                 <div class="form-container">
                     
-                    <form action="javascript:void(0);" class="register-in-form " method="POST">
+                    <form action="javascript:void(0);" class="register-in-form form--hidden " method="POST">
 
                         <div class="label-wrapper sign-up-form">
                             <label for="name">Imię:</label>
@@ -71,7 +71,7 @@ if(isset($_SESSION['logged_in']))
                         <button class="register-in-btn" id="register">Stwórz konto</button> 
                     </form>
                     
-                    <form action="javascript:void(0);" class="sign-in-form form--hidden" method="POST"> 
+                    <form action="javascript:void(0);" class="sign-in-form" method="POST"> 
                         <div class="label-wrapper sign-in-form">
                             <label for="name">Adres Email:</label>
                             <div class="input-field">
@@ -94,7 +94,7 @@ if(isset($_SESSION['logged_in']))
                     
                 </div>         
             </div> 
-            <div class="box-3">
+            <div class="box-3 form--hidden">
                 <div class="form-container"> 
                     <form action="javascript:void(0);" class="register-in-form" method="POST">
                         <div class="label-wrapper register-in-form">
@@ -124,8 +124,8 @@ if(isset($_SESSION['logged_in']))
             </div>
         </div>
         <span class="error_log_info_password">Lorem Ipsum twoje konto srututut wymagan nie spelnia</span>
-        <span class="sign-up-goto-span form--hidden"><p id="sign-up-goto">Nie masz jeszcze konta? &nbsp;<a href="#" id="linkCreateAccount"> Zarejestruj się</a></p></span>
-        <span class="sign-in-goto-span"><p id="sign-in-goto"> Masz już konto? &nbsp;<a href="#" id="linkLogin"> Zaloguj się</a></p></span>
+        <span class="sign-up-goto-span"><p id="sign-up-goto">Nie masz jeszcze konta? &nbsp;<a href="#" id="linkCreateAccount"> Zarejestruj się</a></p></span>
+        <span class="sign-in-goto-span form--hidden"><p id="sign-in-goto"> Masz już konto? &nbsp;<a href="#" id="linkLogin"> Zaloguj się</a></p></span>
     </div>  
    </div>
    <script src="scripts/login_script.js"></script> 
