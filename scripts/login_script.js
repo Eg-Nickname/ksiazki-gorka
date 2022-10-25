@@ -40,11 +40,9 @@ const change_login_content = function(){
     const register_form=document.querySelectorAll('.register-in-form');
     const register_span=document.querySelector('.sign-in-goto-span');
     const register_header=document.querySelector('.sign-up-text');
-    const register_box=document.querySelector('.box-3');
     const sign_in_form=document.querySelector('.sign-in-form');
     const sign_in_header=document.querySelector('.sign-in-text');
     const sign_in_span=document.querySelector('.sign-up-goto-span');
-    const form_container=document.querySelector('.form-container');
     $('#linkLogin').on('click',function(){
         $(register_form).addClass('form--hidden');
         $(register_span).addClass('form--hidden');
@@ -52,8 +50,6 @@ const change_login_content = function(){
         $(sign_in_form).removeClass('form--hidden');
         $(sign_in_header).removeClass('form--hidden');
         $(sign_in_span).removeClass('form--hidden');
-        $(register_box).addClass('form--hidden');
-        $(form_container).addClass('form-login-container');
     });
     $('#linkCreateAccount').on('click',function(){
         $(register_form).removeClass('form--hidden');
@@ -62,8 +58,6 @@ const change_login_content = function(){
         $(sign_in_form).addClass('form--hidden');
         $(sign_in_header).addClass('form--hidden');
         $(sign_in_span).addClass('form--hidden');
-        $(register_box).removeClass('form--hidden');
-        $(form_container).removeClass('form-login-container');
     });
 }
 //logowanie

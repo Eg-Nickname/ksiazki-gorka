@@ -100,19 +100,18 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
                                 <!-- <p>Wydawnictwo WSIP</p> -->
                                 </div> 
                             </div>
-                        </div>
-
-                    </div>
+                            </div>
                     <div class="break">
-                        a
                     </div>
                     <div class="base-text">
-                        a
                     </div>
                 </div>
+
                 <div class="base-price-info">
                 a
                 </div>
+                </div>
+
             </div> 
             <div class="break"></div>  
         </div>

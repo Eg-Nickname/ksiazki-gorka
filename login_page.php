@@ -17,7 +17,7 @@ if(isset($_SESSION['logged_in']))
     <script src="scripts/jquery-3.6.1.min.js"></script>
 </head>
 <body>
-   <div class="container">
+<div class="container">
         <div class="box-1">
             <div class="box-1-content">
                 <h1>Lorem Ipsum Tralalaa, 
@@ -41,10 +41,8 @@ if(isset($_SESSION['logged_in']))
     <div class="wrapper">
             <span class="sign-up-text form--hidden"><h2>Zarejestruj się</h2></span>
             <span class="sign-in-text"><h2>Zaloguj się</h2></span>
-        <div class="box-2-3-wrapper">
+        <!-- <div class="box-2-3-wrapper"> -->
             <div class="box-2">
-                <div class="form-container">
-                    
                     <form action="javascript:void(0);" class="register-in-form form--hidden " method="POST">
 
                         <div class="label-wrapper sign-up-form">
@@ -54,7 +52,7 @@ if(isset($_SESSION['logged_in']))
                             </div>
                             <span class="error_log_info">Lorem Ipsum</span>
                         </div>
-                        <div class="label-wrapper sign-up-form">
+                        <div class="label-wrapper sign-up-form label-wrapper-l">
                             <label for="surname">Nazwisko:</label>
                             <div class="input-field">
                             <input type="text" placeholder="Wpisz nazwisko" name="surname" id="surname" value="si"/>
@@ -68,6 +66,28 @@ if(isset($_SESSION['logged_in']))
                             </div>
                             <span class="error_log_info">Lorem Ipsum</span>
                         </div>
+                        <div class="label-wrapper register-in-form label-wrapper-l">
+                            <label for="register_email">Email:</label>
+                            <div class="input-field">
+                            <input type="email" placeholder="Wpisz swoj email" name="register_email" id="register_email" value="12@df.pl" />
+                            </div>
+                            <span class="error_log_info">Lorem Ipsum</span>
+                        </div>
+                        <div class="label-wrapper register-in-form">
+                            <label for="register_password">Hasło:</label>
+                            <div class="input-field">
+                                <input type="password" placeholder="Hasło musi zawierać 8 znaków" name="register_password" id="register_password" value="123456789" />
+                            </div>
+                            <span class="error_log_info">Lorem Ipsum</span> 
+                        </div>
+                        <div class="label-wrapper register-in-form label-wrapper-l">
+                            <label for="check_password">Hasło:</label>
+                            <div class="input-field">
+                                <input type="password" placeholder="Potwierdź hasło"  name="check_password" id="check_password" value="123456789" />
+                            </div>
+                            <span class="error_log_info">Lorem Ipsum</span> 
+                        </div>
+                        <button class="register-in-btn-google" id="register_google"><span class="icon"></span><span id="google-text">Zarejestruj się z Google</span></button>
                         <button class="register-in-btn" id="register">Stwórz konto</button> 
                     </form>
                     
@@ -90,39 +110,16 @@ if(isset($_SESSION['logged_in']))
                         <!-- <button class="sign-in-btn-google" id="log_in_google"><span class="icon"></span>Zaloguj się za pomocą Google</button> -->
                         
                     </form>
-                    
-                    
-                </div>         
-            </div> 
+            </div>            
+            <!-- </div> 
             <div class="box-3 form--hidden">
                 <div class="form-container"> 
                     <form action="javascript:void(0);" class="register-in-form" method="POST">
-                        <div class="label-wrapper register-in-form">
-                            <label for="register_email">Email:</label>
-                            <div class="input-field">
-                            <input type="email" placeholder="Wpisz swoj email" name="register_email" id="register_email" value="12@df.pl" />
-                            </div>
-                            <span class="error_log_info">Lorem Ipsum</span>
-                        </div>
-                        <div class="label-wrapper register-in-form">
-                            <label for="register_password">Hasło:</label>
-                            <div class="input-field">
-                                <input type="password" placeholder="Hasło musi zawierać 8 znaków" name="register_password" id="register_password" value="123456789" />
-                            </div>
-                            <span class="error_log_info">Lorem Ipsum</span> 
-                        </div>
-                        <div class="label-wrapper register-in-form">
-                            <label for="check_password">Hasło:</label>
-                            <div class="input-field">
-                                <input type="password" placeholder="Potwierdź hasło"  name="check_password" id="check_password" value="123456789" />
-                            </div>
-                            <span class="error_log_info">Lorem Ipsum</span> 
-                        </div>
-                        <button class="register-in-btn-google" id="register_google"><span class="icon"></span><span id="google-text">Zarejestruj się z Google</span></button>
+                       
                     </form>
                 </div>  
-            </div>
-        </div>
+            </div> -->
+        <!-- </div> -->
         <span class="error_log_info_password">Lorem Ipsum twoje konto srututut wymagan nie spelnia</span>
         <span class="sign-up-goto-span"><p id="sign-up-goto">Nie masz jeszcze konta? &nbsp;<a href="#" id="linkCreateAccount"> Zarejestruj się</a></p></span>
         <span class="sign-in-goto-span form--hidden"><p id="sign-in-goto"> Masz już konto? &nbsp;<a href="#" id="linkLogin"> Zaloguj się</a></p></span>

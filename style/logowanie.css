@@ -77,7 +77,6 @@ html {
   display: grid;
   justify-items: center;
   align-items: center;
-  align-content: space-evenly;
 }
 
 
@@ -93,16 +92,21 @@ html {
   align-items: center;
 }
 
-.box-2-3-wrapper {
+/* .box-2-3-wrapper {
   background-color: transparent;
   width: 100%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   align-content: center;
-}
+} */
 
-.box-2
+/* .box-2
+{
+
+} */
+
+/* .box-3
 {
     background-color: transparent;
     height: 100%;
@@ -110,27 +114,11 @@ html {
     display: flex;
     justify-content: center;
     /* align-items: center; */
-}
+/* } */
 
-.box-3
-{
-    background-color: transparent;
-    height: 100%;
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    /* align-items: center; */
-}
+/* .form-register-in-container{
 
-
-
-
-.form-container{
-  display: flex;
-  align-items: center;
-  height : 100%;
-  width: 70%;
-}
+} */
 
 
 /* ////////////////////////////////
@@ -139,19 +127,27 @@ html {
 
 
 .register-in-form {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-direction: column;
-    /* overflow: hidden; */
-    width: 100%;
+  background-color: transparent;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 4rem;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
   }
   .register-in-form .label-wrapper{
     display: flex;
     flex-direction: column;
     width: 100%;
     margin-bottom: 4rem;
+    margin-left: 1rem;
   }
+
+  .register-in-form .label-wrapper-l{
+    margin-right: 1rem !important;
+    margin-left: 0 !important;
+  }
+
 
 
 
@@ -282,7 +278,7 @@ label{
     display: flex;
     font-size: 12px;
     font-weight: normal;
-    margin-top: 2rem;
+    margin-top: -3rem;
     color: #A89887 
 }
 
@@ -459,7 +455,7 @@ label{
     display: flex;
     font-size: 12px;
     font-weight: normal;
-    margin-top: 2rem;
+    margin-top: -3rem;
     color: #A89887; 
 }
 
@@ -472,6 +468,12 @@ label{
 
 
 /* Responsywa */
+@media (orientation: landscape) {
+  body {
+    background-color: #FFFBF6;
+  }
+}
+
 
 @media only screen and (max-width: 1500px) {
   .box-1-content h1{
@@ -487,6 +489,17 @@ label{
 @media only screen and (max-width: 1360px) {
   .register-in-form .icon{
     display: none;
+  }
+
+  .register-in-form .label-wrapper {
+    width: 70%;
+  }
+
+  .register-in-btn {
+    width: 70%;
+  }
+  .register-in-btn-google {
+    width: 70%;
   }
 }
 
@@ -513,33 +526,21 @@ label{
     max-width: 450px;
     margin-left: 2rem;
   }
-  .label-wrapper
-{
-    width: 80%;
-}
 
 label{
   font-size: 18px;
 }
 
-.register-in-btn {
-  width: 80%;
-
-}
 
 .register-in-btn:hover { 
     transform: scale(1);
 }
-
-.register-in-btn-google {
-    width: 80%;
-  }
   
-  .register-in-btn-google:hover { 
+.register-in-btn-google:hover { 
       transform: scale(1);
   }
 
-  .icon{
+.icon{
     display: none;
   }
 
@@ -554,19 +555,6 @@ label{
   .wrapper{
     width: 100%;
   }
-
-  .box-2-3-wrapper{
-    width: 100%;
-    align-items: center;
-  }
-  .box-2{
-    width: 50%;
-    align-items: center;
-  }
-  .box-3{
-    width: 50%;
-    align-items: center;
-  }
   .wrapper h2{
     font-size: 54px;
     font-weight: bold;
@@ -576,31 +564,6 @@ label{
     margin: 8rem 0 4rem 0;
 }
 
-.form-container{
-  width: 60%;
-}
-
-.form-login-container{
-  width: 100%;
-}
-
-
-
-}
-
-
-@media only screen and (max-width: 700px) {
-  .register-in-btn-google {
-    width: 100%;
-  }
-
-  .register-in-btn {
-    width: 100%;
-  }
-
-  .sign-in-form .icon{
-    display: none;
-  }
 
 
 }
