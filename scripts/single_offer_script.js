@@ -67,6 +67,7 @@ const display_sample_offer = function (){
             $('.date-name').append("<p> Data Wydania: " + data.release_date + "<p>")
             $('.isbn-name').append("<p> ISBN: " + data.ISBN + "<p>")
             $('.authors-name').append("<p> Autorzy: " + data.authors + "<p>")
+            $('.base-text').append("<p>" + data.description + "<p>")
             
             // ('background-image',`url("${data.picture}")`);
             // `url("${element['picture']}")`
