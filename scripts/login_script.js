@@ -80,7 +80,7 @@ const login_function = function(){
         success: function(response){
             console.log(response);
             if(response[2]==true)
-            window.location='index.html';
+            window.location='strona-glowna';
         }
     })
 }
