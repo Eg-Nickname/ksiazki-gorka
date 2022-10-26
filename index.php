@@ -69,6 +69,8 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
                     </p>
                     <div class="search-container">
                         <input class="search-input" type="text" placeholder="Znajdź swój podręcznik">
+                        <div class="suggestions-list" id="suggestions_list">
+                        </div>
                     </div>
                     <div class="main-images-responsive">
                         <div class="main-image1"></div>

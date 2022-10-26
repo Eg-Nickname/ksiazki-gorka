@@ -143,5 +143,27 @@ const get_sample_book_data = function (){
 $("body").on("click", ".book-btn",get_sample_book_data);
 ///////////////////////////////////////
 // $(document).ready(function() {
-    
+$(document).keyup(function(){
+    const search_bar=$('#search-input');
+    if($('.search-input').is(":focus")){
+        const suggestions_list = document.getElementById('suggestions_list')
+        while(suggestions_list.childElementCount!=0){
+            suggestions_list.firstChild.remove();
+        }
+        const user_input=$('.search-input').val().toLowerCase();
+        const books=JSON.parse(localStorage.getItem('books'));
+        for(const category in books){
+            for(const book of books[category]){
+                const title = (book.book_name).toLowerCase();
+                // console.log(user_input);
+                if(title.match(user_input)){
+                    const div=document.createElement('div');
+                    div.innerHTML=title;
+                    $(suggestions_list).append(div);
+                }
+                
+            }
+        }
+    }
+})
 // })

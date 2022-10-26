@@ -246,6 +246,7 @@ main{
 .search-container {
     padding-top: 4rem;
     width: 95%;
+    position: relative;
 }
 .search-input {
     width: 100%;
@@ -270,7 +271,15 @@ main{
     font-weight: normal;
 }
 .search-input:focus {
-    outline: none;
+    outline: none
+}
+.suggestions-list{
+    position: absolute;
+    background:white;
+    border: 1px solid #A89887;
+    height:200px;
+    width:100%;
+    display: none;
 }
 
 
