@@ -1,0 +1,115 @@
+-- phpMyAdmin SQL Dump
+-- version 5.1.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Czas generowania: 26 Paź 2022, 23:18
+-- Wersja serwera: 10.4.21-MariaDB
+-- Wersja PHP: 8.0.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Baza danych: `books_mountain`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `sample_books`
+--
+
+CREATE TABLE `sample_books` (
+  `book_ID` int(11) NOT NULL,
+  `book_name` text COLLATE utf8mb4_polish_ci NOT NULL,
+  `ISBN` text COLLATE utf8mb4_polish_ci NOT NULL,
+  `picture` text COLLATE utf8mb4_polish_ci NOT NULL,
+  `picturexl` text COLLATE utf8mb4_polish_ci NOT NULL,
+  `publishing_house` text COLLATE utf8mb4_polish_ci NOT NULL,
+  `authors` text COLLATE utf8mb4_polish_ci NOT NULL DEFAULT 'Opracowanie zbiorowe',
+  `category` text COLLATE utf8mb4_polish_ci NOT NULL,
+  `part` int(11) NOT NULL,
+  `scope` text COLLATE utf8mb4_polish_ci NOT NULL,
+  `release_date` int(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_polish_ci;
+
+--
+-- Zrzut danych tabeli `sample_books`
+--
+
+INSERT INTO `sample_books` (`book_ID`, `book_name`, `ISBN`, `picture`, `picturexl`, `publishing_house`, `authors`, `category`, `part`, `scope`, `release_date`) VALUES
+(1, 'Matematyka na czasie', '9346-4356-36-34', 'images/matm3podr.png', 'images/matm3podrxl.png', 'WSiP', 'Opracowanie zbiorowe', 'matematyka', 1, 'podstawowy', 2020),
+(2, 'Matematyka na czasie 2', '9346-4356-36-341', 'images/matm3podr.png', 'images/matm3podrxl.png', 'WSiP', 'Opracowanie zbiorowe', 'matematyka', 2, 'rozszerzony', 2020),
+(3, 'Poznać przeszłość Wodza Hitlera', '325-3424-32421', 'images/historia3pp.png', '', 'Wsip', 'Opracowanie zbiorowe', 'historia', 1, 'podstawowy', 0),
+(4, 'Koniec niewolnictwa upadek białej rasy', '325-3424-32421', 'images/historia3pp.png', '', 'Wsip', 'Opracowanie zbiorowe', 'historia', 2, 'rozszerzony', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `users`
+--
+
+CREATE TABLE `users` (
+  `id_user` int(11) NOT NULL,
+  `username` text COLLATE utf8mb4_polish_ci NOT NULL,
+  `email` text COLLATE utf8mb4_polish_ci NOT NULL,
+  `password` text COLLATE utf8mb4_polish_ci NOT NULL,
+  `name` text CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
+  `surname` text CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_polish_ci;
+
+--
+-- Zrzut danych tabeli `users`
+--
+
+INSERT INTO `users` (`id_user`, `username`, `email`, `password`, `name`, `surname`) VALUES
+(1, 'johny', 'jasiektojo@gmail.com', '202cb962ac59075b964b07152d234b70', 'Jan', 'Lenart'),
+(2, 'johny1', 'jasiek1tojo@gmail.com', 'd41d8cd98f00b204e9800998ecf8427e', 'Jan', 'Lenart'),
+(3, 'pozłoto', 'adam.malysz@gmail.com', '25f9e794323b453885f5181f1b624d0b', 'Adam', 'Malysz'),
+(4, '2s', '12@df.pl', '25f9e794323b453885f5181f1b624d0b', 'Siema', 'Si'),
+(5, '2s3', '132@df.pl', '25f9e794323b453885f5181f1b624d0b', 'Siema', 'Si');
+
+--
+-- Indeksy dla zrzutów tabel
+--
+
+--
+-- Indeksy dla tabeli `sample_books`
+--
+ALTER TABLE `sample_books`
+  ADD PRIMARY KEY (`book_ID`);
+
+--
+-- Indeksy dla tabeli `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id_user`);
+
+--
+-- AUTO_INCREMENT dla zrzuconych tabel
+--
+
+--
+-- AUTO_INCREMENT dla tabeli `sample_books`
+--
+ALTER TABLE `sample_books`
+  MODIFY `book_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT dla tabeli `users`
+--
+ALTER TABLE `users`
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
