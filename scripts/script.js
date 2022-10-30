@@ -143,27 +143,46 @@ const get_sample_book_data = function (){
 $("body").on("click", ".book-btn",get_sample_book_data);
 ///////////////////////////////////////
 // $(document).ready(function() {
-$(document).keyup(function(){
+const searching_function=function(){
     const search_bar=$('#search-input');
     if($('.search-input').is(":focus")){
-        const suggestions_list = document.getElementById('suggestions_list')
+        const suggestions_list = document.getElementById('suggestions_list');
+        $(suggestions_list).addClass('active_suggestion');
         while(suggestions_list.childElementCount!=0){
             suggestions_list.firstChild.remove();
         }
         const user_input=$('.search-input').val().toLowerCase();
-        const books=JSON.parse(localStorage.getItem('books'));
-        for(const category in books){
-            for(const book of books[category]){
-                const title = (book.book_name).toLowerCase();
-                // console.log(user_input);
-                if(title.match(user_input)){
-                    const div=document.createElement('div');
-                    div.innerHTML=title;
-                    $(suggestions_list).append(div);
+        if(user_input){
+            const books=JSON.parse(localStorage.getItem('books'));
+            for(const category in books){
+                for(const book of books[category]){
+                    let title = (book.book_name);
+                    const lower_title=title.toLowerCase();
+                    // console.log(user_input);
+                    if(lower_title.match(user_input) && suggestions_list.childElementCount<3){
+                        const a=document.createElement('a');
+                        a.innerHTML=`${title}, EAN: ${book.ISBN}`;
+                        title=(book.book_name.split(" ")).join("-");
+                        a.href=`oferta?number=${book.book_ID}&category=${book.category}&title=${title}`;
+                        $(a).addClass("suggestion");
+                        $(suggestions_list).append(a);
+                    }
                 }
-                
             }
         }
     }
+}
+$('.search-input').on('click',searching_function);
+$(document).keyup(function(){
+    searching_function(); 
 })
+$(document).on('click',function(){
+    if(!$('.search-input').is(":focus")){
+        const suggestions_list = document.getElementById('suggestions_list'); //Trzeba sprawdzić czy po kliknięciu na przedmiot na głównej się usuwa, bo na razie jak jest pusty to nie
+        $(suggestions_list).removeClass('active_suggestion');
+        while(suggestions_list.childElementCount!=0){
+            suggestions_list.firstChild.remove();
+        }
+    }
+});
 // })

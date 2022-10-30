@@ -45,7 +45,6 @@ const display_sample_offer = function (){
     const category = urlParams.get('category');
     const books=JSON.parse(localStorage.getItem('books'));
     const subject=books[category];
-    console.log(subject);
     if(subject)
     {
         const data = {};
@@ -74,11 +73,13 @@ const display_sample_offer = function (){
             // `url("${element['picture']}")`
         }
         else{
-            $('body').append('<h1>Strona nie istnieje</h1>')
+            document.querySelector('main').innerHTML="";
+            $('main').append('<h1 class="no_exists">Strona nie istnieje</h1>')
         }
     }
     else{
-        $('body').append('<h1>Strona nie istnieje</h1>')
+        document.querySelector('main').innerHTML="";
+        $('main').append('<h1 class="no_exists">Strona nie istnieje</h1>')
     }
 }
 //--------------------------------------------------------------------------------

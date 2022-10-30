@@ -263,6 +263,7 @@ main{
     transition: all 250ms ease-in-out;
     backface-visibility: hidden;
     transform-style: preserve-3d;
+    /* text-transform:capitalize; */
 }
 
 .search-input::placeholder {
@@ -277,12 +278,24 @@ main{
     position: absolute;
     background:white;
     border: 1px solid #A89887;
-    height:200px;
+    max-height:200px;
     width:100%;
     display: none;
 }
-
-
+.suggestions-list.active_suggestion{
+    display:block;
+}
+.suggestion{
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 250ms ease-in-out;
+}
+.suggestion:hover{
+    background-color: #A88E87;
+}
 /* ////////////////////////////////
     Sekcja główna - prawa częśc
 //////////////////////////////// */

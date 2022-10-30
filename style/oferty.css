@@ -372,7 +372,10 @@ main{
     color: #A88E87;
     border-radius: 5px;
 }
-
+.no_exists{
+    font-size:64px;
+    text-align: center;    
+}
 
 
 @media only screen and (max-width: 880px) {
