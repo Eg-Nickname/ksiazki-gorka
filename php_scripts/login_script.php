@@ -3,7 +3,7 @@ session_start();
 if(!isset($_SESSION['logged_in'])){
     if(isset($_POST['email']) && isset($_POST['password'])){
         $error = false;
-        $error_message=[];
+        $error_message="";
         $login_result=false;
         $email=$_POST['email'];
         $password=$_POST['password'];
@@ -11,11 +11,11 @@ if(!isset($_SESSION['logged_in'])){
         $password=htmlentities($password);
         if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $error = true;
-            array_push($error_message,"Podaj poprawny adres e-mail");
+            $error_message="Podano zły email lub hasło";
         }
-        if(strlen($password)==0){ //warunek hasła jakiś trzeba lepszy wziąć
+        if(strlen($password)<8){ //warunek hasła jakiś trzeba lepszy wziąć
             $error = true;
-            array_push($error_message,"Podaj poprawne hasło");
+            $error_message="Podano zły email lub hasło";
         }
         if(!$error){
             require_once "connect.php";
@@ -32,7 +32,7 @@ if(!isset($_SESSION['logged_in'])){
                 if(!$result)throw new Exception($connection->error);
                 $number_of_users=$result->num_rows;
                 if($number_of_users==0){
-                    array_push($error_message,"Nie znaleziono użytkownika");
+                    $error_message="Podano zły email lub hasło";
                 }
                 else{
                     if($number_of_users==1){
@@ -47,7 +47,7 @@ if(!isset($_SESSION['logged_in'])){
                 }
             }
             catch(Exception $e){
-                array_push($error_message,"Krytyczny błąd systemu");
+                $error_message="Katastrofalny bład systemu";
                 $error=true;
             }
         }

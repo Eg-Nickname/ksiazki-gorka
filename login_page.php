@@ -104,7 +104,7 @@ if(isset($_SESSION['logged_in']))
                             <div class="input-field">
                                 <input type="password" placeholder="Wpisz hasło" id="password" name="password" />
                             </div> 
-                            <span class="error_log_info_login">Lorem Ipsum</span> 
+                            <span class="error_log_info_login" id="login_result">h</span> 
                         </div>
                         <button class="sign-in-btn" id="log_in">Zaloguj się</button>
                         <!-- <button class="sign-in-btn-google" id="log_in_google"><span class="icon"></span>Zaloguj się za pomocą Google</button> -->
@@ -120,7 +120,7 @@ if(isset($_SESSION['logged_in']))
                 </div>  
             </div> -->
         <!-- </div> -->
-        <span class="error_log_info_password">Lorem Ipsum twoje konto srututut wymagan nie spelnia</span>
+        <span class="error_log_info_password form--hidden">Hasło musi zawierać co najmniej 8 znaków, w tym cyfrę i wielką literę. <br> Nazwa użytkownika musi zawierać co najmniej 3 znaki oraz nie może zawierać znaków specjalnych</span>
         <span class="sign-up-goto-span"><p id="sign-up-goto">Nie masz jeszcze konta? &nbsp;<a href="#" id="linkCreateAccount"> Zarejestruj się</a></p></span>
         <span class="sign-in-goto-span form--hidden"><p id="sign-in-goto"> Masz już konto? &nbsp;<a href="#" id="linkLogin"> Zaloguj się</a></p></span>
     </div>  

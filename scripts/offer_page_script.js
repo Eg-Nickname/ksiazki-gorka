@@ -79,6 +79,28 @@ const display_elements_on_offer_list = function(subject_array=[],part_array=[], 
         }
     }
 }
+const get_sample_book_data = function (){
+    const btn_id=(this.getAttribute('id')).replace("book-btn","");
+    const category=($(this).parents().attr('id')).replace(btn_id,"");
+    let title="";
+    const books=JSON.parse(localStorage.getItem('books'));
+    const subject=books[category];
+    for(const element of subject){
+        if(element.book_ID==btn_id){
+            title=(element.book_name.split(" ")).join("-");
+            // title=element.book_name;
+            break;
+        }
+    }
+    if(title){
+        const offer_location=`oferta?number=${btn_id}&category=${category}&title=${title}`;
+        window.location.href=offer_location;
+    }
+    else{
+        return false
+    }
+}
+$("body").on("click", ".book-btn",get_sample_book_data);
 $('#sumbit_filters').on('click', function(){
     const checked_subject_inputs=document.querySelectorAll('.subject_filter:checked');
     const subject_array=[];
@@ -91,7 +113,7 @@ $('#sumbit_filters').on('click', function(){
         const id=(element.id).replace("part","");
         part_array.push(id);
     }
-    const checked_scope_inputs=document.querySelectorAll('.scope_filter:checked');
+    const checked_scope_inputs=document.querySelectorAll('.scope_filter:checked```');
     const scope_array=[];
     for(const element of checked_scope_inputs){
         scope_array.push(element.id);

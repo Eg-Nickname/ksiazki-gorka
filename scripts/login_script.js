@@ -62,7 +62,6 @@ const change_login_content = function(){
 }
 //logowanie
 const login_function = function(){
-    console.log(4);
     $.ajax({
         url: 'php_scripts/login_script.php',
         type: 'POST',
@@ -73,8 +72,13 @@ const login_function = function(){
         },
         success: function(response){
             console.log(response);
-            if(response[2]==true)
+            if(response[2]==true){
             window.location='strona-glowna';
+            }
+            else{
+                $('#login_result').html(response[1]);
+                $('#login_result').css('visibility', 'visible');
+            }
         }
     })
 }

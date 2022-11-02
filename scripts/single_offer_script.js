@@ -71,6 +71,7 @@ const display_sample_offer = function (){
             
             // ('background-image',`url("${data.picture}")`);
             // `url("${element['picture']}")`
+            show_users_offers(bookId);
         }
         else{
             document.querySelector('main').innerHTML="";
@@ -81,6 +82,12 @@ const display_sample_offer = function (){
         document.querySelector('main').innerHTML="";
         $('main').append('<h1 class="no_exists">Strona nie istnieje</h1>')
     }
+}
+const show_users_offers= function (bookId){
+    $.ajax({
+        url: 'php_scripts/show_user_offers',
+        
+    })
 }
 //--------------------------------------------------------------------------------
 ////////////////////////////////////////////////////////////////////////////////////

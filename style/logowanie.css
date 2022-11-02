@@ -307,9 +307,7 @@ label{
 
 
 .error_log_info_password{
-  color: red;
   font-size: 14px;
-  visibility: hidden;
   margin-top: 2rem;
   width: 100%;
   max-width: 80%;

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 26 Paź 2022, 23:18
+-- Czas generowania: 02 Lis 2022, 20:14
 -- Wersja serwera: 10.4.21-MariaDB
 -- Wersja PHP: 8.0.12
 
@@ -77,6 +77,31 @@ INSERT INTO `users` (`id_user`, `username`, `email`, `password`, `name`, `surnam
 (4, '2s', '12@df.pl', '25f9e794323b453885f5181f1b624d0b', 'Siema', 'Si'),
 (5, '2s3', '132@df.pl', '25f9e794323b453885f5181f1b624d0b', 'Siema', 'Si');
 
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `users_offers`
+--
+
+CREATE TABLE `users_offers` (
+  `offer_id` int(11) NOT NULL,
+  `seller` int(11) NOT NULL,
+  `customer` int(11) NOT NULL,
+  `price` int(11) NOT NULL,
+  `photo1` text CHARACTER SET utf8mb4 COLLATE utf8mb4_polish_ci NOT NULL,
+  `photo2` text CHARACTER SET utf8mb4 COLLATE utf8mb4_polish_ci NOT NULL,
+  `status` text NOT NULL,
+  `book_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Zrzut danych tabeli `users_offers`
+--
+
+INSERT INTO `users_offers` (`offer_id`, `seller`, `customer`, `price`, `photo1`, `photo2`, `status`, `book_id`) VALUES
+(1, 1, 2, 16, 'images/matm3podr.png', 'images/matm3podr.png', '0', 1),
+(2, 1, 2, 16, 'images/matm3podr.png', 'images/matm3podr.png', 'dostepne', 1);
+
 --
 -- Indeksy dla zrzutów tabel
 --
@@ -94,6 +119,12 @@ ALTER TABLE `users`
   ADD PRIMARY KEY (`id_user`);
 
 --
+-- Indeksy dla tabeli `users_offers`
+--
+ALTER TABLE `users_offers`
+  ADD PRIMARY KEY (`offer_id`);
+
+--
 -- AUTO_INCREMENT dla zrzuconych tabel
 --
 
@@ -108,6 +139,12 @@ ALTER TABLE `sample_books`
 --
 ALTER TABLE `users`
   MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT dla tabeli `users_offers`
+--
+ALTER TABLE `users_offers`
+  MODIFY `offer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

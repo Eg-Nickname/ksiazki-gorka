@@ -24,17 +24,17 @@ if(!isset($_SESSION['logged_in'])){
             array_push($error_class,"register_password");
             array_push($error_class,"check_password");
         }
-        if(!ctype_alpha($name)){
+        if(preg_match('/[0-9\~\!\@\#\$\%\^\&\*\(\)\-\_\=\+\\{\}\;\'\:\"\,\<\>\.\?]/',$name) || strlen($name)<2){
             $error=true;
             array_push($error_message,"Podaj poprawnę imię");
             array_push($error_class,"name");
         }
-        if(!ctype_alpha($surname)){
+        if(preg_match('/[0-9\~\!\@\#\$\%\^\&\*\(\)\-\_\=\+\\{\}\;\'\:\"\,\<\>\.\?]/',$surname) || strlen($surname)<2){
             $error=true;
             array_push($error_message,"Podaj poprawnę nazwisko");
             array_push($error_class,"surname");
         }
-        if(1==0){ //tutaj dać warunek
+        if(preg_match('/[\~\!\@\#\$\%\^\&\*\(\)]/',$username) || strlen($username)<3){
             $error=true;
             array_push($error_message,"Podaj poprawną nazwę użytkownika");
             array_push($error_class,"username");
