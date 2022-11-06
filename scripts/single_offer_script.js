@@ -85,8 +85,17 @@ const display_sample_offer = function (){
 }
 const show_users_offers= function (bookId){
     $.ajax({
-        url: 'php_scripts/show_user_offers',
-        
+        url: 'php_scripts/show_users_offers.php',
+        type: 'POST',
+        dataType: 'JSON',
+        data:{
+            book_id:bookId
+        },
+        success: function(response){
+            for(const offer of response){
+                console.log(offer);
+            }
+        }
     })
 }
 //--------------------------------------------------------------------------------
