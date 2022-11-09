@@ -377,6 +377,103 @@ main{
     text-align: center;    
 }
 
+section{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2rem;
+    padding: 6rem 0;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+section .user_offer_box{
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem;
+    row-gap: 2rem;
+}
+
+section .user_offer_box_image{
+    background-image: url(../images/matm3podr.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 200px;
+    height: 300px;
+    
+}
+
+section .user_offer_box_content{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+    justify-content:center;
+    align-items:center;
+    width: 100%;
+}
+
+section .user_offer_box_content a p{
+    font-size: 16px;
+    font-weight: 400;
+    color: #A89887;
+}
+
+section #user_offer_box_content_price{
+    font-size: 18px;
+    font-weight: bold;
+    color: #A89887;
+}
+
+section #user_offer_box_content_button{
+    background-color: transparent;
+    border: 1px solid #A89887;
+    color: #000;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 400;
+    overflow: hidden;
+    padding: 1rem 3rem;
+    text-align: center;
+    transition: all 0.4s ease-in-out;
+    vertical-align: middle;
+    outline: none;
+    text-transform: capitalize;
+    border-radius: 5px;
+    margin-top: 0.5rem;
+    width: 80%;
+    transition: all 0.5s ease-in-out;
+}
+
+section #user_offer_box_content_button:hover{
+    background-color: #A89887;
+    border: 1px solid #A89887;;
+    color: #fff;
+    border-radius: 10px;
+}
+.modal-box{
+    display: none;
+    position: fixed; 
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 95%; 
+    height: 95%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.8);
+}
+
+
+@media only screen and (max-width: 1144px) {
+    section{
+        grid-template-columns: 1fr 1fr 1fr;
+        padding: 6rem 3rem;
+    }
+    
+}
 
 @media only screen and (max-width: 880px) {
     
@@ -430,6 +527,12 @@ main{
         height: 21.5px;
     }
 
+}
+
+@media only screen and (max-width: 750px) {
+section{
+    grid-template-columns: 1fr 1fr;
+}
 }
 
 @media only screen and (max-width: 700px) {
@@ -503,6 +606,9 @@ main{
     .nav-container .left-nav .nav-image{
         width: 50px;
         height: 50px;
+    }
+    section{
+        grid-template-columns: 1fr;
     }
 }
 
