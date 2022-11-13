@@ -113,7 +113,7 @@ $('#sumbit_filters').on('click', function(){
         const id=(element.id).replace("part","");
         part_array.push(id);
     }
-    const checked_scope_inputs=document.querySelectorAll('.scope_filter:checked```');
+    const checked_scope_inputs=document.querySelectorAll('.scope_filter:checked');
     const scope_array=[];
     for(const element of checked_scope_inputs){
         scope_array.push(element.id);
