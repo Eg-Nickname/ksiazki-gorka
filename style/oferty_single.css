@@ -1,0 +1,236 @@
+.nav-container{
+    max-width: 1140px;
+    width: 100%;
+    height: 100%;
+    padding: 0 2rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    grid-template-rows: 100%;
+    border-bottom: 0 solid #000;
+}
+
+.offer-wrapper{
+    display: flex;
+    align-items: flex-start;
+    padding: 6rem 0;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.container{
+    max-width: 70%;
+    width: 100%;
+    padding: 0 2rem;
+    margin: 0 auto;
+}
+
+.filters-wrapper{
+    background-color:transparent;
+    height: auto;
+    max-width: 30%;
+    width: 100%;
+    padding: 0 2rem;
+    margin: 0 auto;
+    position: sticky;
+    top: 2rem;
+}
+
+.filters{
+    padding: 3rem;
+    background-color: #F5E9DC;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+    border-radius: 5px;
+}
+
+.filters > div{
+    max-width: 90%;
+}
+
+.filters > div > *{
+    margin: 0 0 1.5rem 0;
+}
+
+.filters div h3{
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.filters label{
+    font-size: 16px;
+    text-transform: capitalize;
+    font-weight: normal;
+    margin-right: 1rem;
+}
+
+.filters label input[type="checkbox"]{
+    appearance: none;
+    background-color: #fff;
+    margin-left: 0.5rem;
+    font: inherit;
+    color: currentColor;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 1px solid #A89887;
+    border-radius: 0;
+    transform: translateY(0.2rem);
+    transition: 300ms all ease-in-out;
+}
+
+.filters label input[type="checkbox"]::before {
+    content: '\2714';
+    transform: scale(0);
+    transition: 300ms all ease-in-out;
+    transform-origin: center;
+    font-size: 12px;
+	position: fixed;
+	top: -0.3rem;
+	left: 0.2rem;
+	color: #A89887;
+  }
+
+.filters label input[type="checkbox"]:checked::before {
+    transform: scale(1);
+    border-radius: 5px;
+}
+.filters label input[type="checkbox"]:checked{
+    border-radius: 5px;
+}
+
+/* input[type="range"] {
+	font-size: 1.5rem;
+	width: 12.5em;
+}
+
+input[type="range"] {
+	color: #A89887;
+	--thumb-height: 1.125em;
+	--track-height: 0.125em;
+	--track-color: #fff;
+	--brightness-hover: 180%;
+	--brightness-down: 80%;
+	--clip-edges: 0.125em;
+}
+
+input[type="range"] {
+	position: relative;
+	background: transparent;
+	overflow: hidden;
+}
+
+input[type="range"]:active {
+	cursor: grabbing;
+}
+
+input[type="range"],
+input[type="range"]::-moz-range-track,
+input[type="range"]::-moz-range-thumb {
+	appearance: none;
+	transition: all ease 500ms;
+	height: var(--thumb-height);
+}
+
+input[type="range"]::-moz-range-thumb {
+	background: currentColor;
+	border: 0;
+	width: var(--thumb-width, var(--thumb-height));
+	border-radius: var(--thumb-width, var(--thumb-height));
+	cursor: grab;
+}
+
+input[type="range"]:active::-moz-range-thumb {
+	cursor: grabbing;
+}
+
+input[type="range"]::-moz-range-track {
+	width: 100%;
+	background: var(--track-color);
+}
+
+input[type="range"]::-moz-range-progress {
+	appearance: none;
+	background: currentColor;
+	transition-delay: 30ms;
+}
+
+input[type="range"]::-moz-range-track,
+input[type="range"]::-moz-range-progress {
+	height: calc(var(--track-height) + 1px);
+	border-radius: var(--track-height);
+} */
+
+.filters label input[type="number"]{
+    margin-left: 5px;
+    border-radius: 5px;
+    outline: none;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    border: none;
+    appearance: textfield;
+}
+
+.filters  label input[type=number]::-webkit-inner-spin-button {
+    appearance: none;
+  }
+
+.filters .filter-button-wrapper{
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: transparent;
+}
+
+.filters .filter-button-wrapper button {
+    background-color: transparent;
+    border: 2px solid #A89887;
+    border-radius: 5px;
+    color: #000;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    width: 70%;
+    overflow: hidden;
+    padding: 1rem 2rem;
+    text-align: center;
+    transition: all 0.5s ease-in-out;
+    vertical-align: middle;
+    outline: none;
+    margin: 0;
+}
+
+.filters .filter-button-wrapper button:hover {
+    background-color: #000;
+    border: 2px solid #000;
+    color: #fff;
+    transform: scale(1.1)
+}
+
+.books {
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+.books-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 47rem;
+    column-gap: 2rem;
+    row-gap: 4rem;
+    justify-items: center;
+}
+
+.books-wrapper .subject {
+    width: 100%;
+    transition: 0.5s all ease-in-out;
+}
+.books-wrapper .subject:hover {
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.5);
+}
+

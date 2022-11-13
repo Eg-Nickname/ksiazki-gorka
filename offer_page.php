@@ -13,6 +13,7 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oferta</title>
     <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/oferty_single.css">
 </head>
 <body> 
     <nav>
@@ -52,22 +53,39 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
             ?>
         </div>
     </nav>
-    <div class="filters">
-        <div class="">
-        <label for="matematyka">Matematyka<input type="checkbox" class="subject_filter" id="matematyka"></label>
-        Historia<input type="checkbox" class="subject_filter" id="historia">
+<div class="offer-wrapper"> 
+    <div class="filters-wrapper">
+        <div class="filters">
+            <div class="subject-wrapper">
+            <h3>Przedmiot</h3>
+            <label for="matematyka">Matematyka<input type="checkbox" class="subject_filter" id="matematyka"></label>
+            <label for="historia">Historia<input type="checkbox" class="subject_filter" id="historia"></label>
+            <label for="fizyka">Fizyka<input type="checkbox" class="subject_filter" id="fizyka"></label>
+            <label for="chemia">Chemia<input type="checkbox" class="subject_filter" id="chemia"></label>
+            <label for="wos">WOS<input type="checkbox" class="subject_filter" id="wos"></label>
+            <!-- Historia<input type="checkbox" class="subject_filter" id="historia"> -->
+            </div>
+            <div class="part-wrapper">
+            <h3>Część</h3>
+            <label for="part1">1 <input type="checkbox" class="part_filter" id="part1"></label>
+            <label for="part2">2 <input type="checkbox" class="part_filter" name="" id="part2"></label>
+            </div>
+            
+            <div class="book-type-wrapper">
+            <h3>Zakres</h3>
+                <label for="podstawowy">Podstawowy<input type="checkbox" class="scope_filter" id="podstawowy"></label>
+                <label for="rozszerzony">Rozszerzony<input type="checkbox" class="scope_filter" id="rozszerzony"></label>
+            </div>
+            <div class="book-price-wrapper">
+            <h3>Cena</h3>
+            <!-- <input type="range" class="" id="" min="10" max="40"> // chciałem zrobić takiego slidera z ceną od do, ale to za duzo jebania sie z js-emmax min pobierany z js  -->
+            <label for="from">Od<input type="number" class="" id="from"></label>
+            <label for="to">Do<input type="number" class="" id="to"></label>
+            </div>
+            <div class="filter-button-wrapper">
+            <button id="sumbit_filters">Zastosuj</button>
+            </div>
         </div>
-        <div class="">
-            Część:
-        <label for="part1">1 <input type="checkbox" class="part_filter" id="part1"></label>
-        <label for="part2">2 <input type="checkbox" class="part_filter" name="" id="part2"></label>
-        </div>
-        <div>
-            Zakres:
-            <label for="podstawowy">Podstawowy<input type="checkbox" class="scope_filter" id="podstawowy"></label>
-            <label for="rozszerzony">Rozszerzony<input type="checkbox" class="scope_filter" id="rozszerzony"></label>
-        </div>
-        <button id="sumbit_filters">Zastosuj</button>
     </div>
     <div class="container">
         <div class="books">
@@ -75,6 +93,7 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
             </div>
         </div>
     </div>
+</div> 
     <footer>
         <div class="footer-container">
             <div class="logo-footer">
