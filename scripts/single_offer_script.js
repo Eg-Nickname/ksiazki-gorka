@@ -94,10 +94,46 @@ const show_users_offers= function (bookId){
         success: function(response){
             for(const offer of response){
                 console.log(offer);
+                const div=document.createElement('div');
+                div.classList.add("user_offer_box");
+                const img_box=document.createElement('div');
+                img_box.classList.add("user_offer_box_image");
+                const div_content=document.createElement('div');
+                div_content.classList.add("user_offer_box_content");
+                const price=document.createElement('p');
+                price.classList.add("user_offer_box_content_price");
+                price.innerHTML=`${offer.price} PLN`;
+                const button=document.createElement('button');
+                button.classList.add("user_offer_box_content_button");
+                button.innerHTML = "Zarezerwuj";
+                $(button).on('click', function(){
+                    siema(offer.offer_id);
+                });
+                div_content.append(price,button);
+                div.append(img_box,div_content);
+
+                document.querySelector('section').appendChild(div);
             }
         }
     })
 }
+function siema(a){
+    console.log(a);
+}
+////////////////////////////////////////////////////////////////////////////////////////////////
+const show_image_popup= function (){
+    let image_bg=$(this).css('background-image');
+    image_bg=image_bg.split("/");
+    console.log(image_bg);
+    const src=image_bg[image_bg.length-2]+'/'+(image_bg[image_bg.length-1]).slice(0,-2);
+    document.querySelector('.offer-image').src=src;
+    $('.modal-box').css('visibility','visible');
+}
+$("body").on("click",'.user_offer_box_image',show_image_popup);
+const hide_image_popup=function(){
+    $('.modal-box').css('visibility','hidden');
+}
+$('.close-modal-box').on('click', hide_image_popup);
 //--------------------------------------------------------------------------------
 ////////////////////////////////////////////////////////////////////////////////////
 const log_out = function (){

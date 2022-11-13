@@ -117,21 +117,21 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
             
             <section>
                 <div class="user_offer_box">
-                    <div class="user_offer_box_image">
-
-                    </div>
+                    <div class="user_offer_box_image"></div>
                     <div class="user_offer_box_content">
-                    <a href="">
-                        <p>Przod/Tył</p>
-                    </a>
-                    <p id="user_offer_box_content_price">28 PLN</p>
-                    <button id="user_offer_box_content_button">Kup teraz</button>
+                    <a href="">Przód</a>
+                    <a href="">Tył</a>
+                    <p class="user_offer_box_content_price">28 PLN</p>
+                    <button class="user_offer_box_content_button">Kup teraz</button>
                     </div>
                 </div>
                 <div class="user_offer_box"></div>
                 <div class="user_offer_box"></div>
                 <div class="user_offer_box"></div>
-                <div class="modal-box"></div> <!--- popup -->
+                <div class="modal-box">
+                    <span class="close-modal-box">X</span>
+                    <img src="" class="offer-image">
+                </div> <!--- popup -->
             </section>
 
         </div>
