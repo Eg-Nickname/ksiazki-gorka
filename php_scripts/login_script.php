@@ -39,6 +39,7 @@ if(!isset($_SESSION['logged_in'])){
                         $user_data=$result->fetch_assoc();
                         $login_result=true;
                         $_SESSION['logged_in']=true;
+                        $_SESSION['user_id']=$user_data['id_user'];
                         $_SESSION['username']=$user_data['username'];
                         $_SESSION['email']=$user_data['email'];
                     }

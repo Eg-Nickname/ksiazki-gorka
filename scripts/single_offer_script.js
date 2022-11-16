@@ -107,7 +107,7 @@ const show_users_offers= function (bookId){
                 button.classList.add("user_offer_box_content_button");
                 button.innerHTML = "Zarezerwuj";
                 $(button).on('click', function(){
-                    siema(offer.offer_id);
+                    declare_buy(Number(offer.offer_id));
                 });
                 div_content.append(price,button);
                 div.append(img_box,div_content);
@@ -117,8 +117,22 @@ const show_users_offers= function (bookId){
         }
     })
 }
-function siema(a){
-    console.log(a);
+const declare_buy = function(offer_id){
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const bookId=Number(urlParams.get('number'));
+    $.ajax({
+        url:'php_scripts/declare_buy.php',
+        type:'POST',
+        dataType: 'JSON',
+        data: {
+            offer_id:offer_id,
+            book_id:bookId
+        },
+        success: function(response){
+            console.log(response);
+        }
+    });
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////
 const show_image_popup= function (){
