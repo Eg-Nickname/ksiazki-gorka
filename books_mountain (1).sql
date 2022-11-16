@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 02 Lis 2022, 20:14
+-- Czas generowania: 16 Lis 2022, 22:44
 -- Wersja serwera: 10.4.21-MariaDB
 -- Wersja PHP: 8.0.12
 
@@ -99,8 +99,10 @@ CREATE TABLE `users_offers` (
 --
 
 INSERT INTO `users_offers` (`offer_id`, `seller`, `customer`, `price`, `photo1`, `photo2`, `status`, `book_id`) VALUES
-(1, 1, 2, 16, 'images/matm3podr.png', 'images/matm3podr.png', '0', 1),
-(2, 1, 2, 16, 'images/matm3podr.png', 'images/matm3podr.png', 'dostepne', 1);
+(1, 1, 0, 16, 'images/matm3podr.png', 'images/matm3podr.png', '0', 1),
+(2, 1, 2, 16, 'images/matm3podr.png', 'images/matm3podr.png', 'available', 2),
+(3, 1, 2, 13, 'images/matm3podr.png', 'images/matm3podr.png', 'available', 2),
+(4, 1, 0, 13, 'images/matm3podr.png', 'images/matm3podr.png', 'available', 2);
 
 --
 -- Indeksy dla zrzutów tabel
@@ -144,7 +146,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT dla tabeli `users_offers`
 --
 ALTER TABLE `users_offers`
-  MODIFY `offer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `offer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
