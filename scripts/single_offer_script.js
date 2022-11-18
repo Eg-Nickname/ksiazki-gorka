@@ -142,10 +142,16 @@ const show_image_popup= function (){
     const src=image_bg[image_bg.length-2]+'/'+(image_bg[image_bg.length-1]).slice(0,-2);
     document.querySelector('.offer-image').src=src;
     $('.modal-box').css('visibility','visible');
+    $('.modal-box').css('opacity','1');
+    $('.modal-box').css('width','100%');
+    $('.modal-box').css('height','101%');
 }
 $("body").on("click",'.user_offer_box_image',show_image_popup);
 const hide_image_popup=function(){
     $('.modal-box').css('visibility','hidden');
+    $('.modal-box').css('opacity','0');
+    $('.modal-box').css('width','0%');
+    $('.modal-box').css('height','0%');
 }
 $('.close-modal-box').on('click', hide_image_popup);
 //--------------------------------------------------------------------------------

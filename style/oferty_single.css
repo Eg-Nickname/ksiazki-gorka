@@ -47,11 +47,21 @@
 }
 
 .filters > div{
-    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .filters > div > *{
     margin: 0 0 1.5rem 0;
+}
+
+/* .filters > div > div{
+} */
+
+.filters > div > div > div{
+    display: inline;
 }
 
 .filters div h3{
@@ -234,3 +244,40 @@ input[type="range"]::-moz-range-progress {
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.5);
 }
 
+@media (max-width: 850px) {
+    .filters {
+        padding: 3rem 1rem 3rem 1rem;
+      }
+}
+
+@media (max-width: 700px) {
+    .books-wrapper {
+        grid-template-columns: 1fr;
+      }
+    .filters-wrapper {
+        max-width: 40%;
+      }
+    }
+
+@media (max-width: 520px) {
+    .offer-wrapper {
+        display: flex;
+        flex-direction: column;
+        row-gap: 2rem;
+      }
+      .filters-wrapper {
+        max-width: 100%;
+        position: static;
+      }
+      .filters > div > div{
+        max-width: 90%;
+        text-align: center;
+      }
+      .container {
+        max-width: 100%;
+        width: 100%;
+        padding: 0 6rem;
+        margin: 0 auto;
+      }
+    }
+    

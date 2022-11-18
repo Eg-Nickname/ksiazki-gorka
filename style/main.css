@@ -4,6 +4,10 @@
               Ogólne
 //////////////////////////////// */
 
+html, body { 
+    scroll-behavior: smooth
+  }
+
 *
 {
     margin: 0;
@@ -148,6 +152,7 @@ nav{
     border: 2px solid #000;
     color: #F5E9DC;
     border-radius: 15px;
+    transform: scale(1.1);
 }
 
 
@@ -733,7 +738,18 @@ footer{
     .books-wrapper{
         grid-template-columns: repeat(3, 1fr) ;
     }
-    
+    /* .nav-container {
+        padding: 0 4rem;
+      }
+    .main-container {
+        padding: 0 4rem;
+      }
+    .container {
+        padding: 0 4rem;
+      }
+      .footer-container {
+        padding: 0 4rem;
+      } */
 }
 
 
