@@ -21,14 +21,14 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
         <div class="nav-container">
             
             <div class="left-nav">
-                <div class="nav-image"></div>
+                <a href="index.php"><div class="nav-image"></div></a>
             </div>
 
             <div class="center-nav">
                 <div class="nav-list">
                     <ul>
-                        <li><a href="#">Kategorie</a></li>
-                        <li><a href="#">Kup</a></li>
+                        <li><a href="#offers-section">Kategorie</a></li>
+                        <li><a href="offer_page.php">Kup</a></li>
                         <li><a href="#">Sprzedaj</a></li>
                     </ul>
                 </div>
@@ -89,7 +89,7 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
         </main>
 
     <div class="container">
-        <div class="oferrs-section">
+        <div class="oferrs-section" id="offers-section">
             <div class="offers-text">
                 <h3>Podręczniki Szkolne</h3>
                 <p><a href="lista-ofert">Przeglądaj wszystko</a></p>
@@ -176,7 +176,7 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
     <footer>
         <div class="footer-container">
             <div class="logo-footer">
-                <div class="footer-image"></div>
+                <a href="index.php"><div class="footer-image"></div></a>
                 <span class="break"></span>
             </div>
 
@@ -184,8 +184,8 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
                 <div class="footer-nav-responsive">
                     <div class="nav-list">
                         <ul>
-                            <li><a href="#">Kategorie</a></li>
-                            <li><a href="#">Kup</a></li>
+                            <li><a href="#offers-section">Kategorie</a></li>
+                            <li><a href="offer_page.php">Kup</a></li>
                             <li><a href="#">Sprzedaj</a></li>
                         </ul>
                     </div>

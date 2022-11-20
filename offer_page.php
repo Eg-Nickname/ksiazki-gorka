@@ -19,15 +19,15 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
     <nav>
         <div class="nav-container">
             
-            <div class="left-nav">
-                <div class="nav-image"></div>
+        <div class="left-nav">
+                <a href="index.php"><div class="nav-image"></div></a>
             </div>
 
             <div class="center-nav">
                 <div class="nav-list">
                     <ul>
-                        <li><a href="#">Kategorie</a></li>
-                        <li><a href="#">Kup</a></li>
+                        <li><a href="index.php#offers-section">Kategorie</a></li>
+                        <li><a href="offer_page.php">Kup</a></li>
                         <li><a href="#">Sprzedaj</a></li>
                     </ul>
                 </div>
@@ -57,18 +57,34 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
     <div class="filters-wrapper">
         <div class="filters">
             <div class="subject-wrapper">
-            <h3>Przedmiot</h3>
-            <label for="matematyka">Matematyka<input type="checkbox" class="subject_filter" id="matematyka"></label>
-            <label for="historia">Historia<input type="checkbox" class="subject_filter" id="historia"></label>
-            <label for="fizyka">Fizyka<input type="checkbox" class="subject_filter" id="fizyka"></label>
-            <label for="chemia">Chemia<input type="checkbox" class="subject_filter" id="chemia"></label>
-            <label for="wos">WOS<input type="checkbox" class="subject_filter" id="wos"></label>
-            <!-- Historia<input type="checkbox" class="subject_filter" id="historia"> -->
+                <h3>Przedmiot</h3>
+                <div>
+                    <div>
+                    <label for="matematyka">Matematyka<input type="checkbox" class="subject_filter" id="matematyka"></label>
+                    </div>
+                    <div>
+                    <label for="historia">Historia<input type="checkbox" class="subject_filter" id="historia"></label>
+                    </div>
+                    <div>
+                    <label for="fizyka">Fizyka<input type="checkbox" class="subject_filter" id="fizyka"></label>
+                    </div>
+                    <div>
+                    <label for="chemia">Chemia<input type="checkbox" class="subject_filter" id="chemia"></label>
+                    </div>
+                    <div>
+                    <label for="wos">WOS<input type="checkbox" class="subject_filter" id="wos"></label>
+                    </div>
+                </div>
+                <!-- Historia<input type="checkbox" class="subject_filter" id="historia"> -->
             </div>
             <div class="part-wrapper">
             <h3>Część</h3>
-            <label for="part1">1 <input type="checkbox" class="part_filter" id="part1"></label>
-            <label for="part2">2 <input type="checkbox" class="part_filter" name="" id="part2"></label>
+            <div>
+            <div>
+                <label for="part1">1 <input type="checkbox" class="part_filter" id="part1"></label>
+                </div>
+                <label for="part2">2 <input type="checkbox" class="part_filter" name="" id="part2"></label>
+                </div>
             </div>
             
             <div class="book-type-wrapper">
@@ -76,12 +92,13 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
                 <label for="podstawowy">Podstawowy<input type="checkbox" class="scope_filter" id="podstawowy"></label>
                 <label for="rozszerzony">Rozszerzony<input type="checkbox" class="scope_filter" id="rozszerzony"></label>
             </div>
-            <div class="book-price-wrapper">
+            <!-- <div class="book-price-wrapper">
             <h3>Cena</h3>
-            <!-- <input type="range" class="" id="" min="10" max="40"> // chciałem zrobić takiego slidera z ceną od do, ale to za duzo jebania sie z js-emmax min pobierany z js  -->
+            <input type="range" class="" id="" min="10" max="40"> // chciałem zrobić takiego slidera z ceną od do, ale to za duzo jebania sie z js-emmax min pobierany z js 
             <label for="from">Od<input type="number" class="" id="from"></label>
             <label for="to">Do<input type="number" class="" id="to"></label>
-            </div>
+            </div> -->
+            
             <div class="filter-button-wrapper">
             <button id="sumbit_filters">Zastosuj</button>
             </div>
@@ -95,9 +112,9 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
     </div>
 </div> 
     <footer>
-        <div class="footer-container">
+    <div class="footer-container">
             <div class="logo-footer">
-                <div class="footer-image"></div>
+                <a href="index.php"><div class="footer-image"></div></a>
                 <span class="break"></span>
             </div>
 
@@ -105,8 +122,8 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
                 <div class="footer-nav-responsive">
                     <div class="nav-list">
                         <ul>
-                            <li><a href="#">Kategorie</a></li>
-                            <li><a href="#">Kup</a></li>
+                            <li><a href="index.php#offers-section">Kategorie</a></li>
+                            <li><a href="offer_page.php">Kup</a></li>
                             <li><a href="#">Sprzedaj</a></li>
                         </ul>
                     </div>
