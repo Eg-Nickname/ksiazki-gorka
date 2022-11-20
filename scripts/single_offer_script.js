@@ -1,9 +1,6 @@
-// import {get_data_for_mainpage} from './script.js';
-// console.log(get_data_for_mainpage);
 /////////////////////////////////////////////////////////////////////////////
 //--------------------------------------------------------------------------
 //Pobieranie elementów do localStorage, skopiowane z innego skryptu, bo eksport nie chiciał działać- Sadge
-
 const get_data_for_mainpage = function (){
 
     localStorage.removeItem("books");
@@ -96,6 +93,7 @@ const show_users_offers= function (bookId){
                 console.log(offer);
                 const div=document.createElement('div');
                 div.classList.add("user_offer_box");
+                div.id=`oferta${offer.offer_id}`;
                 const img_box=document.createElement('div');
                 img_box.classList.add("user_offer_box_image");
                 const div_content=document.createElement('div');
@@ -127,10 +125,16 @@ const declare_buy = function(offer_id){
         dataType: 'JSON',
         data: {
             offer_id:offer_id,
-            book_id:bookId
+            book_id:bookId,
         },
         success: function(response){
-            console.log(response);
+            if(!response["error"])
+            {
+                $(`#oferta${offer_id}`).fadeOut(1000);
+                setTimeout(()=>{
+                    document.getElementById(`oferta${offer_id}`).remove();
+                },1000)
+            }
         }
     });
 }

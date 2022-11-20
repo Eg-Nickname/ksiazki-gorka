@@ -68,12 +68,12 @@ const login_function = function(){
         dataType: 'JSON',
         data: {
             email: $('#email').val(),
-            password: $('#password').val()
+            password: $('#password').val(),
         },
         success: function(response){
             console.log(response);
             if(response[2]==true){
-            window.location='strona-glowna';
+            window.location=document.referrer;
             }
             else{
                 $('#login_result').html(response[1]);

@@ -7,7 +7,7 @@ if(isset($_POST['book_id'])){
     try{
         $connection=new mysqli($host,$db_user,$db_password,$db_name);
         if($connection->connect_errno==0){
-            $sql="SELECT * FROM users_offers WHERE book_id='$bookId' ORDER BY price ASC";
+            $sql="SELECT * FROM users_offers WHERE book_id='$bookId' AND status='available' ORDER BY price ASC";
             $result=$connection->query($sql);
             $everything= $result->fetch_ALL(MYSQLI_ASSOC);
         }

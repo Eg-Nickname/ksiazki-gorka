@@ -16,7 +16,10 @@ if(isset($_SESSION['logged_in']))
                 $result=$connection->query($sql);
                 if($result->num_rows){
                     $user_id=$_SESSION['user_id'];
-                    // $sql="UPDATE users_offers SET "
+                    $sql="UPDATE users_offers SET customer='$user_id', status='reserved' WHERE offer_id = '$offer_id' AND book_id='$book_id'";
+                    $result=$connection->query($sql);
+                    $message="Zarezerwowano. Przejdź do panelu klienta, aby omówić szczegóły ze sprzedawacą";
+                    if(!$result) throw new Exception(mysqli_connect_errno());
                 }
                 else{
                     throw new Exception(mysqli_connect_errno());
@@ -33,13 +36,15 @@ if(isset($_SESSION['logged_in']))
     }
     else{
         $error=true;
-        $message="Krytyczny błąd.  Spróbuj odświeżyć stronę";
+        $message="Krytyczny błąd. Spróbuj odświeżyć stronę";
     }
 }
 else{
     $error=true;
     $message="Musisz być zalogowany";
 }
-$array=[$error,$message];
+$array=[];
+$array['error']=$error;
+$array['message']=$message;
 echo json_encode($array);
 ?>

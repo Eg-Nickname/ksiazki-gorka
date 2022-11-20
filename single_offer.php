@@ -125,9 +125,9 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
                     <button class="user_offer_box_content_button">Kup teraz</button>
                     </div>
                 </div>
+                <!-- <div class="user_offer_box"></div>
                 <div class="user_offer_box"></div>
-                <div class="user_offer_box"></div>
-                <div class="user_offer_box"></div>
+                <div class="user_offer_box"></div> -->
                 <div class="modal-box">
                     <span class="close-modal-box">X</span>
                     <img src="" class="offer-image">
