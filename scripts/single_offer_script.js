@@ -64,7 +64,7 @@ const display_sample_offer = function (){
             $('.date-name').append("<p> Data Wydania: " + data.release_date + "<p>")
             $('.isbn-name').append("<p> ISBN: " + data.ISBN + "<p>")
             $('.authors-name').append("<p> Autorzy: " + data.authors + "<p>")
-            $('.base-text').append("<p>" + data.description + "<p>")
+            // $('.base-text').append("<p>" + data.description + "<p>")
             
             // ('background-image',`url("${data.picture}")`);
             // `url("${element['picture']}")`
@@ -95,10 +95,19 @@ const show_users_offers= function (bookId){
                 div.classList.add("user_offer_box");
                 div.id=`oferta${offer.offer_id}`;
                 const img_box=document.createElement('div');
+                img_box.style.backgroundImage=`url(${offer.photo1})`;
                 img_box.classList.add("user_offer_box_image");
                 const div_content=document.createElement('div');
                 div_content.classList.add("user_offer_box_content");
                 const price=document.createElement('p');
+                const img_btn=document.createElement('button');
+                img_btn.innerHTML="Tył";
+                img_btn.classList.add("user_offer_image_button");
+                const image_photos={
+                    front: offer.photo1,
+                    back:offer.photo2
+                }
+                $(img_btn).on("click",()=>change_offer_image(img_btn,image_photos));
                 price.classList.add("user_offer_box_content_price");
                 price.innerHTML=`${offer.price} PLN`;
                 const button=document.createElement('button');
@@ -107,7 +116,7 @@ const show_users_offers= function (bookId){
                 $(button).on('click', function(){
                     declare_buy(Number(offer.offer_id));
                 });
-                div_content.append(price,button);
+                div_content.append(img_btn,price,button);
                 div.append(img_box,div_content);
 
                 document.querySelector('section').appendChild(div);
@@ -115,6 +124,7 @@ const show_users_offers= function (bookId){
         }
     })
 }
+//zarezerwowanie w bazie
 const declare_buy = function(offer_id){
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
@@ -139,11 +149,30 @@ const declare_buy = function(offer_id){
     });
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////
-const show_image_popup= function (){
-    let image_bg=$(this).css('background-image');
+// zmiana zdjęcia oferty
+const change_offer_image = (img_btn,image_photos) =>{
+    const offer_div=img_btn.parentNode.parentNode;
+    const img_div=offer_div.querySelector('.user_offer_box_image');
+    const image=get_current_image(img_div);
+    if(image==image_photos.front){
+        $(img_div).css('background-image',`url(${image_photos.back})`);
+        img_btn.innerHTML="Przód";
+    }
+    else{
+        console.log('tu');
+        img_btn.innerHTML="Tył";
+        $(img_div).css('background-image',`url(${image_photos.front})`);
+    }
+};
+//Pobranie aktualnego zdjęcia
+const get_current_image = (element) =>{
+    let image_bg=$(element).css('background-image');
     image_bg=image_bg.split("/");
-    console.log(image_bg);
     const src=image_bg[image_bg.length-2]+'/'+(image_bg[image_bg.length-1]).slice(0,-2);
+    return src
+}
+const show_image_popup= function (){
+    const src=get_current_image(this);
     document.querySelector('.offer-image').src=src;
     $('.modal-box').css('visibility','visible');
     $('.modal-box').css('opacity','1');

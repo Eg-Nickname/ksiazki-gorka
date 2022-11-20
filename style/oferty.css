@@ -425,7 +425,7 @@ section .user_offer_box{
 }
 
 section .user_offer_box_image{
-    background-image: url(../images/matm3podr.png);
+    /* background-image: url(../images/matm3podr.png); */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
