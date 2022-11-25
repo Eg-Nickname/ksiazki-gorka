@@ -131,6 +131,10 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
                     <span class="close-modal-box">X</span>
                     <img src="" class="offer-image">
                 </div> <!--- popup -->
+
+                <div class="popup-order-box">
+                 <p class="popup-order-box-alert">Nigger to rasa lepsza</p>   
+                </div>
             </section>
 
         </div>
