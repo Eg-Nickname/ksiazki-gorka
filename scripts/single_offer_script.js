@@ -107,7 +107,9 @@ const show_users_offers= function (bookId){
                     front: offer.photo1,
                     back:offer.photo2
                 }
-                $(img_btn).on("click",()=>change_offer_image(img_btn,image_photos));
+                $(img_btn).on("click",function(){
+                    change_offer_image(img_btn,image_photos);
+                });
                 price.classList.add("user_offer_box_content_price");
                 price.innerHTML=`${offer.price} PLN`;
                 const button=document.createElement('button');
