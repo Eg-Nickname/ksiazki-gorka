@@ -116,7 +116,8 @@ const show_users_offers= function (bookId){
                 button.classList.add("user_offer_box_content_button");
                 button.innerHTML = "Zarezerwuj";
                 $(button).on('click', function(){
-                    declare_buy(Number(offer.offer_id));
+                    confirm_buy(offer)
+                    // declare_buy(Number(offer.offer_id));
                 });
                 div_content.append(img_btn,price,button);
                 div.append(img_box,div_content);
@@ -127,6 +128,25 @@ const show_users_offers= function (bookId){
     })
 }
 //zarezerwowanie w bazie
+const confirm_buy=function(offer){
+    $('.buy-popup').css("visibility","visible");
+    $('.buy-popup').css("width","100vw");
+    $('.confirm-buy').on('click',function(){
+        setTimeout(()=>{
+            declare_buy(Number(offer.offer_id));
+        },1000)
+        $('.buy-popup').css("width","0");
+        $('.buy-popup').css("visibility","hidden");
+        $('.confirm-buy').off('click');
+        $('.cancel-buy').off('click');
+    });
+    $('.cancel-buy').on('click',function(){
+        $('.buy-popup').css("width","0");
+        $('.buy-popup').css("visibility","hidden");
+        $('.cancel-buy').off('click');
+        $('.confirm-buy').off('click');
+    });
+}
 const declare_buy = function(offer_id){
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
@@ -140,12 +160,18 @@ const declare_buy = function(offer_id){
             book_id:bookId,
         },
         success: function(response){
+            $('.popup-order-box').css("visibility","visible");
+            $('.popup-order-box-alert').html(response['message']);
+            setTimeout(()=>{
+                $('.popup-order-box').css("visibility","hidden");
+            },5000)
             if(!response["error"])
             {
                 $(`#oferta${offer_id}`).fadeOut(1000);
                 setTimeout(()=>{
                     document.getElementById(`oferta${offer_id}`).remove();
                 },1000)
+
             }
         }
     });

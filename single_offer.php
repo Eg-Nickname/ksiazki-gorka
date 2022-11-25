@@ -116,14 +116,14 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
             <div class="break"></div> 
             
             <section id="seller-offers">
-                <div class="user_offer_box">
+                <!-- <div class="user_offer_box">
                     <div class="user_offer_box_image"></div>
                     <div class="user_offer_box_content">
                     <button>Tył</button>
                     <p class="user_offer_box_content_price">28 PLN</p>
                     <button class="user_offer_box_content_button">Kup teraz</button>
                     </div>
-                </div>
+                </div> -->
                 <!-- <div class="user_offer_box"></div>
                 <div class="user_offer_box"></div>
                 <div class="user_offer_box"></div> -->
@@ -131,7 +131,16 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
                     <span class="close-modal-box">X</span>
                     <img src="" class="offer-image">
                 </div> <!--- popup -->
-
+                <div class="buy-popup">
+                    <div class="buy-confirm">
+                        <div class="buy-button-wrapper">
+                            <h1 class="title-buy"></h1>
+                            <h2 class="price-buy"></h2>
+                            <button class="confirm-buy">Biorę</button>
+                            <button class="cancel-buy">Anuluj</button>
+                        </div>
+                    </div>
+                </div>
                 <div class="popup-order-box">
                  <p class="popup-order-box-alert">Nigger to rasa lepsza</p>   
                 </div>
