@@ -44,6 +44,7 @@ const change_login_content = function(){
     const sign_in_header=document.querySelector('.sign-in-text');
     const sign_in_span=document.querySelector('.sign-up-goto-span');
     $('#linkLogin').on('click',function(){
+        clear_forms();
         $(register_form).addClass('form--hidden');
         $(register_span).addClass('form--hidden');
         $(register_header).addClass('form--hidden');
@@ -52,6 +53,7 @@ const change_login_content = function(){
         $(sign_in_span).removeClass('form--hidden');
     });
     $('#linkCreateAccount').on('click',function(){
+        clear_forms();
         $(register_form).removeClass('form--hidden');
         $(register_span).removeClass('form--hidden');
         $(register_header).removeClass('form--hidden');
@@ -62,6 +64,7 @@ const change_login_content = function(){
 }
 //logowanie
 const login_function = function(){
+    clear_forms();
     $.ajax({
         url: 'php_scripts/login_script.php',
         type: 'POST',
@@ -85,6 +88,7 @@ const login_function = function(){
 $('#log_in').on('click',login_function);
 //Rejestracja
 const register_function = function (){
+    clear_forms();
     $.ajax({
         url: 'php_scripts/register.php',
         type: 'POST',
@@ -99,8 +103,38 @@ const register_function = function (){
         },
         success: function(response){
             console.log(response);
+            if(!response[2]){
+                const error_array = response[1];
+                console.log(error_array);
+                for(const key in error_array){
+                    document.getElementById(`${key}-error`).innerHTML=error_array[key];
+                    document.getElementById(`${key}-error`).style.visibility='visible';
+                }
+                const error_class_array=response[3];
+                for(const key in error_class_array){
+                    console.log(error_class_array[key]);
+                    const error_element=document.getElementById(`${error_class_array[key]}`);
+                    const error_element_parent=error_element.parentElement;
+                    error_element_parent.classList.add("error");
+                }
+            }
         }
     })
 }
 $('#register').on('click',register_function);
+
+const clear_forms=function(){
+    const inputs_parents= Array.from(document.querySelectorAll('.input-field'));
+    inputs_parents.forEach(parent => {
+        console.log(parent);
+        parent.classList.remove('error');
+    });
+    const error_logs=Array.from(document.querySelectorAll('.error_log_info'));
+    error_logs.forEach((log)=>{
+        log.innerHTML ="Error text";
+        log.style.visibility = 'hidden';
+    });
+    $('#login_result').html("Lorem Ipsum");
+    $('#login_result').css('visibility', 'hidden');
+};
 change_login_content();

@@ -15,28 +15,28 @@ if(!isset($_SESSION['logged_in'])){
         //Warunki poprawić bo ctype nie zalicza polskich znaków
         if(!filter_var($register_email, FILTER_VALIDATE_EMAIL)) {
             $error = true;
-            array_push($error_message,"Podaj poprawny adres e-mail");
+            $error_message['register-email']="Podaj poprawny adres e-mail";
             array_push($error_class,"register_email");
         }
-        if(strlen($password)<8 || $password!=$check_password){ //Warunki hasła do ustawienia
+        if(strlen($password)<8 || $password!=$check_password || !preg_match('/[A-Z]/',$password)){ //Warunki hasła do ustawienia
             $error = true;
-            array_push($error_message,"Hasła nie są zgodne lub nie spełniają wymagań dotyczących złożoności");
+            $error_message['register-password']="Hasła nie są zgodne lub nie spełniają wymagań dotyczących złożoności";
             array_push($error_class,"register_password");
             array_push($error_class,"check_password");
         }
         if(preg_match('/[0-9\~\!\@\#\$\%\^\&\*\(\)\-\_\=\+\\{\}\;\'\:\"\,\<\>\.\?]/',$name) || strlen($name)<2){
             $error=true;
-            array_push($error_message,"Podaj poprawnę imię");
+            $error_message['name']="Imię musi się składać wyłącznie z liter";
             array_push($error_class,"name");
         }
         if(preg_match('/[0-9\~\!\@\#\$\%\^\&\*\(\)\-\_\=\+\\{\}\;\'\:\"\,\<\>\.\?]/',$surname) || strlen($surname)<2){
             $error=true;
-            array_push($error_message,"Podaj poprawnę nazwisko");
+            $error_message['surname']="Nazwisko musi się składać wyłącznie z liter";
             array_push($error_class,"surname");
         }
-        if(preg_match('/[\~\!\@\#\$\%\^\&\*\(\)]/',$username) || strlen($username)<3){
+        if(preg_match('/[~\!\@\#\$\%\^\&\*\(\)\-\\=\+\\{\}\;\'\:\"\,\<\>\.\?]/',$username) || strlen($username)<3){
             $error=true;
-            array_push($error_message,"Podaj poprawną nazwę użytkownika");
+            $error_message['username']="Nazwa użytkownika musi się składać wyłącznie z liter, cyfr lub '_'";
             array_push($error_class,"username");
         }
         if(!$error){
@@ -53,7 +53,7 @@ if(!isset($_SESSION['logged_in'])){
                 if(!$result) throw new Exception($connection->error);
                 if($result->num_rows!=0){
                     $error=true;
-                    array_push($error_message,"Podany adres email jest przypisany do innego konta");
+                    $error_message['register-email']="Podany adres email jest przypisany do innego konta";
                     array_push($error_class,'register_email');
                 }
                 $sql="SELECT * FROM users WHERE username='$username'";
@@ -61,7 +61,7 @@ if(!isset($_SESSION['logged_in'])){
                 if(!$result) throw new Exception($connection->error);
                 if($result->num_rows!=0){
                     $error=true;
-                    array_push($error_message,"Podana nazwa użytkownika jest już zajęta");
+                    $error_message['username']="Podana nazwa użytkownika jest już zajęta";
                     array_push($error_class,'username');
                 }
                 if(!$error){
@@ -85,7 +85,7 @@ if(!isset($_SESSION['logged_in'])){
                 $error=true;
             }
         }
-        $array=[$error,$error_message,$register_result];
+        $array=[$error,$error_message,$register_result,$error_class];
         echo json_encode ($array);
     }
     else{

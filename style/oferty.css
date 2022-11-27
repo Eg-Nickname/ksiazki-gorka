@@ -355,6 +355,7 @@ main{
     height: 100%;
     color: #A89887;
     text-align: center;
+    cursor: pointer;
     transition: all 0.5s ease-in-out;
 }
 .base-price-info a:hover{
@@ -552,6 +553,7 @@ section .user_offer_box_content_button:hover{
     align-items:center;
     transition: all 0.512s ease-in-out;
     visibility: hidden;
+    overflow: hidden;
 }
 .buy-confirm{
     width: 98% !important;
@@ -564,12 +566,28 @@ section .user_offer_box_content_button:hover{
     flex-direction: column;
     align-items: center;
 }
+.buy-text{
+    white-space:nowrap;
+}
 footer{
     height: 170px;
     width: 100%;
     background-color: #F5E9DC;
 }
-
+.show_me_more{
+    text-align: center;
+    width: 100%;
+    cursor: pointer;
+    font-size: 28px;
+}
+#scroll-to-top{
+    position:fixed;
+    bottom: 100px;
+    right:0;
+    width:32px;
+    height:32px;
+    border-radius: 8px;
+}
 .footer-container{
     max-width: 1140px;
     width: 100%;

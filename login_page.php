@@ -50,42 +50,42 @@ if(isset($_SESSION['logged_in']))
                             <div class="input-field">
                             <input type="text" placeholder="Wpisz imię" name="name" id="name" value="siema">
                             </div>
-                            <span class="error_log_info">Lorem Ipsum</span>
+                            <span id="name-error" class="error_log_info">Lorem Ipsum</span>
                         </div>
                         <div class="label-wrapper sign-up-form label-wrapper-l">
                             <label for="surname">Nazwisko:</label>
                             <div class="input-field">
                             <input type="text" placeholder="Wpisz nazwisko" name="surname" id="surname" value="si"/>
                             </div>
-                            <span class="error_log_info">Lorem Ipsum</span>
+                            <span id="surname-error" class="error_log_info">Lorem Ipsum</span>
                         </div>
                         <div class="label-wrapper sign-up-form">
                             <label for="username">Username:</label>
                             <div class="input-field">
                             <input type="text" placeholder="Wpisz nazwę użytkownika" name="username" id="username" value="2s"/>
                             </div>
-                            <span class="error_log_info">Lorem Ipsum</span>
+                            <span id="username-error" class="error_log_info">Lorem Ipsum</span>
                         </div>
                         <div class="label-wrapper register-in-form label-wrapper-l">
                             <label for="register_email">Email:</label>
                             <div class="input-field">
                             <input type="email" placeholder="Wpisz swoj email" name="register_email" id="register_email" value="12@df.pl" />
                             </div>
-                            <span class="error_log_info">Lorem Ipsum</span>
+                            <span id="register-email-error" class="error_log_info">Lorem Ipsum</span>
                         </div>
                         <div class="label-wrapper register-in-form">
                             <label for="register_password">Hasło:</label>
                             <div class="input-field">
                                 <input type="password" placeholder="Hasło musi zawierać 8 znaków" name="register_password" id="register_password" value="123456789" />
                             </div>
-                            <span class="error_log_info">Lorem Ipsum</span> 
+                            <span id="register-password-error" class="error_log_info">Lorem Ipsum</span> 
                         </div>
                         <div class="label-wrapper register-in-form label-wrapper-l">
                             <label for="check_password">Hasło:</label>
                             <div class="input-field">
                                 <input type="password" placeholder="Potwierdź hasło"  name="check_password" id="check_password" value="123456789" />
                             </div>
-                            <span class="error_log_info">Lorem Ipsum</span> 
+                            <span  id="password-check-error"class="error_log_info">Lorem Ipsum</span> 
                         </div>
                         <button class="register-in-btn-google" id="register_google"><span class="icon"></span><span id="google-text">Zarejestruj się z Google</span></button>
                         <button class="register-in-btn" id="register">Stwórz konto</button> 

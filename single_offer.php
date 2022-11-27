@@ -108,7 +108,7 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
                 </div>
 
                 <div class="base-price-info">
-                <a href="#seller-offers">Przejdź do ofert</a>
+                <a id="go_to_offer">Przejdź do ofert</a>
                 </div>
                 </div>
 
@@ -127,26 +127,28 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
                 <!-- <div class="user_offer_box"></div>
                 <div class="user_offer_box"></div>
                 <div class="user_offer_box"></div> -->
-                <div class="modal-box">
+                
+            </section>
+            <div class="modal-box">
                     <span class="close-modal-box">X</span>
                     <img src="" class="offer-image">
                 </div> <!--- popup -->
-                <div class="buy-popup">
-                    <div class="buy-confirm">
-                        <div class="buy-button-wrapper">
-                            <h1 class="title-buy"></h1>
-                            <h2 class="price-buy"></h2>
-                            <button class="confirm-buy">Biorę</button>
-                            <button class="cancel-buy">Anuluj</button>
-                        </div>
+                <div class="popup-order-box">
+                 <p class="popup-order-box-alert"></p>   
+                </div>
+            </div>
+            <div class="buy-popup">
+                <div class="buy-confirm">
+                    <div class="buy-button-wrapper">
+                        <h1 class="title-buy buy-text"></h1>
+                        <h2 class="price-buy buy-text"></h2>
+                        <button class="confirm-buy">Biorę</button>
+                        <button class="cancel-buy">Anuluj</button>
                     </div>
                 </div>
-                <div class="popup-order-box">
-                 <p class="popup-order-box-alert">Nigger to rasa lepsza</p>   
-                </div>
-            </section>
-
-        </div>
+            </div>
+        <button id="scroll-to-top">Do góry</button>
+        <h1 class="show_me_more">Pokaż więcej</h1>
     </main>
     <footer>
         <div class="footer-container">

@@ -68,7 +68,7 @@ const display_sample_offer = function (){
             
             // ('background-image',`url("${data.picture}")`);
             // `url("${element['picture']}")`
-            show_users_offers(bookId);
+            show_users_offers();
         }
         else{
             document.querySelector('main').innerHTML="";
@@ -80,17 +80,25 @@ const display_sample_offer = function (){
         $('main').append('<h1 class="no_exists">Strona nie istnieje</h1>')
     }
 }
-const show_users_offers= function (bookId){
+///////
+const show_users_offers= function (){
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const bookId=urlParams.get('number');
+    const number_of_offers=document.querySelector('section').childElementCount;
+    console.log(number_of_offers);
     $.ajax({
         url: 'php_scripts/show_users_offers.php',
         type: 'POST',
         dataType: 'JSON',
         data:{
-            book_id:bookId
+            book_id:bookId,
+            number_of_offers: number_of_offers
         },
         success: function(response){
+            console.log(response);
             for(const offer of response){
-                console.log(offer);
+                // console.log(offer);
                 const div=document.createElement('div');
                 div.classList.add("user_offer_box");
                 div.id=`oferta${offer.offer_id}`;
@@ -121,16 +129,42 @@ const show_users_offers= function (bookId){
                 });
                 div_content.append(img_btn,price,button);
                 div.append(img_box,div_content);
-
                 document.querySelector('section').appendChild(div);
             }
+        if(response.length!=12){
+            $('.show_me_more').off('click');
+            document.querySelector('.show_me_more').remove();
+        }
         }
     })
 }
+$('.show_me_more').on('click', function(){
+    console.log("s");
+    show_users_offers();
+});
+$('#go_to_offer').on('click', function(){
+    const offers=document.getElementById('seller-offers');
+    offers.scrollIntoView({
+        behavior: 'smooth'
+    });
+})
+$('#scroll-to-top').on('click', function(){
+    const offers=document.getElementById('seller-offers');
+    offers.scrollIntoView({
+        behavior: 'smooth'
+    });
+})
 //zarezerwowanie w bazie
 const confirm_buy=function(offer){
     $('.buy-popup').css("visibility","visible");
     $('.buy-popup').css("width","100vw");
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    let title=urlParams.get('title');
+    title=title.replaceAll("-"," ");
+    console.log(title);
+    $('.title-buy').html(title);
+    $('.price-buy').html(`Cena: ${offer.price} ZŁ`);
     $('.confirm-buy').on('click',function(){
         setTimeout(()=>{
             declare_buy(Number(offer.offer_id));
