@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 16 Lis 2022, 22:44
+-- Czas generowania: 27 Lis 2022, 21:22
 -- Wersja serwera: 10.4.21-MariaDB
 -- Wersja PHP: 8.0.12
 
@@ -49,7 +49,8 @@ INSERT INTO `sample_books` (`book_ID`, `book_name`, `ISBN`, `picture`, `picturex
 (1, 'Matematyka na czasie', '9346-4356-36-34', 'images/matm3podr.png', 'images/matm3podrxl.png', 'WSiP', 'Opracowanie zbiorowe', 'matematyka', 1, 'podstawowy', 2020),
 (2, 'Matematyka na czasie 2', '9346-4356-36-341', 'images/matm3podr.png', 'images/matm3podrxl.png', 'WSiP', 'Opracowanie zbiorowe', 'matematyka', 2, 'rozszerzony', 2020),
 (3, 'Poznać przeszłość Wodza Hitlera', '325-3424-32421', 'images/historia3pp.png', '', 'Wsip', 'Opracowanie zbiorowe', 'historia', 1, 'podstawowy', 0),
-(4, 'Koniec niewolnictwa upadek białej rasy', '325-3424-32421', 'images/historia3pp.png', '', 'Wsip', 'Opracowanie zbiorowe', 'historia', 2, 'rozszerzony', 0);
+(4, 'Koniec niewolnictwa upadek białej rasy', '325-3424-32421', 'images/historia3pp.png', '', 'Wsip', 'Opracowanie zbiorowe', 'historia', 2, 'rozszerzony', 0),
+(5, 'Matematyka na czasie 3', '9346-4356-36-341', 'images/matm3podr.png', 'images/matm3podrxl.png', 'WSiP', 'Opracowanie zbiorowe', 'matematyka', 3, 'rozszerzony', 2020);
 
 -- --------------------------------------------------------
 
@@ -99,10 +100,33 @@ CREATE TABLE `users_offers` (
 --
 
 INSERT INTO `users_offers` (`offer_id`, `seller`, `customer`, `price`, `photo1`, `photo2`, `status`, `book_id`) VALUES
-(1, 1, 0, 16, 'images/matm3podr.png', 'images/matm3podr.png', '0', 1),
-(2, 1, 2, 16, 'images/matm3podr.png', 'images/matm3podr.png', 'available', 2),
-(3, 1, 2, 13, 'images/matm3podr.png', 'images/matm3podr.png', 'available', 2),
-(4, 1, 0, 13, 'images/matm3podr.png', 'images/matm3podr.png', 'available', 2);
+(1, 1, 4, 16, 'images/matm3podr.png', 'images/matm3podr.png', 'available', 1),
+(2, 1, 4, 16, 'images/matm3podr.png', 'images/matm3podr.png', 'available', 2),
+(3, 1, 4, 13, 'images/matm3podr.png', 'images/matm3podr.png', 'reserved', 2),
+(4, 1, 4, 13, 'images/matm3podr.png', 'images/matm3podr.png', 'available', 2),
+(5, 1, 4, 13, 'images/matm3podr.png', 'images/historia3pp.png', 'available', 2),
+(6, 1, 0, 16, 'images/matm3podr.png', 'images/matm3podr.png', 'available', 1),
+(7, 1, 4, 13, 'images/matm3podr.png', 'images/matm3podr.png', 'available', 2),
+(8, 1, 4, 14, 'images/matm3podr.png', 'images/matm3podr.png', 'available', 2),
+(9, 1, 4, 15, 'images/matm3podr.png', 'images/historia3pp.png', 'available', 2),
+(10, 1, 4, 13, 'images/matm3podr.png', 'images/matm3podr.png', 'available', 2),
+(11, 1, 4, 13, 'images/matm3podr.png', 'images/historia3pp.png', 'available', 2),
+(12, 1, 4, 13, 'images/matm3podr.png', 'images/matm3podr.png', 'available', 2),
+(13, 1, 4, 13, 'images/matm3podr.png', 'images/matm3podr.png', 'available', 2),
+(14, 1, 4, 13, 'images/matm3podr.png', 'images/historia3pp.png', 'available', 2),
+(15, 1, 4, 13, 'images/matm3podr.png', 'images/matm3podr.png', 'available', 2),
+(16, 1, 4, 14, 'images/matm3podr.png', 'images/matm3podr.png', 'available', 2),
+(17, 1, 4, 15, 'images/matm3podr.png', 'images/historia3pp.png', 'available', 2),
+(18, 1, 4, 13, 'images/matm3podr.png', 'images/matm3podr.png', 'available', 2),
+(19, 1, 4, 13, 'images/matm3podr.png', 'images/historia3pp.png', 'available', 2),
+(20, 1, 4, 13, 'images/matm3podr.png', 'images/matm3podr.png', 'available', 2),
+(21, 1, 4, 13, 'images/matm3podr.png', 'images/historia3pp.png', 'available', 2),
+(22, 1, 4, 13, 'images/matm3podr.png', 'images/matm3podr.png', 'available', 2),
+(23, 1, 4, 14, 'images/matm3podr.png', 'images/matm3podr.png', 'available', 2),
+(24, 1, 4, 15, 'images/matm3podr.png', 'images/historia3pp.png', 'available', 2),
+(25, 1, 4, 13, 'images/matm3podr.png', 'images/matm3podr.png', 'available', 2),
+(26, 1, 4, 13, 'images/matm3podr.png', 'images/historia3pp.png', 'available', 2),
+(27, 1, 4, 13, 'images/matm3podr.png', 'images/matm3podr.png', 'available', 2);
 
 --
 -- Indeksy dla zrzutów tabel
@@ -134,7 +158,7 @@ ALTER TABLE `users_offers`
 -- AUTO_INCREMENT dla tabeli `sample_books`
 --
 ALTER TABLE `sample_books`
-  MODIFY `book_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `book_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT dla tabeli `users`
@@ -146,7 +170,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT dla tabeli `users_offers`
 --
 ALTER TABLE `users_offers`
-  MODIFY `offer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `offer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
