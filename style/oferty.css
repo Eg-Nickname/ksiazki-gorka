@@ -565,15 +565,105 @@ section .user_offer_box_content_button:hover{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 .buy-text{
     white-space:nowrap;
 }
-footer{
-    height: 170px;
-    width: 100%;
-    background-color: #F5E9DC;
+
+.title-buy{
+    font-size: 24px;
+    text-transform: capitalize;
+    font-weight: normal;
+    color: #000;
+    padding: 1rem 0;
+    text-align: center;
 }
+
+.price-buy{
+    font-size: 18px;
+    text-transform: capitalize;
+    font-weight: normal;
+    color: #A89887;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+.buy-confirm .button-wrapper{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.confirm-buy{
+    background-color: #F5E9DC;
+    border: 1px solid #A89887;
+    color: #000;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 1rem 2rem;
+    overflow: hidden;
+    text-align: center;
+    vertical-align: middle;
+    outline: none;
+    text-transform: capitalize;
+    border-radius: 5px;
+    width: auto;
+    transition: all 0.3s ease-in-out;
+}
+
+.cancel-buy{
+    background-color: #000;
+    border: 1px solid #000;
+    color: #A89887;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 1rem 2rem;
+    overflow: hidden;
+    text-align: center;
+    vertical-align: middle;
+    outline: none;
+    text-transform: capitalize;
+    border-radius: 5px;
+    width: auto;
+    transition: all 0.3s ease-in-out;
+}
+
+.confirm-buy:hover
+{
+    border: 1px solid green;
+}
+
+.cancel-buy:hover{
+    border: 1px solid red;
+}
+
+.user_offer_image_button{
+    background-color: #F5E9DC;
+    border: 1px solid #A89887;
+    color: #000;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 400;
+    overflow: hidden;
+    text-align: center;
+    vertical-align: middle;
+    outline: none;
+    text-transform: capitalize;
+    border-radius: 5px;
+    margin-top: 0.5rem;
+    width: 20%;
+    transition: all 0.5s ease-in-out;
+}
+.user_offer_image_button:hover{
+    background-color: transparent;
+    border: 1px solid #A89887;
+    transform: scale(1.1);
+}
+
 .show_me_more{
     text-align: center;
     width: 100%;
@@ -583,11 +673,32 @@ footer{
 #scroll-to-top{
     position:fixed;
     bottom: 100px;
-    right:0;
+    right: 10px;
     width:32px;
     height:32px;
-    border-radius: 8px;
+    background: #fff;
+    border-radius: 5px;
+    border: 2px solid #A89887;
+    color: #A89887;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
 }
+
+#scroll-to-top::after
+{
+    content: "\2191";
+    font-size: 24px;
+    margin-bottom:3px;
+}
+
+footer{
+    height: 170px;
+    width: 100%;
+    background-color: #F5E9DC;
+}
+
 .footer-container{
     max-width: 1140px;
     width: 100%;

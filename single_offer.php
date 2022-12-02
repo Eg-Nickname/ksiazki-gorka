@@ -142,12 +142,14 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
                     <div class="buy-button-wrapper">
                         <h1 class="title-buy buy-text"></h1>
                         <h2 class="price-buy buy-text"></h2>
+                    <div class="button-wrapper">
                         <button class="confirm-buy">Biorę</button>
                         <button class="cancel-buy">Anuluj</button>
                     </div>
+                    </div>
                 </div>
             </div>
-        <button id="scroll-to-top">Do góry</button>
+        <button id="scroll-to-top"></button>
         <h1 class="show_me_more">Pokaż więcej</h1>
     </main>
     <footer>

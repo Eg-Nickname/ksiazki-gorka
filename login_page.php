@@ -65,6 +65,7 @@ if(isset($_SESSION['logged_in']))
                             <input type="text" placeholder="Wpisz nazwę użytkownika" name="username" id="username" value="2s"/>
                             </div>
                             <span id="username-error" class="error_log_info">Lorem Ipsum</span>
+                            
                         </div>
                         <div class="label-wrapper register-in-form label-wrapper-l">
                             <label for="register_email">Email:</label>
@@ -79,6 +80,7 @@ if(isset($_SESSION['logged_in']))
                                 <input type="password" placeholder="Hasło musi zawierać 8 znaków" name="register_password" id="register_password" value="123456789" />
                             </div>
                             <span id="register-password-error" class="error_log_info">Lorem Ipsum</span> 
+                            
                         </div>
                         <div class="label-wrapper register-in-form label-wrapper-l">
                             <label for="check_password">Hasło:</label>

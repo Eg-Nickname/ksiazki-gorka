@@ -134,11 +134,12 @@ html {
   align-items: center;
   align-content: center;
   justify-items: center;
+  max-width: 740px;
   }
   .register-in-form .label-wrapper{
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 70%;
     margin-bottom: 4rem;
     margin-left: 1rem;
   }
@@ -212,7 +213,7 @@ label{
   line-height: 20px;
   max-width: 100%;
   min-height: 48px;
-  width: 100%;
+  width: 70%;
   overflow: hidden;
   padding: 0px;
   padding-left: 2rem;
@@ -240,7 +241,7 @@ label{
     line-height: 20px;
     max-width: 100%;
     min-height: 48px;
-    width: 100%;
+    width: 70%;
     overflow: hidden;
     padding: 0px;
     padding-left: 2rem;
@@ -264,7 +265,7 @@ label{
   .register-in-btn-google span.icon {
     background: url("../Google\ icon.svg") no-repeat;
     float: left;
-    width: 2.4rem;
+    width: 3.4rem;
     height: 2.5rem;
     margin-right: 1rem;
 }
@@ -445,7 +446,7 @@ label{
   .sign-in-btn-google span.icon {
     background: url("../Google\ icon.svg") no-repeat;
     float: left;
-    width: 2.4rem;
+    width: 3.4rem;
     height: 2.5rem;
     margin-right: 1rem;
 }
