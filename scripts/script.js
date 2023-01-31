@@ -50,7 +50,7 @@ const get_data_for_mainpage = function (){
                 console.log("dopd");
                 let local_storage_data={
                     matematyka:[],
-                    historia:[] //Żeby działało trzeba dodać wszystkie przedmioty
+                    historia:[] //poprawić na nową funkcję z add_offer_page_scr
                 };
                 const books=response[2];
                 for(const element of books)
@@ -161,7 +161,7 @@ const searching_function=function(){
                     // console.log(user_input);
                     if(lower_title.match(user_input) && suggestions_list.childElementCount<3){
                         const a=document.createElement('a');
-                        a.innerHTML=`${title}, EAN: ${book.ISBN}`;
+                        a.innerHTML=`${title}, EAN: ${book.MEN}`;
                         title=(book.book_name.split(" ")).join("-");
                         a.href=`oferta?number=${book.book_ID}&category=${book.category}&title=${title}`;
                         $(a).addClass("suggestion");
@@ -173,10 +173,10 @@ const searching_function=function(){
     }
 }
 $('.search-input').on('click',searching_function);
-$(document).keyup(function(){
+$(document).keyup(function(){//to ustawić na input w polu 
     searching_function(); 
 })
-$(document).on('click',function(){
+$(document).on('click',function(){ // to na utratę focusu, 
     if(!$('.search-input').is(":focus")){
         const suggestions_list = document.getElementById('suggestions_list'); //Trzeba sprawdzić czy po kliknięciu na przedmiot na głównej się usuwa, bo na razie jak jest pusty to nie
         $(suggestions_list).removeClass('active_suggestion');

@@ -62,7 +62,7 @@ const display_sample_offer = function (){
             $('.base-title').append("<h2>" + data.book_name + "<h2>")
             $('.publisher-name').append("<p> Wydawnictwo: " + data.publishing_house + "<p>")
             $('.date-name').append("<p> Data Wydania: " + data.release_date + "<p>")
-            $('.isbn-name').append("<p> ISBN: " + data.ISBN + "<p>")
+            $('.isbn-name').append("<p> MEN: " + data.MEN + "<p>")
             $('.authors-name').append("<p> Autorzy: " + data.authors + "<p>")
             // $('.base-text').append("<p>" + data.description + "<p>")
             
