@@ -29,7 +29,7 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
                     <ul>
                         <li><a href="#offers-section">Kategorie</a></li>
                         <li><a href="offer_page.php">Kup</a></li>
-                        <li><a href="#">Sprzedaj</a></li>
+                        <li><a href="user_panel/add_offer_page.php">Sprzedaj</a></li>
                     </ul>
                 </div>
             </div>

@@ -5,6 +5,14 @@
 //     exit();
 // }
 ?>
+
+<?php
+session_start();
+$is_logged_in=false;
+if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
+    $is_logged_in =true;
+}
+?>
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -12,77 +20,137 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dodaj ofertę</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
     <script defer src="../scripts/jquery-3.6.1.min.js"></script>
     <script defer src="../scripts/user_panel_scripts/add_offer_page_script.js"></script>
-    <style>
-    .search-container {
-    padding-top: 4rem;
-    width: 95%;
-    position: relative;
-}
-.search-input {
-    width: 100%;
-    padding: 1.2rem 2.4rem;
-    background-color: #fff;
-    font-size: 14px;
-    line-height: 18px;
-    color: #A89887;
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='29' height='29' viewBox='0 0 24 24'%3E%3Cpath d='M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-size: 3rem 3rem;
-    background-position: 95% center;
-    border: 1px solid #A89887;
-    transition: all 250ms ease-in-out;
-    backface-visibility: hidden;
-    transform-style: preserve-3d;
-    /* text-transform:capitalize; */
-}
-
-.search-input::placeholder {
-    color: #A89887;
-    font-size: 14px;
-    font-weight: normal;
-}
-.search-input:focus {
-    outline: none
-}
-.suggestions-list{
-    position: absolute;
-    background:white;
-    border: 1px solid #A89887;
-    max-height:200px;
-    width:100%;
-    display: none;
-}
-.suggestions-list.active_suggestion{
-    display:block;
-}
-.suggestion{
-    display: flex;
-    align-items: center;
-    padding: 8px 16px;
-    font-size: 14px;
-    cursor: pointer;
-    transition: all 250ms ease-in-out;
-}
-.suggestion:hover{
-    background-color: #A88E87;
-}
-    </style>
+    <link rel="stylesheet" href="../style/oferty_add.css">
 </head>
 <body>
-    <form onsubmit="return false" enctype="multipart/form" id="offer_form">
-    <div class="search-container">
-        <input class="search-input" type="text" placeholder="Wybierz podręcznik">
-        <input id="book_id" type="hidden">
-        <div class="suggestions-list" id="suggestions_list"></div>
-    </div>
-    <!-- DAJ TU GDZIEŚ INFO ŻE ZDJĘCIE MUSI BYĆ JPG,PNG,JPEG -->
-    <label for="price">Cena</label><input type="number" name="price" id="price">
-    <label for="front_photo"></label><input type="file" name="front_photo" id="front_photo">
-    <label for="back_photo"></label><input type="file" name="" id="back_photo">
-    <p id="chosen">Wybierz podręcznik</p>
-    <button id="submit">Wystaw ofertę</button>
-    </form>
+<nav>
+        <div class="nav-container">
+            
+            <div class="left-nav">
+                <a href="../index.php"><div class="nav-image"></div></a>
+            </div>
+
+            <div class="center-nav">
+                <div class="nav-list">
+                    <ul>
+                        <li><a href="../index.php">Kategorie</a></li>
+                        <li><a href="../offer_page.php">Kup</a></li>
+                        <li><a href="user_panel/add_offer_page.php">Sprzedaj</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <?php
+            if($is_logged_in){
+                echo<<<END
+                <div class="right-nav-authorized">
+                    <a id="user-panel-button"></a>
+                    <a id="messages-button"></a>
+                    <a id="log_out"></a>
+                </div>
+                END;
+            }
+            else{
+                echo<<<END
+                <div class="right-nav">
+                    <a href="strona-logowania">Zaloguj się</a>
+                </div>
+                END;
+            }
+            ?>
+        </div>
+    </nav>
+    <main>
+        <div class="main-container">
+        <form onsubmit="return false" enctype="multipart/form" id="offer_form">
+        <div class="search-container">
+            <h4>Podaj Tytuł:</h4>
+            <input class="search-input" type="text" placeholder="Wybierz podręcznik">
+            <input id="book_id" type="hidden">
+            <div class="suggestions-list" id="suggestions_list"></div>
+            <p  class="error_span" id="title_error_span">Error</p>
+        </div>
+        <!-- DAJ TU GDZIEŚ INFO ŻE ZDJĘCIE MUSI BYĆ JPG,PNG,JPEG -->
+        <div class="price-container">
+        <h4>Cena</h4>
+        <input type="number" name="price" id="price" placeholder="Podaj cenę w zł">
+        <p class="error_span" id="price_error_span">Podałeś złą cene</p>
+        </div>
+        <div class="images-container">
+        <div class="front_photo_wrapper">
+        <h4>Zdjęcie Przód:</h4>
+            <div id="dragger_wrapper">
+            <div id="dragger">
+                <div class="icon"><i class="fa-solid fa-images"></i></div>
+                 <button class="browseFile" id="browseFile">Wybierz Plik</button> <input type="file" hidden id="front_photo" class="fileInputField" />
+            </div>
+            <div class="fileName"> </div>
+            <p class="imgnote">Obsługiwane formaty: JPG, PNG, JPEG</p>
+           
+        </div>   
+        <!-- <label for="front_photo">Zdjęcie - Przód</label><input type="file" name="front_photo" id="front_photo"> -->
+        <p class="error_span" id="front_image_error_span">Problem z 1 zdjeciem</p>
+        </div>
+        <div class="back_photo_wrapper">
+        <h4>Zdjęcie Tył:</h4>
+        <div id="dragger_wrapper">
+            <div id="dragger">
+                <div class="icon"><i class="fa-solid fa-images"></i></div> <button class="browseFile" id="browseFile">Wybierz Plik</button> <input type="file" hidden id="back_photo" class="fileInputField" />
+            </div>
+            <div class="fileName"> </div>
+            <p class="imgnote">Obsługiwane formaty: JPG, PNG, JPEG</p>
+        </div>   
+        <!-- <label for="front_photo">Zdjęcie - Przód</label><input type="file" name="back_photo" id="back_photo"> -->
+        <p class="error_span" id="back_image_error_span">Problem z tylnim zdjeciem</p>
+        </div>
+        </div>
+        <p id="chosen">Wybrany podręcznik: </p>
+        <button id="submit">Wystaw ofertę</button>
+        <p class="error_span" id="submit_error_span">Error</p>
+        </form>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <div class="logo-footer">
+                <a href="index.php"><div class="footer-image"></div></a>
+                <span class="break"></span>
+            </div>
+
+            <div class="footer-nav">
+                <div class="footer-nav-responsive">
+                    <div class="nav-list">
+                        <ul>
+                            <li><a href="#offers-section">Kategorie</a></li>
+                            <li><a href="offer_page.php">Kup</a></li>
+                            <li><a href="#">Sprzedaj</a></li>
+                        </ul>
+                    </div>
+                    <div class="social-box-responsive">
+                        <div class="socials">
+                            <a href="#"><span class="mail">gorckacost@mail.com</span></a>
+                            <a href="#"><span class="location">Rabka-zdrój</span></a>
+                        </div>
+        
+                    </div>
+                    <div class="copyright">
+                        <p>© 2022 Nazwa. Wszelkie prawa zastrzeżone </p>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="social-box">
+                <div class="socials">
+                    <span class="mail">gorckacost@mail.com</span>
+                    <span class="location">Rabka-zdrój</span>
+                </div>
+
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
