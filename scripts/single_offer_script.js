@@ -13,19 +13,19 @@ const get_data_for_mainpage = function (){
         },
         success: function(response){
             if(response[0]==false)
-            { 
-                let local_storage_data={
-                    matematyka:[],
-                    historia:[]
-                };
+            {
+                let local_storage_data={};
                 const books=response[2];
                 for(const element of books)
                 {
-                    const category=element.category;
+                    const category=element.category;//Tą zajefajną funkcję dać wszędzie
+                    if(!local_storage_data[category]){
+                        local_storage_data[category]=[];
+                    }
                     local_storage_data[category].push(element);
                 }
                 local_storage_data=JSON.stringify(local_storage_data);
-                localStorage.setItem("books",local_storage_data);;
+                localStorage.setItem("books",local_storage_data);
             }
             display_sample_offer();
         }

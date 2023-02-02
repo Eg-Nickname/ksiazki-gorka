@@ -363,9 +363,9 @@ h3{
     color: #fff;
 }
 
-#dragger {
-    width: 100%;
-    height: 400px;
+.dragger {
+    width: 210px;
+    height: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -373,7 +373,6 @@ h3{
     border: 2px dashed #fbfbfb;
     border-radius: 5px;
     background-color: #A88E87;
-    padding: 2rem;
 }
 
 #dragger.active {
@@ -481,11 +480,11 @@ button:hover {
     font-size: 12px;
     font-weight: normal;
     display: none;
-    margin: 2rem 0;
+    margin: 1rem 0 0 0;
     text-align: center;
 }
 
-#chosen{
+.chosen{
     font-size: 14px;
     color: #A88E87;
     font-weight: normal;

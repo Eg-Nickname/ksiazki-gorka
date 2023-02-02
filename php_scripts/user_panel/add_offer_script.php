@@ -5,21 +5,25 @@ if(!isset($_SESSION['logged_in'])){
 }
 $error=false;
 $error_msg=[];
+$error_id=[];
 $allowed_exs = array("jpg", "jpeg", "png");
 $new_img_name="";
 $new_bc_img_name="";
 $seller=$_SESSION['user_id'];
 if(!isset($_POST['book_id']) || strlen($_POST['book_id'])==0){
     $error=true;
-    array_push($error_msg,'Nie wybrano podręcznika');
+    $error_msg['title_error_span']='Nie wybrano podręcznika';
+    array_push($error_id,'title_error_span');
 }
-if(!isset($_POST['price']) || $_POST['price']==0){
+if(!isset($_POST['price']) || $_POST['price']<=0){
     $error=true;
-    array_push($error_msg,'Nie podano ceny');
+    $error_msg['price_error_span']='Nie podano ceny';
+    array_push($error_id,'price_error_span');
 }
 if(!isset($_FILES['front_photo'])){
     $error=true;
-    array_push($error_msg,'Nie wybrano przedniego zdjęcia');
+    $error_msg['front_image_error_span']='Nie wybrano przedniego zdjęcia';
+    array_push($error_id,'front_image_error_span');
 }
 else{
     $img_ex = pathinfo($_FILES['front_photo']['name'], PATHINFO_EXTENSION);
@@ -28,12 +32,14 @@ else{
         $new_img_name = uniqid("IMG-").'.'.$img_ex_lc;
     }else {
         $error=true;
-        array_push($error_msg,'Rozszerzenie zdjęcia przodu nie jest obsługiwane');
+        $error_msg['front_image_error_span']='Rozszerzenie zdjęcia przodu nie jest obsługiwane';
+        array_push($error_id,'front_image_error_span');
     }
 }
 if(!isset($_FILES['back_photo'])){
     $error=true;
-    array_push($error_msg,'Nie wybrano tylnego zdjęcia');
+    $error_msg['back_image_error_span']='Nie wybrano tylnego zdjęcia';
+    array_push($error_id,'back_image_error_span');
 }
 else{
     $bc_img_ex = pathinfo($_FILES['back_photo']['name'], PATHINFO_EXTENSION);
@@ -42,7 +48,8 @@ else{
         $new_bc_img_name = uniqid("IMG-").'.'.$bc_img_ex_lc;
     }else {
         $error=true;
-        array_push($error_msg,'Rozszerzenie zdjęcia tyłu nie jest obsługiwane');
+        $error_msg['back_image_error_span']='Rozszerzenie zdjęcia tyłu nie jest obsługiwane';
+        array_push($error_id,'back_image_error_span');
     }
 }
 if(!$error){
@@ -54,18 +61,22 @@ if(!$error){
     $serwer_bc_img_path='users_offers/'.$new_bc_img_name;
     require_once '../connect.php';
     $connection=mysqli_connect($host, $db_user,$db_password,$db_name);
-    $sql="INSERT INTO `users_offers`(`seller`,`price`,`photo1`,`photo2`,`status`, `book_id`) VALUES ('$seller','$price','$serwer_img_path','$serwer_bc_img_path','available','$id')";
-    $result=mysqli_query($connection,$sql);
-    if($result){
-        move_uploaded_file($_FILES['front_photo']['tmp_name'], $img_upload_path);
-        move_uploaded_file($_FILES['back_photo']['tmp_name'], $bc_img_upload_path);
-        array_push($error_msg,'Pomyślnie dodano ofertę');
+    if(move_uploaded_file($_FILES['front_photo']['tmp_name'], $img_upload_path) && move_uploaded_file($_FILES['back_photo']['tmp_name'], $bc_img_upload_path))
+    {
+        $sql="INSERT INTO `users_offers`(`seller`,`price`,`photo1`,`photo2`,`status`, `book_id`) VALUES ('$seller','$price','$serwer_img_path','$serwer_bc_img_path','available','$id')";
+        $result=mysqli_query($connection,$sql);
+        if($result){
+            array_push($error_msg,'Pomyślnie dodano ofertę');
+        }
+        else{
+            array_push($error_msg,'Błąd serwera.Spróbuj później');
+        }
     }
     else{
         array_push($error_msg,'Błąd serwera.Spróbuj później');
     }
     mysqli_close($connection);
 }
-$array=[$error,$error_msg];
+$array=[$error,$error_msg,$error_id];
 echo json_encode($array);
 ?>
