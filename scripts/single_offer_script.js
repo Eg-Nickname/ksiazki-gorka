@@ -2,7 +2,6 @@
 //--------------------------------------------------------------------------
 //Pobieranie elementów do localStorage, skopiowane z innego skryptu, bo eksport nie chiciał działać- Sadge
 const get_data_for_mainpage = function (){
-
     localStorage.removeItem("books");
     $.ajax({
         url: 'php_scripts/get_data.php',

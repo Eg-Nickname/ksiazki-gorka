@@ -168,6 +168,21 @@ document.getElementById('submit').addEventListener('click', function() {
                 document.getElementById(`${error}`).innerHTML=error_msg[error];
             })
         }
+        else{
+            document.querySelector('.search-input').value=null;
+            document.querySelector('#price').value=null;
+            const draggers=Array.from(document.querySelectorAll('.dragger'));
+            draggers.forEach(dragger=>{
+                dragger.lastElementChild.remove();
+                dragger.classList.remove('active');
+                for(const child of dragger.children){
+                    child.style.display = null;
+                }
+                dragger.nextElementSibling.innerHTML=null;
+            })
+            document.getElementById('chosen').innerHTML='Wybierz podręcznik';
+            document.getElementById('chosen_price').innerHTML='Podaj cenę';
+        }
       }
     });
   });
