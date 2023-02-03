@@ -27,7 +27,7 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
                     <ul>
                         <li><a href="index.php#offers-section">Kategorie</a></li>
                         <li><a href="offer_page.php">Kup</a></li>
-                        <li><a href="#">Sprzedaj</a></li>
+                        <li><a href="user_panel/add_offer_page.php">Sprzedaj</a></li>
                     </ul>
                 </div>
             </div>
@@ -36,7 +36,7 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
             if($is_logged_in){
                 echo<<<END
                 <div class="right-nav-authorized">
-                    <a id="user-panel-button"></a>
+                    <a href="user_panel/active_users_offers.php" id="user-panel-button"></a>
                     <a id="messages-button"></a>
                     <a id="log_out"></a>
                 </div>

@@ -47,15 +47,14 @@ const get_data_for_mainpage = function (){
         success: function(response){
             if(response[0]==false)
             {
-                console.log("dopd");
-                let local_storage_data={
-                    matematyka:[],
-                    historia:[] //poprawić na nową funkcję z add_offer_page_scr
-                };
+                let local_storage_data={};
                 const books=response[2];
                 for(const element of books)
                 {
-                    const category=element.category;
+                    const category=element.category;//Tą zajefajną funkcję dać wszędzie
+                    if(!local_storage_data[category]){
+                        local_storage_data[category]=[];
+                    }
                     local_storage_data[category].push(element);
                 }
                 local_storage_data=JSON.stringify(local_storage_data);
@@ -144,45 +143,54 @@ $("body").on("click", ".book-btn",get_sample_book_data);
 ///////////////////////////////////////
 // $(document).ready(function() {
 const searching_function=function(){
-    const search_bar=$('#search-input');
-    if($('.search-input').is(":focus")){
-        const suggestions_list = document.getElementById('suggestions_list');
-        $(suggestions_list).addClass('active_suggestion');
-        while(suggestions_list.childElementCount!=0){
-            suggestions_list.firstChild.remove();
-        }
-        const user_input=$('.search-input').val().toLowerCase();
-        if(user_input){
-            const books=JSON.parse(localStorage.getItem('books'));
-            for(const category in books){
-                for(const book of books[category]){
-                    let title = (book.book_name);
-                    const lower_title=title.toLowerCase();
-                    // console.log(user_input);
-                    if(lower_title.match(user_input) && suggestions_list.childElementCount<3){
-                        const a=document.createElement('a');
-                        a.innerHTML=`${title}, EAN: ${book.MEN}`;
-                        title=(book.book_name.split(" ")).join("-");
-                        a.href=`oferta?number=${book.book_ID}&category=${book.category}&title=${title}`;
-                        $(a).addClass("suggestion");
-                        $(suggestions_list).append(a);
-                    }
+    const search_bar=document.querySelector('.search-input');
+    const suggestions_list = document.getElementById('suggestions_list');
+    $(suggestions_list).addClass('active_suggestion');
+    while(suggestions_list.childElementCount!=0){
+        suggestions_list.firstChild.remove();
+    }
+    const user_input=$('.search-input').val().toLowerCase();
+    if(user_input){
+        const books=JSON.parse(localStorage.getItem('books'));
+        for(const category in books){
+            for(const book of books[category]){
+                let title = (book.book_name);
+                const lower_title=title.toLowerCase();
+                // console.log(user_input);
+                if(lower_title.match(user_input) && suggestions_list.childElementCount<3){
+                    const a=document.createElement('a');
+                    a.innerHTML=`${title}, MEN: ${book.MEN}`;
+                    title=(book.book_name.split(" ")).join("-");
+                    a.href=`oferta?number=${book.book_ID}&category=${book.category}&title=${title}`;
+                    $(a).addClass("suggestion");
+                    $(suggestions_list).append(a);
                 }
             }
         }
     }
 }
-$('.search-input').on('click',searching_function);
-$(document).keyup(function(){//to ustawić na input w polu 
-    searching_function(); 
+document.querySelector('.search-input').addEventListener('input', function(){
+    searching_function();
 })
-$(document).on('click',function(){ // to na utratę focusu, 
-    if(!$('.search-input').is(":focus")){
-        const suggestions_list = document.getElementById('suggestions_list'); //Trzeba sprawdzić czy po kliknięciu na przedmiot na głównej się usuwa, bo na razie jak jest pusty to nie
-        $(suggestions_list).removeClass('active_suggestion');
+document.querySelector('.search-input').addEventListener('focus', function(){
+    this.select();
+    searching_function();
+})
+document.querySelector('.search-input').addEventListener('focusout', function(){
+    const suggestions_list = document.querySelector('#suggestions_list');
+    setTimeout(()=>{
         while(suggestions_list.childElementCount!=0){
             suggestions_list.firstChild.remove();
         }
-    }
-});
+    },150)
+})
+// $(document).on('click',function(){ // to na utratę focusu, 
+//     if(!$('.search-input').is(":focus")){
+//         const suggestions_list = document.getElementById('suggestions_list'); //Trzeba sprawdzić czy po kliknięciu na przedmiot na głównej się usuwa, bo na razie jak jest pusty to nie
+//         $(suggestions_list).removeClass('active_suggestion');
+//         while(suggestions_list.childElementCount!=0){
+//             suggestions_list.firstChild.remove();
+//         }
+//     }
+// });
 // })

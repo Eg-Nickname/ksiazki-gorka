@@ -38,16 +38,15 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
                     <ul>
                         <li><a href="../index.php">Kategorie</a></li>
                         <li><a href="../offer_page.php">Kup</a></li>
-                        <li><a href="user_panel/add_offer_page.php">Sprzedaj</a></li>
+                        <li><a href="#">Sprzedaj</a></li>
                     </ul>
                 </div>
             </div>
-            
             <?php
             if($is_logged_in){
                 echo<<<END
                 <div class="right-nav-authorized">
-                    <a id="user-panel-button"></a>
+                    <a id="user-panel-button" href ="../user_panel/active_users_offers.php"></a>
                     <a id="messages-button"></a>
                     <a id="log_out"></a>
                 </div>
@@ -71,19 +70,19 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
             <input class="search-input" type="text" placeholder="Wybierz podręcznik">
             <input id="book_id" type="hidden">
             <div class="suggestions-list" id="suggestions_list"></div>
-            <p  class="error_span" id="title_error_span">Error</p>
+            <p class="error_span" id="title_error_span">Error</p>
         </div>
         <!-- DAJ TU GDZIEŚ INFO ŻE ZDJĘCIE MUSI BYĆ JPG,PNG,JPEG -->
         <div class="price-container">
         <h4>Cena</h4>
-        <input type="number" name="price" id="price" placeholder="Podaj cenę w zł">
+        <input type="number" name="price" id="price" placeholder="Podaj cenę w zł" class="price_input">
         <p class="error_span" id="price_error_span">Podałeś złą cene</p>
         </div>
         <div class="images-container">
         <div class="front_photo_wrapper">
         <h4>Zdjęcie Przód:</h4>
             <div id="dragger_wrapper">
-            <div id="dragger">
+            <div id="dragger" class="dragger">
                 <div class="icon"><i class="fa-solid fa-images"></i></div>
                  <button class="browseFile" id="browseFile">Wybierz Plik</button> <input type="file" hidden id="front_photo" class="fileInputField" />
             </div>
@@ -97,7 +96,7 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
         <div class="back_photo_wrapper">
         <h4>Zdjęcie Tył:</h4>
         <div id="dragger_wrapper">
-            <div id="dragger">
+            <div id="dragger" class="dragger">
                 <div class="icon"><i class="fa-solid fa-images"></i></div> <button class="browseFile" id="browseFile">Wybierz Plik</button> <input type="file" hidden id="back_photo" class="fileInputField" />
             </div>
             <div class="fileName"> </div>
@@ -107,7 +106,8 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
         <p class="error_span" id="back_image_error_span">Problem z tylnim zdjeciem</p>
         </div>
         </div>
-        <p id="chosen">Wybrany podręcznik: </p>
+        <p id="chosen" class="chosen">Wybrany podręcznik: </p>
+        <p id="chosen_price" class="chosen">Cena: </p>
         <button id="submit">Wystaw ofertę</button>
         <p class="error_span" id="submit_error_span">Error</p>
         </form>

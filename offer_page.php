@@ -37,7 +37,7 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
             if($is_logged_in){
                 echo<<<END
                 <div class="right-nav-authorized">
-                    <a id="user-panel-button"></a>
+                    <a href="user_panel/active_users_offers_page.php" id="user-panel-button"></a>
                     <a id="messages-button"></a>
                     <a id="log_out"></a>
                 </div>

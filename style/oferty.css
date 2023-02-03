@@ -432,6 +432,7 @@ section .user_offer_box_image{
     background-position: center;
     width: 210px;
     height: 300px;
+    cursor: pointer;
     
 }
 

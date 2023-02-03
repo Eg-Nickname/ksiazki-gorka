@@ -1,4 +1,5 @@
 <?php
+/////////////SPRAWDZIĆ CZY TO NIE OFERTA UŻYTRKOWNIKA NIBY BY SIE PRZYDALO
 session_start();
 $error=false;
 $message="";
