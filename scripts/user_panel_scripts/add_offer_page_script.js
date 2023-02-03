@@ -81,6 +81,8 @@ document.querySelector('.search-input').addEventListener('focusout', function(){
 /////////////////////Drag and Drop////////////////////////////////
 /////////////////////////////////////////////////////
 
+//Nie działa gdy ktoś usunie wcześniej wgran zdjęcie
+
 const draggerArea = document.querySelectorAll('#dragger');
 const inputField = document.querySelectorAll('.fileInputField');
 const fileName = document.querySelectorAll('.fileName');
@@ -92,10 +94,10 @@ browseFile[0].addEventListener('click', () => {
     console.log(browseFile[0])
 });
 
-// inputField[0].addEventListener('change', function(e) {
-//     file = this.files[0];
-//     fileHandler(file);
-// });
+inputField[0].addEventListener('change', function(e) {
+    file = this.files[0];
+    fileHandler(file);
+});
 
 //Usuwanie Nazwy Pliku i resetowanie elementów
 const deleteHandler = () => {
@@ -123,13 +125,7 @@ const fileHandler = (file) => {
     } else {
         draggerArea[0].classList.remove('active');
     }}
-    console.log(browseFile[0]);
-    console.log(inputField[0]);
-    
-    inputField[0].addEventListener('change', function(e) {
-        file = this.files[0];
-        fileHandler(file);
-    });
+
 /////////////////////2////////////////////////////////
 browseFile[1].addEventListener('click', () => {
     inputField[1].value = ""
