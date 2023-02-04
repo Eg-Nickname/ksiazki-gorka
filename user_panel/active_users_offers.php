@@ -14,7 +14,7 @@ section{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 2rem;
-    padding: 6rem 0;
+    padding: 6rem 2rem;
     max-width: 1140px;
     margin: 0 auto;
 }
@@ -97,6 +97,14 @@ section .user_offer_box_content_button:hover{
     color: #fff;
     border-radius: 10px;
 }
+
+section p{
+    font-size:16px;
+    font-weight:normal;
+    color: #A89887;
+    text-align: center;
+    height: 50px!important;
+}
 .modal-box{
     visibility:hidden;
     display: flex;
@@ -126,7 +134,18 @@ section .user_offer_box_content_button:hover{
 }
 
 .delete-box-wrapper{
-    display: flex;
+    display: none;
+    flex-direction: column;
+    row-gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 6rem;
+}
+
+.change-price-box-wrapper{
+    display: none;
     flex-direction: column;
     row-gap: 2rem;
     justify-content: center;
@@ -155,6 +174,15 @@ section .user_offer_box_content_button:hover{
 }
 
  .button-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    gap: 4rem;
+    width: 50%;
+}
+
+.input-wrapper{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -204,7 +232,49 @@ section .user_offer_box_content_button:hover{
     transform: scale(1.1);
 }
 
+.confirm-change-price{
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 10px;
+    border: 1px solid #F5E9DC;
+    /* border-radius: 10px; */
+    background-color: transparent;
+    color: #A88E87;
+    outline: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    width: 50%;
+}
+
+.cancel-change-price{
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 10px;
+    border: 1px solid #A88E87;
+    /* border-radius: 10px; */
+    background-color: #F5E9DC;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    width: 50%;
+}
+
+.confirm-change-price:hover
+{
+    transform: scale(1.1);
+}
+
+.cancel-change-price:hover{
+    transform: scale(1.1);
+}
+
 .offer-image{
+    display: none;
     max-width:512px;
     width:92%;
     margin: 0 auto;
@@ -245,9 +315,9 @@ button {
     outline: none;
     text-transform: capitalize;
     border-radius: 5px;
-    margin-top: 0.5rem;
     width: 20%;
     transition: all 0.5s ease-in-out;
+    padding: 0.5rem 1rem
 }
 .user_offer_image_button:hover{
     background-color: transparent;
@@ -268,12 +338,34 @@ button {
     section{
     grid-template-columns: 1fr 1fr;
     }
+    .modal-box > div{
+        padding: 0;
+    }
+
+    .input-wrapper{
+        width: 80%;
+    }
+
+    .button-wrapper{
+        width: 80%;
+    }
 }
 
 @media only screen and (max-width:500px) {
     section{
     grid-template-columns: 1fr;
     padding: 6rem 3rem;
+}
+.delete-text {
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.delete-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
 }
 }
     </style>
@@ -325,18 +417,30 @@ button {
     </div>
     </div> -->
     <div class="modal-box">
-
-        <span class="close-modal-box">X</span>
-    <div class="delete-box-wrapper"> 
-        <h1 class="title-delete delete-text"></h1>
-        <p class="delete-title"></p>
-        <div class="delete-popup">
-                <div class="button-wrapper">
-                    <button class="confirm-delete">Usuń</button>
-                    <button class="cancel-delete">Anuluj</button>
-                </div>
+            <span class="close-modal-box">X</span>
+            <img src="" class="offer-image">
+        <div class="delete-box-wrapper"> 
+            <h1 class="title-delete delete-text"></h1>
+            <p class="delete-title"></p>
+            <div class="delete-popup">
+                    <div class="button-wrapper">
+                        <button class="confirm-delete">Usuń</button>
+                        <button class="cancel-delete">Anuluj</button>
+                    </div>
+            </div>
         </div>
-    </div>   
+        <div class="change-price-box-wrapper"> 
+            <h1 class="title-delete delete-text"></h1>
+            <div class="input-wrapper">
+                <input type="number" id="change-price-input" placeholder="Zmień cenę" class="price_input">
+            </div>
+            <div class="delete-popup">
+                    <div class="button-wrapper">
+                        <button class="confirm-change-price">Zmień</button>
+                        <button class="cancel-change-price">Anuluj</button>
+                    </div>
+            </div>
+        </div>     
             <!-- <img src="" class="offer-image"> -->
             <!-- <div class="popup-order-box">
                 <p class="popup-order-box-alert"></p>   
