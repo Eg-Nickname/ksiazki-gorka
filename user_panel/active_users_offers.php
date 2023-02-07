@@ -105,7 +105,7 @@ section p{
     text-align: center;
     height: 50px!important;
 }
-.modal-box{
+div[class*='modal-box']{
     visibility:hidden;
     display: flex;
     position: fixed; 
@@ -417,8 +417,6 @@ button {
     </div>
     </div> -->
     <div class="modal-box">
-            <span class="close-modal-box">X</span>
-            <img src="" class="offer-image">
         <div class="delete-box-wrapper"> 
             <h1 class="title-delete delete-text"></h1>
             <p class="delete-title"></p>
@@ -451,6 +449,10 @@ button {
                             <button class="cancel-delete">Anuluj</button>
                         </div>
                     </div> -->
+    </div>
+    <div class="modal-box-img">
+            <span class="close-modal-box">X</span>
+            <img src="" class="offer-image">
     </div>
     <footer>
         <div class="footer-container">

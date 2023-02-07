@@ -9,7 +9,7 @@ if(isset($_POST['book_id']) && isset($_POST['number_of_offers'])){
     try{
         $connection=new mysqli($host,$db_user,$db_password,$db_name);
         if($connection->connect_errno==0){
-            $sql="SELECT * FROM users_offers WHERE book_id='$bookId' AND status='available' ORDER BY price ASC LIMIT $number_of_offers";
+            $sql="SELECT users_offers.*, users.name,users.surname FROM users_offers JOIN users ON users_offers.seller=users.id_user WHERE book_id='$bookId' AND status='available' ORDER BY price ASC LIMIT $number_of_offers";
             $result=$connection->query($sql);
             $everything= $result->fetch_ALL(MYSQLI_ASSOC);
             $everything=array_slice($everything,$number_of_offers-12,$number_of_offers);

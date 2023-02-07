@@ -11,10 +11,10 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oferta</title>
+    <title>Oferty użytkownika</title>
     <link rel="stylesheet" href="style/oferty.css">
     <script defer src="scripts/jquery-3.6.1.min.js"></script>
-    <script defer src="scripts/single_offer_script.js"></script>
+    <script defer src="scripts/all_from_user_script.js"></script>
 </head>
 <body>
     <nav>
@@ -57,66 +57,6 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
     </nav>
 
     <main>
-        <div class="main-container">
-            <div class="category-path">
-                <!-- <p>Matematyka > Matematyka 3 podręcznik</p> -->
-            </div>
-            <div class="base-book-info">
-                <div class="base-img">
-                </div>
-                <div class="base-info-wrapper">
-                    <div class="base-title">
-                        <!-- <h2></h2> -->
-                    </div>
-                    <div class="base-info">
-
-                        <div class="publisher-info info-box-style">
-                            <div class="publisher-icon icon-box-style">
-                            <img src="images/book-bookmark.svg" alt="">
-                            </div>
-                            <div class="publisher-name name-box-style">
-                            <!-- <p>Wydawnictwo WSIP</p> -->
-                            </div>   
-                        </div>
-                        <div class="date-info info-box-style">
-                            <div class="date-icon icon-box-style">
-                                <img src="images/calendar.svg" alt="">
-                                </div>
-                                <div class="date-name name-box-style">
-                                <!-- <p>Wydawnictwo WSIP</p> -->
-                                </div>   
-                        </div>
-                        <div class="isbn-info info-box-style">
-                            <div class="isbn-icon icon-box-style">
-                                <img src="images/hastag.svg" alt="">
-                                </div>
-                                <div class="isbn-name name-box-style">
-                                <!-- <p>Wydawnictwo WSIP</p> -->
-                                </div> 
-                            </div>
-                        <div class="authors-info info-box-style">
-                            <div class="authors-icon icon-box-style">
-                                <img src="images/copyright.svg" alt="">
-                                </div>
-                                <div class="authors-name name-box-style">
-                                <!-- <p>Wydawnictwo WSIP</p> -->
-                                </div> 
-                            </div>
-                            </div>
-                    <div class="break">
-                    </div>
-                    <div class="base-text">
-                    </div>
-                </div>
-
-                <div class="base-price-info">
-                <a id="go_to_offer">Przejdź do ofert</a>
-                </div>
-                </div>
-
-            </div> 
-            <div class="break"></div> 
-            
             <section id="seller-offers">
                 <!-- <div class="user_offer_box">
                     <div class="user_offer_box_image"></div>
@@ -151,8 +91,6 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
                     </div>
                 </div>
             </div>
-        <button id="scroll-to-top"></button>
-        <h1 class="show_me_more">Pokaż więcej</h1>
     </main>
     <footer>
         <div class="footer-container">

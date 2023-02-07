@@ -1,98 +1,13 @@
-/////////////////////////////////////////////////////////////////////////////
-//--------------------------------------------------------------------------
-//Pobieranie elementów do localStorage, skopiowane z innego skryptu, bo eksport nie chiciał działać- Sadge
-const get_data_for_mainpage = function (){
-    localStorage.removeItem("books");
+function show_users_offers(){
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const seller=urlParams.get('seller');
     $.ajax({
-        url: 'php_scripts/get_data.php',
+        url: 'php_scripts/sellers_offers.php',
         type: 'POST',
         dataType: 'JSON',
         data:{
-            flag:true
-        },
-        success: function(response){
-            if(response[0]==false)
-            {
-                let local_storage_data={};
-                const books=response[2];
-                for(const element of books)
-                {
-                    const category=element.category;//Tą zajefajną funkcję dać wszędzie
-                    if(!local_storage_data[category]){
-                        local_storage_data[category]=[];
-                    }
-                    local_storage_data[category].push(element);
-                }
-                local_storage_data=JSON.stringify(local_storage_data);
-                localStorage.setItem("books",local_storage_data);
-            }
-            display_sample_offer();
-        }
-    })
-}
-get_data_for_mainpage();
-//------------------------------------------------------------------------------
-// Pobieranie danych z url i wyświetlenie ich jako przykładowa książka
-const display_sample_offer = function (){
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    const bookId=urlParams.get('number');
-    const title = urlParams.get('title').replaceAll("-"," ");
-    const category = urlParams.get('category');
-    const books=JSON.parse(localStorage.getItem('books'));
-    const subject=books[category];
-    if(subject)
-    {
-        const data = {};
-        for(const element of subject){
-            if(element.book_ID==bookId && element.book_name==title){
-                for(const key in element)
-                {
-                    data[key] = element[key];
-                }
-                break;
-            }
-        }
-        console.log(data);
-        if(Object.keys(data).length!=0){
-            console.log(data.picture);
-            $('.base-img').css('background-image',`url("${data.picturexl}")`);
-            $('.category-path').append("<p>" + category + " > " + data.book_name + "<h2")
-            $('.base-title').append("<h2>" + data.book_name + "<h2>")
-            $('.publisher-name').append("<p> Wydawnictwo: " + data.publishing_house + "<p>")
-            $('.date-name').append("<p> Data Wydania: " + data.release_date + "<p>")
-            $('.isbn-name').append("<p> MEN: " + data.MEN + "<p>")
-            $('.authors-name').append("<p> Autorzy: " + data.authors + "<p>")
-            // $('.base-text').append("<p>" + data.description + "<p>")
-            
-            // ('background-image',`url("${data.picture}")`);
-            // `url("${element['picture']}")`
-            show_users_offers();
-        }
-        else{
-            document.querySelector('main').innerHTML="";
-            $('main').append('<h1 class="no_exists">Strona nie istnieje</h1>')
-        }
-    }
-    else{
-        document.querySelector('main').innerHTML="";
-        $('main').append('<h1 class="no_exists">Strona nie istnieje</h1>')
-    }
-}
-///////
-const show_users_offers= function (){
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    const bookId=urlParams.get('number');
-    const number_of_offers=document.querySelector('section').childElementCount;
-    console.log(number_of_offers);
-    $.ajax({
-        url: 'php_scripts/show_users_offers.php',
-        type: 'POST',
-        dataType: 'JSON',
-        data:{
-            book_id:bookId,
-            number_of_offers: number_of_offers
+            seller: seller
         },
         success: function(response){
             console.log(response);
@@ -126,45 +41,23 @@ const show_users_offers= function (){
                     confirm_buy(offer)
                     // declare_buy(Number(offer.offer_id));
                 });
-                const a=document.createElement('a');
-                a.href=`oferty-uzytkownika?seller=${offer.seller}`;
-                a.innerHTML=`Od: ${offer.name} ${offer.surname}`;
-                div_content.append(img_btn,price,button,a);
+                const title=document.createElement('p');
+                title.innerHTML=offer.book_name;
+                const men=document.createElement('p');
+                men.innerHTML=`MEN: ${offer.men}`;
+                div_content.append(img_btn,title,men,price,button);
                 div.append(img_box,div_content);
                 document.querySelector('section').appendChild(div);
             }
-        if(response.length!=12){
-            $('.show_me_more').off('click');
-            document.querySelector('.show_me_more').remove();
-        }
         }
     })
 }
-$('.show_me_more').on('click', function(){
-    console.log("s");
-    show_users_offers();
-});
-$('#go_to_offer').on('click', function(){
-    const offers=document.getElementById('seller-offers');
-    offers.scrollIntoView({
-        behavior: 'smooth'
-    });
-})
-$('#scroll-to-top').on('click', function(){
-    const offers=document.getElementById('seller-offers');
-    offers.scrollIntoView({
-        behavior: 'smooth'
-    });
-})
+show_users_offers();
 //zarezerwowanie w bazie
 const confirm_buy=function(offer){
     $('.buy-popup').css("visibility","visible");
     $('.buy-popup').css("width","100vw");
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    let title=urlParams.get('title');
-    title=title.replaceAll("-"," ");
-    console.log(title);
+    const title=offer.book_name;
     $('.title-buy').html(title);
     $('.price-buy').html(`Cena: ${offer.price} ZŁ`);
     $('.confirm-buy').on('click',function(){
@@ -190,8 +83,7 @@ const declare_buy = function(offer_id){
         type:'POST',
         dataType: 'JSON',
         data: {
-            offer_id:offer_id,
-            book_id:bookId,
+            offer_id:offer_id
         },
         success: function(response){
             $('.popup-order-box').css("visibility","visible");

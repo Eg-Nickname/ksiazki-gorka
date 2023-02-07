@@ -44,8 +44,9 @@ function get_active_offers() {
                     const pricebutton=document.createElement('button');
                     pricebutton.classList.add("user_offer_box_content_button");
                     pricebutton.innerHTML = "Zmień Cenę";
-                    $(pricebutton).on('click', function(){
-                        change_price(offer)
+                    pricebutton.addEventListener('click', function(){
+                        const price=(pricebutton.parentNode.previousSibling.lastChild.innerHTML).replace(" PLN","");//XD
+                        change_price(offer,price)
                     }); 
                     const buttonDiv = document.createElement('div');
                     buttonDiv.classList.add("user_offer_box_content_button_div");
@@ -78,7 +79,7 @@ function delete_offer(offer){
         setTimeout(()=>{
             confirm_delete(offer.offer_id);
             popupwrap.style.display = 'none';
-            hide_image_popup();
+            hide_price_popup();
         },300)
         $('.confirm-delete').off('click');
         $('.cancel-delete').off('click');
@@ -87,7 +88,7 @@ function delete_offer(offer){
     $('.cancel-delete').on('click',function(){
         $('.confirm-delete').off('click');
         $('.cancel-delete').off('click');
-        hide_image_popup();
+        hide_price_popup();
         popupwrap.style.display = 'none';
     });
 }
@@ -107,7 +108,8 @@ function confirm_delete(offer_id){
     })
 }
 
-function change_price(offer){
+function change_price(offer,price){
+    const first_price=document.getElementById('change-price-input').value =Number(price);
     const pricewrap= document.querySelector('.change-price-box-wrapper');
     const popup=document.querySelector('.change-price-box-wrapper .delete-popup');
     const inputwrap=document.querySelector('.change-price-box-wrapper .input-wrapper');
@@ -120,11 +122,13 @@ function change_price(offer){
     $('.modal-box').css('width','100%');
     $('.modal-box').css('height','101%');
     $('.confirm-change-price').on('click',function(){
-        setTimeout(()=>{
             // confirm_delete(offer.offer_id);
             pricewrap.style.display = 'none';
+            const price=Math.ceil(Number(document.getElementById('change-price-input').value));
+            if(price!=first_price){
+                confirm_price_change(offer.offer_id,price);
+            }
             hide_price_popup();
-        },300)
         $('.confirm-change-price').off('click');
         $('.cancel-change-price').off('click');
         // hide_image_popup();
@@ -137,7 +141,23 @@ function change_price(offer){
     });
     
 }
-
+function confirm_price_change(id,price){
+    $.ajax({
+        url:"../php_scripts/user_panel/change_price.php",
+        type:"POST",
+        dataType:"json",
+        data:{
+            id:id,
+            price:price
+        },
+        success: function(response){
+            if(response){
+                const p_price=document.querySelector(`#oferta${id} .user_offer_box_content_price`);
+                p_price.innerHTML=`${price} PLN`;
+            }
+        }
+    })
+}
 function change_offer_image(img_btn,image_photos){
     const offer_div=img_btn.parentNode.parentNode;
     const img_div=offer_div.querySelector('.user_offer_box_image');
@@ -163,18 +183,18 @@ function show_image_popup(){
     $('.offer-image').css('display','block');
     const src=get_current_image(this);
     document.querySelector('.offer-image').src=`../${src}`;
-    $('.modal-box').css('visibility','visible');
-    $('.modal-box').css('opacity','1');
-    $('.modal-box').css('width','100%');
-    $('.modal-box').css('height','101%');
+    $('.modal-box-img').css('visibility','visible');
+    $('.modal-box-img').css('opacity','1');
+    $('.modal-box-img').css('width','100%');
+    $('.modal-box-img').css('height','101%');
     $('.change-price-box-wrapper').css('display','none');
 }
 
 function hide_image_popup(){
-    $('.modal-box').css('visibility','hidden');
-    $('.modal-box').css('opacity','0');
-    $('.modal-box').css('width','0%');
-    $('.modal-box').css('height','0%');
+    $('.modal-box-img').css('visibility','hidden');
+    $('.modal-box-img').css('opacity','0');
+    $('.modal-box-img').css('width','0%');
+    $('.modal-box-img').css('height','0%');
     const popupwrap = document.querySelector('.delete-box-wrapper');
     popupwrap.style.display = 'none';
     $('.offer-image').css('display','none');
