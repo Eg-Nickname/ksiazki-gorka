@@ -13,6 +13,7 @@ if(isset($_POST['book_id']) && isset($_POST['number_of_offers'])){
             $result=$connection->query($sql);
             $everything= $result->fetch_ALL(MYSQLI_ASSOC);
             $everything=array_slice($everything,$number_of_offers-12,$number_of_offers);
+            mysqli_close($connection);
         }
         else{
             throw new Exception(mysqli_connect_errno());

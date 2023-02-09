@@ -19,6 +19,7 @@ else
         else{
             $sql="SELECT * FROM `sample_books`";
             $result=$connection->query($sql);
+            mysqli_close($connection);
             if($result){
             $everything= $result->fetch_ALL(MYSQLI_ASSOC); //nieskończone
             }

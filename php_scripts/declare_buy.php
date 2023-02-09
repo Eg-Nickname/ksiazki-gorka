@@ -19,6 +19,7 @@ if(isset($_SESSION['logged_in']))
                     $sql="UPDATE users_offers SET customer='$user_id', status='reserved' WHERE offer_id = '$offer_id'";
                     $result=$connection->query($sql);
                     $message="Zarezerwowano. Przejdź do panelu klienta, aby omówić szczegóły ze sprzedawacą";
+                    mysqli_close($connection);
                     if(!$result) throw new Exception(mysqli_connect_errno());
                 }
                 else{
