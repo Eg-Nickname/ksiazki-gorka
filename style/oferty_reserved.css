@@ -26,7 +26,6 @@ body{
 
 p{
     font-size: 16px;
-    font-weight: bold;
     text-transform: capitalize;
     color: #A89887;
 }
@@ -93,14 +92,21 @@ border-left: none;
     column-gap: 1rem;
     justify-content: flex-start;
     align-items: center;
+    justify-content: space-between;
     padding: 1rem;
 }
 
 .offer_info_wrapper .offer_info .buyer_name{
     font-size: 16px;
-    font-weight: bold;
     text-transform: capitalize;
     color: #A89887;
+}
+.buyer_name a{
+    color: #A89887;
+    font-weight: bold;
+}
+.buyer_name a:hover{
+    color: #6a5f54;
 }
 .offer_info_wrapper .offer_info .offer_info_chatbtn{
     width: 24px;
@@ -109,7 +115,7 @@ border-left: none;
     cursor: pointer;
 }
 
-#zajebane_p{
+.lovely_p{
     display: flex;
     align-self: center;
     align-items: center;
@@ -118,7 +124,9 @@ border-left: none;
     column-gap: 1rem;
     cursor: pointer;
 }
-
+.lovely_p:hover{
+    color: #6a5f54;
+}
 .offer_info_wrapper .offer_info_book_price{
     display: flex;
     flex-direction: row;
@@ -196,7 +204,9 @@ border-left: none;
     bottom: 0;
     width: 100%;
 }
-
+.chat_user_box_name{
+    font-weight: bold;
+}
 .input_box input{
     width: 100%;
     outline: none;

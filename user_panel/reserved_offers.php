@@ -40,10 +40,10 @@
     <div class="container">
         <div class='customer_box'>
 
-            <div class="offer_info_wrapper">
+            <!-- <div class="offer_info_wrapper">
                 <div class="offer_info">
                     <p class="buyer_name">Kupujący: Adam Małysz</p>
-                    <p href="#" id="zajebane_p"><img href="#" src="../images/envelope.svg" alt="envelope" class="offer_info_chatbtn">Otwórz czat</p>
+                    <p href="#" class="lovely_p"><img href="#" src="../images/envelope.svg" alt="envelope" class="offer_info_chatbtn">Otwórz czat</p>
                 </div>
                 <div class="offer_info_book_price">
                     <p class="offer_book">Matematyka na czasie</p>
@@ -61,9 +61,9 @@
                     <p class="offer_sum">Suma:</p>
                     <p class="offer_price_sum">64 PLN</p>
                 </div>
-            </div>
+            </div> -->
 
-            <div class="offer_info_wrapper">
+            <!-- <div class="offer_info_wrapper">
                 <div class="offer_info">
                     <p class="buyer_name">Kupujący: Adam Małysz</p>
                     <p href="#" id="zajebane_p"><img href="#" src="../images/envelope.svg" alt="envelope" class="offer_info_chatbtn">Otwórz czat</p>
@@ -84,9 +84,9 @@
                     <p class="offer_sum">Suma:</p>
                     <p class="offer_price_sum">64 PLN</p>
                 </div>
-            </div>
+            </div> -->
 
-            <div class="offer_info_wrapper">
+            <!-- <div class="offer_info_wrapper">
                 <div class="offer_info">
                     <p class="buyer_name">Kupujący: Adam Małysz</p>
                     <p href="#" id="zajebane_p"><img href="#" src="../images/envelope.svg" alt="envelope" class="offer_info_chatbtn">Otwórz czat</p>
@@ -107,13 +107,13 @@
                     <p class="offer_sum">Suma:</p>
                     <p class="offer_price_sum">64 PLN</p>
                 </div>
-            </div>
+            </div> -->
 
         </div>
 
         <div class="chat_box">
             <div class="chat_user_box">
-                <p class="chat_user_box_name">Andrzej Kmicic</p>
+                <p class="chat_user_box_name">WYBIERZ KONWERSACJĘ</p>
             </div>
             <div class="input_box">
                 <input type="text" name="message" id="message_input" placeholder="Napisz coś..." disabled>
