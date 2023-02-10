@@ -1,0 +1,217 @@
+html, body { 
+    scroll-behavior: smooth
+  }
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px;
+    font-weight: 400px;
+}
+
+a{
+    text-decoration: none;
+    font-size: 16px;
+    color: #513939;
+    font-weight: normal;
+    line-height: 20px;
+}
+
+body{
+    background-color: #fff!important;
+}
+
+p{
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: capitalize;
+    color: #A89887;
+}
+
+.nav-container{
+    border-bottom: none;
+}
+
+
+.container{
+    max-width: 1140px;
+    width: 100%;
+    height: 100%;
+    padding: 6rem 2rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    column-gap: 2rem;
+    /* grid-template-rows: 100%; */
+
+}
+.customer_box{
+    width: 100%;
+    color: white ;
+    overflow-y: scroll;
+    height: 50vh;
+    border: 2px solid #F5E9DC;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+    padding: 2rem 2rem;
+}
+
+.customer_box::-webkit-scrollbar {
+    width: 0.8em;
+    background-color: #F5F5F5;
+}
+ 
+.customer_box::-webkit-scrollbar-thumb {
+background-color: rgba(245, 233, 220, 1);
+border-right: none;
+border-left: none;
+}
+ 
+.customer_box::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(245, 233, 220, 1);
+  border-radius: 20px;
+  background: transparent;
+}
+
+.offer_info_wrapper{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #A89887;
+    width: 100%;
+    row-gap: 2rem;
+}
+.offer_info_wrapper .offer_info{
+    display: flex;
+    flex-direction: row;
+    column-gap: 1rem;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1rem;
+}
+
+.offer_info_wrapper .offer_info .buyer_name{
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: capitalize;
+    color: #A89887;
+}
+.offer_info_wrapper .offer_info .offer_info_chatbtn{
+    width: 24px;
+    height: 24px;
+    fill: #A89887;
+    cursor: pointer;
+}
+
+#zajebane_p{
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    column-gap: 1rem;
+    cursor: pointer;
+}
+
+.offer_info_wrapper .offer_info_book_price{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.offer_info_wrapper .offer_info_book_price p.offer_book{
+    font-size: 14px;
+    font-weight: normal;
+    text-transform: none;
+    color: #A89887;
+}
+
+.offer_info_wrapper .offer_info_book_price p.offer_price{
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: none;
+    color: #000;
+}
+
+.offer_info_wrapper .offer_info_sum{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #A89887;
+    padding: 2rem;
+    width: 100%;
+    padding: 1rem;
+} 
+
+.offer_info_wrapper .offer_info_sum p.offer_price_sum{
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: capitalize;
+    color: #000;
+}
+
+.offer_info_wrapper .offer_info_sum p.offer_sum{
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: capitalize;
+    color: #000;
+}
+
+.chat_box{
+    width: 100%;
+    color: white ;
+    height: 50vh;
+    border: 2px solid #F5E9DC;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat_box .chat_user_box{
+    width: 60%;
+    justify-self: center;
+    align-self: center;
+    border-bottom: 2px solid #F5E9DC;
+}
+
+.chat_box .chat_user_box p{
+    font-size: 16px;
+    color: #A89887;
+    text-transform: capitalize;
+    text-align: center;
+    padding: 1rem 0;
+}
+.chat_box .input_box{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.input_box input{
+    width: 100%;
+    outline: none;
+    color: #A89887;
+    /* border-radius: 10px; */
+    border: none;
+    border-top: 2px solid #F5E9DC;
+    padding: 1rem;
+    font-size: 16px;
+}
+
+.input_box input:disabled {
+    cursor: not-allowed;
+  }
+
+footer{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+}
