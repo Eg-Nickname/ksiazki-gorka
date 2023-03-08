@@ -12,7 +12,7 @@ function get_purchases(){
                 const p=document.createElement('p');
                 p.style.fontSize='32px';
                 p.style.color='black';
-                p.innerHTML="Jeszcze nic nie zarezerwowałeś";
+                p.innerHTML="Nie zarezerwowałeś jeszcze żadnego podręcznika";
                 p.style.textAlign='center';
                 document.querySelector('.customer_box').append(p);
             }else{

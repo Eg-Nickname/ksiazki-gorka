@@ -4,62 +4,75 @@ function get_active_offers() {
         type: 'POST',
         dataType: 'json',
         success: function(response){
-            if(response[0]){
-                alert(response[1]);
+            console.log(response);
+            if(response[response.length-1].length){
+            const offers=response[2];
+            for(const offer of offers){
+                // console.log(offer);
+                const div=document.createElement('div');
+                div.classList.add("user_offer_box");
+                div.id=`oferta${offer.offer_id}`;
+                const img_box=document.createElement('div');
+                img_box.style.backgroundImage=`url(../${offer.photo1})`;
+                img_box.classList.add("user_offer_box_image");
+                img_box.addEventListener("click",show_image_popup);
+                const div_content=document.createElement('div');
+                div_content.classList.add("user_offer_box_content");
+                const price=document.createElement('p');
+                const img_btn=document.createElement('button');
+                img_btn.innerHTML="Tył";
+                img_btn.classList.add("user_offer_image_button");
+                const image_photos={
+                    front: offer.photo1,
+                    back:offer.photo2
+                }
+                $(img_btn).on("click",function(){
+                    change_offer_image(img_btn,image_photos);
+                });
+                const name=document.createElement('p');
+                name.innerHTML=offer.book_name;
+                price.classList.add("user_offer_box_content_price");
+                price.innerHTML=`${offer.price} PLN`;
+                const button=document.createElement('button');
+                button.classList.add("user_offer_box_content_button");
+                button.innerHTML = "Usuń";
+                $(button).on('click', function(){
+                    delete_offer(offer)
+                });
+                const pricebutton=document.createElement('button');
+                pricebutton.classList.add("user_offer_box_content_button");
+                pricebutton.innerHTML = "Zmień Cenę";
+                pricebutton.addEventListener('click', function(){
+                    const price=(pricebutton.parentNode.previousSibling.lastChild.innerHTML).replace(" PLN","");//XD
+                    change_price(offer,price)
+                }); 
+                const buttonDiv = document.createElement('div');
+                buttonDiv.classList.add("user_offer_box_content_button_div");
+                buttonDiv.append(pricebutton, button);
+                div_content.append(img_btn,name,price);
+                div.append(img_box,div_content,buttonDiv);
+                document.querySelector('section').appendChild(div);
+            }
             }
             else{
-                const offers=response[2];
-                for(const offer of offers){
-                    // console.log(offer);
-                    const div=document.createElement('div');
-                    div.classList.add("user_offer_box");
-                    div.id=`oferta${offer.offer_id}`;
-                    const img_box=document.createElement('div');
-                    img_box.style.backgroundImage=`url(../${offer.photo1})`;
-                    img_box.classList.add("user_offer_box_image");
-                    img_box.addEventListener("click",show_image_popup);
-                    const div_content=document.createElement('div');
-                    div_content.classList.add("user_offer_box_content");
-                    const price=document.createElement('p');
-                    const img_btn=document.createElement('button');
-                    img_btn.innerHTML="Tył";
-                    img_btn.classList.add("user_offer_image_button");
-                    const image_photos={
-                        front: offer.photo1,
-                        back:offer.photo2
-                    }
-                    $(img_btn).on("click",function(){
-                        change_offer_image(img_btn,image_photos);
-                    });
-                    const name=document.createElement('p');
-                    name.innerHTML=offer.book_name;
-                    price.classList.add("user_offer_box_content_price");
-                    price.innerHTML=`${offer.price} PLN`;
-                    const button=document.createElement('button');
-                    button.classList.add("user_offer_box_content_button");
-                    button.innerHTML = "Usuń";
-                    $(button).on('click', function(){
-                        delete_offer(offer)
-                    });
-                    const pricebutton=document.createElement('button');
-                    pricebutton.classList.add("user_offer_box_content_button");
-                    pricebutton.innerHTML = "Zmień Cenę";
-                    pricebutton.addEventListener('click', function(){
-                        const price=(pricebutton.parentNode.previousSibling.lastChild.innerHTML).replace(" PLN","");//XD
-                        change_price(offer,price)
-                    }); 
-                    const buttonDiv = document.createElement('div');
-                    buttonDiv.classList.add("user_offer_box_content_button_div");
-                    buttonDiv.append(pricebutton, button);
-                    div_content.append(img_btn,name,price);
-                    div.append(img_box,div_content,buttonDiv);
-                    document.querySelector('section').appendChild(div);
-                }
+                clear_section();
             }
         }
     })
 }
 get_active_offers();
+function clear_section(){
+    const h1=document.createElement('h1');
+    h1.innerHTML="Aktualnie nie masz wystawionych ofert";
+    h1.style.fontSize="32px";
+    h1.style.textAlign="center";
+    const a=document.createElement('a');
+    a.href="dodaj-oferte";
+    a.innerHTML="Kliknij, aby dodać ofertę";
+    const body=document.querySelector('body');
+    body.insertBefore(h1,document.querySelector('section'));
+    body.insertBefore(a,document.querySelector('section'));
+}
 function delete_offer(offer){
     $('.modal-box').css('visibility','visible');
     $('.modal-box').css('opacity','1');
@@ -103,6 +116,10 @@ function confirm_delete(offer_id){
         success:function(response){
             if(response){
                 document.getElementById(`oferta${offer_id}`).remove();
+                if(!document.querySelector('section').childNodes.length){
+                    clear_section();
+                }
+                
             }
         }
     })

@@ -57,12 +57,16 @@ if(!isset($_SESSION['logged_in'])){
                     if(!$result){
                         throw new Exception($connection->error);
                     }
+                    $sql="SELECT id_user FROM users WHERE email='$register_email' AND password='$password'";
+                    $result=mysqli_query($connection,$sql);
+                    $row=mysqli_fetch_array($result);
+                    array_push($error_message,$row[0]);
                     $register_result=true;
                     $_SESSION['logged_in']=true;
-                    $_SESSION['user_id']=$user_data['id_user'];
-                    $_SESSION['email']=$user_data['email'];
-                    $_SESSION['name']=$user_data['name'];
-                    $_SESSION['surname']=$user_data['surname'];
+                    $_SESSION['user_id']=$row[0];
+                    $_SESSION['email']=$register_email;
+                    $_SESSION['name']=$name;
+                    $_SESSION['surname']=$surname;
                     array_push($error_message,"Utworzono konto");
                 }
                 $connection->close();

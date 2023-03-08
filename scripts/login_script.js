@@ -103,6 +103,7 @@ const register_function = function (){
         },
         success: function(response){
             console.log(response);
+            console.log(response);
             if(!response[2]){
                 const error_array = response[1];
                 console.log(error_array);
@@ -117,6 +118,9 @@ const register_function = function (){
                     const error_element_parent=error_element.parentElement;
                     error_element_parent.classList.add("error");
                 }
+            }
+            else{
+                window.location=document.referrer;
             }
         }
     })

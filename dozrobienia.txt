@@ -2,9 +2,10 @@ Baza danych
 PHP{
 sprawdzanie czy zalogowany czy nie na stronach
 walidacja podanych przez uzytkownika
+usuwanie zdjęcia po usunięciu ofert
+rejestracja do naprawy bo sie nie loguje
 }
 Strona główna
--zmienić to a bo dodaje # to linku i brzydko taki link wygląda
 -mail jakis trzeba dac i moze jakis formularz kontaktowy ale to na razie nie
 -wyszukiwanie responsywa /css
 -responsywa menu html/css
@@ -26,7 +27,8 @@ Strona oferty
 -popup po wzięciu oferty html/css
 -od kogo oferta html/css
 STRONA LOGOWANIA
--wywalenie googla html/css
+--dodać tak, żeby wracało na poprzednią stronę
+-wywalenie googla i cssa do niego html/css 
 -responsywa logowania i rejestracji bo XD html/css
 PANEL UŻYTKOWNIKA ()
 WSZĘDZIE MENU U GÓRY html/css
@@ -42,11 +44,11 @@ DODAWANIE OFERTY
 -można spróbować ogarnać wysokość tej strony bo tak w sumie dużo skrolowania na telefonie
 -liniki
 AKTYWNE OFERTY Uzytkownika activer_users...
+-wywalic styl z html
 -przycisk przod/tyl text sie rozwala
 -ta oferta jakoś strasznie dziwnie wysoka,
 -popup zmiany ceny - ten input moze byc jakis ladniejszy, przyciski tez mogłyby być ładniejsze
 -tak samo popup usuwania moze to jest sam,
--dodac napis brak ofert jak nie ma ofert
 -linki
 -te buttony tez trzeba poprawic chyba
 -responsywa menu
@@ -57,7 +59,6 @@ CHATY
 -usuwanie ksiazki z oferty
 -anulowanie zakupu/sprzedazy
 -responsywa calego zakupu sie lekko rozjezdza ikona wiadomosci
--dodać cos, jesli brak konwersacji
 -responsywa menu
 -dodać scrolowanie do czatu po kliknieciu na responsywie
 //DODAC JAKIS PANEL ADMINA PRZYNAJMNIEJ DO DODAWANIA PRZYKŁADOWYCH KSIAZĘK

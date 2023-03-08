@@ -12,7 +12,7 @@ function get_reserved_offers(){
                 const p=document.createElement('p');
                 p.style.fontSize='32px';
                 p.style.color='black';
-                p.innerHTML="Kiedyś ktoś napisze";
+                p.innerHTML="Jeszcze nikt nie napisał";
                 p.style.textAlign='center';
                 document.querySelector('.customer_box').append(p);
             }else{
