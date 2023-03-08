@@ -5,7 +5,6 @@ if(!isset($_SESSION['logged_in'])){
 }
 $name = $_SESSION['name'];
 $surname = $_SESSION['surname'];
-$username = $_SESSION['username'];
 $email = $_SESSION['email'];
 ?>
 <!DOCTYPE html>
@@ -18,6 +17,7 @@ $email = $_SESSION['email'];
     <link rel="stylesheet" href="../style/logowanie.css">
     <script defer src="../scripts/jquery-3.6.1.min.js"></script>
     <script defer src="../scripts/user_panel_scripts/user_data_script.js"></script>
+    <script defer src="../scripts/log_out.js"></script>
 </head>
 <body>
 <form action="javascript:void(0);" class="register-in-form " method="POST">
@@ -35,14 +35,6 @@ $email = $_SESSION['email'];
         </div>
         <span id="surname-error" class="error_log_info">Lorem Ipsum</span>
     </div>
-    <!-- <div class="label-wrapper sign-up-form">
-        <label for="username">Username:</label>
-        <div class="input-field">
-        <input type="text" placeholder="Wpisz nazwę użytkownika" name="username" id="username" value="<?php echo $username?>"/>
-        </div>
-        <span id="username-error" class="error_log_info">Lorem Ipsum</span>
-        
-    </div> -->
     <div class="label-wrapper register-in-form label-wrapper-l">
         <label for="register_email">Email:</label>
         <div class="input-field">

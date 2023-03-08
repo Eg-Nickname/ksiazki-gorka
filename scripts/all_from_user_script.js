@@ -143,12 +143,12 @@ const hide_image_popup=function(){
 $('.close-modal-box').on('click', hide_image_popup);
 //--------------------------------------------------------------------------------
 ////////////////////////////////////////////////////////////////////////////////////
-const log_out = function (){
-    $.ajax({
-        url:'php_scripts/log_out.php',
-        success: function(response){
-            window.location.reload();
-        }
-    })
-}
-$('#log_out').on('click',log_out);
+// const log_out = function (){
+//     $.ajax({
+//         url:'php_scripts/log_out.php',
+//         success: function(response){
+//             window.location.reload();
+//         }
+//     })
+// }
+// $('#log_out').on('click',log_out);

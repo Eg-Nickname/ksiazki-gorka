@@ -59,14 +59,14 @@ if(isset($_SESSION['logged_in']))
                             </div>
                             <span id="surname-error" class="error_log_info">Lorem Ipsum</span>
                         </div>
-                        <div class="label-wrapper sign-up-form">
+                        <!-- <div class="label-wrapper sign-up-form">
                             <label for="username">Username:</label>
                             <div class="input-field">
                             <input type="text" placeholder="Wpisz nazwę użytkownika" name="username" id="username" value="2s"/>
                             </div>
                             <span id="username-error" class="error_log_info">Lorem Ipsum</span>
                             
-                        </div>
+                        </div> -->
                         <div class="label-wrapper register-in-form label-wrapper-l">
                             <label for="register_email">Email:</label>
                             <div class="input-field">
@@ -123,8 +123,8 @@ if(isset($_SESSION['logged_in']))
             </div> -->
         <!-- </div> -->
         <span class="error_log_info_password form--hidden">Hasło musi zawierać co najmniej 8 znaków, w tym cyfrę i wielką literę. <br> Nazwa użytkownika musi zawierać co najmniej 3 znaki oraz nie może zawierać znaków specjalnych</span>
-        <span class="sign-up-goto-span"><p id="sign-up-goto">Nie masz jeszcze konta? &nbsp;<a href="#" id="linkCreateAccount"> Zarejestruj się</a></p></span>
-        <span class="sign-in-goto-span form--hidden"><p id="sign-in-goto"> Masz już konto? &nbsp;<a href="#" id="linkLogin"> Zaloguj się</a></p></span>
+        <span class="sign-up-goto-span"><p id="sign-up-goto">Nie masz jeszcze konta? &nbsp;<a id="linkCreateAccount"> Zarejestruj się</a></p></span>
+        <span class="sign-in-goto-span form--hidden"><p id="sign-in-goto"> Masz już konto? &nbsp;<a id="linkLogin"> Zaloguj się</a></p></span>
     </div>  
    </div>
    <script src="scripts/login_script.js"></script> 

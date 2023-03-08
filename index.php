@@ -12,7 +12,9 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kiermasz książek</title>
-    <script src="scripts/jquery-3.6.1.min.js"></script>
+    <script defer src="scripts/jquery-3.6.1.min.js"></script>
+    <script defer src="scripts/script.js"></script>
+    <script defer src="scripts/log_out.js"></script>
     <link rel="stylesheet" href="style/main.css">
 </head>
 <body>
@@ -21,15 +23,15 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
         <div class="nav-container">
             
             <div class="left-nav">
-                <a href="index.php"><div class="nav-image"></div></a>
+                <a href="strona-glowna"><div class="nav-image"></div></a>
             </div>
 
             <div class="center-nav">
                 <div class="nav-list">
                     <ul>
                         <li><a href="#offers-section">Kategorie</a></li>
-                        <li><a href="offer_page.php">Kup</a></li>
-                        <li><a href="user_panel/add_offer_page.php">Sprzedaj</a></li>
+                        <li><a href="lista-ofert">Kup</a></li>
+                        <li><a href="user_panel/dodaj-oferte">Sprzedaj</a></li>
                     </ul>
                 </div>
             </div>
@@ -38,8 +40,8 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
             if($is_logged_in){
                 echo<<<END
                 <div class="right-nav-authorized">
-                    <a id="user-panel-button" href="user_panel/active_users_offers.php"></a>
-                    <a id="messages-button"></a>
+                    <a id="user-panel-button" href="user_panel/dane-uzytkownika"></a>
+                    <a id="messages-button" href="user_panel/wiadomosci-sprzedaz"></a>
                     <a id="log_out"></a>
                 </div>
                 END;
@@ -185,8 +187,8 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
                     <div class="nav-list">
                         <ul>
                             <li><a href="#offers-section">Kategorie</a></li>
-                            <li><a href="offer_page.php">Kup</a></li>
-                            <li><a href="#">Sprzedaj</a></li>
+                            <li><a href="lista-ofert">Kup</a></li>
+                            <li><a href="user_panel/dodaj-oferte">Sprzedaj</a></li>
                         </ul>
                     </div>
                     <div class="social-box-responsive">
@@ -212,6 +214,5 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
             </div>
         </div>
     </footer>
-    <script src="scripts/script.js"></script> <!-- Jak skrypt będzie się wywalał to trzeba usunąć module, -->
 </body>
 </html>

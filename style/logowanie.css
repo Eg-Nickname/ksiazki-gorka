@@ -280,6 +280,7 @@ label{
     font-size: 12px;
     font-weight: normal;
     margin-top: -3rem;
+    cursor: pointer;
     color: #A89887 
 }
 
@@ -452,6 +453,7 @@ label{
 }
 
 #sign-up-goto{
+    cursor: pointer;
     justify-content: center;
     display: flex;
     font-size: 12px;

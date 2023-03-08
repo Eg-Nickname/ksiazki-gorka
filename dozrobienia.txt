@@ -1,52 +1,46 @@
 Baza danych
--wywalić username
--wywalić username z php
 PHP{
 sprawdzanie czy zalogowany czy nie na stronach
 walidacja podanych przez uzytkownika
 }
 Strona główna
--wyszukiwanie responsywa
--responsywa menu
--linki
--proporcje zdjęć na głównej i liście ofert
+-zmienić to a bo dodaje # to linku i brzydko taki link wygląda
+-mail jakis trzeba dac i moze jakis formularz kontaktowy ale to na razie nie
+-wyszukiwanie responsywa /css
+-responsywa menu html/css
+-cursor pointer na logout html/css
+-proporcje zdjęć na głównej i liście ofert html/css
 Lista ofert
--proporcje zdjęć na głównej i liście ofert
--filtry
--wyrównanie filtrów na responsywie
--linki
--responsywa menu
+-cursor pointer na logout html/css
+-proporcje zdjęć na głównej i liście ofert html/css
+-filtry html/css
+-wyrównanie filtrów na responsywie html/css
+-responsywa menu html/css
 Strona oferty
--wywalić buttona razem ze skryptem do niego
--responsywa głównego zdjęcia
-+1 font size do tego matematyka>...
--responsywa menu
--linki
--przycisk przejdz do ofert na responsywie
--X na popupie żeby wyglądał
--popup brania oferty
--popup po wzięciu oferty
--od kogo oferta
+-responsywa głównego zdjęcia html/css
++1 font size do tego matematyka>... html/css
+-responsywa menu html/css
+-przycisk przejdz do ofert na responsywie html/css
+-X na popupie żeby wyglądał html/css
+-popup brania oferty html/css
+-popup po wzięciu oferty html/css
+-od kogo oferta html/css
 STRONA LOGOWANIA
--Wywalenie nazwy uztykownika
--wywalenie googla
--responsywa logowania i rejestracji bo XD
--liniki
+-wywalenie googla html/css
+-responsywa logowania i rejestracji bo XD html/css
 PANEL UŻYTKOWNIKA ()
-WSZĘDZIE MENU U GÓRY
-DANE UŻytkownika
--wygląd
+WSZĘDZIE MENU U GÓRY html/css
+DANE UŻytkownika // TEGO NA NARAZIE NIE BO JESZCZE ZMIANA HASŁA BĘDZIE
+-wygląd 
 -liniki
 -zmiana hasła
 -menu u góy
--nazwa w htacces
 -dodać jakiś popup potwierdzenia
 DODAWANIE OFERTY
--popup po dodaniu oferty
+-popup po dodaniu oferty 
 -menu u góry
 -można spróbować ogarnać wysokość tej strony bo tak w sumie dużo skrolowania na telefonie
 -liniki
--nazwa w htacces
 AKTYWNE OFERTY Uzytkownika activer_users...
 -przycisk przod/tyl text sie rozwala
 -ta oferta jakoś strasznie dziwnie wysoka,

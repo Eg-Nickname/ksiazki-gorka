@@ -15,31 +15,29 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
     <link rel="stylesheet" href="style/oferty.css">
     <script defer src="scripts/jquery-3.6.1.min.js"></script>
     <script defer src="scripts/single_offer_script.js"></script>
+    <script defer src="scripts/log_out.js"></script>
 </head>
 <body>
     <nav>
-        <div class="nav-container">
-            
+        <div class="nav-container">   
             <div class="left-nav">
-                <a href="index.php"><div class="nav-image"></div></a>
+                <a href="strona-glowna"><div class="nav-image"></div></a>
             </div>
-
             <div class="center-nav">
                 <div class="nav-list">
                     <ul>
-                        <li><a href="index.php#offers-section">Kategorie</a></li>
-                        <li><a href="offer_page.php">Kup</a></li>
-                        <li><a href="user_panel/add_offer_page.php">Sprzedaj</a></li>
+                        <li><a href="strona-logowania#offers-section">Kategorie</a></li>
+                        <li><a href="lista-ofert">Kup</a></li>
+                        <li><a href="user_panel/dodaj-oferte">Sprzedaj</a></li>
                     </ul>
                 </div>
             </div>
-
             <?php
             if($is_logged_in){
                 echo<<<END
                 <div class="right-nav-authorized">
-                    <a href="user_panel/active_users_offers.php" id="user-panel-button"></a>
-                    <a id="messages-button"></a>
+                    <a id="user-panel-button" href="user_panel/dane-uzytkownika"></a>
+                    <a id="messages-button" href="user_panel/wiadomosci-sprzedaz"></a>
                     <a id="log_out"></a>
                 </div>
                 END;
@@ -52,7 +50,6 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
                 END;
             }
             ?>
-
         </div>
     </nav>
 
@@ -151,7 +148,6 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
                     </div>
                 </div>
             </div>
-        <button id="scroll-to-top"></button>
         <h1 class="show_me_more">Pokaż więcej</h1>
     </main>
     <footer>
@@ -165,9 +161,9 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
                 <div class="footer-nav-responsive">
                     <div class="nav-list">
                         <ul>
-                            <li><a href="index.php#offers-section">Kategorie</a></li>
-                            <li><a href="offer_page.php">Kup</a></li>
-                            <li><a href="#">Sprzedaj</a></li>
+                            <li><a href="strona-glowna#offers-section">Kategorie</a></li>
+                            <li><a href="lista-ofert">Kup</a></li>
+                            <li><a href="user_panel/dodaj-oferte">Sprzedaj</a></li>
                         </ul>
                     </div>
                     <div class="social-box-responsive">

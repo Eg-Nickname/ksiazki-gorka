@@ -22,6 +22,7 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
     <title>Dodaj ofertę</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
     <script defer src="../scripts/jquery-3.6.1.min.js"></script>
+    <script defer src="../scripts/log_out.js"></script>
     <script defer src="../scripts/user_panel_scripts/add_offer_page_script.js"></script>
     <link rel="stylesheet" href="../style/oferty_add.css">
 </head>

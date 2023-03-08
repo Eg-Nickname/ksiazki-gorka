@@ -23,17 +23,6 @@ $('#click').on('click',function(){
     }
 })
 //------------------------------
-//Wylogowanie
-const log_out = function (){
-    $.ajax({
-        url:'php_scripts/log_out.php',
-        success: function(response){
-            window.location.reload();
-        }
-    })
-}
-$('#log_out').on('click',log_out);
-//-------------------------------------------------------------------
 //Dodanie wszystkich książek do localstorage
 const get_data_for_mainpage = function (){
     localStorage.removeItem("books");

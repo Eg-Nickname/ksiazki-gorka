@@ -10,3 +10,8 @@ RewriteRule strona-logowania login_page.php
 RewriteRule oferta single_offer.php
 RewriteRule lista-ofert offer_page.php
 RewriteRule oferty-uzytkownika all_from_user.php
+RewriteRule dane-uzytkownika user_panel/user_data.php
+RewriteRule wiadomosci-kupno user_panel/my_purchases.php
+RewriteRule wiadomosci-sprzedaz user_panel/reserved_offers.php
+RewriteRule dodaj-oferte user_panel/add_offer_page.php
+RewriteRule twoje-oferty active_users_offers.php

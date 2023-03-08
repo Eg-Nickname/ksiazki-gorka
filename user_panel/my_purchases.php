@@ -7,6 +7,7 @@
     <title>Document</title>
     <script src="../scripts/jquery-3.6.1.min.js"></script>
     <script defer src="../scripts/user_panel_scripts/my_purchases_script.js"></script>
+    <script defer src="../scripts/log_out.js"></script>
     <link rel="stylesheet" href="../style/main.css">
     <link rel="stylesheet" href="../style/oferty_reserved.css">
 </head>
