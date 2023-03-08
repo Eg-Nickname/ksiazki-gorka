@@ -1,0 +1,87 @@
+Baza danych
+-wywalić username
+-wywalić username z php
+PHP{
+sprawdzanie czy zalogowany czy nie na stronach
+walidacja podanych przez uzytkownika
+}
+Strona główna
+-wyszukiwanie responsywa
+-responsywa menu
+-linki
+-proporcje zdjęć na głównej i liście ofert
+Lista ofert
+-proporcje zdjęć na głównej i liście ofert
+-filtry
+-wyrównanie filtrów na responsywie
+-linki
+-responsywa menu
+Strona oferty
+-wywalić buttona razem ze skryptem do niego
+-responsywa głównego zdjęcia
++1 font size do tego matematyka>...
+-responsywa menu
+-linki
+-przycisk przejdz do ofert na responsywie
+-X na popupie żeby wyglądał
+-popup brania oferty
+-popup po wzięciu oferty
+-od kogo oferta
+STRONA LOGOWANIA
+-Wywalenie nazwy uztykownika
+-wywalenie googla
+-responsywa logowania i rejestracji bo XD
+-liniki
+PANEL UŻYTKOWNIKA ()
+WSZĘDZIE MENU U GÓRY
+DANE UŻytkownika
+-wygląd
+-liniki
+-zmiana hasła
+-menu u góy
+-nazwa w htacces
+-dodać jakiś popup potwierdzenia
+DODAWANIE OFERTY
+-popup po dodaniu oferty
+-menu u góry
+-można spróbować ogarnać wysokość tej strony bo tak w sumie dużo skrolowania na telefonie
+-liniki
+-nazwa w htacces
+AKTYWNE OFERTY Uzytkownika activer_users...
+-przycisk przod/tyl text sie rozwala
+-ta oferta jakoś strasznie dziwnie wysoka,
+-popup zmiany ceny - ten input moze byc jakis ladniejszy, przyciski tez mogłyby być ładniejsze
+-tak samo popup usuwania moze to jest sam,
+-dodac napis brak ofert jak nie ma ofert
+-linki
+-te buttony tez trzeba poprawic chyba
+-responsywa menu
+-ustawić tak, zeby stopka zawsze byla na dole
+CHATY
+-menu
+-linki
+-usuwanie ksiazki z oferty
+-anulowanie zakupu/sprzedazy
+-responsywa calego zakupu sie lekko rozjezdza ikona wiadomosci
+-dodać cos, jesli brak konwersacji
+-responsywa menu
+-dodać scrolowanie do czatu po kliknieciu na responsywie
+//DODAC JAKIS PANEL ADMINA PRZYNAJMNIEJ DO DODAWANIA PRZYKŁADOWYCH KSIAZĘK
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
