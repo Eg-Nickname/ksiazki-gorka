@@ -11,7 +11,7 @@ $seller = $_SESSION['user_id'];
 require_once '../connect.php';
 $connection=mysqli_connect($host,$db_user,$db_password,$db_name);
 if($connection){
-    $sql="SELECT s.book_name,uo.offer_id,uo.price,uo.customer,u.name, u.surname FROM sample_books AS s JOIN (users_offers AS uo JOIN users AS u ON uo.customer=u.id_user) ON s.book_ID=uo.book_id WHERE `seller`='$seller'";
+    $sql="SELECT s.book_name,uo.offer_id,uo.price,uo.customer,u.name, u.surname FROM sample_books AS s JOIN (users_offers AS uo JOIN users AS u ON uo.customer=u.id_user) ON s.book_ID=uo.book_id WHERE `seller`='$seller' AND uo.status='reserved'";
     $result=mysqli_query($connection,$sql);
     $everything= mysqli_fetch_all($result,MYSQLI_ASSOC);
     mysqli_close($connection);

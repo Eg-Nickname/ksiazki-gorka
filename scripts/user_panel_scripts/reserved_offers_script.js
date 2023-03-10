@@ -12,7 +12,7 @@ function get_reserved_offers(){
                 const p=document.createElement('p');
                 p.style.fontSize='32px';
                 p.style.color='black';
-                p.innerHTML="Jeszcze nikt nie napisał";
+                p.innerHTML="Nic się jeszcze nie pojawiło";
                 p.style.textAlign='center';
                 document.querySelector('.customer_box').append(p);
             }else{
@@ -64,13 +64,25 @@ function build_chatbox(response){
         }
         const div=document.createElement('div');
         div.classList.add('offer_info_book_price');
+        const button_box=document.createElement('div');
+        const delete_btn=document.createElement('button');
+        delete_btn.innerHTML="-";
+        delete_btn.addEventListener('click',function(){
+            delete_from_cart(offer.offer_id,this)
+        })
+        const sold_btn=document.createElement('button');
+        sold_btn.innerHTML="Sprzedana";
+        sold_btn.addEventListener('click',function(){
+            sold(offer.offer_id,this);
+        })
+        button_box.append(delete_btn, sold_btn);
         const offer_book=document.createElement('p');
         offer_book.classList.add('offer_book');
         offer_book.innerHTML=offer.book_name;
         const offer_price=document.createElement('p');
         offer_price.classList.add('offer_price');
         offer_price.innerHTML=`${offer.price} PLN`;
-        div.append(offer_book,offer_price);
+        div.append(button_box,offer_book,offer_price);
         const par=document.getElementById(`customer${offer['customer']}`);
         const sum_div=par.querySelector(`.offer_info_sum`);
         sum_div.before(div);
@@ -80,6 +92,7 @@ function build_chatbox(response){
 }
 get_reserved_offers();
 function cost(parent){
+    console.log(parent)
     const price_paragraphs=Array.from(parent.querySelectorAll('.offer_price'));
     let cost=0;
     price_paragraphs.forEach(str_price=>{
@@ -94,4 +107,60 @@ function change_message_box(chatter,name,surname){
     const msg_input=document.getElementById('message_input');
     msg_input.disabled=false;
     console.log(chatter);
+}
+function delete_from_cart(offer,btn){
+    $.ajax({
+        url:"../php_scripts/user_panel/change_offer_status.php",
+        method:"POST",
+        dataType:"json",
+        data:{
+            offer,
+            status:"available"
+        },
+        success: function(response){
+            if(response){
+                after_changing_status(btn);
+            }
+        }
+    })
+}
+function sold(offer,btn){
+    $.ajax({
+        url:"../php_scripts/user_panel/change_offer_status.php",
+        method:"POST",
+        dataType:"json",
+        data:{
+            offer,
+            status:"sold"
+        },
+        success: function(response){
+            if(response){
+                after_changing_status(btn);
+            }
+        }
+    })
+}
+function after_changing_status(btn){
+    const parent=btn.parentNode;
+    const parent_to_cost=parent.parentNode;
+    parent.remove();
+    check_if_offer_info_not_empty(parent_to_cost);
+}
+function check_if_offer_info_not_empty(element){
+    if(element.childNodes.length<=2){
+        element.remove();
+        if(!document.querySelector('.customer_box').childNodes.length){
+            const p=document.createElement('p');
+            p.innerHTML="Nic się jeszcze nie pojawiło";
+            p.style.fontSize='32px';
+            p.style.color='black';
+            p.style.textAlign='center';
+            document.querySelector('.customer_box').append(p);
+        }
+    }
+    else{
+        console.log('a');
+        const new_cost=cost(element);
+        element.querySelector('.offer_price_sum').innerHTML=`${new_cost} PLN`;
+    }
 }

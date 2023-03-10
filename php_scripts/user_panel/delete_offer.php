@@ -17,7 +17,7 @@ try{//usuwanie zdjęć trzeba tu zrobić
     }
 }
 catch(Exception $e){
-    $result='1';
+    $result=false;
 }
 echo json_encode($result);
 ?>
