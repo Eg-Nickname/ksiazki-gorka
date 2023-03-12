@@ -1,3 +1,10 @@
+function set_title(){
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const title=urlParams.get('name').replaceAll("-"," ");
+    document.title =`Oferta - ${title}`;
+}
+set_title()
 function show_users_offers(){
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);

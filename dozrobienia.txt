@@ -1,5 +1,6 @@
 Baza danych
-Języki posprawdzać w html
+Najniższa cena oferty XD
+Favicon
 PHP{
 sprawdzanie czy zalogowany czy nie na stronach
 walidacja podanych przez uzytkownika
