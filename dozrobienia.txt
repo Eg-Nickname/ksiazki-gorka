@@ -6,22 +6,12 @@ walidacja podanych przez uzytkownika
 }
 Strona główna
 -mail jakis trzeba dac i moze jakis formularz kontaktowy ale to na razie nie
-<<<<<<< HEAD
-=======
--wyszukiwanie responsywa /css
--responsywa menu html/css
->>>>>>> 84c3049086f916ee8811a6397239d740f8cd0c99
 -proporcje zdjęć na głównej i liście ofert html/css
 Lista ofert
 -proporcje zdjęć na głównej i liście ofert html/css
 -filtry html/css
 Strona oferty
 -responsywa głównego zdjęcia html/css
-<<<<<<< HEAD
-=======
--responsywa menu html/css
--przycisk przejdz do ofert na responsywie html/css
->>>>>>> 84c3049086f916ee8811a6397239d740f8cd0c99
 -X na popupie żeby wyglądał html/css
 -popup brania oferty html/css
 -popup po wzięciu oferty html/css
