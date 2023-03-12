@@ -42,7 +42,7 @@ if(isset($_SESSION['logged_in']))
             <span class="sign-up-text form--hidden"><h2>Zarejestruj się</h2></span>
             <span class="sign-in-text"><h2>Zaloguj się</h2></span>
         <!-- <div class="box-2-3-wrapper"> -->
-            <div class="box-2">
+            
                     <form action="javascript:void(0);" class="register-in-form form--hidden " method="POST">
 
                         <div class="label-wrapper sign-up-form">
@@ -67,13 +67,7 @@ if(isset($_SESSION['logged_in']))
                             <span id="username-error" class="error_log_info">Lorem Ipsum</span>
                             
                         </div> -->
-                        <div class="label-wrapper register-in-form label-wrapper-l">
-                            <label for="register_email">Email:</label>
-                            <div class="input-field">
-                            <input type="email" placeholder="Wpisz swoj email" name="register_email" id="register_email" value="12@df.pl" />
-                            </div>
-                            <span id="register-email-error" class="error_log_info">Lorem Ipsum</span>
-                        </div>
+
                         <div class="label-wrapper register-in-form">
                             <label for="register_password">Hasło:</label>
                             <div class="input-field">
@@ -89,8 +83,16 @@ if(isset($_SESSION['logged_in']))
                             </div>
                             <span  id="password-check-error"class="error_log_info">Lorem Ipsum</span> 
                         </div>
-                        <button class="register-in-btn-google" id="register_google"><span class="icon"></span><span id="google-text">Zarejestruj się z Google</span></button>
-                        <button class="register-in-btn" id="register">Stwórz konto</button> 
+                        <div class="email-and-btn-container">
+                            <div class="label-wrapper register-in-form label-wrapper-l">
+                                <label for="register_email">Email:</label>
+                                <div class="input-field">
+                                <input type="email" placeholder="Wpisz swoj email" name="register_email" id="register_email" value="12@df.pl" />
+                                </div>
+                                <span id="register-email-error" class="error_log_info">Lorem Ipsum</span>
+                            </div>
+                            <button class="register-in-btn" id="register">Stwórz konto</button> 
+                        </div>
                     </form>
                     
                     <form action="javascript:void(0);" class="sign-in-form" method="POST"> 
@@ -112,7 +114,7 @@ if(isset($_SESSION['logged_in']))
                         <!-- <button class="sign-in-btn-google" id="log_in_google"><span class="icon"></span>Zaloguj się za pomocą Google</button> -->
                         
                     </form>
-            </div>            
+                       
             <!-- </div> 
             <div class="box-3 form--hidden">
                 <div class="form-container"> 

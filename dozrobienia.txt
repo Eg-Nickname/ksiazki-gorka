@@ -7,30 +7,17 @@ rejestracja do naprawy bo sie nie loguje
 }
 Strona główna
 -mail jakis trzeba dac i moze jakis formularz kontaktowy ale to na razie nie
--wyszukiwanie responsywa /css
--responsywa menu html/css
--cursor pointer na logout html/css
 -proporcje zdjęć na głównej i liście ofert html/css
 Lista ofert
--cursor pointer na logout html/css
 -proporcje zdjęć na głównej i liście ofert html/css
 -filtry html/css
--wyrównanie filtrów na responsywie html/css
--responsywa menu html/css
 Strona oferty
 -responsywa głównego zdjęcia html/css
-+1 font size do tego matematyka>... html/css
--responsywa menu html/css
--przycisk przejdz do ofert na responsywie html/css
 -X na popupie żeby wyglądał html/css
 -popup brania oferty html/css
 -popup po wzięciu oferty html/css
--od kogo oferta html/css
 STRONA LOGOWANIA
-te inputy muszą być dłuższe trochę
 --dodać tak, żeby wracało na poprzednią stronę
--wywalenie googla i cssa do niego html/css 
--responsywa logowania i rejestracji bo XD html/css
 PANEL UŻYTKOWNIKA ()
 WSZĘDZIE MENU U GÓRY html/css
 DANE UŻytkownika // TEGO NA NARAZIE NIE BO JESZCZE ZMIANA HASŁA BĘDZIE
