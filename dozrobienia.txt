@@ -1,25 +1,21 @@
 Baza danych
+Języki posprawdzać w html
 PHP{
 sprawdzanie czy zalogowany czy nie na stronach
 walidacja podanych przez uzytkownika
-usuwanie zdjęcia po usunięciu ofert
-rejestracja do naprawy bo sie nie loguje
 }
 Strona główna
 -mail jakis trzeba dac i moze jakis formularz kontaktowy ale to na razie nie
 -wyszukiwanie responsywa /css
 -responsywa menu html/css
--cursor pointer na logout html/css
 -proporcje zdjęć na głównej i liście ofert html/css
 Lista ofert
--cursor pointer na logout html/css
 -proporcje zdjęć na głównej i liście ofert html/css
 -filtry html/css
 -wyrównanie filtrów na responsywie html/css
 -responsywa menu html/css
 Strona oferty
 -responsywa głównego zdjęcia html/css
-+1 font size do tego matematyka>... html/css
 -responsywa menu html/css
 -przycisk przejdz do ofert na responsywie html/css
 -X na popupie żeby wyglądał html/css
@@ -57,7 +53,7 @@ AKTYWNE OFERTY Uzytkownika activer_users...
 CHATY
 -menu
 -linki
--usuwanie ksiazki z oferty
+-czat css do buttonów, oba mają klase operation_btn
 -anulowanie zakupu/sprzedazy
 -responsywa calego zakupu sie lekko rozjezdza ikona wiadomosci
 -responsywa menu
