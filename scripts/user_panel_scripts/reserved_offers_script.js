@@ -12,7 +12,7 @@ function get_reserved_offers(){
                 const p=document.createElement('p');
                 p.style.fontSize='32px';
                 p.style.color='black';
-                p.innerHTML="Nic się jeszcze nie pojawiło";
+                p.innerHTML="Brak aktualnych wiadomości";
                 p.style.textAlign='center';
                 document.querySelector('.customer_box').append(p);
             }else{
@@ -66,12 +66,14 @@ function build_chatbox(response){
         div.classList.add('offer_info_book_price');
         const button_box=document.createElement('div');
         const delete_btn=document.createElement('button');
-        delete_btn.innerHTML="-";
+        delete_btn.innerHTML="Anuluj";
+        delete_btn.classList.add('operation_btn');
         delete_btn.addEventListener('click',function(){
             delete_from_cart(offer.offer_id,this)
         })
         const sold_btn=document.createElement('button');
         sold_btn.innerHTML="Sprzedana";
+        sold_btn.classList.add('operation_btn');
         sold_btn.addEventListener('click',function(){
             sold(offer.offer_id,this);
         })
@@ -141,9 +143,9 @@ function sold(offer,btn){
     })
 }
 function after_changing_status(btn){
-    const parent=btn.parentNode;
-    const parent_to_cost=parent.parentNode;
-    parent.remove();
+    const book_div=btn.parentNode.parentNode;
+    const parent_to_cost=book_div.parentNode;
+    book_div.remove();
     check_if_offer_info_not_empty(parent_to_cost);
 }
 function check_if_offer_info_not_empty(element){
@@ -151,7 +153,7 @@ function check_if_offer_info_not_empty(element){
         element.remove();
         if(!document.querySelector('.customer_box').childNodes.length){
             const p=document.createElement('p');
-            p.innerHTML="Nic się jeszcze nie pojawiło";
+            p.innerHTML="Brak aktualnych wiadomości";
             p.style.fontSize='32px';
             p.style.color='black';
             p.style.textAlign='center';
@@ -159,7 +161,6 @@ function check_if_offer_info_not_empty(element){
         }
     }
     else{
-        console.log('a');
         const new_cost=cost(element);
         element.querySelector('.offer_price_sum').innerHTML=`${new_cost} PLN`;
     }
