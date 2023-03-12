@@ -189,7 +189,9 @@ nav{
     background-repeat: none;
     background-image: url(../images/log-out.svg);
 }
-
+.nav-container .right-nav-authorized #log_out:hover{
+    cursor: pointer;
+}
 /* ////////////////////////////////
         Sekcja główna
 //////////////////////////////// */
@@ -803,7 +805,7 @@ footer{
         justify-content: flex-end;
     }
 
-    .search-input {
+    /* .search-input {
         width: 100%;
         padding: 0.8rem 2rem;
         background-color: #fff;
@@ -813,7 +815,7 @@ footer{
         background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='29' height='29' viewBox='0 0 24 24'%3E%3Cpath d='M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
         background-repeat: no-repeat;
         background-size: 2rem 2rem;
-    }
+    } */
 
     .footer-container .footer-nav .nav-list ul li a{
         font-size: 14px;
@@ -857,6 +859,9 @@ footer{
         height: 22px;
     }
     
+ .suggestions-list{
+        z-index: 100;
+    }
 
     main{
         height: 850px;
@@ -899,16 +904,18 @@ footer{
         text-align: center;
     }
     
-    .search-container {
+    /* .search-container {
         padding-top: 4rem;
         width: 100%;
         display: flex;
-        justify-content: center;
-    }
-    .search-input {
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+    } */
+    /* .search-input {
         width: 50%;
         padding: 1.8rem 2.8rem;
-    }
+    } */
 
     .main-container .left-main .main-images-responsive{
         display: flex;
@@ -987,11 +994,6 @@ footer{
 
 @media only screen and (max-width: 600px) {
 
-    .nav-container .right-nav a{
-        font-size: 12px;
-        padding: 0.2rem 1rem;
-    }
-
     .offers-text h3{
         font-size: 24px;
         font-weight: medium;
@@ -1007,7 +1009,7 @@ footer{
 }
 
 @media only screen and (max-width: 550px) {
-
+    
     .nav-container .center-nav .nav-list ul li a{
         font-size: 12px;
         color: #000;
@@ -1019,7 +1021,10 @@ footer{
         width: 50px;
         height: 50px;
     }
-
+    .nav-container .right-nav a{
+        font-size: 12px;
+        padding: 0.2rem 1rem;
+    }
     .main-container h2{
         font-size: 24px;
         line-height: 48px;
@@ -1033,16 +1038,20 @@ footer{
         text-align: center;
     }
     
-    .search-container {
+    /* .search-container {
         padding-top: 4rem;
         width: 100%;
         display: flex;
         justify-content: center;
-    }
-    .search-input {
+    } */
+    /* .search-input {
         width: 80%;
         padding: 1.8rem 2.8rem;
-    }
+    } */
+/* 
+    .suggestions-list{
+        width: 80%;
+    } */
 
     .main-container .left-main .main-images-responsive .main-image1{
         width: 300px;
@@ -1188,7 +1197,7 @@ footer{
         margin-left: 1rem;
     }
     .nav-container .center-nav .nav-list ul li+li{
-        margin-left: 1rem;
+        margin-left: 1.5rem;
     }
 
     .nav-container .right-nav-authorized{
