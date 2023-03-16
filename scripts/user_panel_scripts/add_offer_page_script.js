@@ -158,17 +158,25 @@ document.getElementById('submit').addEventListener('click', function() {
         const error_spans=Array.from(document.querySelectorAll('.error_span'));
         error_spans.forEach(span=>{
             span.style.display=null;
+            // span.style.visibility="hidden";
         });
         if(response[0]){
             const error_id=response[2];
             console.log(error_id);
             const error_msg=response[1];
             error_id.forEach(error=>{
+                // document.getElementById(`${error}`).style.visibility="visible";
                 document.getElementById(`${error}`).style.display='block';
                 document.getElementById(`${error}`).innerHTML=error_msg[error];
             })
         }
         else{
+            document.querySelector('.popup-order-box-alert').innerHTML=response[1];
+            const popup=document.querySelector('.popup-order-box');
+            popup.style.visibility="visible";
+            setTimeout(()=>{
+                popup.style.visibility="hidden";
+            },5000)
             document.querySelector('.search-input').value=null;
             document.querySelector('#price').value=null;
             const draggers=Array.from(document.querySelectorAll('.dragger'));
@@ -182,6 +190,10 @@ document.getElementById('submit').addEventListener('click', function() {
             })
             document.getElementById('chosen').innerHTML='Wybierz podręcznik';
             document.getElementById('chosen_price').innerHTML='Podaj cenę';
+            inputField.forEach(field=>{
+                field.value=null;
+            })
+            document.getElementById('book_id').value=null;
         }
       }
     });

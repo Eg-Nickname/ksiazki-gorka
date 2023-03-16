@@ -67,7 +67,12 @@ const display_elements_on_offer_list = function(subject_array=[],part_array=[], 
                     $(book_name).html(`${element['book_name']}`);
                     const book_price=document.createElement('p');
                     $(book_price).addClass(`book-price`);
-                    $(book_price).html(`Zaczyna się od 30 PLN`); //dodać najniższą cenę to bazy
+                    if(element.min){
+                        $(book_price).html(`Najniższa cena: ${element.min} PLN`)
+                    }
+                    else{
+                        $(book_price).html(`Brak ofert`);
+                    }
                     const button=document.createElement('button');
                     $(button).addClass(`book-btn`);
                     button.setAttribute('id',`book-btn${element['book_ID']}`);

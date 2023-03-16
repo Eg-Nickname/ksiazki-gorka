@@ -481,6 +481,7 @@ button:hover {
     color: red;
     font-size: 12px;
     font-weight: normal;
+    /* visibility: hidden; */
     display: none;
     margin: 1rem 0 0 0;
     text-align: center;
@@ -490,6 +491,28 @@ button:hover {
     font-size: 14px;
     color: #A88E87;
     font-weight: normal;
+}
+.popup-order-box{
+    width: 400px;
+    height: auto;
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #F5E9DC;
+    border: 1px solid #A89887;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+.popup-order-box-alert{
+    font-size: 16px;
+    color: #A89887;
+    padding: 1.5rem;
+    text-align: center;
 }
 
 footer{

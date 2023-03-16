@@ -17,7 +17,8 @@ else
             throw new Exception(mysqli_connect_errno());
         }
         else{
-            $sql="SELECT * FROM `sample_books`";
+            // $sql="SELECT * FROM `sample_books`";
+            $sql="SELECT sample_books.*,(SELECT min(price) FROM users_offers WHERE status='available' AND users_offers.book_id=sample_books.book_ID) AS min FROM sample_books";
             $result=$connection->query($sql);
             mysqli_close($connection);
             if($result){

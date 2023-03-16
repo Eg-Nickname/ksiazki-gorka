@@ -144,6 +144,12 @@ const show_users_offers= function (){
             $('.show_me_more').off('click');
             document.querySelector('.show_me_more').remove();
         }
+        if(!document.querySelector('section').childElementCount){
+            const h2=document.createElement('h2');
+            h2.innerHTML="Brak ofert";
+            h2.classList.add('no_offers');
+            document.querySelector('section').appendChild(h2);
+        }
         }
     })
 }

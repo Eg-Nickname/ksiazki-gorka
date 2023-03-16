@@ -683,6 +683,13 @@ section .user_offer_box_content_button:hover{
     cursor: pointer;
     font-size: 28px;
 }
+.no_offers{
+    text-align: center;
+    width: 100%;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    font-size: 28px;
+}
 #scroll-to-top{
     position:fixed;
     bottom: 100px;

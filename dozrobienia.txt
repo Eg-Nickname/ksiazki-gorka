@@ -1,5 +1,4 @@
 Baza danych
-Najniższa cena oferty XD
 Favicon
 PHP{
 sprawdzanie czy zalogowany czy nie na stronach
@@ -24,7 +23,6 @@ DANE UŻytkownika // TEGO NA NARAZIE NIE BO JESZCZE ZMIANA HASŁA BĘDZIE
 -menu u góy
 -dodać jakiś popup potwierdzenia
 DODAWANIE OFERTY
--popup po dodaniu oferty 
 -menu u góry
 -można spróbować ogarnać wysokość tej strony bo tak w sumie dużo skrolowania na telefonie
 -liniki
