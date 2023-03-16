@@ -77,16 +77,54 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
                     <div>
                     <label for="wos">WOS<input type="checkbox" class="subject_filter" id="wos"></label>
                     </div>
+                    <div>
+                    <label for="biologia">Biologia<input type="checkbox" class="subject_filter" id="biologia"></label>
+                    </div>
+                    <div>
+                    <label for="geografia">Geografia<input type="checkbox" class="subject_filter" id="geografia"></label>
+                    </div>
+                    <div>
+                    <label for="angielski">J.angielski<input type="checkbox" class="subject_filter" id="angielski"></label>
+                    </div>
+                    <div>
+                    <label for="niemiecki">J.niemiecki<input type="checkbox" class="subject_filter" id="niemiecki"></label>
+                    </div>
+                    <div>
+                    <label for="polski">J.polski<input type="checkbox" class="subject_filter" id="polski"></label>
+                    </div>
+                    <div>
+                    <label for="pp">PP<input type="checkbox" class="subject_filter" id="pp"></label>
+                    </div>
+                    <div>
+                    <label for="zawodowe">Przedmioty zawodowe<input type="checkbox" class="subject_filter" id="zawodowe"></label>
+                    </div>
+                    <div>
+                    <label for="hit">HIT<input type="checkbox" class="subject_filter" id="hit"></label>
+                    </div>
+                    <div>
+                    <label for="informatyka">Informatyka<input type="checkbox" class="subject_filter" id="informatyka"></label>
+                    </div>
+                    <div>
+                    <label for="edb">EDB<input type="checkbox" class="subject_filter" id="edb"></label>
+                    </div>
                 </div>
                 <!-- Historia<input type="checkbox" class="subject_filter" id="historia"> -->
             </div>
             <div class="part-wrapper">
-            <h3>Część</h3>
-            <div>
-            <div>
-                <label for="part1">1 <input type="checkbox" class="part_filter" id="part1"></label>
-                </div>
-                <label for="part2">2 <input type="checkbox" class="part_filter" name="" id="part2"></label>
+                <h3>Część</h3>
+                <div>
+                    <div>
+                        <label for="part1">1 <input type="checkbox" class="part_filter" id="part1"></label>
+                    </div>
+                    <div>
+                        <label for="part2">2 <input type="checkbox" class="part_filter" name="" id="part2"></label>
+                    </div>
+                    <div>
+                        <label for="part3">3 <input type="checkbox" class="part_filter" name="" id="part3"></label>
+                    </div>
+                    <div>
+                        <label for="part4">4 <input type="checkbox" class="part_filter" name="" id="part4"></label>
+                    </div>
                 </div>
             </div>
             

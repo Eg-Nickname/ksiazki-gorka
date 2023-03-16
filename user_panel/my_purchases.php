@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="../scripts/jquery-3.6.1.min.js"></script>
+    <title>Twoje zakupy</title>
+    <script defer src="../scripts/jquery-3.6.1.min.js"></script>
     <script defer src="../scripts/user_panel_scripts/my_purchases_script.js"></script>
     <script defer src="../scripts/log_out.js"></script>
     <link rel="stylesheet" href="../style/main.css">

@@ -1,8 +1,5 @@
 <?php
 session_start(); 
-if(!isset($_SESSION['logged_in'])){
-    exit();
-}
 if(!isset($_POST['seller'])){
     exit();
 }

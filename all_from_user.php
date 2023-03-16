@@ -1,7 +1,7 @@
 <?php
 session_start();
 $is_logged_in=false;
-if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
+if(isset($_SESSION['logged_in'])){
     $is_logged_in =true;
 }
 ?>
@@ -15,6 +15,7 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
     <link rel="stylesheet" href="style/oferty.css">
     <script defer src="scripts/jquery-3.6.1.min.js"></script>
     <script defer src="scripts/all_from_user_script.js"></script>
+    <script defer src="scripts/log_out.js"></script>
 </head>
 <body>
     <nav>

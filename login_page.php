@@ -14,7 +14,8 @@ if(isset($_SESSION['logged_in']))
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rejestracja/Logowanie</title>
     <link rel="stylesheet" href="style/logowanie.css">
-    <script src="scripts/jquery-3.6.1.min.js"></script>
+    <script defer src="scripts/jquery-3.6.1.min.js"></script>
+    <script defer src="scripts/login_script.js"></script> 
 </head>
 <body>
 <div class="container">
@@ -129,6 +130,5 @@ if(isset($_SESSION['logged_in']))
         <span class="sign-in-goto-span form--hidden"><p id="sign-in-goto"> Masz już konto? &nbsp;<a id="linkLogin"> Zaloguj się</a></p></span>
     </div>  
    </div>
-   <script src="scripts/login_script.js"></script> 
 </body>
 </html>

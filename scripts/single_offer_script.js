@@ -1,5 +1,12 @@
 /////////////////////////////////////////////////////////////////////////////
 //--------------------------------------------------------------------------
+function set_title(){
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const title=urlParams.get('title').replaceAll("-"," ");
+    document.title = title;
+}
+set_title()
 //Pobieranie elementów do localStorage, skopiowane z innego skryptu, bo eksport nie chiciał działać- Sadge
 const get_data_for_mainpage = function (){
     localStorage.removeItem("books");
@@ -127,7 +134,7 @@ const show_users_offers= function (){
                     // declare_buy(Number(offer.offer_id));
                 });
                 const a=document.createElement('a');
-                a.href=`oferty-uzytkownika?seller=${offer.seller}`;
+                a.href=`oferty-uzytkownika?seller=${offer.seller}&name=${offer.name+"-"+offer.surname}`;
                 a.innerHTML=`Od: ${offer.name} ${offer.surname}`;
                 div_content.append(img_btn,price,button,a);
                 div.append(img_box,div_content);

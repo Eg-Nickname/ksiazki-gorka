@@ -1,5 +1,6 @@
 Baza danych
-Języki posprawdzać w html
+Najniższa cena oferty XD
+Favicon
 PHP{
 sprawdzanie czy zalogowany czy nie na stronach
 walidacja podanych przez uzytkownika
@@ -12,9 +13,6 @@ Lista ofert
 -filtry html/css
 Strona oferty
 -responsywa głównego zdjęcia html/css
--X na popupie żeby wyglądał html/css
--popup brania oferty html/css
--popup po wzięciu oferty html/css
 STRONA LOGOWANIA
 --dodać tak, żeby wracało na poprzednią stronę
 PANEL UŻYTKOWNIKA ()
