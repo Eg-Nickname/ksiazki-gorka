@@ -37,6 +37,16 @@
         </div>
     </nav>
 
+    <section id="sub-menu">
+        <ul>
+            <li><a href="#">Dane</a></li>
+            <li><a href="#">Twoje oferty</a></li>
+            <li><a href="#">Wystaw</a></li>
+            <li class="active"><a href="#">Kupujesz</a></li>
+            <li><a href="#">Sprzedajesz</a></li>
+            <li><a href="#">Wiadomosci</a></li>
+        </ul>
+    </section>
 
     <div class="container">
         <div class='customer_box'>

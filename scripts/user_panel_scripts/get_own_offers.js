@@ -51,7 +51,7 @@ function get_active_offers() {
                 buttonDiv.append(pricebutton, button);
                 div_content.append(img_btn,name,price);
                 div.append(img_box,div_content,buttonDiv);
-                document.querySelector('section').appendChild(div);
+                document.querySelector('#users_offers_box').appendChild(div);
             }
             }
             else{
@@ -70,8 +70,8 @@ function clear_section(){
     a.href="dodaj-oferte";
     a.innerHTML="Kliknij, aby dodać ofertę";
     const body=document.querySelector('body');
-    body.insertBefore(h1,document.querySelector('section'));
-    body.insertBefore(a,document.querySelector('section'));
+    body.insertBefore(h1,document.querySelector('#users_offers_box'));
+    body.insertBefore(a,document.querySelector('#users_offers_box'));
 }
 function delete_offer(offer){
     $('.modal-box').css('visibility','visible');
@@ -116,7 +116,7 @@ function confirm_delete(offer_id){
         success:function(response){
             if(response){
                 document.getElementById(`oferta${offer_id}`).remove();
-                if(!document.querySelector('section').childNodes.length){
+                if(!document.querySelector('#users_offers_box').childNodes.length){
                     clear_section();
                 }
                 

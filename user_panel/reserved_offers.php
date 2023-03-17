@@ -10,6 +10,7 @@
     <script defer src="../scripts/user_panel_scripts/reserved_offers_script.js"></script>
     <link rel="stylesheet" href="../style/main.css">
     <link rel="stylesheet" href="../style/oferty_reserved.css">
+    <link rel="stylesheet" href="../style/sub_menu.css">
 </head>
 <body>
 <nav>
@@ -37,6 +38,16 @@
         </div>
     </nav>
 
+    <section id="sub-menu">
+        <ul>
+            <li><a href="">Dane</a></li>
+            <li><a href="">Twoje oferty</a></li>
+            <li><a href="">Wystaw</a></li>
+            <li><a href="">Kupujesz</a></li>
+            <li><a href="">Sprzedajesz</a></li>
+            <li class="active"><a href="">Wiadomosci</a></li>
+        </ul>
+    </section>
 
     <div class="container">
         <div class='customer_box'>

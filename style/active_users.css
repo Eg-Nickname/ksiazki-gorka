@@ -1,0 +1,358 @@
+#users_offers_box{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2rem;
+    padding: 6rem 2rem;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+#users_offers_box .user_offer_box{
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem;
+    row-gap: 2rem;
+}
+
+#users_offers_box .user_offer_box_image{
+    /* background-image: url(../images/matm3podr.png); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 210px;
+    height: 300px;
+    cursor: pointer;
+    
+}
+
+#users_offers_box .user_offer_box_content{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+    justify-content:center;
+    align-items:center;
+    width: 100%;
+}
+
+#users_offers_box .user_offer_box_content_button_div{
+    display: flex;
+    flex-direction: row;
+    column-gap: 1.5rem;
+    justify-content:center;
+    align-items:center;
+    width: 100%;
+}
+
+#users_offers_box .user_offer_box_content a p{
+    font-size: 16px;
+    font-weight: 400;
+    color: #A89887;
+}
+
+#users_offers_box .user_offer_box_content_price{
+    font-size: 18px;
+    font-weight: bold;
+    color: #A89887;
+}
+
+#users_offers_box .user_offer_box_content_button{
+    background-color: transparent;
+    border: 1px solid #A89887;
+    color: #000;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 400;
+    overflow: hidden;
+    padding: 1rem 1rem;
+    text-align: center;
+    transition: all 0.4s ease-in-out;
+    vertical-align: middle;
+    outline: none;
+    text-transform: capitalize;
+    border-radius: 5px;
+    margin-top: 0.5rem;
+    width: 80%;
+    height: 100%;
+    transition: all 0.5s ease-in-out;
+}
+
+#users_offers_box .user_offer_box_content_button:hover{
+    background-color: #A89887;
+    border: 1px solid #A89887;
+    color: #fff;
+    border-radius: 10px;
+}
+
+#users_offers_box p{
+    font-size:16px;
+    font-weight:normal;
+    color: #A89887;
+    text-align: center;
+    height: 50px!important;
+}
+div[class*='modal-box']{
+    visibility:hidden;
+    display: flex;
+    position: fixed; 
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0%; 
+    height: 0%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.8);
+    justify-content:center;
+    align-items:center;
+    transition: all 0.5s ease-in-out;
+    opacity: 0;
+}
+
+.close-modal-box{
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #A89887;
+    font-size:32px;
+    padding:8px 16px;
+    cursor: pointer;
+}
+
+.delete-box-wrapper{
+    display: none;
+    flex-direction: column;
+    row-gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 6rem;
+}
+
+.change-price-box-wrapper{
+    display: none;
+    flex-direction: column;
+    row-gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 6rem;
+}
+
+.delete-text{
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+.delete-title{
+    font-size: 18px;
+    font-weight: normal;
+    color: #fff;
+}
+
+.delete-popup{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ .button-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    gap: 4rem;
+    width: 50%;
+}
+
+.input-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    gap: 4rem;
+    width: 50%;
+}
+
+.confirm-delete{
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 10px;
+    border: 1px solid #F5E9DC;
+    /* border-radius: 10px; */
+    background-color: transparent;
+    color: #A88E87;
+    outline: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    width: 50%;
+}
+
+.cancel-delete{
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 10px;
+    border: 1px solid #A88E87;
+    /* border-radius: 10px; */
+    background-color: #F5E9DC;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    width: 50%;
+}
+
+.confirm-delete:hover
+{
+    transform: scale(1.1);
+}
+
+.cancel-delete:hover{
+    transform: scale(1.1);
+}
+
+.confirm-change-price{
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 10px;
+    border: 1px solid #F5E9DC;
+    /* border-radius: 10px; */
+    background-color: transparent;
+    color: #A88E87;
+    outline: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    width: 50%;
+}
+
+.cancel-change-price{
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 10px;
+    border: 1px solid #A88E87;
+    /* border-radius: 10px; */
+    background-color: #F5E9DC;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    width: 50%;
+}
+
+.confirm-change-price:hover
+{
+    transform: scale(1.1);
+}
+
+.cancel-change-price:hover{
+    transform: scale(1.1);
+}
+
+.offer-image{
+    display: none;
+    max-width:512px;
+    width:92%;
+    margin: 0 auto;
+}
+/* .close-modal-box{
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #A89887;
+    font-size:32px;
+    padding:8px 16px;
+    cursor: pointer;
+}
+.delete-popup{
+    display:none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background:red;
+    width: 200px;
+    height: 200px;
+} */
+
+button {
+    color: #A88E87;
+}
+
+.user_offer_image_button{
+    background-color: #F5E9DC;
+    border: 1px solid #A89887;
+    color: #000;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 400;
+    overflow: hidden;
+    text-align: center;
+    vertical-align: middle;
+    outline: none;
+    text-transform: capitalize;
+    border-radius: 5px;
+    width: 20%;
+    transition: all 0.5s ease-in-out;
+    padding: 0.5rem 1rem
+}
+.user_offer_image_button:hover{
+    background-color: transparent;
+    border: 1px solid #A89887;
+    transform: scale(1.1);
+}
+.price_input{
+    width: 80% !important;
+}
+
+@media only screen and (max-width:1000px) {
+    #users_offers_box{
+    grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media only screen and (max-width:750px) {
+    #users_offers_box{
+    grid-template-columns: 1fr 1fr;
+    }
+    .modal-box > div{
+        padding: 0;
+    }
+
+    .input-wrapper{
+        width: 80%;
+    }
+
+    .button-wrapper{
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width:500px) {
+    #users_offers_box{
+    grid-template-columns: 1fr;
+    padding: 6rem 3rem;
+}
+.delete-text {
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.delete-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+}
+}
