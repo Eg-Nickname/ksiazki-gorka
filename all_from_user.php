@@ -22,15 +22,15 @@ if(isset($_SESSION['logged_in'])){
         <div class="nav-container">
             
             <div class="left-nav">
-                <a href="index.php"><div class="nav-image"></div></a>
+                <a href="strona-glowna"><div class="nav-image"></div></a>
             </div>
 
             <div class="center-nav">
                 <div class="nav-list">
                     <ul>
-                        <li><a href="index.php#offers-section">Kategorie</a></li>
-                        <li><a href="offer_page.php">Kup</a></li>
-                        <li><a href="user_panel/add_offer_page.php">Sprzedaj</a></li>
+                        <li><a href="strona-glowna#offers-section">Kategorie</a></li>
+                        <li><a href="lista-ofert">Kup</a></li>
+                        <li><a href="user_panel/dodaj-oferte">Sprzedaj</a></li>
                     </ul>
                 </div>
             </div>
@@ -39,8 +39,8 @@ if(isset($_SESSION['logged_in'])){
             if($is_logged_in){
                 echo<<<END
                 <div class="right-nav-authorized">
-                    <a href="user_panel/active_users_offers.php" id="user-panel-button"></a>
-                    <a id="messages-button"></a>
+                    <a id="user-panel-button" href="user_panel/dane-uzytkownika"></a>
+                    <a id="messages-button" href="user_panel/wiadomosci-sprzedaz"></a>
                     <a id="log_out"></a>
                 </div>
                 END;
@@ -96,7 +96,7 @@ if(isset($_SESSION['logged_in'])){
     <footer>
         <div class="footer-container">
             <div class="logo-footer">
-                <a href="index.php"><div class="footer-image"></div></a>
+                <a href="strona-glowna"><div class="footer-image"></div></a>
                 <span class="break"></span>
             </div>
 
@@ -104,9 +104,9 @@ if(isset($_SESSION['logged_in'])){
                 <div class="footer-nav-responsive">
                     <div class="nav-list">
                         <ul>
-                            <li><a href="index.php#offers-section">Kategorie</a></li>
-                            <li><a href="offer_page.php">Kup</a></li>
-                            <li><a href="#">Sprzedaj</a></li>
+                            <li><a href="strona-glowna#offers-section">Kategorie</a></li>
+                            <li><a href="lista-ofert">Kup</a></li>
+                            <li><a href="user_panel/dodaj-oferte">Sprzedaj</a></li>
                         </ul>
                     </div>
                     <div class="social-box-responsive">

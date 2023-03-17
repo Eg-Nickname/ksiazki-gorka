@@ -178,7 +178,7 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
     <footer>
         <div class="footer-container">
             <div class="logo-footer">
-                <a href="index.php"><div class="footer-image"></div></a>
+                <a href="strona-glowna"><div class="footer-image"></div></a>
                 <span class="break"></span>
             </div>
 
