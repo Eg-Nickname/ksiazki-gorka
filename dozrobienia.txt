@@ -1,5 +1,7 @@
 Baza danych
+może redukcja rozmairu zdjęcia w php jak się uda https://stackoverflow.com/questions/11418594/how-to-reduce-the-image-size-without-losing-quality-in-php
 Favicon
+Sprawdzić czy stopka zawsze jest na samym dole i responsywa na telefonie
 PHP{
 sprawdzanie czy zalogowany czy nie na stronach
 walidacja podanych przez uzytkownika
@@ -12,38 +14,23 @@ Lista ofert
 -filtry html/css
 Strona oferty
 -responsywa głównego zdjęcia html/css
-STRONA LOGOWANIA
---dodać tak, żeby wracało na poprzednią stronę
-PANEL UŻYTKOWNIKA ()
-WSZĘDZIE MENU U GÓRY html/css
 DANE UŻytkownika // TEGO NA NARAZIE NIE BO JESZCZE ZMIANA HASŁA BĘDZIE
 -wygląd 
--liniki
 -zmiana hasła
--menu u góy
 -dodać jakiś popup potwierdzenia
 DODAWANIE OFERTY
--menu u góry
 -można spróbować ogarnać wysokość tej strony bo tak w sumie dużo skrolowania na telefonie
--liniki
 AKTYWNE OFERTY Uzytkownika activer_users...
--wywalic styl z html
--przycisk przod/tyl text sie rozwala
 -ta oferta jakoś strasznie dziwnie wysoka,
 -popup zmiany ceny - ten input moze byc jakis ladniejszy, przyciski tez mogłyby być ładniejsze
 -tak samo popup usuwania moze to jest sam,
--linki
 -te buttony tez trzeba poprawic chyba
--responsywa menu
 -ustawić tak, zeby stopka zawsze byla na dole
 CHATY
--menu
--linki
 -czat css do buttonów, oba mają klase operation_btn
 -anulowanie zakupu/sprzedazy
--responsywa calego zakupu sie lekko rozjezdza ikona wiadomosci
--responsywa menu
 -dodać scrolowanie do czatu po kliknieciu na responsywie
+STRONA Wiadomosci
 //DODAC JAKIS PANEL ADMINA PRZYNAJMNIEJ DO DODAWANIA PRZYKŁADOWYCH KSIAZĘK
 
 

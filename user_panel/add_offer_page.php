@@ -5,14 +5,6 @@
 //     exit();
 // }
 ?>
-
-<?php
-session_start();
-$is_logged_in=false;
-if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
-    $is_logged_in =true;
-}
-?>
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -25,44 +17,43 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
     <script defer src="../scripts/log_out.js"></script>
     <script defer src="../scripts/user_panel_scripts/add_offer_page_script.js"></script>
     <link rel="stylesheet" href="../style/oferty_add.css">
+    <link rel="stylesheet" href="../style/sub_menu.css">
 </head>
 <body>
 <nav>
         <div class="nav-container">
             
             <div class="left-nav">
-                <a href="../index.php"><div class="nav-image"></div></a>
+                <a href="../strona-glowna"><div class="nav-image"></div></a>
             </div>
 
             <div class="center-nav">
                 <div class="nav-list">
                     <ul>
-                        <li><a href="../index.php">Kategorie</a></li>
-                        <li><a href="../offer_page.php">Kup</a></li>
-                        <li><a href="#">Sprzedaj</a></li>
+                        <li><a href="../strona-glowna#offers-section">Kategorie</a></li>
+                        <li><a href="../lista-ofert">Kup</a></li>
+                        <li><a href="../user_panel/dodaj-oferte">Sprzedaj</a></li>
                     </ul>
                 </div>
             </div>
-            <?php
-            if($is_logged_in){
-                echo<<<END
+            
                 <div class="right-nav-authorized">
-                    <a id="user-panel-button" href ="../user_panel/active_users_offers.php"></a>
-                    <a id="messages-button" href="../user_panel/wiadomosci-sprzedaz"></a>
+                    <a id="user-panel-button" href="dane-uzytkownika"></a>
+                    <a id="messages-button" href="../user_panel/wiadomosci"></a>
                     <a id="log_out"></a>
                 </div>
-                END;
-            }
-            else{
-                echo<<<END
-                <div class="right-nav">
-                    <a href="strona-logowania">Zaloguj się</a>
-                </div>
-                END;
-            }
-            ?>
         </div>
     </nav>
+    <section id="sub-menu">
+        <ul>
+            <li><a href="dane-uzytkownika">Dane</a></li>
+            <li><a href="twoje-oferty">Twoje oferty</a></li>
+            <li  class="active"><a href="dodaj-oferte">Wystaw</a></li>
+            <li><a href="wiadomosci-kupno">Kupujesz</a></li>
+            <li><a href="wiadomosci-sprzedaz">Sprzedajesz</a></li>
+            <li><a href="wiadomosci">Wiadomosci</a></li>
+        </ul>
+    </section>
     <main>
         <div class="main-container">
         <form onsubmit="return false" enctype="multipart/form" id="offer_form">
@@ -117,7 +108,7 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
     <footer>
         <div class="footer-container">
             <div class="logo-footer">
-                <a href="index.php"><div class="footer-image"></div></a>
+                <a href="../strona-glowna"><div class="footer-image"></div></a>
                 <span class="break"></span>
             </div>
 
@@ -125,9 +116,9 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
                 <div class="footer-nav-responsive">
                     <div class="nav-list">
                         <ul>
-                            <li><a href="#offers-section">Kategorie</a></li>
-                            <li><a href="offer_page.php">Kup</a></li>
-                            <li><a href="#">Sprzedaj</a></li>
+                            <li><a href="../strona-glowna#offers-section">Kategorie</a></li>
+                            <li><a href="../lista-ofert">Kup</a></li>
+                            <li><a href="dodaj-oferte">Sprzedaj</a></li>
                         </ul>
                     </div>
                     <div class="social-box-responsive">

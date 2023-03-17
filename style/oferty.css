@@ -1118,6 +1118,21 @@ section{
             grid-template-columns: 1fr;
             padding: 6rem 6rem;
     }
+    .nav-container .right-nav-authorized #user-panel-button{
+        width: 24px;
+        height: 24px;
+    }
+    
+    .nav-container .right-nav-authorized #messages-button{
+        width: 27px;
+        height: 21px;
+    }
+    
+    .nav-container .right-nav-authorized #log_out{
+        cursor: pointer;
+        width: 28px;
+        height: 22px;
+    }
     .nav-container .center-nav .nav-list ul li + li {
         margin-left: 1rem;
       }

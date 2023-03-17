@@ -17,22 +17,22 @@
         <div class="nav-container">
             
             <div class="left-nav">
-                <a href="../index.php"><div class="nav-image"></div></a>
+                <a href="../strona-glowna"><div class="nav-image"></div></a>
             </div>
 
             <div class="center-nav">
                 <div class="nav-list">
                     <ul>
-                        <li><a href="../index.php#offers-section">Kategorie</a></li>
-                        <li><a href="../offer_page.php">Kup</a></li>
-                        <li><a href="../user_panel/add_offer_page.php">Sprzedaj</a></li>
+                        <li><a href="../strona-glowna#offers-section">Kategorie</a></li>
+                        <li><a href="../lista-ofert">Kup</a></li>
+                        <li><a href="../user_panel/dodaj-oferte">Sprzedaj</a></li>
                     </ul>
                 </div>
             </div>
             
                 <div class="right-nav-authorized">
-                    <a id="user-panel-button" href="active_users_offers.php"></a>
-                    <a id="messages-button" href="../user_panel/wiadomosci-sprzedaz"></a>
+                    <a id="user-panel-button" href="dane-uzytkownika"></a>
+                    <a id="messages-button" href="../user_panel/wiadomosci"></a>
                     <a id="log_out"></a>
                 </div>
         </div>
@@ -40,12 +40,12 @@
 
     <section id="sub-menu">
         <ul>
-            <li><a href="">Dane</a></li>
-            <li><a href="">Twoje oferty</a></li>
-            <li><a href="">Wystaw</a></li>
-            <li><a href="">Kupujesz</a></li>
-            <li><a href="">Sprzedajesz</a></li>
-            <li class="active"><a href="">Wiadomosci</a></li>
+            <li><a href="dane-uzytkownika">Dane</a></li>
+            <li><a href="twoje-oferty">Twoje oferty</a></li>
+            <li><a href="dodaj-oferte">Wystaw</a></li>
+            <li><a href="wiadomosci-kupno">Kupujesz</a></li>
+            <li class="active"><a href="wiadomosci-sprzedaz">Sprzedajesz</a></li>
+            <li><a href="wiadomosci">Wiadomosci</a></li>
         </ul>
     </section>
 
@@ -137,7 +137,7 @@
     <footer>
         <div class="footer-container">
             <div class="logo-footer">
-                <a href="index.php"><div class="footer-image"></div></a>
+                <a href="../strona-glowna"><div class="footer-image"></div></a>
                 <span class="break"></span>
             </div>
 
@@ -145,9 +145,9 @@
                 <div class="footer-nav-responsive">
                     <div class="nav-list">
                         <ul>
-                            <li><a href="#offers-section">Kategorie</a></li>
-                            <li><a href="offer_page.php">Kup</a></li>
-                            <li><a href="#">Sprzedaj</a></li>
+                            <li><a href="../strona-glowna#offers-section">Kategorie</a></li>
+                            <li><a href="../lista-ofert">Kup</a></li>
+                            <li><a href="dodaj-oferte">Sprzedaj</a></li>
                         </ul>
                     </div>
                     <div class="social-box-responsive">
