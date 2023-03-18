@@ -2,10 +2,13 @@ Baza danych
 może redukcja rozmairu zdjęcia w php jak się uda https://stackoverflow.com/questions/11418594/how-to-reduce-the-image-size-without-losing-quality-in-php
 Favicon
 Sprawdzić czy stopka zawsze jest na samym dole i responsywa na telefonie
+WARUNKI haseł itd rejestracja,zmiana danych
 PHP{
 sprawdzanie czy zalogowany czy nie na stronach
 walidacja podanych przez uzytkownika
 }
+Strona logowania
+rozwala się przy błędach css
 Strona główna
 -mail jakis trzeba dac i moze jakis formularz kontaktowy ale to na razie nie
 -proporcje zdjęć na głównej i liście ofert html/css
@@ -14,10 +17,8 @@ Lista ofert
 -filtry html/css
 Strona oferty
 -responsywa głównego zdjęcia html/css
-DANE UŻytkownika // TEGO NA NARAZIE NIE BO JESZCZE ZMIANA HASŁA BĘDZIE
+DANE UŻytkownika
 -wygląd 
--zmiana hasła
--dodać jakiś popup potwierdzenia
 DODAWANIE OFERTY
 -można spróbować ogarnać wysokość tej strony bo tak w sumie dużo skrolowania na telefonie
 AKTYWNE OFERTY Uzytkownika activer_users...

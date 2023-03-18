@@ -44,7 +44,7 @@ if(isset($_SESSION['logged_in']))
             <span class="sign-in-text"><h2>Zaloguj się</h2></span>
         <!-- <div class="box-2-3-wrapper"> -->
             
-                    <form action="javascript:void(0);" class="register-in-form form--hidden " method="POST">
+                    <form action="javascript:void(0);" class="register-in-form form--hidden ">
 
                         <div class="label-wrapper sign-up-form">
                             <label for="name">Imię:</label>
@@ -96,7 +96,7 @@ if(isset($_SESSION['logged_in']))
                         </div>
                     </form>
                     
-                    <form action="javascript:void(0);" class="sign-in-form" method="POST"> 
+                    <form action="javascript:void(0);" class="sign-in-form"> 
                         <div class="label-wrapper sign-in-form">
                             <label for="name">Adres Email:</label>
                             <div class="input-field">

@@ -13,7 +13,7 @@ if(!isset($_SESSION['logged_in'])){
             $error = true;
             $error_message="Podano zły email lub hasło";
         }
-        if(strlen($password)<8){ //warunek hasła jakiś trzeba lepszy wziąć
+        if(strlen($password)<1){ //warunek hasła jakiś trzeba lepszy wziąć
             $error = true;
             $error_message="Podano zły email lub hasło";
         }
@@ -26,17 +26,14 @@ if(!isset($_SESSION['logged_in'])){
                     throw new Exception(mysqli_connect_errno());
                 }
                 else{
-                $password=md5($password);
-                $sql="SELECT * FROM users WHERE email='$email' AND password='$password'";
+                // $password=md5($password);
+                $sql="SELECT * FROM users WHERE email='$email'";
                 $result=$connection->query($sql);
                 if(!$result)throw new Exception($connection->error);
                 $number_of_users=$result->num_rows;
-                if($number_of_users==0){
-                    $error_message="Podano zły email lub hasło";
-                }
-                else{
-                    if($number_of_users==1){
-                        $user_data=$result->fetch_assoc();
+                if($number_of_users==1){
+                    $user_data=mysqli_fetch_assoc($result);
+                    if(password_verify($password,$user_data['password'])){
                         $login_result=true;
                         $_SESSION['logged_in']=true;
                         $_SESSION['user_id']=$user_data['id_user'];
@@ -44,6 +41,13 @@ if(!isset($_SESSION['logged_in'])){
                         $_SESSION['name']=$user_data['name'];
                         $_SESSION['surname']=$user_data['surname'];
                     }
+                    else{
+                        $error_message="Podano zły email lub hasło";
+                    }
+                }
+                else
+                {
+                    $error_message="Podano zły email lub hasło";
                 }
                 $connection->close();
                 }

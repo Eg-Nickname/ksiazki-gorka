@@ -51,7 +51,8 @@ if(!isset($_SESSION['logged_in'])){
                     array_push($error_class,'register_email');
                 }
                 if(!$error){
-                    $password=md5($password);
+                    // $password=md5($password);
+                    $password=password_hash($password,PASSWORD_DEFAULT);
                     $sql="INSERT INTO users VALUES (NULL,'$register_email','$password','$name','$surname')";
                     $result=$connection->query($sql);
                     if(!$result){

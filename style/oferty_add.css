@@ -492,7 +492,7 @@ button:hover {
     color: #A88E87;
     font-weight: normal;
 }
-.popup-order-box{
+/* .popup-order-box{ dalem to do submenu
     width: 400px;
     height: auto;
     position: fixed;
@@ -513,7 +513,7 @@ button:hover {
     color: #A89887;
     padding: 1.5rem;
     text-align: center;
-}
+} */
 
 footer{
     height: 170px;

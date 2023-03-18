@@ -7,17 +7,17 @@ if(!isset($_SESSION['logged_in']))
 if(!isset($_POST['name']) || !isset($_POST['surname']) || !isset($_POST['email'])){
     exit();
 }
-$name = $_POST['name'];
-$surname = $_POST['surname'];
-$email = $_POST['email'];
+$name = htmlentities($_POST['name']);
+$surname = htmlentities($_POST['surname']);
+$email = htmlentities($_POST['email']);
 $id=$_SESSION['user_id'];
 $error=false;
 $error_message=[];
 $error_class=[];
 if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     $error = true;
-    $error_message['register-email']="Podaj poprawny adres e-mail";
-    array_push($error_class,"register_email");
+    $error_message['email']="Podaj poprawny adres e-mail";
+    array_push($error_class,"email");
 }
 if(preg_match('/[0-9\~\!\@\#\$\%\^\&\*\(\)\-\_\=\+\\{\}\;\'\:\"\,\<\>\.\?]/',$name) || strlen($name)<2){
     $error=true;
@@ -34,15 +34,25 @@ if(!$error){
     $connection=mysqli_connect($host,$db_user,$db_password,$db_name);
     if($connection)
     {
-        $sql="UPDATE `users` SET `email`='$email', `name`='$name', `surname`='$surname' WHERE id_user='$id'";
+        $user_mail=$_SESSION['email'];
+        $sql="SELECT * FROM users WHERE email='$email' AND email!='$user_mail'";
         $result=mysqli_query($connection,$sql);
-        if($result){
-            $_SESSION['name']=$name;
-            $_SESSION['surname']=$surname;
-            $_SESSION['email']=$email;
+        if(mysqli_num_rows($result)==0){
+            $sql="UPDATE `users` SET `email`='$email', `name`='$name', `surname`='$surname' WHERE id_user='$id'";
+            $result=mysqli_query($connection,$sql);
+            if($result){
+                $_SESSION['name']=$name;
+                $_SESSION['surname']=$surname;
+                $_SESSION['email']=$email;
+            }
+            else{
+                $error=true;
+            }
         }
         else{
-            $error=true;
+            $error = true;
+            $error_message['email']="Email jest już zajęty";
+            array_push($error_class,"email");
         }
     }
 }
