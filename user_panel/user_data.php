@@ -21,6 +21,7 @@ $email = $_SESSION['email'];
     <link rel="stylesheet" href="../style/main.css">
     <link rel="stylesheet" href="../style/oferty_reserved.css">
     <link rel="stylesheet" href="../style/sub_menu.css">
+    <link rel="icon" type="image/x-icon" href="../images/icon.png">
     <style>
         /* jak chcesz to sobie pozmieniaj na display, ale żeby nie było tak jak na logowaniu */
         .error_log_info{

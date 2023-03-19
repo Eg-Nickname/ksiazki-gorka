@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../style/oferty_add.css">
     <link rel="stylesheet" href="../style/active_users.css">
     <link rel="stylesheet" href="../style/sub_menu.css">
+    <link rel="icon" type="image/x-icon" href="../images/icon.png">
 
 </head>
 <body>

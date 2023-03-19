@@ -16,6 +16,7 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
     <script defer src="scripts/jquery-3.6.1.min.js"></script>
     <script defer src="scripts/single_offer_script.js"></script>
     <script defer src="scripts/log_out.js"></script>
+    <link rel="icon" type="image/x-icon" href="images/icon.png">
 </head>
 <body>
     <nav>

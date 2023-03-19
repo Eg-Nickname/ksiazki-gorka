@@ -18,6 +18,7 @@
     <script defer src="../scripts/user_panel_scripts/add_offer_page_script.js"></script>
     <link rel="stylesheet" href="../style/oferty_add.css">
     <link rel="stylesheet" href="../style/sub_menu.css">
+    <link rel="icon" type="image/x-icon" href="../images/icon.png">
 </head>
 <body>
 <nav>

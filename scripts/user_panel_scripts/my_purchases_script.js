@@ -90,6 +90,7 @@ function cost(parent){
     return cost
 }
 function change_message_box(chatter,name,surname){
+    document.querySelector('.chat_box').scrollIntoView();
     document.querySelector('.chat_user_box_name').innerHTML=`${name} ${surname}`;
     const msg_input=document.getElementById('message_input');
     msg_input.disabled=false;

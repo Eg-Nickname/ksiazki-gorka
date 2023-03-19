@@ -137,6 +137,8 @@ const deleteHandler = (parent,img,paragraph) => {
     parent.classList.remove('active');
 }
 document.getElementById('submit').addEventListener('click', function() {
+    const btn=this;
+    btn.disabled = true;
     const book_id = document.getElementById('book_id').value;
     const price = Math.round(Number(document.getElementById('price').value));
     const inputField = Array.from(document.querySelectorAll('.fileInputField'));
@@ -154,7 +156,10 @@ document.getElementById('submit').addEventListener('click', function() {
       contentType: false,
       processData: false,
       success: function(response) {
+        btn.disabled = false;
+        console.log(this);
         response=JSON.parse(response);
+        console.log(response);
         const error_spans=Array.from(document.querySelectorAll('.error_span'));
         error_spans.forEach(span=>{
             span.style.display=null;

@@ -1,11 +1,10 @@
+!!!!!!! LINIJKA DO PHP.INI extension=php_gd.dll, trzeba to wkleić tam żeby wam dodawanie ofert działało, bo dodałem kompresje
 Baza danych
-może redukcja rozmairu zdjęcia w php jak się uda https://stackoverflow.com/questions/11418594/how-to-reduce-the-image-size-without-losing-quality-in-php
-Favicon
 Sprawdzić czy stopka zawsze jest na samym dole i responsywa na telefonie
-WARUNKI haseł itd rejestracja,zmiana danych
 PHP{
 sprawdzanie czy zalogowany czy nie na stronach
 walidacja podanych przez uzytkownika
+WARUNKI haseł itd rejestracja,zmiana danych
 }
 Strona logowania
 rozwala się przy błędach css
@@ -30,9 +29,9 @@ AKTYWNE OFERTY Uzytkownika activer_users...
 CHATY
 -czat css do buttonów, oba mają klase operation_btn
 -anulowanie zakupu/sprzedazy
--dodać scrolowanie do czatu po kliknieciu na responsywie
 STRONA Wiadomosci
 //DODAC JAKIS PANEL ADMINA PRZYNAJMNIEJ DO DODAWANIA PRZYKŁADOWYCH KSIAZĘK
+//resetowanie hasła
 
 
 

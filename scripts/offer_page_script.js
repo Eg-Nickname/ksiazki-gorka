@@ -107,6 +107,7 @@ const get_sample_book_data = function (){
 }
 $("body").on("click", ".book-btn",get_sample_book_data);
 $('#sumbit_filters').on('click', function(){
+    document.querySelector('.container').scrollIntoView();
     const checked_subject_inputs=document.querySelectorAll('.subject_filter:checked');
     const subject_array=[];
     for(const element of checked_subject_inputs){

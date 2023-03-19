@@ -16,6 +16,7 @@ if(isset($_SESSION['logged_in']))
     <link rel="stylesheet" href="style/logowanie.css">
     <script defer src="scripts/jquery-3.6.1.min.js"></script>
     <script defer src="scripts/login_script.js"></script> 
+    <link rel="icon" type="image/x-icon" href="images/icon.png">
 </head>
 <body>
 <div class="container">
