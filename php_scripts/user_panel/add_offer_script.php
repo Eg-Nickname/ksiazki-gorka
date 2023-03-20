@@ -53,8 +53,8 @@ else{
     }
 }
 if(!$error){
-    $id=$_POST['book_id'];
-    $price=$_POST['price'];
+    $id=htmlentities($_POST['book_id']);
+    $price=htmlentities($_POST['price']);
     $img_upload_path = '../../users_offers/'.$new_img_name;
     $bc_img_upload_path = '../../users_offers/'.$new_bc_img_name;
     $serwer_img_path='users_offers/'.$new_img_name;

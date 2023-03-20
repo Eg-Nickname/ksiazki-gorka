@@ -1,9 +1,9 @@
 <?php
 if(isset($_POST['book_id']) && isset($_POST['number_of_offers'])){
-    $bookId=$_POST['book_id'];
-    $number_of_offers=$_POST['number_of_offers'];
+    $bookId=htmlentities($_POST['book_id']);
+    $number_of_offers=htmlentities($_POST['number_of_offers']);
     $number_of_offers+=12;
-    require_once "connect.php";
+    require_once "connect.php"; 
     $everything=[];
     mysqli_report(MYSQLI_REPORT_STRICT);
     try{

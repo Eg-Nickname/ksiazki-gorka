@@ -84,6 +84,11 @@ $email = $_SESSION['email'];
             <label for="register_email">Email:</label>
             <input type="email" placeholder="Wpisz swoj email" name="email" id="email" value="<?php echo $email?>" />
             <span id="email-error" class="error_log_info">Lorem Ipsum</span>
+
+            <label for="password">Podaj obecne hasło:</label>
+            <input type="password" class="password_change" placeholder="Obecne hasło"  name="password" id="password" />
+            <span  id="password-error"class="error_log_info">Lorem Ipsum</span>
+
             <button id="change_data">Zmień dane</button> 
         </div>
         <div>

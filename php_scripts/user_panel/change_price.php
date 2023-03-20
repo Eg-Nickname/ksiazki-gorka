@@ -6,8 +6,8 @@ if(!isset($_SESSION['logged_in'])){
 if(!isset($_POST['id']) || !isset($_POST['price'])){
     exit();
 }
-$offer=$_POST['id'];
-$price=$_POST['price'];
+$offer=htmlentities($_POST['id']);
+$price=htmlentities($_POST['price']);
 $user=$_SESSION['user_id'];
 $result=false;
 require_once '../connect.php';

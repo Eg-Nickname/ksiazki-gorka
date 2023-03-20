@@ -1,22 +1,17 @@
-!!!!!!! LINIJKA DO PHP.INI extension=php_gd.dll, trzeba to wkleić tam żeby wam dodawanie ofert działało, bo dodałem kompresje
-Baza danych
+!!!!!!! LINIJKA DO PHP.INI: extension=php_gd.dll , trzeba to wkleić tam żeby wam dodawanie ofert działało, bo dodałem kompresje
+BAZA DANYCH
 Sprawdzić czy stopka zawsze jest na samym dole i responsywa na telefonie
-PHP{
-sprawdzanie czy zalogowany czy nie na stronach
-walidacja podanych przez uzytkownika
-WARUNKI haseł itd rejestracja,zmiana danych
-}
-Strona logowania
+STRONA LOGOWANIA
+trzeba dodać info że hasło musi się składać z liter,znakow itd
 rozwala się przy błędach css
-Strona główna
--mail jakis trzeba dac i moze jakis formularz kontaktowy ale to na razie nie
+STRONA GŁÓWNA
 -proporcje zdjęć na głównej i liście ofert html/css
-Lista ofert
+LISTA OFERT
 -proporcje zdjęć na głównej i liście ofert html/css
 -filtry html/css
-Strona oferty
+STRONA OFERT
 -responsywa głównego zdjęcia html/css
-DANE UŻytkownika
+DANE UŻYTKOWNIKA
 -wygląd 
 DODAWANIE OFERTY
 -można spróbować ogarnać wysokość tej strony bo tak w sumie dużo skrolowania na telefonie
@@ -32,6 +27,7 @@ CHATY
 STRONA Wiadomosci
 //DODAC JAKIS PANEL ADMINA PRZYNAJMNIEJ DO DODAWANIA PRZYKŁADOWYCH KSIAZĘK
 //resetowanie hasła
+//mail jakis trzeba dac i moze jakis formularz kontaktowy
 
 
 

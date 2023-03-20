@@ -17,22 +17,54 @@ if(!isset($_SESSION['logged_in'])){
             $error_message['register-email']="Podaj poprawny adres e-mail";
             array_push($error_class,"register_email");
         }
-        if(strlen($password)<8 || $password!=$check_password || !preg_match('/[A-Z]/',$password)){ //Warunki hasła do ustawienia
+        $uppercase = preg_match('@[A-Z]@', $password);
+        $lowercase = preg_match('@[a-z]@', $password);
+        $number    = preg_match('@[0-9]@', $password);
+        $specialChars = preg_match('@[^\w]@', $password);
+        if(!$uppercase || !$lowercase || !$number || !$specialChars || strlen($password) < 8){ //Warunki hasła do ustawienia
             $error = true;
-            $error_message['register-password']="Hasła nie są zgodne lub nie spełniają wymagań dotyczących złożoności";
+            $error_message['register-password']="Hasło nie spełnia wymagań złożoności";
+            array_push($error_class,"register_password");
+        }
+        if($password!=$check_password){
+            $error = true;
+            $error_message['password-check']="Hasła nie są zgodne";
             array_push($error_class,"register_password");
             array_push($error_class,"check_password");
         }
-        if(preg_match('/[0-9\~\!\@\#\$\%\^\&\*\(\)\-\_\=\+\\{\}\;\'\:\"\,\<\>\.\?]/',$name) || strlen($name)<2){
+        // if(strlen($password)<8 || $password!=$check_password || !preg_match('/[A-Z]/',$password)){ //Warunki hasła do ustawienia
+        //     $error = true;
+        //     $error_message['register-password']="Hasła nie są zgodne lub nie spełniają wymagań dotyczących złożoności";
+        //     array_push($error_class,"register_password");
+        //     array_push($error_class,"check_password");
+        // }
+        if(preg_match('/[0-9\~\!\@\#\$\%\^\&\*\(\)\-\_\=\+\\{\}\;\'\:\"\,\<\>\.\?]/',$name)){
             $error=true;
             $error_message['name']="Imię musi się składać wyłącznie z liter";
             array_push($error_class,"name");
+        }else{
+            if(strlen($name)<2){
+                $error=true;
+                $error_message['name']="Imię jest za krótkie";
+                array_push($error_class,"name");
+            }
         }
-        if(preg_match('/[0-9\~\!\@\#\$\%\^\&\*\(\)\-\_\=\+\\{\}\;\'\:\"\,\<\>\.\?]/',$surname) || strlen($surname)<2){
+        if(preg_match('/[0-9\~\!\@\#\$\%\^\&\*\(\)\-\_\=\+\\{\}\;\'\:\"\,\<\>\.\?]/',$surname)){
             $error=true;
             $error_message['surname']="Nazwisko musi się składać wyłącznie z liter";
             array_push($error_class,"surname");
+        }else{
+            if(strlen($surname)<2){
+                $error=true;
+                $error_message['surname']="Nazwisko jest za krótkie";
+                array_push($error_class,"surname");
+            }
         }
+        // if(preg_match('/[0-9\~\!\@\#\$\%\^\&\*\(\)\-\_\=\+\\{\}\;\'\:\"\,\<\>\.\?]/',$surname) || strlen($surname)<2){
+        //     $error=true;
+        //     $error_message['surname']="Nazwisko musi się składać wyłącznie z liter";
+        //     array_push($error_class,"surname");
+        // }
         if(!$error){
             require_once "connect.php";
             mysqli_report((MYSQLI_REPORT_STRICT));

@@ -5,9 +5,8 @@ if(!isset($_SESSION['logged_in']) || !isset($_POST['offer']) || !isset($_POST['s
 }
 $offer = htmlentities($_POST['offer']);
 $user=$_SESSION['user_id'];
-$status=$_POST['status'];
+$status=htmlentities($_POST['status']);
 $result=false;
-$elo;
 require_once "../connect.php";
 $connection=mysqli_connect($host,$db_user,$db_password,$db_name);
 if(!mysqli_connect_errno()){

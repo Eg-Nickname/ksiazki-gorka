@@ -2,7 +2,8 @@ document.getElementById('change_data').addEventListener('click', function(){
     const user_data={
         name:document.getElementById('name').value,
         surname:document.getElementById('surname').value,
-        email:document.getElementById('email').value
+        email:document.getElementById('email').value,
+        password:document.getElementById('password').value
     }
     update_user_data(user_data);
 });

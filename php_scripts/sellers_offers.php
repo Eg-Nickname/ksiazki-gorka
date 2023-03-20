@@ -3,7 +3,7 @@ session_start();
 if(!isset($_POST['seller'])){
     exit();
 }
-$seller = $_POST['seller'];
+$seller = htmlentities($_POST['seller']);
 require_once 'connect.php';
 $connection=mysqli_connect($host,$db_user,$db_password,$db_name);
 if($connection){

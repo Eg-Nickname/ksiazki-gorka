@@ -35,7 +35,7 @@ function build_chatbox(response){
             const buyer=document.createElement('p');
             buyer.classList.add('buyer_name');
             const a=document.createElement('a');
-            a.href=`../oferty-uzytkownika?seller=${offer.customer}`;
+            a.href=`../oferty-uzytkownika?seller=${offer.customer}&name=${offer.name}-${offer.surname}`;
             a.innerHTML=` ${offer.name} ${offer.surname}`;
             buyer.innerHTML =`Kupujący:`;
             buyer.append(a);

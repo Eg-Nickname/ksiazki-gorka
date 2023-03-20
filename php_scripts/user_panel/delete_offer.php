@@ -3,7 +3,7 @@ session_start();
 if(!isset($_SESSION['logged_in']) || !isset($_POST['offer'])){
     exit();
 }
-$offer=$_POST['offer'];
+$offer=htmlentities($_POST['offer']);
 $user=$_SESSION['user_id'];
 $result;
 mysqli_report(MYSQLI_REPORT_STRICT);

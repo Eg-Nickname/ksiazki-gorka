@@ -1,9 +1,9 @@
 <?php
-// session_start();
-// if(!isset($_SESSION['logged_in'])){
-//     header('Location:../strona-logowania');
-//     exit();
-// }
+session_start();
+if(!isset($_SESSION['logged_in'])){
+    header('Location:../strona-logowania');
+    exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="pl">

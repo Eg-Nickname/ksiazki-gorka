@@ -62,8 +62,9 @@ if(!isset($_SESSION['logged_in'])){
     }
     else{
         header("Location:../strona-logowania");
+        exit();
     }
 }else{
-
+    exit();
 }
 ?>
