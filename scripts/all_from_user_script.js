@@ -3,8 +3,15 @@ function set_title(){
     const urlParams = new URLSearchParams(queryString);
     const title=urlParams.get('name').replaceAll("-"," ");
     document.title =`Oferta - ${title}`;
+    add_header(title);
 }
 set_title()
+function add_header(title){
+    const h1=document.createElement('h1');
+    h1.innerHTML = `Oferta użytkownika: ${title}`;
+    h1.classList.add('users_offers_header');
+    document.querySelector('main').prepend(h1);
+}
 function show_users_offers(){
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);

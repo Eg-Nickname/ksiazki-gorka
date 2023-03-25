@@ -718,6 +718,10 @@ footer{
     width: 100%;
     background-color: #F5E9DC;
 }
+.users_offers_header{
+    text-align: center;
+    font-size:20px;
+}
 
 .footer-container{
     max-width: 1140px;

@@ -16,7 +16,7 @@ DANE UŻYTKOWNIKA
 DODAWANIE OFERTY
 -można spróbować ogarnać wysokość tej strony bo tak w sumie dużo skrolowania na telefonie
 OFERTY OD DANEGO UŻYTKOWNIKA
--można dodać hedera od kogo
+-tytuł książki i MEN CSS możesz też zmniejszyć tą przerwę między tym headerem, ale to według twoje uzania już
 AKTYWNE OFERTY Uzytkownika activer_users...
 -ta oferta jakoś strasznie dziwnie wysoka,
 -popup zmiany ceny - ten input moze byc jakis ladniejszy, przyciski tez mogłyby być ładniejsze
