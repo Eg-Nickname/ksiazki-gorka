@@ -6,7 +6,7 @@ if(!isset($_SESSION['logged_in'])){
         $error_message=[];
         $register_result=false;
         $error_class=[];
-        $register_email=strtolower(htmlentities($_POST['register_email']));
+        $register_email=strtolower(htmlentities($email=filter_var($_POST['email'], FILTER_SANITIZE_EMAIL)));
         $password=htmlentities($_POST['register_password']);
         $check_password=htmlentities($_POST['check_password']);
         $name=ucfirst(strtolower(htmlentities($_POST['name'])));

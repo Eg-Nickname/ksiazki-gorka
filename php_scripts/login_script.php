@@ -5,7 +5,7 @@ if(!isset($_SESSION['logged_in'])){
         $error = false;
         $error_message="";
         $login_result=false;
-        $email=$_POST['email'];
+        $email=filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
         $password=$_POST['password'];
         $email=htmlentities($email);
         $password=htmlentities($password);
