@@ -9,7 +9,7 @@ if(!isset($_POST['name']) || !isset($_POST['surname']) || !isset($_POST['email']
 }
 $name=ucfirst(strtolower(htmlentities($_POST['name'])));
 $surname=ucfirst(strtolower(htmlentities($_POST['surname'])));
-$email = strtolower(htmlentities($_POST['email']));
+$email = strtolower(htmlentities(filter_var($_POST['email'], FILTER_SANITIZE_EMAIL)));
 $password =htmlentities($_POST['password']);
 $id=$_SESSION['user_id'];
 $error=false;
