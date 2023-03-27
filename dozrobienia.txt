@@ -1,27 +1,15 @@
 !!!!!!! LINIJKA DO PHP.INI: extension=php_gd.dll , trzeba to wkleić tam żeby wam dodawanie ofert działało, bo dodałem kompresje
 BAZA DANYCH
-Sprawdzić czy stopka zawsze jest na samym dole i responsywa na telefonie
+STOPKA I STRONA NA TEL
+OGARNĄĆ PROPORCJE ZDJĘĆ
 STRONA LOGOWANIA
-trzeba dodać info że hasło musi się składać z liter,znakow itd
-rozwala się przy błędach css
-STRONA GŁÓWNA
--proporcje zdjęć na głównej i liście ofert html/css 
-LISTA OFERT
--proporcje zdjęć na głównej i liście ofert html/css
-STRONA OFERT
--responsywa głównego zdjęcia html/css
-DANE UŻYTKOWNIKA
--wygląd 
-DODAWANIE OFERTY
--można spróbować ogarnać wysokość tej strony bo tak w sumie dużo skrolowania na telefonie
+trzeba dodać info że hasło musi się składać z liter,znakow itd niby już jest ale się strona rozciąga 
 OFERTY OD DANEGO UŻYTKOWNIKA
 -tytuł książki i MEN CSS możesz też zmniejszyć tą przerwę między tym headerem, ale to według twoje uzania już
 AKTYWNE OFERTY Uzytkownika activer_users...
--ta oferta jakoś strasznie dziwnie wysoka,
 -popup zmiany ceny - ten input moze byc jakis ladniejszy, przyciski tez mogłyby być ładniejsze
 -tak samo popup usuwania moze to jest sam,
--te buttony tez trzeba poprawic chyba bo jakieś duże i wysokie
--ustawić tak, zeby stopka zawsze byla na dole
+-ustawić tak, zeby stopka zawsze byla na dole, gdy użytkownik nie ma ofert to widać
 CHATY
 -czat css do buttonów, oba mają klase operation_btn
 -anulowanie zakupu/sprzedazy
