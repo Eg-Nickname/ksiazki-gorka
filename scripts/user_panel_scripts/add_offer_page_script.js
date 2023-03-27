@@ -62,7 +62,7 @@ function chose_book(id,name,men){
 }
 document.getElementById('price').addEventListener('input',function(){
     const value=document.getElementById('price').value;
-    document.querySelector('#chosen_price').innerHTML=`Cena ${value} PLN`;
+    document.querySelector('#chosen_price').innerHTML=`Cena: ${value} PLN`;
 })
 document.querySelector('.search-input').addEventListener('input', function(){
     searching_function();
