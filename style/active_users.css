@@ -14,7 +14,7 @@
     align-items: center;
     flex-direction: column;
     padding: 1rem;
-    row-gap: 2rem;
+    row-gap: 1rem;
 }
 
 #users_offers_box .user_offer_box_image{
@@ -22,8 +22,8 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    width: 210px;
-    height: 300px;
+    width: 200px;
+    height: 284px;
     cursor: pointer;
     
 }
@@ -66,7 +66,7 @@
     font-size: 15px;
     font-weight: 400;
     overflow: hidden;
-    padding: 1rem 1rem;
+    padding: 0.2rem 0.2rem;
     text-align: center;
     transition: all 0.4s ease-in-out;
     vertical-align: middle;
@@ -74,7 +74,7 @@
     text-transform: capitalize;
     border-radius: 5px;
     margin-top: 0.5rem;
-    width: 80%;
+    width: 60%;
     height: 100%;
     transition: all 0.5s ease-in-out;
 }
@@ -91,7 +91,7 @@
     font-weight:normal;
     color: #A89887;
     text-align: center;
-    height: 50px!important;
+    /* height: 50px!important; */
 }
 div[class*='modal-box']{
     visibility:hidden;
@@ -180,7 +180,7 @@ div[class*='modal-box']{
 }
 
 .confirm-delete{
-    padding: 1.5rem;
+    padding: 1rem;
     margin: 1rem 0;
     border-radius: 10px;
     border: 1px solid #F5E9DC;
@@ -191,12 +191,12 @@ div[class*='modal-box']{
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out !important;
     width: 50%;
 }
 
 .cancel-delete{
-    padding: 1.5rem;
+    padding: 1rem;
     margin: 1rem 0;
     border-radius: 10px;
     border: 1px solid #A88E87;
@@ -207,13 +207,17 @@ div[class*='modal-box']{
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out !important;
     width: 50%;
 }
 
 .confirm-delete:hover
 {
     transform: scale(1.1);
+    border: 1px solid #A88E87;
+    /* border-radius: 10px; */
+    background-color: transparent;
+    color: #F5E9DC;
 }
 
 .cancel-delete:hover{
@@ -221,7 +225,7 @@ div[class*='modal-box']{
 }
 
 .confirm-change-price{
-    padding: 1.5rem;
+    padding: 1rem;
     margin: 1rem 0;
     border-radius: 10px;
     border: 1px solid #F5E9DC;
@@ -232,12 +236,12 @@ div[class*='modal-box']{
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out !important;
     width: 50%;
 }
 
 .cancel-change-price{
-    padding: 1.5rem;
+    padding: 1rem;
     margin: 1rem 0;
     border-radius: 10px;
     border: 1px solid #A88E87;
@@ -248,13 +252,19 @@ div[class*='modal-box']{
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out !important;
     width: 50%;
+
+
 }
 
 .confirm-change-price:hover
 {
     transform: scale(1.1);
+    border: 1px solid #A88E87;
+    /* border-radius: 10px; */
+    background-color: transparent;
+    color: #F5E9DC;
 }
 
 .cancel-change-price:hover{
@@ -314,8 +324,22 @@ button {
 }
 .price_input{
     width: 80% !important;
+    background: transparent;
+    outline: none;
+    width: 100%;
+    line-height: 1;
+    font-weight: 400px;
+    font-size: 1.4rem;
+    color: #A89887;
+    margin: 14px 0;
+    border: 1px solid #F5E9DC;
+    border-radius: 10px;
+    padding: 1rem 2rem;
+    transition: border 0.5s ease-in-out;
 }
-
+.price_input:focus{
+    border: 1px solid #A89887;
+}
 @media only screen and (max-width:1000px) {
     #users_offers_box{
     grid-template-columns: 1fr 1fr 1fr;

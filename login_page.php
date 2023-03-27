@@ -41,6 +41,9 @@ if(isset($_SESSION['logged_in']))
         </div>
     
     <div class="wrapper">
+        <div class="home-btn">
+        <a href="strona-glowna" class="round-button"><img src="images/house.svg" alt=""></a>   
+        </div>
             <span class="sign-up-text form--hidden"><h2>Zarejestruj się</h2></span>
             <span class="sign-in-text"><h2>Zaloguj się</h2></span>
         <!-- <div class="box-2-3-wrapper"> -->

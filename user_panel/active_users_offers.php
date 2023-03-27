@@ -46,6 +46,7 @@ if(!isset($_SESSION['logged_in'])){
                 </div>
         </div>
     </nav>
+    
     <section id="sub-menu">
         <ul>
             <li><a href="dane-uzytkownika">Dane</a></li>
@@ -56,6 +57,7 @@ if(!isset($_SESSION['logged_in'])){
             <li><a href="wiadomosci">Wiadomosci</a></li>
         </ul>
     </section>
+    <div class="break"></div>
     <section id="users_offers_box">
     <!-- <div class="modal-box">
         <span class="close-modal-box">X</span>

@@ -93,6 +93,33 @@ html {
   align-items: center;
 }
 
+.wrapper .home-btn{
+  position: fixed;
+  top: 3%;
+  right: 2%;
+}
+
+.home-btn .round-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background-color: #f5e9dc;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 30px;
+  text-decoration: none;
+  transition: all 0.5s ease-in-out;
+}
+
+.home-btn .round-button:hover {
+  transform: scale(1.1);
+}
+.home-btn .round-button img{
+  width:28px;
+  height:28px;
+}
 /* .box-2-3-wrapper {
   background-color: transparent;
   width: 100%;
@@ -561,6 +588,16 @@ label{
     text-transform: capitalize;
     color: #000;
     margin: 8rem 0 4rem 0;
+}
+
+.wrapper .home-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: fixed;
+  top: 3%;
+  right: 0%;
 }
 
 

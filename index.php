@@ -102,7 +102,7 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
                     <button type="button" name="historia" value="historia" class="btn">Historia</button>   
                     <button type="button" name="polski" value="polski" class="btn">J.Polski</button>   
                     <button type="button" name="angielski" value="angielski" class="btn">J.Angielski</button>   
-                    <button type="button" name="matematyka" value="matematyka" class="active btn" focused>Matematyka</button>   
+                    <button type="button" name="matematyka" value="matematyka" class="btn active" focused>Matematyka</button>   
                     <button type="button" name="fizyka" value="fizyka" class="btn">Fizyka</button>   
                     <button type="button" name="chemia" value="chemia" class="btn">Chemia</button>   
                     <button type="button" name="biologia" value="biologia" class="btn">Biologia</button>   

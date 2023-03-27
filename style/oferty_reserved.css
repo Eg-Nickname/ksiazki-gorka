@@ -222,6 +222,10 @@ border-left: none;
     cursor: not-allowed;
   }
 
+  footer{ 
+    position: absolute;
+    bottom: 0;
+  }
 @media only screen and (max-width:1000px){
     .container{
         grid-template-columns: 1fr;
@@ -230,6 +234,13 @@ border-left: none;
         /* grid-template-rows: 100%; */
     
     }
+
+    footer{ 
+        height: 170px;
+        width: 100%;
+        background-color: #F5E9DC;
+        position: static;
+      }
 
     @media only screen and (max-width:450px){
         .customer_box{

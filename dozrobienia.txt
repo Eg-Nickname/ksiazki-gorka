@@ -5,10 +5,9 @@ STRONA LOGOWANIA
 trzeba dodać info że hasło musi się składać z liter,znakow itd
 rozwala się przy błędach css
 STRONA GŁÓWNA
--proporcje zdjęć na głównej i liście ofert html/css
+-proporcje zdjęć na głównej i liście ofert html/css 
 LISTA OFERT
 -proporcje zdjęć na głównej i liście ofert html/css
--filtry html/css
 STRONA OFERT
 -responsywa głównego zdjęcia html/css
 DANE UŻYTKOWNIKA

@@ -97,7 +97,7 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
                     <label for="pp">PP<input type="checkbox" class="subject_filter" id="pp"></label>
                     </div>
                     <div>
-                    <label for="zawodowe">Przedmioty zawodowe<input type="checkbox" class="subject_filter" id="zawodowe"></label>
+                    <label for="zawodowe">Zawodowe<input type="checkbox" class="subject_filter" id="zawodowe"></label>
                     </div>
                     <div>
                     <label for="hit">HIT<input type="checkbox" class="subject_filter" id="hit"></label>

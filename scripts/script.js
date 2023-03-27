@@ -107,6 +107,7 @@ const display_elements_on_mainpage = function(){
     }
     else return false;
 }
+$('.buttons-wrapper button.btn.active').addClass('active');
 $('.buttons-wrapper button').on('click',display_elements_on_mainpage);
 /////////////////////////////////////
 // $( document ).ajaxComplete(function() {

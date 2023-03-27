@@ -63,7 +63,7 @@ const display_sample_offer = function (){
         console.log(data);
         if(Object.keys(data).length!=0){
             console.log(data.picture);
-            $('.base-img').css('background-image',`url("${data.picturexl}")`);
+            $('.base-img').css('background-image',`url("${data.picture}")`);
             $('.category-path').append("<p>" + category + " > " + data.book_name + "<h2")
             $('.base-title').append("<h2>" + data.book_name + "<h2>")
             $('.publisher-name').append("<p> Wydawnictwo: " + data.publishing_house + "<p>")

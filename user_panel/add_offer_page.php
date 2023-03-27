@@ -55,6 +55,7 @@ if(!isset($_SESSION['logged_in'])){
             <li><a href="wiadomosci">Wiadomosci</a></li>
         </ul>
     </section>
+    <div class="break"></div>
     <main>
         <div class="main-container">
         <form onsubmit="return false" enctype="multipart/form" id="offer_form">

@@ -21,20 +21,8 @@ $email = $_SESSION['email'];
     <link rel="stylesheet" href="../style/main.css">
     <link rel="stylesheet" href="../style/oferty_reserved.css">
     <link rel="stylesheet" href="../style/sub_menu.css">
+    <link rel="stylesheet" href="../style/user_data.css">
     <link rel="icon" type="image/x-icon" href="../images/icon.png">
-    <style>
-        /* jak chcesz to sobie pozmieniaj na display, ale żeby nie było tak jak na logowaniu */
-        .error_log_info{
-            visibility: hidden;
-        }
-        
-        .active_error{
-            visibility: visible !important;
-        }
-        .active_error_border{
-            border-color: red;
-        }
-    </style>
 </head>
 <body>
 <nav>
@@ -71,8 +59,12 @@ $email = $_SESSION['email'];
             <li><a href="wiadomosci">Wiadomosci</a></li>
         </ul>
     </section>
+    <div class="break"></div>
     <!-- MASZ trochę styli wyżej -->
-        <div>
+    <main>
+    <h3>Zmień swoje dane</h3>
+    <div class="container">
+        <div class="change-personal">
             <label for="name">Imię:</label>
             <input type="text" placeholder="Wpisz imię" name="name" id="name" value="<?php echo $name?>">
             <span id="name-error" class="error_log_info">Lorem Ipsum</span>
@@ -91,7 +83,9 @@ $email = $_SESSION['email'];
 
             <button id="change_data">Zmień dane</button> 
         </div>
-        <div>
+        <hr>
+        <div class="change-paswd">
+            <h3>Zmien swoje hasło</h3>
             <label for="new_password">Nowe hasło:</label>
             <input type="password" class="password_change" placeholder="Hasło musi zawierać 8 znaków" name="new_password" id="new_password" />
             <span id="new_password-error" class="error_log_info">Lorem Ipsum</span> 
@@ -106,8 +100,9 @@ $email = $_SESSION['email'];
 
             <button id="change_password">Zmień hasło</button> 
         </div>
-
+    </div>
 </form>
+    </main>
 <footer>
         <div class="footer-container">
             <div class="logo-footer">
