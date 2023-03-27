@@ -8,7 +8,7 @@ OFERTY OD DANEGO UŻYTKOWNIKA
 -tytuł książki i MEN CSS możesz też zmniejszyć tą przerwę między tym headerem, ale to według twoje uzania już
 AKTYWNE OFERTY Uzytkownika activer_users...
 -popup zmiany ceny - ten input moze byc jakis ladniejszy, przyciski tez mogłyby być ładniejsze
--tak samo popup usuwania moze to jest sam,
+-tak samo popup usuwania moze to jest ten sam,
 -ustawić tak, zeby stopka zawsze byla na dole, gdy użytkownik nie ma ofert to widać
 CHATY
 -czat css do buttonów, oba mają klase operation_btn
