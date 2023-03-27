@@ -1,11 +1,10 @@
-!!!!!!! LINIJKA DO PHP.INI: extension=php_gd.dll , trzeba to wkleić tam żeby wam dodawanie ofert działało, bo dodałem kompresje
 BAZA DANYCH
 STOPKA I STRONA NA TEL
 OGARNĄĆ PROPORCJE ZDJĘĆ
 STRONA LOGOWANIA
 trzeba dodać info że hasło musi się składać z liter,znakow itd niby już jest ale się strona rozciąga 
 OFERTY OD DANEGO UŻYTKOWNIKA
--tytuł książki i MEN CSS możesz też zmniejszyć tą przerwę między tym headerem, ale to według twoje uzania już
+-tytuł książki i MEN CSS możesz też zmniejszyć tą przerwę między tym headerem, ale to według twoje uznania już
 AKTYWNE OFERTY Uzytkownika activer_users...
 -popup zmiany ceny - ten input moze byc jakis ladniejszy, przyciski tez mogłyby być ładniejsze
 -tak samo popup usuwania moze to jest ten sam,
