@@ -96,5 +96,5 @@ function change_message_box(chatter,name,surname){
     msg_input.disabled=false;
     document.getElementById("message_send").disabled=false;
     console.log(chatter);
-    get_messages(chatter);
+    get_all_messages(chatter);
 }
