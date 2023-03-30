@@ -10,6 +10,8 @@ AKTYWNE OFERTY Uzytkownika activer_users...
 -tak samo popup usuwania moze to jest ten sam,
 -ustawić tak, zeby stopka zawsze byla na dole, gdy użytkownik nie ma ofert to widać
 CHATY
+- pobieranie nowych wiadomości co x sekund
+- style do czatu
 -czat css do buttonów, oba mają klase operation_btn
 -anulowanie zakupu/sprzedazy
 STRONA Wiadomosci
