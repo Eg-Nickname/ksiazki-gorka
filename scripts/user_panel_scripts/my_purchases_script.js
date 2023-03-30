@@ -94,5 +94,7 @@ function change_message_box(chatter,name,surname){
     document.querySelector('.chat_user_box_name').innerHTML=`${name} ${surname}`;
     const msg_input=document.getElementById('message_input');
     msg_input.disabled=false;
+    document.getElementById("message_send").disabled=false;
     console.log(chatter);
+    get_messages(chatter);
 }

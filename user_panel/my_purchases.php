@@ -13,6 +13,7 @@ if(!isset($_SESSION['logged_in'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Twoje zakupy</title>
     <script defer src="../scripts/jquery-3.6.1.min.js"></script>
+    <script defer src="../chat/chat.js"></script>
     <script defer src="../scripts/user_panel_scripts/my_purchases_script.js"></script>
     <script defer src="../scripts/log_out.js"></script>
     <link rel="stylesheet" href="../style/main.css">
@@ -66,8 +67,13 @@ if(!isset($_SESSION['logged_in'])){
             <div class="chat_user_box">
                 <p class="chat_user_box_name">WYBIERZ KONWERSACJĘ</p>
             </div>
+            <div class="chat_messages" style="color:black;">
+            <!-- Wiadomości idom tutej -->
+            </div>
+
             <div class="input_box">
                 <input type="text" name="message" id="message_input" placeholder="Napisz coś..." disabled>
+                <button type="submit" onclick="send_message();" id="message_send"  disabled>wyślij</button>
             </div>
         </div>
     </div>
