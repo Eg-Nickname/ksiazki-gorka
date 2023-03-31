@@ -109,7 +109,8 @@ function change_message_box(chatter,name,surname){
     document.querySelector('.chat_user_box_name').innerHTML=`${name} ${surname}`;
     const msg_input=document.getElementById('message_input');
     msg_input.disabled=false;
-    console.log(chatter);
+    document.getElementById("message_send").disabled=false;
+    get_all_messages(chatter)
 }
 function delete_from_cart(offer,btn){
     $.ajax({

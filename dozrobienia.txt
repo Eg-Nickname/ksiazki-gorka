@@ -4,6 +4,8 @@ OGARNĄĆ PROPORCJE ZDJĘĆ
 AKTYWNE OFERTY Uzytkownika activer_users...
 -ustawić tak, zeby stopka zawsze byla na dole, gdy użytkownik nie ma ofert to widać //kind of zrobione
 CHATY
+- pobieranie nowych wiadomości co x sekund
+- style do czatu
 -czat css do buttonów, oba mają klase operation_btn
 -anulowanie zakupu/sprzedazy
 STRONA Wiadomosci
