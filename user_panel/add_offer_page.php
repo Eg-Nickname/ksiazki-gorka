@@ -75,8 +75,8 @@ if(!isset($_SESSION['logged_in'])){
         <div class="images-container">
         <div class="front_photo_wrapper">
         <h4>Zdjęcie Przód:</h4>
-            <div id="dragger_wrapper">
-            <div id="dragger" class="dragger">
+            <div class="dragger_wrapper">
+            <div class="dragger">
                 <div class="icon"><i class="fa-solid fa-images"></i></div>
                  <button class="browseFile" id="browseFile">Wybierz Plik</button> <input type="file" hidden id="front_photo" class="fileInputField" />
             </div>
@@ -89,8 +89,8 @@ if(!isset($_SESSION['logged_in'])){
         </div>
         <div class="back_photo_wrapper">
         <h4>Zdjęcie Tył:</h4>
-        <div id="dragger_wrapper">
-            <div id="dragger" class="dragger">
+        <div class="dragger_wrapper">
+            <div class="dragger">
                 <div class="icon"><i class="fa-solid fa-images"></i></div> <button class="browseFile" id="browseFile">Wybierz Plik</button> <input type="file" hidden id="back_photo" class="fileInputField" />
             </div>
             <div class="fileName"> </div>

@@ -508,6 +508,16 @@ label{
     color: #A89887 ;
 }
 
+.error_log_info_password{
+  justify-content: center;
+  display: flex;
+  font-size: 12px;
+  font-weight: normal;
+  margin-top: -3rem;
+  color: #A89887; 
+}
+
+
 
 /* Responsywa */
 @media (orientation: landscape) {

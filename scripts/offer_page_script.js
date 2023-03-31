@@ -83,6 +83,12 @@ const display_elements_on_offer_list = function(subject_array=[],part_array=[], 
             }
         }
     }
+    if(document.querySelector('.books-wrapper').childNodes.length==0){
+        const h2=document.createElement('h2');
+        h2.innerHTML="Brak wyników";
+        h2.classList.add("no-offers");
+        document.querySelector('.container').append(h2);
+    }
 }
 const get_sample_book_data = function (){
     const btn_id=(this.getAttribute('id')).replace("book-btn","");

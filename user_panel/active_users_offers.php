@@ -15,11 +15,11 @@ if(!isset($_SESSION['logged_in'])){
     <script defer src="../scripts/jquery-3.6.1.min.js"></script>
     <script defer src="../scripts/log_out.js"></script>
     <script defer src="../scripts/user_panel_scripts/get_own_offers.js"></script>
+    <script defer src="../scripts/make_footer_great_again.js"></script>
     <link rel="stylesheet" href="../style/oferty_add.css">
     <link rel="stylesheet" href="../style/active_users.css">
     <link rel="stylesheet" href="../style/sub_menu.css">
     <link rel="icon" type="image/x-icon" href="../images/icon.png">
-
 </head>
 <body>
 <nav>
@@ -80,44 +80,6 @@ if(!isset($_SESSION['logged_in'])){
     </div>
     </div> -->
     </section>
-    <div class="modal-box">
-        <div class="delete-box-wrapper"> 
-            <h1 class="title-delete delete-text"></h1>
-            <p class="delete-title"></p>
-            <div class="delete-popup">
-                    <div class="button-wrapper">
-                        <button class="confirm-delete">Usuń</button>
-                        <button class="cancel-delete">Anuluj</button>
-                    </div>
-            </div>
-        </div>
-        <div class="change-price-box-wrapper"> 
-            <h1 class="title-delete delete-text"></h1>
-            <div class="input-wrapper">
-                <input type="number" id="change-price-input" placeholder="Zmień cenę" class="price_input">
-            </div>
-            <div class="delete-popup">
-                    <div class="button-wrapper">
-                        <button class="confirm-change-price">Zmień</button>
-                        <button class="cancel-change-price">Anuluj</button>
-                    </div>
-            </div>
-        </div>     
-            <!-- <img src="" class="offer-image"> -->
-            <!-- <div class="popup-order-box">
-                <p class="popup-order-box-alert"></p>   
-            </div> -->
-                    <!-- <div class="delete-popup">
-                        <div class="button-wrapper">
-                            <button class="confirm-delete">Usuń</button>
-                            <button class="cancel-delete">Anuluj</button>
-                        </div>
-                    </div> -->
-    </div>
-    <div class="modal-box-img">
-            <span class="close-modal-box">X</span>
-            <img src="" class="offer-image">
-    </div>
     <footer>
         <div class="footer-container">
             <div class="logo-footer">
@@ -157,5 +119,44 @@ if(!isset($_SESSION['logged_in'])){
             </div>
         </div>
     </footer>
+    <div class="modal-box">
+        <div class="delete-box-wrapper"> 
+            <h1 class="title-delete delete-text"></h1>
+            <p class="delete-title"></p>
+            <div class="delete-popup">
+                    <div class="button-wrapper">
+                        <button class="confirm-delete">Usuń</button>
+                        <button class="cancel-delete">Anuluj</button>
+                    </div>
+            </div>
+        </div>
+        <div class="change-price-box-wrapper"> 
+            <h1 class="title-delete delete-text"></h1>
+            <div class="input-wrapper">
+                <input type="number" id="change-price-input" placeholder="Zmień cenę" class="price_input">
+            </div>
+            <div class="delete-popup">
+                    <div class="button-wrapper">
+                        <button class="confirm-change-price">Zmień</button>
+                        <button class="cancel-change-price">Anuluj</button>
+                    </div>
+            </div>
+        </div>     
+            <!-- <img src="" class="offer-image"> -->
+            <!-- <div class="popup-order-box">
+                <p class="popup-order-box-alert"></p>   
+            </div> -->
+                    <!-- <div class="delete-popup">
+                        <div class="button-wrapper">
+                            <button class="confirm-delete">Usuń</button>
+                            <button class="cancel-delete">Anuluj</button>
+                        </div>
+                    </div> -->
+    </div>
+    <div class="modal-box-img">
+            <span class="close-modal-box">X</span>
+            <img src="" class="offer-image">
+    </div>
+    
 </body>
 </html>

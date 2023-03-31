@@ -43,6 +43,7 @@ const change_login_content = function(){
     const sign_in_form=document.querySelector('.sign-in-form');
     const sign_in_header=document.querySelector('.sign-in-text');
     const sign_in_span=document.querySelector('.sign-up-goto-span');
+    const password_info=document.querySelector('.error_log_info_password');
     $('#linkLogin').on('click',function(){
         clear_forms();
         $(register_form).addClass('form--hidden');
@@ -51,6 +52,7 @@ const change_login_content = function(){
         $(sign_in_form).removeClass('form--hidden');
         $(sign_in_header).removeClass('form--hidden');
         $(sign_in_span).removeClass('form--hidden');
+        password_info.classList.add('form--hidden');
     });
     $('#linkCreateAccount').on('click',function(){
         clear_forms();
@@ -60,6 +62,8 @@ const change_login_content = function(){
         $(sign_in_form).addClass('form--hidden');
         $(sign_in_header).addClass('form--hidden');
         $(sign_in_span).addClass('form--hidden');
+        password_info.classList.remove('form--hidden');
+
     });
 }
 //logowanie

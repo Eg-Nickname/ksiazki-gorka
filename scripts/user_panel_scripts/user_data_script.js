@@ -27,6 +27,7 @@ function update_user_data(user_data){
                 });
             }
             else{
+                document.getElementById('password').value=null;
                 show_popup("Twoje dane zostały zaaktualizowane");
             }
         }

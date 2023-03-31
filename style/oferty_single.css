@@ -142,7 +142,10 @@
 .filters label input[type="checkbox"]:checked{
     border-radius: 5px;
 }
-
+.no-offers{
+    font-size: 32px;
+    text-align: center;
+}
 .book-type-wrapper label{
     display: flex;
     justify-content: flex-end;

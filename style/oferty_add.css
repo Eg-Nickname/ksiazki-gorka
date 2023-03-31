@@ -348,7 +348,7 @@ h3{
 {
     width: 50%;
 }
-#dragger_wrapper {
+.dragger_wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -358,14 +358,14 @@ h3{
     border-radius: 10px;
 }
 
-#dragger_wrapper .imgnote {
+.dragger_wrapper .imgnote {
     font-size: 12px;
     font-weight: medium;
     color: #A88E87;
 
 }
 
-#dragger_wrapper h2 {
+.dragger_wrapper h2 {
     font-size: 18px;
     font-weight: bold;
     color: #fff;
@@ -383,11 +383,11 @@ h3{
     background-color: #A88E87;
 }
 
-#dragger.active {
+.dragger.active {
     border: 2px dashed #000000;
 }
 
-#dragger img {
+.dragger img {
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -763,7 +763,9 @@ footer{
     }
     .dragger {
         width: 210px;
-        height: 150px;
+        height:300px;
+        /* width: 210px;
+        height: 150px; */
         display: flex;
         justify-content: center;
         align-items: center;
