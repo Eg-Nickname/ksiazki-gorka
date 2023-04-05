@@ -15,7 +15,6 @@ if(!isset($_SESSION['logged_in'])){
     <script defer src="../scripts/jquery-3.6.1.min.js"></script>
     <script defer src="../scripts/log_out.js"></script>
     <script defer src="../scripts/user_panel_scripts/get_own_offers.js"></script>
-    <script defer src="../scripts/make_footer_great_again.js"></script>
     <link rel="stylesheet" href="../style/oferty_add.css">
     <link rel="stylesheet" href="../style/active_users.css">
     <link rel="stylesheet" href="../style/sub_menu.css">

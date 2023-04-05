@@ -2,7 +2,11 @@ BAZA DANYCH
 STOPKA I STRONA NA TEL
 OGARNĄĆ PROPORCJE ZDJĘĆ
 AKTYWNE OFERTY Uzytkownika activer_users...
--ustawić tak, zeby stopka zawsze byla na dole, gdy użytkownik nie ma ofert to widać //kind of zrobione
+-Drogi Kacperku, napraw tego grida proszę (nie, że był zły, tylko nastąpiła zmiana wiatru i trochę się rozjechał)
+-Coś dziwnego dzieje się z menu u góry jak się przełącza z innych stron, chodzi góra dól (na boki może, ale to przez pasek na niektórych)
+-popupy
+OFERTY OD DANEGO UŻYTKOWNIKA
+-tytuł i men czcionka
 CHATY
 - pobieranie nowych wiadomości co x sekund
 - style do czatu

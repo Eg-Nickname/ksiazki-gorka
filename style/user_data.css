@@ -1,7 +1,13 @@
+body{
+    display: flex;
+    flex-direction: column;
+    min-height:100svh;
+}
 main{
     background-color: #fff;
     height: auto;
     padding: 4rem 0;
+    flex-grow: 1;
 }
 .container{
     grid-template-columns: 1fr 100px 1fr;
