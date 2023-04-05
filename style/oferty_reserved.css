@@ -222,10 +222,10 @@ border-left: none;
     cursor: not-allowed;
   }
 
-  footer{ 
+  /* footer{ 
     position: absolute;
     bottom: 0;
-  }
+  } */
 @media only screen and (max-width:1000px){
     .container{
         grid-template-columns: 1fr;

@@ -1,6 +1,6 @@
 BAZA DANYCH
-STOPKA I STRONA NA TEL
 OGARNĄĆ PROPORCJE ZDJĘĆ
+STRONA NA TEL: Domek na stronie logowania się rozjeżdża, Moje oferty w panelu użytkownika mają zbugowane podkreślenie(jak tekst jest w dwóch liniach),na liście ofert te przerwy między książkami są strasznie duże
 AKTYWNE OFERTY Uzytkownika activer_users...
 -Drogi Kacperku, napraw tego grida proszę (nie, że był zły, tylko nastąpiła zmiana wiatru i trochę się rozjechał)
 -Coś dziwnego dzieje się z menu u góry jak się przełącza z innych stron, chodzi góra dól (na boki może, ale to przez pasek na niektórych)

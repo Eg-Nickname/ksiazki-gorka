@@ -17,6 +17,8 @@
     padding: 6rem 0;
     max-width: 1140px;
     margin: 0 auto;
+    flex-grow: 1;
+    width: 100%;
 }
 
 .container{
@@ -299,7 +301,7 @@
       .container {
         max-width: 100%;
         width: 100%;
-        padding: 0 6rem;
+        padding: 0 3rem;
         margin: 0 auto;
       }
       .nav-container .left-nav .nav-image {
@@ -314,7 +316,7 @@
 
     }
     .books-wrapper .subject{
-        height:90%;
+        height:425px;
     }
 }
 

@@ -22,11 +22,11 @@ if(isset($_SESSION['logged_in']))
 <div class="container">
         <div class="box-1">
             <div class="box-1-content">
-                <h1>Lorem Ipsum Tralalaa, 
-                    Tralala Kafvaraam</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut a mattis augue, id elementum orci. 
+                <h1>„Jest tylko jeden sposób nauki. Poprzez działanie.”
+– Paulo Coelho</h1>
+                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut a mattis augue, id elementum orci. 
                     Nulla condimentum et tellus sodales volutpat. Suspendisse rutrum ante rhoncus
-                    .</p>
+                    .</p> -->
             </div>
         </div>
         <div class="box-1 box-1-hidden">

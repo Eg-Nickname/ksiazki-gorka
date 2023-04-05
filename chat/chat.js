@@ -1,5 +1,5 @@
 let curent_chatter  = 0;
-let last_message_send = "2069-03-31 00:21:37";
+let last_message_send = "2069-03-31 00:21:37";//#wiedział
 
 function get_all_messages(chatter){
     curent_chatter = chatter;
