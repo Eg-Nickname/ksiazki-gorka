@@ -14,10 +14,9 @@ if(!isset($_SESSION['logged_in'])){
     <title>Twoje zakupy</title>
     <script defer src="../scripts/jquery-3.6.1.min.js"></script>
     <script defer src="../chat/chat.js"></script>
-    <script defer src="../chat/temporary_chat.js"></script>
     <script defer src="../scripts/log_out.js"></script>
     <link rel="stylesheet" href="../style/main.css">
-    <link rel="stylesheet" href="../style/oferty_reserved.css">
+    <link rel="stylesheet" href="../style/chat.css">
     <link rel="stylesheet" href="../style/sub_menu.css">
     <link rel="icon" type="image/x-icon" href="../images/icon.png">
 </head>
@@ -52,14 +51,39 @@ if(!isset($_SESSION['logged_in'])){
             <li><a href="dane-uzytkownika">Dane</a></li>
             <li><a href="twoje-oferty">Twoje oferty</a></li>
             <li><a href="dodaj-oferte">Wystaw</a></li>
-            <li class="active"><a href="wiadomosci-kupno">Kupujesz</a></li>
-            <li><a href="wiadomosci-sprzedaz">Sprzedajesz</a></li>
-            <li><a href="wiadomosci">Wiadomosci</a></li>
+            <li class="active"><a href="wiadomosci">Wiadomosci</a></li>
         </ul>
     </section>
     <div class="break"></div>
+    <ul>
+            <li><a class="change_customer_box" id="all">Wszystkie</a></li>
+            <li><a class="change_customer_box" id="buy">Kupujesz</a></li>
+            <li><a class="change_customer_box" id="sell">Sprzedajesz</a></li>
+        </ul>
     <div class="container">
         <div class='customer_box'>
+             <!-- <div class="offer_info_wrapper">
+                <div class="offer_info">
+                    <p class="buyer_name">Kupujący: Adam Małysz</p>
+                    <p href="#" class="lovely_p"><img href="#" src="../images/envelope.svg" alt="envelope" class="offer_info_chatbtn">Otwórz czat</p>
+                </div>
+                <div class="offer_info_book_price">
+                    <p class="offer_book">Matematyka na czasie</p>
+                    <p class="offer_price">19 PLN</p>
+                </div>
+                <div class="offer_info_book_price">
+                    <p class="offer_book">Matematyka na czasie 2</p>
+                    <p class="offer_price">22 PLN</p>
+                </div>
+                <div class="offer_info_book_price">
+                    <p class="offer_book">Matematyka na czasie 3</p>
+                    <p class="offer_price">23 PLN</p>
+                </div>
+                <div class="offer_info_sum">
+                    <p class="offer_sum">Suma:</p>
+                    <p class="offer_price_sum">64 PLN</p>
+                </div>
+            </div> -->
         </div>
         <div class="chat_box">
             <div class="chat_user_box">
@@ -71,7 +95,8 @@ if(!isset($_SESSION['logged_in'])){
 
             <div class="input_box">
                 <input type="text" name="message" id="message_input" placeholder="Napisz coś..." disabled>
-                <button type="submit" onclick="send_message();" id="message_send"  disabled>wyślij</button>
+                <button type="submit"  id="message_send"  disabled>wyślij</button>
+                <!-- onclick="send_message();" -->
             </div>
         </div>
     </div>

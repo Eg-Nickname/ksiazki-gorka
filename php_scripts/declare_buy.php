@@ -20,7 +20,7 @@ if(isset($_SESSION['logged_in']))
                     if($row["seller"]!=$user_id){
                         $sql="UPDATE users_offers SET customer='$user_id', status='reserved' WHERE offer_id = '$offer_id'";
                         $result=$connection->query($sql);
-                        $message="<h3>Zarezerwowano.</h3> Przejdź do panelu klienta, aby omówić szczegóły ze sprzedawacą";
+                        $message="<h3>Zarezerwowano.</h3> Przejdź do wiadomości, aby omówić szczegóły ze sprzedawacą";
                     }
                     else{
                         $error=true;
@@ -39,7 +39,7 @@ if(isset($_SESSION['logged_in']))
         }
         catch(Exception $e){
             $error=true;
-            $message="Operacja się nie powiodła. Krytyczny błąd. Spróbuj odświeżyć stronę";
+            $message="Oferta nie jest już dostępna";
         }
     }
     else{

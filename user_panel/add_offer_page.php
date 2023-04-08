@@ -49,9 +49,7 @@ if(!isset($_SESSION['logged_in'])){
         <ul>
             <li><a href="dane-uzytkownika">Dane</a></li>
             <li><a href="twoje-oferty">Twoje oferty</a></li>
-            <li  class="active"><a href="dodaj-oferte">Wystaw</a></li>
-            <li><a href="wiadomosci-kupno">Kupujesz</a></li>
-            <li><a href="wiadomosci-sprzedaz">Sprzedajesz</a></li>
+            <li class="active"><a href="dodaj-oferte">Wystaw</a></li>
             <li><a href="wiadomosci">Wiadomosci</a></li>
         </ul>
     </section>

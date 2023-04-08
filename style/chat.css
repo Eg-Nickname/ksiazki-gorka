@@ -68,7 +68,8 @@ p{
 }
  
 .customer_box::-webkit-scrollbar-thumb {
-background-color: rgba(245, 233, 220, 1);
+background-color: rgb(206, 187, 167); 
+/* rgba(245, 233, 220, 1); */
 border-right: none;
 border-left: none;
 }
@@ -85,6 +86,7 @@ border-left: none;
     border: 1px solid #A89887;
     width: 100%;
     row-gap: 2rem;
+    border-radius: 8px 8px 0 0;
 }
 .offer_info_wrapper .offer_info{
     display: flex;

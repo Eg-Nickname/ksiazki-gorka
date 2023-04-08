@@ -1,22 +1,29 @@
 BAZA DANYCH
+
 OGARNĄĆ PROPORCJE ZDJĘĆ
+SUBMENU na panelu użytkownika się zmieniło, teraz już chyba nie musi się zwijać- wyrównać do górnego
 STRONA NA TEL: Domek na stronie logowania się rozjeżdża, Moje oferty w panelu użytkownika mają zbugowane podkreślenie(jak tekst jest w dwóch liniach),na liście ofert te przerwy między książkami są strasznie duże
 AKTYWNE OFERTY Uzytkownika activer_users...
--Drogi Kacperku, napraw tego grida proszę (nie, że był zły, tylko nastąpiła zmiana wiatru i trochę się rozjechał)
--Coś dziwnego dzieje się z menu u góry jak się przełącza z innych stron, chodzi góra dól (na boki może, ale to przez pasek na niektórych)
+-Drogi Kacperku, napraw tego grida proszę (nie, że był zły, tylko nastąpiła zmiana wiatru i trochę się rozjechał(jak jest jeden rząd ofert i sie oddali))
+-Coś dziwnego dzieje się z menu u góry jak się przełącza z innych stron, chodzi góra dól (na boki może przez pasek na niektórych), ale góra dół to chyba nie powinien
 -popupy
 OFERTY OD DANEGO UŻYTKOWNIKA
 -tytuł i men czcionka
-CHATY
-- pobieranie nowych wiadomości co x sekund
-- style do czatu
--czat css do buttonów, oba mają klase operation_btn
--anulowanie zakupu/sprzedazy
 STRONA Wiadomosci
+-cursory pointery na to mini menu wiadomości i style do tego menu
+- style do czatu
+-czat css do buttonów, oba mają klase operation_btn- możesz je umieścić jak chcesz, byle jakoś wyglądały, w chat.php masz w html tego offer_wrappera to sobie tam zrób, a ja potem w js zmienie
+
+-popup do wiadomosci, żeby jakieś błędy tam dać
 //DODAC JAKIS PANEL ADMINA PRZYNAJMNIEJ DO DODAWANIA PRZYKŁADOWYCH KSIAZĘK
 //resetowanie hasła
 //mail jakis trzeba dac i moze jakis formularz kontaktowy
 
+-usunięcie zdjęcie po sprzedaniu
+dodanie wiadomości że ktoś wziął ofertę
+-anulowanie zakupu/sprzedazy - wiadomości
+-dodawanie oferty -popup
+-zmienic zeby się tak głupio czat nie odswiezal
 
 
 

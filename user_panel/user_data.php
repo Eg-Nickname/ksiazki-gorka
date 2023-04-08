@@ -19,7 +19,7 @@ $email = $_SESSION['email'];
     <script defer src="../scripts/user_panel_scripts/user_data_script.js"></script>
     <script defer src="../scripts/log_out.js"></script>
     <link rel="stylesheet" href="../style/main.css">
-    <link rel="stylesheet" href="../style/oferty_reserved.css">
+    <link rel="stylesheet" href="../style/chat.css">
     <link rel="stylesheet" href="../style/sub_menu.css">
     <link rel="stylesheet" href="../style/user_data.css">
     <link rel="icon" type="image/x-icon" href="../images/icon.png">
@@ -54,8 +54,6 @@ $email = $_SESSION['email'];
             <li class="active"><a href="dane-uzytkownika">Dane</a></li>
             <li><a href="twoje-oferty">Twoje oferty</a></li>
             <li><a href="dodaj-oferte">Wystaw</a></li>
-            <li><a href="wiadomosci-kupno">Kupujesz</a></li>
-            <li><a href="wiadomosci-sprzedaz">Sprzedajesz</a></li>
             <li><a href="wiadomosci">Wiadomosci</a></li>
         </ul>
     </section>

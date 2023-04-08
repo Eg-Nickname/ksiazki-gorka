@@ -25,43 +25,49 @@ function show_users_offers(){
         },
         success: function(response){
             console.log(response);
-            for(const offer of response){
-                console.log(offer);
-                const div=document.createElement('div');
-                div.classList.add("user_offer_box");
-                div.id=`oferta${offer.offer_id}`;
-                const img_box=document.createElement('div');
-                img_box.style.backgroundImage=`url(${offer.photo1})`;
-                img_box.classList.add("user_offer_box_image");
-                const div_content=document.createElement('div');
-                div_content.classList.add("user_offer_box_content");
-                const price=document.createElement('p');
-                const img_btn=document.createElement('button');
-                img_btn.innerHTML="Tył";
-                img_btn.classList.add("user_offer_image_button");
-                const image_photos={
-                    front: offer.photo1,
-                    back:offer.photo2
+            if(response.length){
+                for(const offer of response){
+                    console.log(offer);
+                    const div=document.createElement('div');
+                    div.classList.add("user_offer_box");
+                    div.id=`oferta${offer.offer_id}`;
+                    const img_box=document.createElement('div');
+                    img_box.style.backgroundImage=`url(${offer.photo1})`;
+                    img_box.classList.add("user_offer_box_image");
+                    const div_content=document.createElement('div');
+                    div_content.classList.add("user_offer_box_content");
+                    const price=document.createElement('p');
+                    const img_btn=document.createElement('button');
+                    img_btn.innerHTML="Tył";
+                    img_btn.classList.add("user_offer_image_button");
+                    const image_photos={
+                        front: offer.photo1,
+                        back:offer.photo2
+                    }
+                    $(img_btn).on("click",function(){
+                        change_offer_image(img_btn,image_photos);
+                    });
+                    price.classList.add("user_offer_box_content_price");
+                    price.innerHTML=`${offer.price} PLN`;
+                    const button=document.createElement('button');
+                    button.classList.add("user_offer_box_content_button");
+                    button.innerHTML = "Zarezerwuj";
+                    $(button).on('click', function(){
+                        confirm_buy(offer)
+                        // declare_buy(Number(offer.offer_id));
+                    });
+                    const title=document.createElement('p');
+                    title.innerHTML=offer.book_name;
+                    const men=document.createElement('p');
+                    men.innerHTML=`MEN: ${offer.men}`;
+                    div_content.append(img_btn,title,men,price,button);
+                    div.append(img_box,div_content);
+                    document.querySelector('section').appendChild(div);
                 }
-                $(img_btn).on("click",function(){
-                    change_offer_image(img_btn,image_photos);
-                });
-                price.classList.add("user_offer_box_content_price");
-                price.innerHTML=`${offer.price} PLN`;
-                const button=document.createElement('button');
-                button.classList.add("user_offer_box_content_button");
-                button.innerHTML = "Zarezerwuj";
-                $(button).on('click', function(){
-                    confirm_buy(offer)
-                    // declare_buy(Number(offer.offer_id));
-                });
-                const title=document.createElement('p');
-                title.innerHTML=offer.book_name;
-                const men=document.createElement('p');
-                men.innerHTML=`MEN: ${offer.men}`;
-                div_content.append(img_btn,title,men,price,button);
-                div.append(img_box,div_content);
-                document.querySelector('section').appendChild(div);
+            }
+            else{
+                const name=urlParams.get('name').replaceAll("-"," ");
+                document.querySelector('.users_offers_header').innerHTML=`Użytkownik ${name} akutalnie nie ma nic w swojej ofercie`;
             }
         }
     })
