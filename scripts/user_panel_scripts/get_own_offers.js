@@ -64,6 +64,7 @@ get_active_offers();
 function clear_section(){
     const h1=document.createElement('h1');
     h1.innerHTML="Aktualnie nie masz wystawionych ofert";
+    h1.style.marginTop="10px"
     h1.style.fontSize="32px";
     h1.style.textAlign="center";
     const a=document.createElement('a');
@@ -119,7 +120,9 @@ function confirm_delete(offer_id){
                 if(!document.querySelector('#users_offers_box').childNodes.length){
                     clear_section();
                 }
-                
+            }
+            else{
+                window.location.reload()
             }
         }
     })
@@ -171,6 +174,9 @@ function confirm_price_change(id,price){
             if(response){
                 const p_price=document.querySelector(`#oferta${id} .user_offer_box_content_price`);
                 p_price.innerHTML=`${price} PLN`;
+            }
+            else{
+                window.location.reload();
             }
         }
     })

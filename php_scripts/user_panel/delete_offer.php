@@ -11,9 +11,12 @@ try{//usuwanie zdjęć trzeba tu zrobić
     require_once '../connect.php';
     $connection = mysqli_connect($host,$db_user,$db_password,$db_name);
     if($connection->connect_errno==0){
-        $sql="SELECT photo1, photo2 FROM users_offers WHERE seller='$user' AND offer_id='$offer'";
-        $result = mysqli_query($connection,$sql); 
+        $sql="DELETE FROM users_offers WHERE seller='$user' AND offer_id='$offer' AND status='available'";
+        $result=mysqli_query($connection,$sql);
+        $result=mysqli_affected_rows($connection);
         if($result){
+            $sql="SELECT photo1, photo2 FROM users_offers WHERE seller='$user' AND offer_id='$offer'";
+            $result = mysqli_query($connection,$sql); 
             $result=mysqli_fetch_row($result);
             foreach($result as $photo){
                 if($photo){
@@ -23,9 +26,8 @@ try{//usuwanie zdjęć trzeba tu zrobić
                     }
                 }
             }
-            $sql="DELETE FROM users_offers WHERE seller='$user' AND offer_id='$offer'";
-            $result=mysqli_query($connection,$sql);
         }
+        
         mysqli_close($connection);
     }
 }

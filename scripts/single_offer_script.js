@@ -103,6 +103,7 @@ const show_users_offers= function (){
         },
         success: function(response){
             console.log(response);
+        if(response.length){
             for(const offer of response){
                 console.log(offer);
                 const div=document.createElement('div');
@@ -140,18 +141,24 @@ const show_users_offers= function (){
                 div.append(img_box,div_content);
                 document.querySelector('section').appendChild(div);
             }
+        }
         if(response.length!=12){
             $('.show_me_more').off('click');
             document.querySelector('.show_me_more').remove();
         }
-        if(!document.querySelector('section').childElementCount){
-            const h2=document.createElement('h2');
-            h2.innerHTML="Brak ofert";
-            h2.classList.add('no_offers');
-            document.querySelector('section').appendChild(h2);
-        }
+        check_if_section_is_empty();
         }
     })
+}
+function check_if_section_is_empty(){
+    console.log("tu jestem")
+    if(!document.querySelector('section').childElementCount){
+        console.log("tu mnie nie ma")
+        const h2=document.createElement('h2');
+        h2.innerHTML="Brak ofert";
+        h2.classList.add('no_offers');
+        document.querySelector('section').appendChild(h2);
+    }
 }
 $('.show_me_more').on('click', function(){
     console.log("s");
@@ -211,8 +218,8 @@ const declare_buy = function(offer_id){
                 $(`#oferta${offer_id}`).fadeOut(1000);
                 setTimeout(()=>{
                     document.getElementById(`oferta${offer_id}`).remove();
+                    check_if_section_is_empty()
                 },1000)
-
             }
         }
     });

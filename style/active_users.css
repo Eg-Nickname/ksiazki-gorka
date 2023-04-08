@@ -16,7 +16,7 @@ a{
     padding: 6rem 2rem;
     max-width: 1140px;
     margin: 0 auto;
-    min-height: 635px;
+    /* min-height: 635px; */
     flex-grow: 1;
     width: 100%;
 }

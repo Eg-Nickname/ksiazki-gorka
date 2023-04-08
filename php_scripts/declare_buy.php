@@ -12,7 +12,7 @@ if(isset($_SESSION['logged_in']))
         try{
             $connection=new mysqli($host,$db_user,$db_password,$db_name);
             if($connection->connect_errno==0){
-                $sql = "SELECT * FROM users_offers WHERE offer_id = '$offer_id' AND status='available'";
+                $sql = "SELECT sample_books.book_name,users_offers.seller FROM users_offers JOIN sample_books ON sample_books.book_ID=users_offers.book_id  WHERE offer_id = '$offer_id' AND status='available'";
                 $result=$connection->query($sql);
                 if($result->num_rows){
                     $row=mysqli_fetch_array($result);
@@ -21,6 +21,10 @@ if(isset($_SESSION['logged_in']))
                         $sql="UPDATE users_offers SET customer='$user_id', status='reserved' WHERE offer_id = '$offer_id'";
                         $result=$connection->query($sql);
                         $message="<h3>Zarezerwowano.</h3> Przejdź do wiadomości, aby omówić szczegóły ze sprzedawacą";
+                        $seller=$row["seller"];
+                        $buy_msg="Zgłoszono chęć kupna <b>".$row["book_name"]."</b>";
+                        $sql_msg="INSERT INTO messages (message,sender_id,reciver_id) VALUES ('$buy_msg','$user_id','$seller')";
+                        $result=mysqli_query($connection,$sql_msg);
                     }
                     else{
                         $error=true;

@@ -13,9 +13,10 @@ $result=false;
 require_once '../connect.php';
 $connection = mysqli_connect($host,$db_user,$db_password,$db_name);
 if($connection){
-    $sql="UPDATE users_offers SET `price`='$price' WHERE `seller`='$user' AND `offer_id`='$offer'";
+    $sql="UPDATE users_offers SET `price`='$price' WHERE `seller`='$user' AND `offer_id`='$offer' AND status='available'";
     $result = mysqli_query($connection,$sql);
+    $was_updated=mysqli_affected_rows($connection);
     mysqli_close($connection);
 }
-echo json_encode($result);
+echo json_encode($was_updated);
 ?>

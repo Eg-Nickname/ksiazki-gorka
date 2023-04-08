@@ -1,7 +1,7 @@
 BAZA DANYCH
 
 OGARNĄĆ PROPORCJE ZDJĘĆ
-SUBMENU na panelu użytkownika się zmieniło, teraz już chyba nie musi się zwijać- wyrównać do górnego
+SUBMENU na panelu użytkownika się zmieniło, teraz już chyba nie musi się zwijać- wyrównać do górnego, z tym możesz poczekać bo w sumie zachciało mi się zrobić historie sprzedazy i się jeszcze zobaczy
 STRONA NA TEL: Domek na stronie logowania się rozjeżdża, Moje oferty w panelu użytkownika mają zbugowane podkreślenie(jak tekst jest w dwóch liniach),na liście ofert te przerwy między książkami są strasznie duże
 AKTYWNE OFERTY Uzytkownika activer_users...
 -Drogi Kacperku, napraw tego grida proszę (nie, że był zły, tylko nastąpiła zmiana wiatru i trochę się rozjechał(jak jest jeden rząd ofert i sie oddali))
@@ -15,16 +15,20 @@ STRONA Wiadomosci
 -czat css do buttonów, oba mają klase operation_btn- możesz je umieścić jak chcesz, byle jakoś wyglądały, w chat.php masz w html tego offer_wrappera to sobie tam zrób, a ja potem w js zmienie
 
 -popup do wiadomosci, żeby jakieś błędy tam dać
+//Historia sprzedaży może
 //DODAC JAKIS PANEL ADMINA PRZYNAJMNIEJ DO DODAWANIA PRZYKŁADOWYCH KSIAZĘK
 //resetowanie hasła
 //mail jakis trzeba dac i moze jakis formularz kontaktowy
 
 -usunięcie zdjęcie po sprzedaniu
-dodanie wiadomości że ktoś wziął ofertę
 -anulowanie zakupu/sprzedazy - wiadomości
--dodawanie oferty -popup
 -zmienic zeby się tak głupio czat nie odswiezal
+-po wzieciu wszyskich od Uzytkownika i chyba po usunięciu wszystkich
 
+// zrobione, ale trzeba przemyśleć 
+dodanie wiadomości że ktoś wziął ofertę-tekst
+kompresja - czy taka wystarczy czy większa
+-mozna zmienic cene po zarezerwowaniu jesli strona sie nie odswiezyla - czy odświeżenie czy popup jakiś trzeba dodać
 
 
 
