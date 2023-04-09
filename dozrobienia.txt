@@ -20,8 +20,6 @@ STRONA Wiadomosci
 //resetowanie hasła
 //mail jakis trzeba dac i moze jakis formularz kontaktowy
 
--zmienic zeby się tak głupio czat nie odswiezal
-
 // zrobione, ale trzeba przemyśleć 
 dodanie wiadomości że ktoś wziął ofertę-tekst
 kompresja - czy taka wystarczy czy większa
