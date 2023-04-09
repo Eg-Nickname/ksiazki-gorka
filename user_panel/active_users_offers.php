@@ -55,28 +55,7 @@ if(!isset($_SESSION['logged_in'])){
         </ul>
     </section>
     <div class="break"></div>
-    <section id="users_offers_box">
-    <!-- <div class="modal-box">
-        <span class="close-modal-box">X</span>
-        <img src="" class="offer-image">
-        </div>
-        <div class="popup-order-box">
-            <p class="popup-order-box-alert"></p>   
-        </div>
-        <div class="delete-popup">
-        <div class="delete-confirm">
-            <div class="delete-button-wrapper">
-                <h1 class="title-delete delete-text"></h1>
-                <p class="delete-title"></p>
-            <div class="button-wrapper">
-                <button class="confirm-delete">Usuń</button>
-                <button class="cancel-delete">Anuluj</button>
-            </div>
-            </div>
-        </div>
-    </div>
-    </div> -->
-    </section>
+    <section id="users_offers_box"></section>
     <footer>
         <div class="footer-container">
             <div class="logo-footer">

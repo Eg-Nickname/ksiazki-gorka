@@ -64,7 +64,7 @@ get_active_offers();
 function clear_section(){
     const h1=document.createElement('h1');
     h1.innerHTML="Aktualnie nie masz wystawionych ofert";
-    h1.style.marginTop="10px"
+    h1.style.marginTop="32px"
     h1.style.fontSize="32px";
     h1.style.textAlign="center";
     const a=document.createElement('a');

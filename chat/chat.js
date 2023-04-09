@@ -204,6 +204,9 @@ function after_changing_status(btn){
     const parent_to_cost=book_div.parentNode;
     book_div.remove();
     check_if_offer_info_not_empty(parent_to_cost);
+    clearInterval(refresh_messages)
+    get_new_messages()
+    refresh_messages=setInterval(get_new_messages,60000);
 }
 function check_if_offer_info_not_empty(element){
     if(element.childNodes.length<=2){

@@ -66,13 +66,18 @@ function show_users_offers(){
                 }
             }
             else{
-                const name=urlParams.get('name').replaceAll("-"," ");
-                document.querySelector('.users_offers_header').innerHTML=`Użytkownik ${name} akutalnie nie ma nic w swojej ofercie`;
+                no_more_offers()
             }
         }
     })
 }
 show_users_offers();
+function no_more_offers() {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const name=urlParams.get('name').replaceAll("-"," ");
+    document.querySelector('.users_offers_header').innerHTML=`Użytkownik ${name} akutalnie nie ma nic w swojej ofercie`;
+}
 //zarezerwowanie w bazie
 const confirm_buy=function(offer){
     $('.buy-popup').css("visibility","visible");
@@ -110,13 +115,16 @@ const declare_buy = function(offer_id){
             $('.popup-order-box-alert').html(response['message']);
             setTimeout(()=>{
                 $('.popup-order-box').css("visibility","hidden");
-            },5000)
+            },2500)
             if(!response["error"])
             {
                 $(`#oferta${offer_id}`).fadeOut(1000);
                 setTimeout(()=>{
                     document.getElementById(`oferta${offer_id}`).remove();
-                },1000)
+                    if(!document.getElementById('seller-offers').childNodes.length){
+                        no_more_offers()
+                    }
+                },500)
 
             }
         }
