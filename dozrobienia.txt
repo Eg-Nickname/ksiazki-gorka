@@ -1,6 +1,5 @@
-OGARNĄĆ PROPORCJE ZDJĘĆ
-SUBMENU na panelu użytkownika się zmieniło, teraz już chyba nie musi się zwijać- wyrównać do górnego, z tym możesz poczekać bo w sumie zachciało mi się zrobić historie sprzedazy i się jeszcze zobaczy
-
+To masz do zrobienia
+--------------------------------------------------------------------------------------------------------------------------------
 STRONA NA TEL: Domek na stronie logowania się rozjeżdża, Moje oferty w panelu użytkownika mają zbugowane podkreślenie(jak tekst jest w dwóch liniach),na liście ofert te przerwy między książkami są strasznie duże
 AKTYWNE OFERTY Uzytkownika activer_users...
 -Drogi Kacperku, napraw tego grida proszę (nie, że był zły, tylko nastąpiła zmiana wiatru i trochę się rozjechał(jak jest jeden rząd ofert i sie oddali))
@@ -10,16 +9,11 @@ OFERTY OD DANEGO UŻYTKOWNIKA
 -tytuł i men czcionka
 STRONA Wiadomosci
 -cursory pointery na to mini menu wiadomości i style do tego menu
-- style do czatu
+- style do czatu - To co się tam dzieje jak jest dużo wiadomosci to XD
 -czat css do buttonów, oba mają klase operation_btn- możesz je umieścić jak chcesz, byle jakoś wyglądały, w chat.php masz w html tego offer_wrappera to sobie tam zrób, a ja potem w js zmienie
-
--popup do wiadomosci, żeby jakieś błędy tam dać
-//Historia sprzedaży może
-//DODAC JAKIS PANEL ADMINA PRZYNAJMNIEJ DO DODAWANIA PRZYKŁADOWYCH KSIAZĘK
-//resetowanie hasła
-//mail jakis trzeba dac i moze jakis formularz kontaktowy
-
-// zrobione, ale trzeba przemyśleć 
+--------------------------------------------------------------------------------------------------------------------------------
+To już działa, ale trzeba ogarnąć to co jest napisane
+--------------------------------------------------------------------------------------------------------------------------------
 BAZA DANYCH
 dodanie wiadomości że ktoś wziął ofertę-tekst
 kompresja - czy taka wystarczy czy większa
@@ -29,6 +23,15 @@ kompresja - czy taka wystarczy czy większa
 -favicon czy taki czy t logo ze strony
 -czas odświeżenia
 -anulowanie zakupu/sprzedazy - chyba działa bez żadnych błędów
+--------------------------------------------------------------------------------------------------------------------------------
+To w przyszłości
+--------------------------------------------------------------------------------------------------------------------------------
+-popup do wiadomosci, żeby jakieś błędy tam dać
+//Historia sprzedaży może
+//DODAC JAKIS PANEL ADMINA PRZYNAJMNIEJ DO DODAWANIA PRZYKŁADOWYCH KSIAZĘK
+//resetowanie hasła
+//mail jakis trzeba dac i moze jakis formularz kontaktowy
+--------------------------------------------------------------------------------------------------------------------------------
 
 
 
