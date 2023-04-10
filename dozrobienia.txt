@@ -1,4 +1,3 @@
-BAZA DANYCH
 OGARNĄĆ PROPORCJE ZDJĘĆ
 SUBMENU na panelu użytkownika się zmieniło, teraz już chyba nie musi się zwijać- wyrównać do górnego, z tym możesz poczekać bo w sumie zachciało mi się zrobić historie sprzedazy i się jeszcze zobaczy
 
@@ -21,6 +20,7 @@ STRONA Wiadomosci
 //mail jakis trzeba dac i moze jakis formularz kontaktowy
 
 // zrobione, ale trzeba przemyśleć 
+BAZA DANYCH
 dodanie wiadomości że ktoś wziął ofertę-tekst
 kompresja - czy taka wystarczy czy większa
 -mozna zmienic cene po zarezerwowaniu jesli strona sie nie odswiezyla - czy odświeżenie czy popup jakiś trzeba dodać
