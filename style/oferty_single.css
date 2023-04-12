@@ -228,6 +228,7 @@
 
 .books-wrapper .subject {
     width: 100%;
+    max-width: 370px;
     transition: 0.5s all ease-in-out;
 }
 .books-wrapper .subject:hover {

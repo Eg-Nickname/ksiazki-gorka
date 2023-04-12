@@ -8,8 +8,8 @@ if(!isset($_POST['flag'])){
     exit();
 }
 $message_sender = $_SESSION['user_id'];
-$message_reciver = $_POST['chatter'];
-$message = $_POST['message'];
+$message_reciver = htmlentities($_POST['chatter']);
+$message = htmlentities($_POST['message']);
 require_once '../php_scripts/connect.php';
 $connection=mysqli_connect($host,$db_user,$db_password,$db_name);
 

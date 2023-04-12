@@ -31,10 +31,10 @@ if(!mysqli_connect_errno()){
                     }
                 }
             }
-            $msg="Sprzedano ".$data["book_name"];
+            $msg="<b>Sprzedano: ".$data["book_name"]."</b>";
         }
         elseif($status=="available") {
-            $msg="Wycofano ".$data["book_name"];
+            $msg="<b>Wycofano: ".$data["book_name"]." - oferta jest ponownie w sprzedaży</b>";
         }
         $sender;
         $reciver;

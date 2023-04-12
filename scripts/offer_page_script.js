@@ -29,6 +29,9 @@ const get_data_for_mainpage = function (){
 }
 get_data_for_mainpage();
 const display_elements_on_offer_list = function(subject_array=[],part_array=[], scope_array=[]){
+    if(document.querySelector('.container .no-offers')){
+        document.querySelector('.container .no-offers').remove()
+    }
     const wrapper=document.querySelector('.books-wrapper')
     wrapper.textContent='';
     const books=JSON.parse(localStorage.getItem('books'));

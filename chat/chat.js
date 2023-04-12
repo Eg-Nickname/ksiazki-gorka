@@ -1,12 +1,12 @@
 let current_chatter  = 0;
 let last_message_send = "2069-03-31 00:21:37";//#wiedział
 let type="all";
-let refresh_chatter=setInterval(get_chatters,60000)
+let refresh_chatter=setInterval(get_chatters,25000)
 let refresh_messages;
 function get_chatters(){
     console.log("reset")
     clearInterval(refresh_chatter);
-    refresh_chatter=setInterval(get_chatters,60000)
+    refresh_chatter=setInterval(get_chatters,25000)
     document.querySelector('.customer_box').textContent="";
     $.ajax({
         url: '../chat/get_chatters.php',
@@ -206,7 +206,7 @@ function after_changing_status(btn){
     check_if_offer_info_not_empty(parent_to_cost);
     clearInterval(refresh_messages)
     get_new_messages()
-    refresh_messages=setInterval(get_new_messages,60000);
+    refresh_messages=setInterval(get_new_messages,10000);
 }
 function check_if_offer_info_not_empty(element){
     if(element.childNodes.length<=2){
@@ -258,7 +258,7 @@ function get_all_messages(chatter){
                 document.querySelector('.chat_messages').innerHTML="";
                 display_messages(response);
                 clearInterval(refresh_messages)
-                refresh_messages=setInterval(get_new_messages,60000);
+                refresh_messages=setInterval(get_new_messages,10000);
             }
         }
     })

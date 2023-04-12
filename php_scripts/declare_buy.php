@@ -22,7 +22,7 @@ if(isset($_SESSION['logged_in']))
                         $result=$connection->query($sql);
                         $message="<h3>Zarezerwowano.</h3> Przejdź do wiadomości, aby omówić szczegóły ze sprzedawacą";
                         $seller=$row["seller"];
-                        $buy_msg="Zgłoszono chęć kupna <b>".$row["book_name"]."</b>";
+                        $buy_msg="<b>Zgłoszono chęć kupna: ".$row["book_name"]."</b>";
                         $sql_msg="INSERT INTO messages (message,sender_id,reciver_id) VALUES ('$buy_msg','$user_id','$seller')";
                         $result=mysqli_query($connection,$sql_msg);
                     }

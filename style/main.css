@@ -497,11 +497,12 @@ main{
 }
 
 .book-name{
-    font-size: 12px;
+    font-size: 13px;
     line-height: 16px;
     font-weight: normal;
     color: #000;
     margin-bottom: 2rem;
+    text-align: center;
 }
 
 .book-price{
