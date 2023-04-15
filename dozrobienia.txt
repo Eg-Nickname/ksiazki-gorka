@@ -1,12 +1,5 @@
-STRONA NA TEL: Domek na stronie logowania się rozjeżdża, Moje oferty w panelu użytkownika mają zbugowane podkreślenie(jak tekst jest w dwóch liniach),na liście ofert te przerwy między książkami są strasznie duże i te oferty na liscie ofert między 520px a 500 się źle skalują(ale jak ci się nie chce to w sumie wywalone w to, jak coś to usuń to z tego)
+STRONA NA TEL: 
 AKTYWNE OFERTY Uzytkownika activer_users...
--Drogi Kacperku, napraw tego grida proszę (nie, że był zły, tylko nastąpiła zmiana wiatru i trochę się rozjechał(jak jest jeden rząd ofert i sie oddali))
--Coś dziwnego dzieje się z menu u góry jak się przełącza z innych stron, chodzi góra dól (na boki może przez pasek na niektórych), ale góra dół to chyba nie powinien
--popupy
-Logowanie
--dalej się rozjeżda na błędach
-OFERTY OD DANEGO UŻYTKOWNIKA
--tytuł i men czcionka
 STRONA Wiadomosci
 -cursory pointery na to mini menu wiadomości i style do tego menu
 - style do czatu - To co się tam dzieje jak jest dużo wiadomosci to XD

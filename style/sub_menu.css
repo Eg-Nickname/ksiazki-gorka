@@ -123,5 +123,11 @@
     #sub-menu li a{
         font-size: 14px;
     }
+    #sub-menu li.active a::after {
+        font-weight: bold;
+        color: #A89887;
+        width: 0;
+        transition: width .3s;
+    }
     
 }

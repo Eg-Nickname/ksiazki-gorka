@@ -13,6 +13,7 @@ if(isset($_SESSION['logged_in'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oferty użytkownika</title>
     <link rel="stylesheet" href="style/oferty.css">
+    <link rel="stylesheet" href="style/all_from_user.css">
     <script defer src="scripts/jquery-3.6.1.min.js"></script>
     <script defer src="scripts/all_from_user_script.js"></script>
     <script defer src="scripts/log_out.js"></script>

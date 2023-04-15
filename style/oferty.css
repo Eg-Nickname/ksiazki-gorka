@@ -1130,8 +1130,9 @@ section{
     }
     section{
         grid-template-columns: 1fr;
-            grid-template-columns: 1fr;
-            padding: 6rem 6rem;
+        grid-template-columns: 1fr;
+        padding: 6rem 6rem;
+        gap: 1rem;
     }
     .nav-container .right-nav-authorized #user-panel-button{
         width: 24px;
