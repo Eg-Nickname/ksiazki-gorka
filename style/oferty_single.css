@@ -316,11 +316,11 @@
         row-gap: 1rem;
 
     }
-    .books-wrapper .subject{
+    .books-wrapper .subject{ 
         height:425px;
+        /* to nie wiem czy tego nie rozwala */
     }
 }
-
 @media (max-width:450px){
     .nav-container{
         padding: 0 0.5rem;
