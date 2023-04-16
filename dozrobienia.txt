@@ -1,4 +1,4 @@
-STRONA NA TEL: Lista ofert skalowanie jednak chyba trzeba zrobić, bo się zmniejsza, a potem powiększa i ten domek dalej wjeżdża na rejestracji
+STRONA NA TEL: Lista ofert skalowanie jednak chyba trzeba zrobić, bo się zmniejsza, a potem powiększa
 STRONA Wiadomosci
 -cursory pointery na to mini menu wiadomości i style do tego menu
 - style do czatu - To co się tam dzieje jak jest dużo wiadomosci to XD
