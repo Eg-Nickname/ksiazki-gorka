@@ -1,5 +1,5 @@
 let current_chatter  = 0;
-let last_message_send = "2069-03-31 00:21:37";//#wiedział
+let last_message_send = "2069-03-31 00:21:37";
 let type="all";
 let refresh_chatter=setInterval(get_chatters,25000)
 let refresh_messages;
@@ -251,9 +251,7 @@ function get_all_messages(chatter){
         success: function(response){
             console.log(response);
             console.log(response.length);
-            if(response.length==0){
-                // Error braku wiadomości z wybrana osobą
-            }else{
+            if(response.length>=0){
                 // Wyświetl wiadomości jeśli istnieja
                 document.querySelector('.chat_messages').innerHTML="";
                 display_messages(response);
@@ -283,8 +281,8 @@ function send_message(){
     let message_to_send = document.querySelector("#message_input").value
     if(message_to_send.length == 0 || current_chatter===0)
     {
-        // console.log("Nie wysyłaj pustej wiadomości")
-        // Dodać komunikat o wysłaniu pustej wiadomości
+        const msg="Nie możesz wysłać pustej wiadomości";
+        show_popup_msg(msg)
         return;
     }
     else{
@@ -300,7 +298,8 @@ function send_message(){
             success: function(response){
                 console.log(response.length);
                 if(response.length==0){
-                    // Nie udało sie wysłać wiadomośći dodać error
+                    const msg="Nie udało się wysłać wiadomości";
+                    show_popup_msg(msg)
                 }else{
                     document.querySelector("#message_input").value = '';
                     // pobranie wiadomomśći z ostatnio wysłaną
@@ -321,7 +320,6 @@ document.addEventListener("keydown", (event) => {
     }
 });
 
-// Ustawić odpalanie funkcji co x sekund
 function get_new_messages(){
     console.log("Sprawdzenie nowych wiadomości")
     $.ajax({
@@ -335,13 +333,18 @@ function get_new_messages(){
         },
         success: function(response){
             console.log(response.length);
-            if(response.length==0){
-                // Brak nowych wiadomości
-                console.log("Brak nowych wiadomości")
-            }else{
-                // Dodaj nowe wiadomości
+            if(response.length>0){
                 display_messages(response);
+                // dodaj nowe wiadomości
             }
         }
     })
+}
+function show_popup_msg(message){
+    const error_p=document.querySelector('.popup-order-box-alert');
+    error_p.innerHTML=message;
+    error_p.parentNode.style.visibility="visible";
+    setTimeout(() => {
+        error_p.parentNode.style.visibility="hidden";
+    },2000)
 }

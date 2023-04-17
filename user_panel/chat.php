@@ -139,5 +139,8 @@ if(!isset($_SESSION['logged_in'])){
             </div>
         </div>
     </footer>
+    <div class="popup-order-box">
+        <p class="popup-order-box-alert">Komunikat</p>
+    </div>
 </body>
 </html>

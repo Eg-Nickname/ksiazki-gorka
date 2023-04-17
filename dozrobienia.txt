@@ -1,16 +1,9 @@
-STRONA NA TEL: Lista ofert skalowanie jednak chyba trzeba zrobić, bo się zmniejsza, a potem powiększa
-STRONA Wiadomosci
--cursory pointery na to mini menu wiadomości i style do tego menu
-- style do czatu - To co się tam dzieje jak jest dużo wiadomosci to XD
--czat css do buttonów, oba mają klase operation_btn- możesz je umieścić jak chcesz, byle jakoś wyglądały, w chat.php masz w html tego offer_wrappera to sobie tam zrób, a ja potem w js zmienie
-Panel użytkownika
--menu na responsywie, ale to potem
-TO JESZCZE MOŻNA ZROBIĆ
--popup do wiadomosci, żeby jakieś błędy tam dać
-//Historia sprzedaży może
+STRONA NA TEL: Lista ofert skalowanie jednak chyba trzeba zrobić, bo się zmniejsza, a potem powiększa i ten domek
+STRONA Wiadomosci: mini menu(cursory też zmień na pointery XD), style do czatu(powodzenia), te przyciski(w chat.php masz w html tego offer_wrappera) i responsywa
+-tych zdjęć chyba w końcu nie ogarnęliśmy
 //DODAC JAKIS PANEL ADMINA PRZYNAJMNIEJ DO DODAWANIA PRZYKŁADOWYCH KSIAZĘK
 //resetowanie hasła
-//mail jakis trzeba dac i moze jakis formularz kontaktowy
+//mail jakis
 
 
 
