@@ -1131,7 +1131,7 @@ section{
     section{
         grid-template-columns: 1fr;
         grid-template-columns: 1fr;
-        padding: 6rem 6rem;
+        padding: 6rem 3rem;
         gap: 1rem;
     }
     .nav-container .right-nav-authorized #user-panel-button{
