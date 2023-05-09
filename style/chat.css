@@ -193,6 +193,39 @@ border-left: none;
     color: #000;
 }
 
+.operation_btn_wrapper{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+
+}
+
+.operation_btn:first-of-type{
+    border: 1px solid #A89887;
+    background-color: transparent;
+    color: #6a5f54;
+    padding: 1rem;
+    font-weight: bold;
+    border-radius: 8px 8px 0 0;
+    font-size: 12px;
+    transition: all 0.3s ease-in-out
+}
+.operation_btn{
+    border: 1px solid #A89887;
+    background-color: transparent;
+    color: #6a5f54;
+    padding: 1rem;
+    font-weight: bold;
+    border-radius: 0 0 8px 8px ;
+    font-size: 12px;
+    transition: all 0.3s ease-in-out
+}
+
+.operation_btn:hover{
+    background-color: #6a5f54;
+    color: #000;
+    cursor: pointer;
+}
 .chat_box{
     width: 100%;
     color: white ;
@@ -348,11 +381,35 @@ b{
         background-color: #F5E9DC;
         position: static;
       }
-
+    @media only screen and (max-width:550px){
+        ul > li > a{
+            font-size: 15px;
+        }
+        .container{
+            padding: 3rem 3rem 5rem 3rem
+        }
+    }
     @media only screen and (max-width:520px){
         #message_send::after{
             width: 22px;
             height: 22px;
+        }
+
+        .offer_info_wrapper .offer_info_book_price {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 1rem;
+          }
+
+        .operation_btn:first-of-type{
+            padding: 0.2rem;
+            font-size: 10px;
+        }
+        .operation_btn{
+            padding: 0.2rem;
+            font-size: 10px;
         }
     }
     @media only screen and (max-width:450px){

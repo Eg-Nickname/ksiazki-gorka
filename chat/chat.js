@@ -141,6 +141,7 @@ function build_offer_book_div({chatter,book_name,price,offer_id},type){
 }
 function build_button_box(type,offer_id){
     const button_box=document.createElement('div');
+    button_box.classList.add('operation_btn_wrapper');
     const delete_btn=document.createElement('button');
     delete_btn.classList.add('operation_btn')
     delete_btn.innerHTML="Anuluj"
