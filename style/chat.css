@@ -196,7 +196,7 @@ border-left: none;
 .operation_btn_wrapper{
     display: flex;
     flex-direction: column;
-    row-gap: 1rem;
+    /* row-gap: 1rem; */
 
 }
 
@@ -278,9 +278,9 @@ border-left: none;
 }
 
 .chat_messages .sent-message{
-    text-align: right;
+    text-align: left;
     font-size: 14px;
-    max-width: 50%;
+    max-width: 75%;
     width: fit-content;
     align-self: flex-end;
     word-wrap: break-word;
@@ -293,7 +293,7 @@ border-left: none;
     text-align: left;
     font-size: 14px;
     outline: 2px solid rgb(245, 233, 220);
-    max-width: 50%;
+    max-width: 75%;
     width: fit-content;
     align-self: flex-start;
     word-wrap: break-word;
@@ -397,18 +397,18 @@ b{
 
         .offer_info_wrapper .offer_info_book_price {
             display: flex;
-            flex-direction: row-reverse;
+            /* flex-direction: row-reverse; */
             justify-content: space-between;
             align-items: center;
             padding: 0 1rem;
           }
 
         .operation_btn:first-of-type{
-            padding: 0.2rem;
+            padding: 0.5rem 0.2rem;
             font-size: 10px;
         }
         .operation_btn{
-            padding: 0.2rem;
+            padding: 0.5rem 0.2rem;
             font-size: 10px;
         }
     }

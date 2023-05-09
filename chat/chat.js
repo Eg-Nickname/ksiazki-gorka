@@ -61,9 +61,9 @@ function build_offer_info_div({chatter,chatter_name}){
         chat_p.append(img,"Otwórz czat")
         chat_p.addEventListener('click',function(){
             change_message_box(chatter,chatter_name_array[0],chatter_name_array[1])
-            setTimeout( () => {
-                scrollToBottom();
-            },20)
+            // setTimeout( () => {
+            //     scrollToBottom();
+            // },20)
 
         })
         div.append(p,chat_p)
@@ -262,6 +262,7 @@ function get_all_messages(chatter){
                 display_messages(response);
                 clearInterval(refresh_messages)
                 refresh_messages=setInterval(get_new_messages,10000);
+                // scrollToBottom();
             }
         }
     })
@@ -280,6 +281,7 @@ function display_messages(messages){
         document.querySelector(".chat_messages").append(message_div);
     }
     last_message_send = messages[messages.length-1]["send_time"]
+    scrollToBottom({behavior: "smooth"});
 }
 
 function send_message(){
@@ -354,9 +356,13 @@ function show_popup_msg(message){
     },2000)
 }
 function scrollToBottom(){
-    let messageBox = document.querySelector(".chat-msg-container")
-    let scrollH = messageBox.scrollHeight;
-    let scrollT = messageBox.scrollTop;
-    messageBox.scrollTop = messageBox.scrollHeight;
-    console.log(scrollH,scrollT);
+    const last_msg=document.querySelector(".chat_messages").lastElementChild;
+    console.log(last_msg);
+    last_msg.scrollIntoView();
+    // let messageBox = document.querySelector(".chat-msg-container")
+    // let scrollH = messageBox.scrollHeight;
+    // let scrollT = messageBox.scrollTop;
+    // messageBox.scrollTop = messageBox.scrollHeight;
+    // console.log(scrollH,scrollT);
+
 }

@@ -1,5 +1,5 @@
-STRONA NA TEL: Lista ofert skalowanie jednak chyba trzeba zrobić, bo się zmniejsza, a potem powiększa i ten domek
-STRONA Wiadomosci: mini menu(cursory też zmień na pointery XD), style do czatu(powodzenia), te przyciski(w chat.php masz w html tego offer_wrappera) i responsywa
+Napraw menu na DANE i WIADMOSĆI, Domek rejestracja(nie wiem co z nim)
+STRONA Wiadomosci: napraw szerokość tego b i responsywa tego boxa z tym co sprzedajesz/kupujesz
 -tych zdjęć chyba w końcu nie ogarnęliśmy
 //DODAC JAKIS PANEL ADMINA PRZYNAJMNIEJ DO DODAWANIA PRZYKŁADOWYCH KSIAZĘK
 //resetowanie hasła
