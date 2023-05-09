@@ -61,6 +61,10 @@ function build_offer_info_div({chatter,chatter_name}){
         chat_p.append(img,"Otwórz czat")
         chat_p.addEventListener('click',function(){
             change_message_box(chatter,chatter_name_array[0],chatter_name_array[1])
+            setTimeout( () => {
+                scrollToBottom();
+            },20)
+
         })
         div.append(p,chat_p)
         div_wrapper.append(div)
@@ -347,4 +351,11 @@ function show_popup_msg(message){
     setTimeout(() => {
         error_p.parentNode.style.visibility="hidden";
     },2000)
+}
+function scrollToBottom(){
+    let messageBox = document.querySelector(".chat-msg-container")
+    let scrollH = messageBox.scrollHeight;
+    let scrollT = messageBox.scrollTop;
+    messageBox.scrollTop = messageBox.scrollHeight;
+    console.log(scrollH,scrollT);
 }

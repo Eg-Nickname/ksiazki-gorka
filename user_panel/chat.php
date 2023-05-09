@@ -89,13 +89,14 @@ if(!isset($_SESSION['logged_in'])){
             <div class="chat_user_box">
                 <p class="chat_user_box_name">WYBIERZ KONWERSACJĘ</p>
             </div>
+        <div class="chat-msg-container">
             <div class="chat_messages" style="color:black;">
-            <!-- Wiadomości idom tutej -->
+            <!-- Wiadomości idą tutej -->
             </div>
-
+        </div>
             <div class="input_box">
                 <input type="text" name="message" id="message_input" placeholder="Napisz coś..." disabled>
-                <button type="submit"  id="message_send"  disabled>wyślij</button>
+                <button type="submit"  id="message_send"  disabled></button>
                 <!-- onclick="send_message();" -->
             </div>
         </div>
