@@ -14,3 +14,5 @@ RewriteRule dane-uzytkownika user_panel/user_data.php
 RewriteRule wiadomosci user_panel/chat.php
 RewriteRule dodaj-oferte user_panel/add_offer_page.php
 RewriteRule twoje-oferty user_panel/active_users_offers.php
+RewriteRule admin-panel admin/admin.php
+RewriteRule admin-logowanie admin/admin_login_page.php

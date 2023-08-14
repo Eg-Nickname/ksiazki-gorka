@@ -1,10 +1,7 @@
-Napraw menu na DANE i WIADMOSĆI, Domek rejestracja(nie wiem co z nim)
-STRONA Wiadomosci: napraw szerokość tego b i responsywa tego boxa z tym co sprzedajesz/kupujesz
+STRONA Wiadomosci: napraw szerokość tego b i responsywa tego boxa z tym co sprzedajesz/kupujesz, menu active
 -tych zdjęć chyba w końcu nie ogarnęliśmy
-//DODAC JAKIS PANEL ADMINA PRZYNAJMNIEJ DO DODAWANIA PRZYKŁADOWYCH KSIAZĘK
 //resetowanie hasła
 //mail jakis
-
 
 
 
