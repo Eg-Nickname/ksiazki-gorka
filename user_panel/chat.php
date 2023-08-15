@@ -56,7 +56,7 @@ if(!isset($_SESSION['logged_in'])){
     </section>
     <div class="break"></div>
     <ul class="chat-menu">
-            <li><a class="change_customer_box" id="all">Wszystkie</a></li>
+            <li><a class="change_customer_box active_messages" id="all">Wszystkie</a></li>
             <li><a class="change_customer_box" id="buy">Kupujesz</a></li>
             <li><a class="change_customer_box" id="sell">Sprzedajesz</a></li>
         </ul>

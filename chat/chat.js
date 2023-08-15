@@ -144,7 +144,8 @@ function build_button_box(type,offer_id){
     button_box.classList.add('operation_btn_wrapper');
     const delete_btn=document.createElement('button');
     delete_btn.classList.add('operation_btn')
-    delete_btn.innerHTML="Anuluj"
+    delete_btn.innerHTML="-"
+    delete_btn.title="Wycofaj"
     delete_btn.addEventListener('click',function(){
         delete_from_cart(offer_id,this)
     })
@@ -152,11 +153,14 @@ function build_button_box(type,offer_id){
     if(type=="sell"){
         const sold_btn=document.createElement("button")
         sold_btn.classList.add("operation_btn")
-        sold_btn.innerHTML="Sprzedana"
+        sold_btn.innerHTML="$"
+        sold_btn.title="Oznacz jako sprzedana"
         sold_btn.addEventListener("click",function(){
             sold(offer_id,this)
         })
-        button_box.append(sold_btn)
+        const span=document.createElement("span")
+        span.classList.add("operation_box_break")
+        button_box.append(span,sold_btn)
     }
     return button_box
 
@@ -228,13 +232,16 @@ function check_if_offer_info_not_empty(element){
 function empty_customer_box(){
     const p=document.createElement('p');
     p.innerHTML="Brak aktualnych wiadomości";
-    p.style.fontSize='32px';
+    p.style.fontSize='24px';
     p.style.color='black';
     p.style.textAlign='center';
     document.querySelector('.customer_box').append(p);
 }
 document.querySelectorAll('.change_customer_box').forEach((el)=>{
     el.addEventListener("click",function(){
+        document.querySelector('.active_messages').classList.remove('active_messages')
+        el.classList.add('active_messages')
+        // document.querySelector('.active_messages').classList.remove('active_messages')
         if(type!=String(el.id)){
             type=String(el.id);
             get_chatters()

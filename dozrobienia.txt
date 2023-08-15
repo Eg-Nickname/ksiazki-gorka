@@ -1,4 +1,3 @@
-STRONA Wiadomosci: napraw szerokość tego b i responsywa tego boxa z tym co sprzedajesz/kupujesz, menu active
 -tych zdjęć chyba w końcu nie ogarnęliśmy
 //resetowanie hasła
 //mail jakis

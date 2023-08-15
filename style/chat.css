@@ -51,6 +51,10 @@ ul.chat-menu > li:hover{
     color: #513939;
     cursor: pointer;
 }
+ul.chat-menu > li a.active_messages{
+    font-weight: 700;
+    color:#A89887
+}
 
 .container{
     max-width: 1140px;
@@ -195,22 +199,25 @@ border-left: none;
 
 .operation_btn_wrapper{
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    /* flex-direction: column; */
     /* row-gap: 1rem; */
 
 }
 
-.operation_btn:first-of-type{
+.operation_btn{
     border: 1px solid #A89887;
     background-color: transparent;
     color: #6a5f54;
-    padding: 1rem;
+    padding: 0.5rem 0.2rem;
     font-weight: bold;
-    border-radius: 8px 8px 0 0;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
     font-size: 12px;
     transition: all 0.3s ease-in-out
 }
-.operation_btn{
+/* .operation_btn{
     border: 1px solid #A89887;
     background-color: transparent;
     color: #6a5f54;
@@ -219,12 +226,18 @@ border-left: none;
     border-radius: 0 0 8px 8px ;
     font-size: 12px;
     transition: all 0.3s ease-in-out
-}
+} */
 
 .operation_btn:hover{
     background-color: #6a5f54;
-    color: #000;
+    color: #fff;
     cursor: pointer;
+}
+.operation_box_break{
+    height: 16px;
+    width:1px;
+    margin: 0 4px;
+    background: #6a5f54;
 }
 .chat_box{
     width: 100%;
@@ -265,6 +278,7 @@ border-left: none;
     bottom: 0;
     width: 100%;
     display: grid;
+    z-index: 1;
     grid-template-columns: 90% 10%;
 }
 .chat_user_box_name{
@@ -280,7 +294,7 @@ border-left: none;
 
 .chat_messages .sent-message{
     text-align: left;
-    font-size: 14px;
+    font-size: 13px;
     max-width: 75%;
     width: fit-content;
     align-self: flex-end;
@@ -292,7 +306,7 @@ border-left: none;
 
 .chat_messages .recived-message{
     text-align: left;
-    font-size: 14px;
+    font-size: 13px;
     outline: 2px solid rgb(245, 233, 220);
     max-width: 75%;
     width: fit-content;
@@ -328,7 +342,7 @@ border-left: none;
   }
 
 #message_send{
-    background-color:transparent;
+    background-color:#fff;
     border: none;
     border-top: 2px solid #F5E9DC;
     border-left: 2px solid #F5E9DC;
@@ -370,24 +384,71 @@ b{
 @media only screen and (max-width:1000px){
     .container{
         grid-template-columns: 1fr;
-        row-gap: 4rem;
-        padding: 5rem 3rem;
+        row-gap: 2rem;
+        padding: 2rem 1rem;
         /* grid-template-rows: 100%; */
     
     }
-
+    .customer_box{
+        height:auto;
+        min-height:auto;
+    }
     footer{ 
         height: 170px;
         width: 100%;
         background-color: #F5E9DC;
         position: static;
       }
+      .chat_messages .recived-message,.chat_messages .sent-message{
+        font-size: 11px;
+        padding:0.5rem 1rem;
+      }
+      b{
+        font-size:10px;
+      }
+      .input_box input{
+        font-size:13px;
+      }
+      .chat-msg-container{
+        padding:10px;
+      }
+      .chat_box .chat_user_box p{
+        font-size:14px;
+      }
     @media only screen and (max-width:550px){
         ul > li > a{
             font-size: 15px;
         }
         .container{
-            padding: 3rem 3rem 5rem 3rem
+            padding: 2rem 1rem 2rem 1rem;
+        }
+        ul.chat-menu > li a.change_customer_box{
+            font-size: 13px;
+        }
+        .offer_info_wrapper div.offer_info{
+            padding:5px;
+        }
+        div.offer_info p, div.offer_info a{
+            font-size: 12px;
+        }
+        .offer_info_wrapper .offer_info .offer_info_chatbtn{
+            height:20px;
+        }
+        .lovely_p{
+            column-gap: 0.5rem;
+        }
+        button.operation_btn{
+            padding:4px;
+        }
+        .offer_info_wrapper .offer_info_book_price p.offer_book{
+            font-size:12px;
+        }
+        .offer_info_wrapper .offer_info_book_price p.offer_price{
+            font-size: 12px;
+            text-align: center;
+        }
+        .offer_info_wrapper .offer_info_sum p.offer_price_sum,.offer_info_wrapper .offer_info_sum p.offer_sum{
+            font-size: 12px;
         }
     }
     @media only screen and (max-width:520px){
@@ -403,11 +464,6 @@ b{
             align-items: center;
             padding: 0 1rem;
           }
-
-        .operation_btn:first-of-type{
-            padding: 0.5rem 0.2rem;
-            font-size: 10px;
-        }
         .operation_btn{
             padding: 0.5rem 0.2rem;
             font-size: 10px;
@@ -419,6 +475,11 @@ b{
         }
         .chat_box .input_box{
             grid-template-columns: 80% 20%;
+        }
+        button.operation_btn{
+            padding:0;
+            width: 24px;
+            height: 24px;
         }
 }
 }
