@@ -440,7 +440,7 @@ section .user_offer_box_image{
     background-size: cover;
     background-position: center;
     width: 210px;
-    height: 300px;
+    height: 280px;
     cursor: pointer;
     
 }
@@ -1012,7 +1012,7 @@ footer{
 
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 768px) {
 section{
     grid-template-columns: 1fr 1fr;
 }

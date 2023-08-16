@@ -137,6 +137,7 @@ const show_users_offers= function (){
                 const a=document.createElement('a');
                 a.href=`oferty-uzytkownika?seller=${offer.seller}&name=${offer.name+"-"+offer.surname}`;
                 a.innerHTML=`Od: ${offer.name} ${offer.surname}`;
+                a.target="blank"
                 div_content.append(img_btn,price,button,a);
                 div.append(img_box,div_content);
                 document.querySelector('section').appendChild(div);

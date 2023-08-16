@@ -77,8 +77,9 @@ if(!isset($_SESSION['logged_in'])){
             <div class="dragger">
                 <div class="icon"><i class="fa-solid fa-images"></i></div>
                  <button class="browseFile" id="browseFile">Wybierz Plik</button> <input type="file" hidden id="front_photo" class="fileInputField" />
-            </div>
+                </div>
             <div class="fileName"> </div>
+            <p class="imgnote format">Zdjęcia powinny mieć format 4:3</p>
             <p class="imgnote">Obsługiwane formaty: JPG, PNG, JPEG</p>
            
         </div>   
@@ -92,6 +93,7 @@ if(!isset($_SESSION['logged_in'])){
                 <div class="icon"><i class="fa-solid fa-images"></i></div> <button class="browseFile" id="browseFile">Wybierz Plik</button> <input type="file" hidden id="back_photo" class="fileInputField" />
             </div>
             <div class="fileName"> </div>
+            <p class="imgnote format">Zdjęcia powinny mieć format 4:3</p>
             <p class="imgnote">Obsługiwane formaty: JPG, PNG, JPEG</p>
         </div>   
         <!-- <label for="front_photo">Zdjęcie - Przód</label><input type="file" name="back_photo" id="back_photo"> -->

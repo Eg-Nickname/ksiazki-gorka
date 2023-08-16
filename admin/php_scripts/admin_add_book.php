@@ -44,7 +44,7 @@ if (strlen($title) > 0 &&
             require_once '../../php_scripts/connect.php';
             $connection=mysqli_connect($host, $db_user,$db_password,$db_name);
             if(!mysqli_connect_errno()){
-                if(compressImage($_FILES['front_photo']['tmp_name'],$img_upload_path,90))
+                if(compressImage($_FILES['front_photo']['tmp_name'],$img_upload_path,100))
                     {
                         $sql="INSERT INTO `sample_books`(`book_name`,`men`,`picture`,`publishing_house`,`authors`, `category`,`part`,`scope`,`release_date`) VALUES ('$title','$men','$serwer_img_path','$publishing','$authors','$category','$part','$scope','$year')";
                         $result=mysqli_query($connection,$sql);

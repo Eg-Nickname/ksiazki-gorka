@@ -369,6 +369,10 @@ h3{
     color: #A88E87;
 
 }
+.dragger_wrapper .format {
+    font-size: 13px;
+    font-weight:bold;
+}
 
 .dragger_wrapper h2 {
     font-size: 18px;
@@ -378,7 +382,7 @@ h3{
 
 .dragger {
     width: 210px;
-    height: 300px;
+    height: 280px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -767,8 +771,6 @@ footer{
         width: 95%;
     }
     .dragger {
-        width: 210px;
-        height:300px;
         /* width: 210px;
         height: 150px; */
         display: flex;

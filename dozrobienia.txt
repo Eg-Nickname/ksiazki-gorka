@@ -1,7 +1,4 @@
--tych zdjęć chyba w końcu nie ogarnęliśmy
-//resetowanie hasła
-//mail jakis
-
+-mail - reset hasła, potwierdzenie rejestracji, ktoś zarezerował
 
 
 
