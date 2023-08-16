@@ -318,15 +318,6 @@ textarea{
     cursor: pointer;
     font-size: 45px;
 }
-.error_span{
-    color: red;
-    font-size: 12px;
-    font-weight: normal;
-    /* visibility: hidden; */
-    display: none;
-    margin: 1rem 0 0 0;
-    text-align: center;
-}
 
 @media (max-width: 768px) {
     h1{

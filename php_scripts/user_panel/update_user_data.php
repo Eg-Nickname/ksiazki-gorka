@@ -84,6 +84,7 @@ if(!$error){
                 array_push($error_class,"password");
             }
         }
+        mysqli_close($connection);
     }
 }
 $array=[$error,$error_message,$error_class];

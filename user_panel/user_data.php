@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(!isset($_SESSION['logged_in'])){
+if (!isset($_SESSION['logged_in'])) {
     header('Location:../strona-logowania');
     exit();
 }
@@ -10,6 +10,7 @@ $email = $_SESSION['email'];
 ?>
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,32 +25,35 @@ $email = $_SESSION['email'];
     <link rel="stylesheet" href="../style/user_data.css">
     <link rel="icon" type="image/x-icon" href="../images/icon.png">
 </head>
-<body>
-<nav>
-    <div class="nav-container">
-        
-        <div class="left-nav">
-            <a href="../strona-glowna"><div class="nav-image"></div></a>
-        </div>
 
-        <div class="center-nav">
-            <div class="nav-list">
-                <ul>
-                    <li><a href="../strona-glowna#offers-section">Kategorie</a></li>
-                    <li><a href="../lista-ofert">Kup</a></li>
-                    <li><a href="../user_panel/dodaj-oferte">Sprzedaj</a></li>
-                </ul>
+<body>
+    <nav>
+        <div class="nav-container">
+
+            <div class="left-nav">
+                <a href="../strona-glowna">
+                    <div class="nav-image"></div>
+                </a>
             </div>
-        </div>
-        
+
+            <div class="center-nav">
+                <div class="nav-list">
+                    <ul>
+                        <li><a href="../strona-glowna#offers-section">Kategorie</a></li>
+                        <li><a href="../lista-ofert">Kup</a></li>
+                        <li><a href="../user_panel/dodaj-oferte">Sprzedaj</a></li>
+                    </ul>
+                </div>
+            </div>
+
             <div class="right-nav-authorized">
                 <a id="user-panel-button" href="dane-uzytkownika"></a>
                 <a id="messages-button" href="../user_panel/wiadomosci"></a>
                 <a id="log_out"></a>
             </div>
-    </div>
-</nav>
-<section id="sub-menu">
+        </div>
+    </nav>
+    <section id="sub-menu">
         <ul>
             <li class="active"><a href="dane-uzytkownika">Dane</a></li>
             <li><a href="twoje-oferty">Twoje oferty</a></li>
@@ -58,53 +62,54 @@ $email = $_SESSION['email'];
         </ul>
     </section>
     <div class="break"></div>
-    <!-- MASZ trochę styli wyżej -->
     <main>
-    <h3>Zmień swoje dane</h3>
-    <div class="container">
-        <div class="change-personal">
-            <label for="name">Imię:</label>
-            <input type="text" placeholder="Wpisz imię" name="name" id="name" value="<?php echo $name?>">
-            <span id="name-error" class="error_log_info">Lorem Ipsum</span>
+        <h3>Zmień swoje dane</h3>
+        <div class="container">
+            <div class="change-personal">
+                <label for="name">Imię:</label>
+                <input type="text" placeholder="Wpisz imię" name="name" id="name" value="<?php echo $name ?>">
+                <span id="name-error" class="error_log_info">Lorem Ipsum</span>
 
-            <label for="surname">Nazwisko:</label>
-            <input type="text" placeholder="Wpisz nazwisko" name="surname" id="surname" value="<?php echo $surname?>"/>
-            <span id="surname-error" class="error_log_info">Lorem Ipsum</span>
+                <label for="surname">Nazwisko:</label>
+                <input type="text" placeholder="Wpisz nazwisko" name="surname" id="surname" value="<?php echo $surname ?>" />
+                <span id="surname-error" class="error_log_info">Lorem Ipsum</span>
 
-            <label for="register_email">Email:</label>
-            <input type="email" placeholder="Wpisz swoj email" name="email" id="email" value="<?php echo $email?>" />
-            <span id="email-error" class="error_log_info">Lorem Ipsum</span>
+                <label for="register_email">Email:</label>
+                <input type="email" placeholder="Wpisz swoj email" name="email" id="email" value="<?php echo $email ?>" />
+                <span id="email-error" class="error_log_info">Lorem Ipsum</span>
 
-            <label for="password">Podaj obecne hasło:</label>
-            <input type="password" class="password_change" placeholder="Obecne hasło"  name="password" id="password" />
-            <span  id="password-error"class="error_log_info">Lorem Ipsum</span>
+                <label for="password">Podaj obecne hasło:</label>
+                <input type="password" class="password_change" placeholder="Obecne hasło" name="password" id="password" />
+                <span id="password-error" class="error_log_info">Lorem Ipsum</span>
 
-            <button id="change_data">Zmień dane</button> 
+                <button id="change_data">Zmień dane</button>
+            </div>
+            <hr>
+            <div class="change-paswd">
+                <h3>Zmien swoje hasło</h3>
+                <label for="new_password">Nowe hasło:</label>
+                <input type="password" class="password_change" placeholder="Min. 8 znaków, w tym litera i cyfra" name="new_password" id="new_password" />
+                <span id="new_password-error" class="error_log_info">Lorem Ipsum</span>
+
+                <label for="check_password">Potwierdź nowe hasło:</label>
+                <input type="password" class="password_change" placeholder="Powtórz hasło" name="check_password" id="check_password" />
+                <span id="check_password-error" class="error_log_info">Lorem Ipsum</span>
+
+                <label for="current_password">Podaj obecne hasło:</label>
+                <input type="password" class="password_change" placeholder="Obecne hasło" name="current_password" id="current_password" />
+                <span id="current_password-error" class="error_log_info">Lorem Ipsum</span>
+
+                <button id="change_password">Zmień hasło</button>
+            </div>
         </div>
-        <hr>
-        <div class="change-paswd">
-            <h3>Zmien swoje hasło</h3>
-            <label for="new_password">Nowe hasło:</label>
-            <input type="password" class="password_change" placeholder="Hasło musi zawierać 8 znaków" name="new_password" id="new_password" />
-            <span id="new_password-error" class="error_log_info">Lorem Ipsum</span> 
-            
-            <label for="check_password">Potwierdź nowe hasło:</label>
-            <input type="password" class="password_change" placeholder="Powtórz hasło"  name="check_password" id="check_password" />
-            <span  id="check_password-error"class="error_log_info">Lorem Ipsum</span> 
-
-            <label for="current_password">Podaj obecne hasło:</label>
-            <input type="password" class="password_change" placeholder="Obecne hasło"  name="current_password" id="current_password" />
-            <span  id="current_password-error"class="error_log_info">Lorem Ipsum</span> 
-
-            <button id="change_password">Zmień hasło</button> 
-        </div>
-    </div>
-</form>
+        </form>
     </main>
-<footer>
+    <footer>
         <div class="footer-container">
             <div class="logo-footer">
-                <a href="../strona-glowna"><div class="footer-image"></div></a>
+                <a href="../strona-glowna">
+                    <div class="footer-image"></div>
+                </a>
                 <span class="break"></span>
             </div>
 
@@ -122,13 +127,13 @@ $email = $_SESSION['email'];
                             <a href="#"><span class="mail">gorckacost@mail.com</span></a>
                             <a href="#"><span class="location">Rabka-zdrój</span></a>
                         </div>
-        
+
                     </div>
                     <div class="copyright">
                         <p>© 2022 Nazwa. Wszelkie prawa zastrzeżone </p>
                     </div>
                 </div>
-                
+
             </div>
 
             <div class="social-box">
@@ -141,7 +146,8 @@ $email = $_SESSION['email'];
         </div>
     </footer>
     <div class="popup-order-box">
-        <p class="popup-order-box-alert"></p>   
+        <p class="popup-order-box-alert"></p>
     </div>
 </body>
+
 </html>

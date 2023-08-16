@@ -4,7 +4,6 @@ let type="all";
 let refresh_chatter=setInterval(get_chatters,25000)
 let refresh_messages;
 function get_chatters(){
-    console.log("reset")
     clearInterval(refresh_chatter);
     refresh_chatter=setInterval(get_chatters,25000)
     document.querySelector('.customer_box').textContent="";
@@ -62,10 +61,6 @@ function build_offer_info_div({chatter,chatter_name}){
         chat_p.append(img,"Otwórz czat")
         chat_p.addEventListener('click',function(){
             change_message_box(chatter,chatter_name_array[0],chatter_name_array[1])
-            // setTimeout( () => {
-            //     scrollToBottom();
-            // },20)
-
         })
         div.append(p,chat_p)
         div_wrapper.append(div)
@@ -82,27 +77,20 @@ function change_message_box(chatter,name,surname){
         const msg_input=document.getElementById('message_input');
         msg_input.disabled=false;
         document.getElementById("message_send").disabled=false;
-        console.log(chatter);
         current_chatter=chatter;
         get_all_messages(chatter);
     }
 }
 function add_offers_to_wrapper(data,type)
 {
-    // console.log(data)
     const offer_book_div=build_offer_book_div(data,type)
     const wrapper=document.getElementById(`chatter${data.chatter}`)
     wrapper.querySelector('.offer_info').after(offer_book_div)
     if(!wrapper.querySelector('.offer_info_sum')){
-        console.log('nedd')
         const sum_div=build_sum_div();
         wrapper.append(sum_div)
     }
     update_cost(wrapper)
-    // console.log(chatter,book_name,price,offer_id)
-}
-function add_sold_btn(element){
-    console.log(element)
 }
 function update_cost(wrapper){
     const total_cost=cost(wrapper);
@@ -122,7 +110,6 @@ function build_sum_div(){
     return sum_div
 }
 function build_offer_book_div({chatter,book_name,price,offer_id},type){
-    console.log(type)
     const div=document.createElement('div');
     div.classList.add('offer_info_book_price');
     const offer_book=document.createElement('p');
@@ -134,11 +121,6 @@ function build_offer_book_div({chatter,book_name,price,offer_id},type){
     const button_box=build_button_box(type,offer_id)
     div.append(button_box,offer_book,offer_price);
     return div
-    // const par=document.getElementById(`seller${offer['seller']}`);
-    // const sum_div=par.querySelector(`.offer_info_sum`);
-    // sum_div.before(div);
-    // const new_cost=cost(par);
-    // sum_div.querySelector('.offer_price_sum').innerHTML=`${new_cost} PLN`;
 }
 function build_button_box(type,offer_id){
     const button_box=document.createElement('div');
@@ -183,7 +165,6 @@ function sold(offer,btn){
     })
 }
 function cost(parent){
-    console.log(parent)
     const price_paragraphs=Array.from(parent.querySelectorAll('.offer_price'));
     let cost=0;
     price_paragraphs.forEach(str_price=>{
@@ -262,15 +243,12 @@ function get_all_messages(chatter){
             chatter: current_chatter
         },
         success: function(response){
-            console.log(response);
-            console.log(response.length);
             if(response.length>=0){
                 // Wyświetl wiadomości jeśli istnieja
                 document.querySelector('.chat_messages').innerHTML="";
                 display_messages(response);
                 clearInterval(refresh_messages)
                 refresh_messages=setInterval(get_new_messages,10000);
-                // scrollToBottom();
             }
         }
     })
@@ -311,7 +289,6 @@ function send_message(){
                 message: message_to_send
             },
             success: function(response){
-                console.log(response.length);
                 if(response.length==0){
                     const msg="Nie udało się wysłać wiadomości";
                     show_popup_msg(msg)
@@ -336,7 +313,6 @@ document.addEventListener("keydown", (event) => {
 });
 
 function get_new_messages(){
-    console.log("Sprawdzenie nowych wiadomości")
     $.ajax({
         url: '../chat/get_new_messages.php',
         type: 'POST',
@@ -347,7 +323,6 @@ function get_new_messages(){
             last_message: last_message_send
         },
         success: function(response){
-            console.log(response.length);
             if(response.length>0){
                 display_messages(response);
                 // dodaj nowe wiadomości
@@ -365,12 +340,5 @@ function show_popup_msg(message){
 }
 function scrollToBottom(){
     const last_msg=document.querySelector(".chat_messages").lastElementChild;
-    console.log(last_msg);
     last_msg.scrollIntoView();
-    // let messageBox = document.querySelector(".chat-msg-container")
-    // let scrollH = messageBox.scrollHeight;
-    // let scrollT = messageBox.scrollTop;
-    // messageBox.scrollTop = messageBox.scrollHeight;
-    // console.log(scrollH,scrollT);
-
 }

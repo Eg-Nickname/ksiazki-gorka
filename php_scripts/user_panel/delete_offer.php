@@ -1,4 +1,4 @@
-<?php // zrobić tak, że każdy onclick potwierdzenia jest osobno
+<?php
 session_start();
 if(!isset($_SESSION['logged_in']) || !isset($_POST['offer'])){
     exit();
@@ -7,7 +7,7 @@ $offer=htmlentities($_POST['offer']);
 $user=$_SESSION['user_id'];
 $result;
 mysqli_report(MYSQLI_REPORT_STRICT);
-try{//usuwanie zdjęć trzeba tu zrobić
+try{
     require_once '../connect.php';
     $connection = mysqli_connect($host,$db_user,$db_password,$db_name);
     if($connection->connect_errno==0){

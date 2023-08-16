@@ -1,12 +1,13 @@
 <?php
 session_start();
-$is_logged_in=false;
-if(isset($_SESSION['logged_in'])){
-    $is_logged_in =true;
+$is_logged_in = false;
+if (isset($_SESSION['logged_in'])) {
+    $is_logged_in = true;
 }
 ?>
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,12 +20,15 @@ if(isset($_SESSION['logged_in'])){
     <script defer src="scripts/log_out.js"></script>
     <link rel="icon" type="image/x-icon" href="images/icon.png">
 </head>
+
 <body>
     <nav>
         <div class="nav-container">
-            
+
             <div class="left-nav">
-                <a href="strona-glowna"><div class="nav-image"></div></a>
+                <a href="strona-glowna">
+                    <div class="nav-image"></div>
+                </a>
             </div>
 
             <div class="center-nav">
@@ -38,17 +42,16 @@ if(isset($_SESSION['logged_in'])){
             </div>
 
             <?php
-            if($is_logged_in){
-                echo<<<END
+            if ($is_logged_in) {
+                echo <<<END
                 <div class="right-nav-authorized">
                     <a id="user-panel-button" href="user_panel/dane-uzytkownika"></a>
                     <a id="messages-button" href="user_panel/wiadomosci"></a>
                     <a id="log_out"></a>
                 </div>
                 END;
-            }
-            else{
-                echo<<<END
+            } else {
+                echo <<<END
                 <div class="right-nav">
                     <a href="strona-logowania">Zaloguj się</a>
                 </div>
@@ -60,32 +63,34 @@ if(isset($_SESSION['logged_in'])){
     </nav>
 
     <main>
-            <section id="seller-offers"></section>
-            <div class="modal-box">
-                    <span class="close-modal-box">X</span>
-                    <img src="" class="offer-image">
-                </div> <!--- popup -->
-                <div class="popup-order-box">
-                 <p class="popup-order-box-alert"></p>   
-                </div>
-            </div>
-            <div class="buy-popup">
-                <div class="buy-confirm">
-                    <div class="buy-button-wrapper">
-                        <h1 class="title-buy buy-text"></h1>
-                        <h2 class="price-buy buy-text"></h2>
+        <section id="seller-offers"></section>
+        <div class="modal-box">
+            <span class="close-modal-box">X</span>
+            <img src="" class="offer-image">
+        </div> <!--- popup -->
+        <div class="popup-order-box">
+            <p class="popup-order-box-alert"></p>
+        </div>
+        </div>
+        <div class="buy-popup">
+            <div class="buy-confirm">
+                <div class="buy-button-wrapper">
+                    <h1 class="title-buy buy-text"></h1>
+                    <h2 class="price-buy buy-text"></h2>
                     <div class="button-wrapper">
                         <button class="confirm-buy">Biorę</button>
                         <button class="cancel-buy">Anuluj</button>
                     </div>
-                    </div>
                 </div>
             </div>
+        </div>
     </main>
     <footer>
         <div class="footer-container">
             <div class="logo-footer">
-                <a href="strona-glowna"><div class="footer-image"></div></a>
+                <a href="strona-glowna">
+                    <div class="footer-image"></div>
+                </a>
                 <span class="break"></span>
             </div>
 
@@ -103,13 +108,13 @@ if(isset($_SESSION['logged_in'])){
                             <a href="#"><span class="mail">gorckacost@mail.com</span></a>
                             <a href="#"><span class="location">Rabka-zdrój</span></a>
                         </div>
-        
+
                     </div>
                     <div class="copyright">
                         <p>© 2022 Nazwa. Wszelkie prawa zastrzeżone </p>
                     </div>
                 </div>
-                
+
             </div>
 
             <div class="social-box">
@@ -122,4 +127,5 @@ if(isset($_SESSION['logged_in'])){
         </div>
     </footer>
 </body>
+
 </html>

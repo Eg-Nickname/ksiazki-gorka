@@ -14,7 +14,7 @@ $id=$_SESSION['user_id'];
 $error=false;
 $error_message=[];
 $error_class=[];
-if(strlen($new_password)<3){ // do zmiany
+if(!preg_match('/^(?=.*[A-Z])(?=.*\d).{8,}$/', $new_password)){
     $error=true;
     $error_message['new_password']="Hasło nie spełnia wymagań";
     array_push($error_class,"new_password");
@@ -48,6 +48,7 @@ if(!$error){
                 array_push($error_class,"current_password");
             }
         }
+        mysqli_close($connection);
     }
 }
 $array=[$error,$error_message,$error_class];

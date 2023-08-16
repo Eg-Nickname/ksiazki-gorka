@@ -1,11 +1,11 @@
-#sub-menu{
+#sub-menu {
     padding: 2rem 0 2rem 0;
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
-#sub-menu ul{
+#sub-menu ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -14,12 +14,12 @@
 
 }
 
-#sub-menu li.active{
+#sub-menu li.active {
     background-color: transparent !important;
     border: none !important;
 }
 
-#sub-menu li.active a::after{
+#sub-menu li.active a::after {
     content: '';
     position: absolute;
     width: 0;
@@ -30,7 +30,7 @@
     top: 25px;
 }
 
-#sub-menu li a{
+#sub-menu li a {
     font-size: 16px;
     color: #A89887;
     font-weight: normal;
@@ -39,7 +39,7 @@
     position: relative;
 }
 
-#sub-menu li a::after{
+#sub-menu li a::after {
     content: '';
     position: absolute;
     width: 0;
@@ -50,23 +50,24 @@
     top: 25px;
 }
 
-#sub-menu li a:hover::after{
+#sub-menu li a:hover::after {
     width: 100%;
     transition: width .3s;
 }
 
-#sub-menu li.active a{
+#sub-menu li.active a {
     font-weight: bold;
     color: #A89887;
 }
 
-#sub-menu li.active a::after{
+#sub-menu li.active a::after {
     font-weight: bold;
     color: #A89887;
     width: 100%;
     transition: width .3s;
 }
-.popup-order-box{
+
+.popup-order-box {
     width: 400px;
     height: auto;
     position: fixed;
@@ -82,7 +83,8 @@
     align-items: center;
     visibility: hidden;
 }
-.popup-order-box-alert{
+
+.popup-order-box-alert {
     font-size: 16px;
     color: #A89887;
     padding: 1.5rem;
@@ -97,38 +99,33 @@
 }
 
 
-@media (max-width:1000px)
-{
-    #sub-menu ul{
+@media (max-width:1000px) {
+    #sub-menu ul {
         width: 80%;
     }
 }
 
-@media (max-width:680px)
-{
-    #sub-menu ul{
+@media (max-width:680px) {
+    #sub-menu ul {
         width: 90%;
-        /* display: grid;
-        grid-template-columns: repeat(3,1fr);
-        gap: 2rem; */
     }
 
-    li{
+    li {
         text-align: center;
     }
 }
 
-@media (max-width:550px)
-{
+@media (max-width:550px) {
 
-    #sub-menu li a{
+    #sub-menu li a {
         font-size: 13px;
     }
+
     #sub-menu li.active a::after {
         font-weight: bold;
         color: #A89887;
         width: 0;
         transition: width .3s;
     }
-    
+
 }

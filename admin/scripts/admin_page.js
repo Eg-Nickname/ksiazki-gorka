@@ -193,7 +193,6 @@ document.getElementById('submit').addEventListener('click', function() {
     const category=document.getElementById('category').value
     const part=document.getElementById('part').value
     const scope=document.getElementById('podstawowy').checked ? "podstawowy" : "rozszerzony";
-    console.log(scope)
     const inputField = Array.from(document.querySelectorAll('.fileInputField'));
     const files1 = inputField[0].files;
     const data = new FormData();
@@ -206,7 +205,6 @@ document.getElementById('submit').addEventListener('click', function() {
     data.append('category',category)
     data.append('part',part)
     data.append('scope',scope)
-    console.log(data)
     $.ajax({
       url: 'php_scripts/admin_add_book.php',
       type: 'POST',

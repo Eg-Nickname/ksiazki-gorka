@@ -1,12 +1,13 @@
 <?php
 session_start();
-if(!isset($_SESSION['logged_in'])){
+if (!isset($_SESSION['logged_in'])) {
     header('Location:../strona-logowania');
     exit();
 }
 ?>
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,12 +21,15 @@ if(!isset($_SESSION['logged_in'])){
     <link rel="stylesheet" href="../style/sub_menu.css">
     <link rel="icon" type="image/x-icon" href="../images/icon.png">
 </head>
+
 <body>
-<nav>
+    <nav>
         <div class="nav-container">
-            
+
             <div class="left-nav">
-                <a href="../strona-glowna"><div class="nav-image"></div></a>
+                <a href="../strona-glowna">
+                    <div class="nav-image"></div>
+                </a>
             </div>
 
             <div class="center-nav">
@@ -37,12 +41,12 @@ if(!isset($_SESSION['logged_in'])){
                     </ul>
                 </div>
             </div>
-            
-                <div class="right-nav-authorized">
-                    <a id="user-panel-button" href="dane-uzytkownika"></a>
-                    <a id="messages-button" href="../user_panel/wiadomosci"></a>
-                    <a id="log_out"></a>
-                </div>
+
+            <div class="right-nav-authorized">
+                <a id="user-panel-button" href="dane-uzytkownika"></a>
+                <a id="messages-button" href="../user_panel/wiadomosci"></a>
+                <a id="log_out"></a>
+            </div>
         </div>
     </nav>
 
@@ -56,55 +60,33 @@ if(!isset($_SESSION['logged_in'])){
     </section>
     <div class="break"></div>
     <ul class="chat-menu">
-            <li><a class="change_customer_box active_messages" id="all">Wszystkie</a></li>
-            <li><a class="change_customer_box" id="buy">Kupujesz</a></li>
-            <li><a class="change_customer_box" id="sell">Sprzedajesz</a></li>
-        </ul>
+        <li><a class="change_customer_box active_messages" id="all">Wszystkie</a></li>
+        <li><a class="change_customer_box" id="buy">Kupujesz</a></li>
+        <li><a class="change_customer_box" id="sell">Sprzedajesz</a></li>
+    </ul>
     <div class="container">
         <div class='customer_box'>
-             <!-- <div class="offer_info_wrapper">
-                <div class="offer_info">
-                    <p class="buyer_name">Kupujący: Adam Małysz</p>
-                    <p href="#" class="lovely_p"><img href="#" src="../images/envelope.svg" alt="envelope" class="offer_info_chatbtn">Otwórz czat</p>
-                </div>
-                <div class="offer_info_book_price">
-                    <p class="offer_book">Matematyka na czasie</p>
-                    <p class="offer_price">19 PLN</p>
-                </div>
-                <div class="offer_info_book_price">
-                    <p class="offer_book">Matematyka na czasie 2</p>
-                    <p class="offer_price">22 PLN</p>
-                </div>
-                <div class="offer_info_book_price">
-                    <p class="offer_book">Matematyka na czasie 3</p>
-                    <p class="offer_price">23 PLN</p>
-                </div>
-                <div class="offer_info_sum">
-                    <p class="offer_sum">Suma:</p>
-                    <p class="offer_price_sum">64 PLN</p>
-                </div>
-            </div> -->
         </div>
         <div class="chat_box">
             <div class="chat_user_box">
                 <p class="chat_user_box_name">WYBIERZ KONWERSACJĘ</p>
             </div>
-        <div class="chat-msg-container">
-            <div class="chat_messages" style="color:black;">
-            <!-- Wiadomości idą tutej -->
+            <div class="chat-msg-container">
+                <div class="chat_messages" style="color:black;">
+                </div>
             </div>
-        </div>
             <div class="input_box">
                 <input type="text" name="message" id="message_input" placeholder="Napisz coś..." disabled>
-                <button type="submit"  id="message_send"  disabled></button>
-                <!-- onclick="send_message();" -->
+                <button type="submit" id="message_send" disabled></button>
             </div>
         </div>
     </div>
     <footer>
         <div class="footer-container">
             <div class="logo-footer">
-                <a href="../strona-glowna"><div class="footer-image"></div></a>
+                <a href="../strona-glowna">
+                    <div class="footer-image"></div>
+                </a>
                 <span class="break"></span>
             </div>
 
@@ -122,13 +104,13 @@ if(!isset($_SESSION['logged_in'])){
                             <a href="#"><span class="mail">gorckacost@mail.com</span></a>
                             <a href="#"><span class="location">Rabka-zdrój</span></a>
                         </div>
-        
+
                     </div>
                     <div class="copyright">
                         <p>© 2022 Nazwa. Wszelkie prawa zastrzeżone </p>
                     </div>
                 </div>
-                
+
             </div>
 
             <div class="social-box">
@@ -144,4 +126,5 @@ if(!isset($_SESSION['logged_in'])){
         <p class="popup-order-box-alert">Komunikat</p>
     </div>
 </body>
+
 </html>

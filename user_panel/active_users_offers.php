@@ -1,12 +1,13 @@
 <?php
 session_start();
-if(!isset($_SESSION['logged_in'])){
+if (!isset($_SESSION['logged_in'])) {
     header('Location:../strona-logowania');
     exit();
 }
 ?>
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,12 +21,15 @@ if(!isset($_SESSION['logged_in'])){
     <link rel="stylesheet" href="../style/sub_menu.css">
     <link rel="icon" type="image/x-icon" href="../images/icon.png">
 </head>
+
 <body>
-<nav>
+    <nav>
         <div class="nav-container">
-            
+
             <div class="left-nav">
-                <a href="../strona-glowna"><div class="nav-image"></div></a>
+                <a href="../strona-glowna">
+                    <div class="nav-image"></div>
+                </a>
             </div>
 
             <div class="center-nav">
@@ -37,19 +41,19 @@ if(!isset($_SESSION['logged_in'])){
                     </ul>
                 </div>
             </div>
-            
-                <div class="right-nav-authorized">
-                    <a id="user-panel-button" href="dane-uzytkownika"></a>
-                    <a id="messages-button" href="../user_panel/wiadomosci"></a>
-                    <a id="log_out"></a>
-                </div>
+
+            <div class="right-nav-authorized">
+                <a id="user-panel-button" href="dane-uzytkownika"></a>
+                <a id="messages-button" href="../user_panel/wiadomosci"></a>
+                <a id="log_out"></a>
+            </div>
         </div>
     </nav>
-    
+
     <section id="sub-menu">
         <ul>
             <li><a href="dane-uzytkownika">Dane</a></li>
-            <li  class="active"><a href="twoje-oferty">Twoje oferty</a></li>
+            <li class="active"><a href="twoje-oferty">Twoje oferty</a></li>
             <li><a href="dodaj-oferte">Wystaw</a></li>
             <li><a href="wiadomosci">Wiadomosci</a></li>
         </ul>
@@ -59,7 +63,9 @@ if(!isset($_SESSION['logged_in'])){
     <footer>
         <div class="footer-container">
             <div class="logo-footer">
-                <a href="../strona-glowna"><div class="footer-image"></div></a>
+                <a href="../strona-glowna">
+                    <div class="footer-image"></div>
+                </a>
                 <span class="break"></span>
             </div>
 
@@ -77,13 +83,13 @@ if(!isset($_SESSION['logged_in'])){
                             <a href="#"><span class="mail">gorckacost@mail.com</span></a>
                             <a href="#"><span class="location">Rabka-zdrój</span></a>
                         </div>
-        
+
                     </div>
                     <div class="copyright">
                         <p>© 2022 Nazwa. Wszelkie prawa zastrzeżone </p>
                     </div>
                 </div>
-                
+
             </div>
 
             <div class="social-box">
@@ -96,43 +102,34 @@ if(!isset($_SESSION['logged_in'])){
         </div>
     </footer>
     <div class="modal-box">
-        <div class="delete-box-wrapper"> 
+        <div class="delete-box-wrapper">
             <h1 class="title-delete delete-text"></h1>
             <p class="delete-title"></p>
             <div class="delete-popup">
-                    <div class="button-wrapper">
-                        <button class="confirm-delete">Usuń</button>
-                        <button class="cancel-delete">Anuluj</button>
-                    </div>
+                <div class="button-wrapper">
+                    <button class="confirm-delete">Usuń</button>
+                    <button class="cancel-delete">Anuluj</button>
+                </div>
             </div>
         </div>
-        <div class="change-price-box-wrapper"> 
+        <div class="change-price-box-wrapper">
             <h1 class="title-delete delete-text"></h1>
             <div class="input-wrapper">
                 <input type="number" id="change-price-input" placeholder="Zmień cenę" class="price_input">
             </div>
             <div class="delete-popup">
-                    <div class="button-wrapper">
-                        <button class="confirm-change-price">Zmień</button>
-                        <button class="cancel-change-price">Anuluj</button>
-                    </div>
+                <div class="button-wrapper">
+                    <button class="confirm-change-price">Zmień</button>
+                    <button class="cancel-change-price">Anuluj</button>
+                </div>
             </div>
-        </div>     
-            <!-- <img src="" class="offer-image"> -->
-            <!-- <div class="popup-order-box">
-                <p class="popup-order-box-alert"></p>   
-            </div> -->
-                    <!-- <div class="delete-popup">
-                        <div class="button-wrapper">
-                            <button class="confirm-delete">Usuń</button>
-                            <button class="cancel-delete">Anuluj</button>
-                        </div>
-                    </div> -->
+        </div>
     </div>
     <div class="modal-box-img">
-            <span class="close-modal-box">X</span>
-            <img src="" class="offer-image">
+        <span class="close-modal-box">X</span>
+        <img src="" class="offer-image">
     </div>
-    
+
 </body>
+
 </html>

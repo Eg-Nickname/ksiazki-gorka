@@ -1,5 +1,5 @@
 -mail - reset hasła, potwierdzenie rejestracji, ktoś zarezerował
-
+-zmienić baze
 
 
 

@@ -61,22 +61,6 @@ if(!$error){
     $serwer_bc_img_path='users_offers/'.$new_bc_img_name;
     require_once '../connect.php';
     $connection=mysqli_connect($host, $db_user,$db_password,$db_name);
-    // $a=compressImage($_FILES['front_photo']['tmp_name'],$img_upload_path,75);
-    // array_push($error_msg,$a);
-    // if(move_uploaded_file($_FILES['front_photo']['tmp_name'], $img_upload_path) && move_uploaded_file($_FILES['back_photo']['tmp_name'], $bc_img_upload_path))
-    // {
-    //     $sql="INSERT INTO `users_offers`(`seller`,`price`,`photo1`,`photo2`,`status`, `book_id`) VALUES ('$seller','$price','$serwer_img_path','$serwer_bc_img_path','available','$id')";
-    //     $result=mysqli_query($connection,$sql);
-    //     if($result){
-    //         array_push($error_msg,'Pomyślnie dodano ofertę');
-    //     }
-    //     else{
-    //         array_push($error_msg,'Błąd serwera.Spróbuj później');
-    //     }
-    // }
-    // else{
-    //     array_push($error_msg,'Błąd serwera.Spróbuj później');
-    // }
     if(compressImage($_FILES['front_photo']['tmp_name'],$img_upload_path,50) && compressImage($_FILES['back_photo']['tmp_name'],$bc_img_upload_path,50))
     {
         $sql="INSERT INTO `users_offers`(`seller`,`price`,`photo1`,`photo2`,`status`, `book_id`) VALUES ('$seller','$price','$serwer_img_path','$serwer_bc_img_path','available','$id')";
@@ -108,6 +92,4 @@ function compressImage($source, $destination, $quality) {
   
 $array=[$error,$error_msg,$error_id];
 echo json_encode($array);
-
-
 ?>

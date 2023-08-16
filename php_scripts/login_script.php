@@ -13,7 +13,7 @@ if(!isset($_SESSION['logged_in'])){
             $error = true;
             $error_message="Podano zły email lub hasło";
         }
-        if(strlen($password)<1){ //warunek hasła jakiś trzeba lepszy wziąć
+        if(strlen($password)<1){
             $error = true;
             $error_message="Podano zły email lub hasło";
         }
@@ -26,7 +26,6 @@ if(!isset($_SESSION['logged_in'])){
                     throw new Exception(mysqli_connect_errno());
                 }
                 else{
-                // $password=md5($password);
                 $sql="SELECT * FROM users WHERE email='$email'";
                 $result=$connection->query($sql);
                 if(!$result)throw new Exception($connection->error);

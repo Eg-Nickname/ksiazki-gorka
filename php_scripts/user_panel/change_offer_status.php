@@ -20,7 +20,7 @@ if(!mysqli_connect_errno()){
     $sql="UPDATE users_offers SET $update WHERE offer_id='$offer' AND (seller='$user' OR customer='$user')";
     $result=mysqli_query($connection,$sql);
     $was_updated=mysqli_affected_rows($connection);
-    if($was_updated){ // if do usuwania zdjęć po sprzedaniu
+    if($was_updated){
         if($status=="sold"){
             $array=[$data["photo1"],$data["photo2"]];
             foreach($array as $photo){
