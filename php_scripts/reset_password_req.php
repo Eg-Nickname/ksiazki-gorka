@@ -34,7 +34,7 @@ if(!$error){
                 $mail->Host="smtp.gmail.com";
                 $mail->SMTPAuth=true;
                 $mail->Username="gorkakiermasz@gmail.com";
-                $mail->Password="rzsdbfjppmckzpvd";
+                $mail->Password="tu ma być hasło";//rzsdbfjppmckzpvd
                 $mail->SMTPSecure="ssl";
                 $mail->Port=465;
                 $mail->setFrom("gorkakiermasz@gmail.com");
