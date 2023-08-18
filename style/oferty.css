@@ -1148,49 +1148,7 @@ footer {
 
 }
 
-
-
-@media only screen and (max-width: 550px) {
-
-    .nav-container .center-nav .nav-list ul li a {
-        font-size: 12px;
-        color: #000;
-        font-weight: normal;
-        line-height: 20px;
-    }
-
-    section {
-        grid-template-columns: 1fr;
-        grid-template-columns: 1fr;
-        padding: 6rem 3rem;
-        gap: 1rem;
-    }
-
-    .nav-container .right-nav-authorized #user-panel-button {
-        width: 24px;
-        height: 24px;
-    }
-
-    .nav-container .right-nav-authorized #messages-button {
-        width: 27px;
-        height: 21px;
-    }
-
-    .nav-container .right-nav-authorized #log_out {
-        cursor: pointer;
-        width: 28px;
-        height: 22px;
-    }
-
-    .nav-container .center-nav .nav-list ul li+li {
-        margin-left: 1rem;
-    }
-
-    .nav-container .left-nav .nav-image {
-        width: 40px;
-        height: 40px;
-    }
-
+@media only screen and (max-width: 600px) {
     .footer-container {
         grid-template-columns: 120px 1fr;
     }
@@ -1278,6 +1236,49 @@ footer {
         width: 18px;
         height: 22px;
         margin-right: 1rem;
+    }
+}
+
+
+@media only screen and (max-width: 550px) {
+
+    .nav-container .center-nav .nav-list ul li a {
+        font-size: 12px;
+        color: #000;
+        font-weight: normal;
+        line-height: 20px;
+    }
+
+    section {
+        grid-template-columns: 1fr;
+        grid-template-columns: 1fr;
+        padding: 6rem 3rem;
+        gap: 1rem;
+    }
+
+    .nav-container .right-nav-authorized #user-panel-button {
+        width: 24px;
+        height: 24px;
+    }
+
+    .nav-container .right-nav-authorized #messages-button {
+        width: 27px;
+        height: 21px;
+    }
+
+    .nav-container .right-nav-authorized #log_out {
+        cursor: pointer;
+        width: 28px;
+        height: 22px;
+    }
+
+    .nav-container .center-nav .nav-list ul li+li {
+        margin-left: 1rem;
+    }
+
+    .nav-container .left-nav .nav-image {
+        width: 40px;
+        height: 40px;
     }
 }
 

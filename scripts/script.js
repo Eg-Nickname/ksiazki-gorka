@@ -115,7 +115,7 @@ const searching_function = function () {
                 const lower_title = title.toLowerCase();
                 if (lower_title.match(user_input) && suggestions_list.childElementCount < 3) {
                     const a = document.createElement('a');
-                    a.innerHTML = `${title}, MEN: ${book.MEN}`;
+                    a.innerHTML = `${title}`;
                     title = (book.book_name.split(" ")).join("-");
                     a.href = `oferta?number=${book.book_ID}&category=${book.category}&title=${title}`;
                     $(a).addClass("suggestion");

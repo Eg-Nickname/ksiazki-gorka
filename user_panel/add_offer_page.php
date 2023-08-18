@@ -128,7 +128,7 @@ if (!isset($_SESSION['logged_in'])) {
                     </div>
                     <div class="social-box-responsive">
                         <div class="socials">
-                            <a href="#"><span class="mail">gorckacost@mail.com</span></a>
+                            <a href="#"><span class="mail">gorkakiermasz@gmail.com</span></a>
                             <a href="#"><span class="location">Rabka-zdrój</span></a>
                         </div>
 
@@ -142,7 +142,7 @@ if (!isset($_SESSION['logged_in'])) {
 
             <div class="social-box">
                 <div class="socials">
-                    <span class="mail">gorckacost@mail.com</span>
+                    <span class="mail">gorkakiermasz@gmail.com</span>
                     <span class="location">Rabka-zdrój</span>
                 </div>
 

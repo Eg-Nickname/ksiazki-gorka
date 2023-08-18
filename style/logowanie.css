@@ -459,7 +459,7 @@ label {
   margin-right: 1rem;
 }
 
-#sign-up-goto {
+#sign-up-goto,#forgotten-password {
   cursor: pointer;
   justify-content: center;
   display: flex;
@@ -468,11 +468,14 @@ label {
   color: #A89887;
 }
 
-#sign-up-goto a {
+#sign-up-goto a, #forgotten-password a {
   font-size: 12px;
   font-weight: bold;
   text-decoration: none;
   color: #A89887;
+}
+#forgotten-password{
+  margin-top:8px;
 }
 
 .error_log_info_password {

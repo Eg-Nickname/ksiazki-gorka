@@ -16,3 +16,5 @@ RewriteRule dodaj-oferte user_panel/add_offer_page.php
 RewriteRule twoje-oferty user_panel/active_users_offers.php
 RewriteRule admin-panel admin/admin.php
 RewriteRule admin-logowanie admin/admin_login_page.php
+RewriteRule odzyskaj-haslo recover_password.php
+RewriteRule zresetuj-haslo reset_password.php

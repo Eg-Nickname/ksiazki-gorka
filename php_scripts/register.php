@@ -1,4 +1,6 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 session_start();
 if(!isset($_SESSION['logged_in'])){
     if(isset($_POST['register_email']) && isset($_POST['register_password']) && isset($_POST['check_password']) && isset($_POST['name']) && isset($_POST['surname'])){ //    
@@ -6,7 +8,8 @@ if(!isset($_SESSION['logged_in'])){
         $error_message=[];
         $register_result=false;
         $error_class=[];
-        $register_email=strtolower(htmlentities($email=filter_var($_POST['register_email'], FILTER_SANITIZE_EMAIL)));
+        $email=filter_var($_POST['register_email']);
+        $register_email=strtolower(htmlentities($email, FILTER_SANITIZE_EMAIL));
         $password=htmlentities($_POST['register_password']);
         $check_password=htmlentities($_POST['check_password']);
         $name=ucfirst(strtolower(htmlentities($_POST['name'])));
@@ -51,7 +54,6 @@ if(!isset($_SESSION['logged_in'])){
         }
         if(!$error){
             require_once "connect.php";
-            mysqli_report((MYSQLI_REPORT_STRICT));
             try{
                 $connection=new mysqli($host,$db_user,$db_password,$db_name);
                 if($connection->connect_errno!=0){
@@ -84,6 +86,32 @@ if(!isset($_SESSION['logged_in'])){
                     $_SESSION['name']=$name;
                     $_SESSION['surname']=$surname;
                     array_push($error_message,"Utworzono konto");
+                    require 'phpmailer/src/Exception.php';
+                    require 'phpmailer/src/PHPMailer.php';
+                    require 'phpmailer/src/SMTP.php';
+                        $mail=new PHPMailer(true);
+                        $mail->isSMTP();
+                        $mail->Host="smtp.gmail.com";
+                        $mail->SMTPAuth=true;
+                        $mail->Username="gorkakiermasz@gmail.com";
+                        $mail->Password="rzsdbfjppmckzpvd";
+                        $mail->SMTPSecure="ssl";
+                        $mail->Port=465;
+                        $mail->setFrom("gorkakiermasz@gmail.com");
+                        $mail->addAddress($register_email);
+                        $mail->isHTML(true);
+                        $mail->CharSet = "UTF-8";
+                        $mail->Subject="Potwierdzenie rejestracji";
+                        $mail->Body='<html>
+                        <head>
+                            <title>Potwierdzenie rejestracji</title>
+                        </head>
+                        <body>
+                            <h1>Dziękujemy za rejestracje</h1>
+                            <p>Wiadomość wygenerowana automatycznie. Prosimy nie odpowiadać.</p>
+                        </body>
+                        </html>';
+                        $mail->send();
                 }
                 $connection->close();
                 }

@@ -49,7 +49,7 @@ function build_offer_info_div({chatter,chatter_name}){
         const a=document.createElement('a');
         const chatter_name_array=chatter_name.split(" ");
         a.href=`../oferty-uzytkownika?seller=${chatter}&name=${chatter_name_array[0]}-${chatter_name_array[1]}`;
-        a.target="blank"
+        a.target="_blank"
         a.innerHTML=` ${chatter_name_array[0]} ${chatter_name_array[1]}`;
         p.append(a)
         const chat_p=document.createElement('p')

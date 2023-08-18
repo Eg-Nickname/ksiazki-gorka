@@ -53,14 +53,14 @@ if (isset($_SESSION['logged_in'])) {
                 <div class="label-wrapper sign-up-form">
                     <label for="name">Imię:</label>
                     <div class="input-field">
-                        <input type="text" placeholder="Wpisz imię" name="name" id="name" value="siema">
+                        <input type="text" placeholder="Podaj imię" name="name" id="name">
                     </div>
                     <span id="name-error" class="error_log_info">Lorem Ipsum</span>
                 </div>
                 <div class="label-wrapper sign-up-form label-wrapper-l">
                     <label for="surname">Nazwisko:</label>
                     <div class="input-field">
-                        <input type="text" placeholder="Wpisz nazwisko" name="surname" id="surname" value="si" />
+                        <input type="text" placeholder="Podaj nazwisko" name="surname" id="surname" />
                     </div>
                     <span id="surname-error" class="error_log_info">Lorem Ipsum</span>
                 </div>
@@ -68,7 +68,7 @@ if (isset($_SESSION['logged_in'])) {
                 <div class="label-wrapper register-in-form">
                     <label for="register_password">Hasło:</label>
                     <div class="input-field">
-                        <input type="password" placeholder="Hasło musi zawierać 8 znaków" name="register_password" id="register_password" value="123456789" />
+                        <input type="password" placeholder="Podaj hasło" name="register_password" id="register_password" />
                     </div>
                     <span id="register-password-error" class="error_log_info">Lorem Ipsum</span>
 
@@ -76,7 +76,7 @@ if (isset($_SESSION['logged_in'])) {
                 <div class="label-wrapper register-in-form label-wrapper-l">
                     <label for="check_password">Hasło:</label>
                     <div class="input-field">
-                        <input type="password" placeholder="Potwierdź hasło" name="check_password" id="check_password" value="123456789" />
+                        <input type="password" placeholder="Powtórz hasło" name="check_password" id="check_password" />
                     </div>
                     <span id="password-check-error" class="error_log_info">Lorem Ipsum</span>
                 </div>
@@ -84,7 +84,7 @@ if (isset($_SESSION['logged_in'])) {
                     <div class="label-wrapper register-in-form label-wrapper-l">
                         <label for="register_email">Email:</label>
                         <div class="input-field">
-                            <input type="email" placeholder="Wpisz swoj email" name="register_email" id="register_email" value="12@df.pl" />
+                            <input type="email" placeholder="Podaj email" name="register_email" id="register_email"/>
                         </div>
                         <span id="register-email-error" class="error_log_info">Lorem Ipsum</span>
                     </div>
@@ -96,14 +96,14 @@ if (isset($_SESSION['logged_in'])) {
                 <div class="label-wrapper sign-in-form">
                     <label for="name">Adres Email:</label>
                     <div class="input-field">
-                        <input type="email" placeholder="adres email" name="email" id="email" />
+                        <input type="email" placeholder="Podaj email" name="email" id="email" />
                     </div>
                     <span class="error_log_info_login">Lorem Ipsum</span>
                 </div>
                 <div class="label-wrapper sign-in-form">
                     <label for="password">Hasło:</label>
                     <div class="input-field">
-                        <input type="password" placeholder="Wpisz hasło" id="password" name="password" />
+                        <input type="password" placeholder="Podaj hasło" id="password" name="password" />
                     </div>
                     <span class="error_log_info_login" id="login_result">h</span>
                 </div>
@@ -112,6 +112,7 @@ if (isset($_SESSION['logged_in'])) {
             <span class="error_log_info_password form--hidden">Hasło musi zawierać co najmniej 8 znaków, w tym cyfrę i wielką literę.</span>
             <span class="sign-up-goto-span">
                 <p id="sign-up-goto">Nie masz jeszcze konta? &nbsp;<a id="linkCreateAccount"> Zarejestruj się</a></p>
+                <p id="forgotten-password"> Zapomniałeś hasła? &nbsp;<a href="odzyskaj-haslo"> Odzyskaj je</a></p>
             </span>
             <span class="sign-in-goto-span form--hidden">
                 <p id="sign-in-goto"> Masz już konto? &nbsp;<a id="linkLogin"> Zaloguj się</a></p>

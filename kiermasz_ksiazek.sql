@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 10 Kwi 2023, 13:01
+-- Czas generowania: 18 Sie 2023, 16:03
 -- Wersja serwera: 10.4.21-MariaDB
 -- Wersja PHP: 8.0.12
 
@@ -24,6 +24,18 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Struktura tabeli dla tabeli `admins`
+--
+
+CREATE TABLE `admins` (
+  `id` int(11) NOT NULL,
+  `login` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_polish_ci NOT NULL,
+  `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_polish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Struktura tabeli dla tabeli `messages`
 --
 
@@ -33,6 +45,38 @@ CREATE TABLE `messages` (
   `sender_id` int(11) NOT NULL,
   `reciver_id` int(11) NOT NULL,
   `send_time` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `reset_password`
+--
+
+CREATE TABLE `reset_password` (
+  `request_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `authorization_code` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_polish_ci NOT NULL,
+  `date` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `sample_books`
+--
+
+CREATE TABLE `sample_books` (
+  `book_ID` int(11) NOT NULL,
+  `book_name` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `MEN` varchar(16) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `picture` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `publishing_house` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `authors` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `category` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `part` tinyint(4) NOT NULL,
+  `scope` varchar(16) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `release_date` smallint(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -71,10 +115,28 @@ CREATE TABLE `users_offers` (
 --
 
 --
+-- Indeksy dla tabeli `admins`
+--
+ALTER TABLE `admins`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indeksy dla tabeli `messages`
 --
 ALTER TABLE `messages`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indeksy dla tabeli `reset_password`
+--
+ALTER TABLE `reset_password`
+  ADD PRIMARY KEY (`request_id`);
+
+--
+-- Indeksy dla tabeli `sample_books`
+--
+ALTER TABLE `sample_books`
+  ADD PRIMARY KEY (`book_ID`);
 
 --
 -- Indeksy dla tabeli `users`
@@ -93,10 +155,28 @@ ALTER TABLE `users_offers`
 --
 
 --
+-- AUTO_INCREMENT dla tabeli `admins`
+--
+ALTER TABLE `admins`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT dla tabeli `messages`
 --
 ALTER TABLE `messages`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT dla tabeli `reset_password`
+--
+ALTER TABLE `reset_password`
+  MODIFY `request_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT dla tabeli `sample_books`
+--
+ALTER TABLE `sample_books`
+  MODIFY `book_ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT dla tabeli `users`
